@@ -57,7 +57,6 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
       let query = supabase
         .from('social_posts')
         .select('*')
-        .eq('is_active', true)
         .order('created_at', { ascending: false })
         .limit(20);
 

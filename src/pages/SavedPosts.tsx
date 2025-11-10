@@ -75,7 +75,6 @@ export default function SavedPosts() {
         .from('social_posts')
         .select('*')
         .in('id', postIds)
-        .eq('is_active', true)
         .order('created_at', { ascending: false });
 
       if (postsError) throw postsError;
