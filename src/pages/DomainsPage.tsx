@@ -16,7 +16,6 @@ interface Domain {
   expires_at: string;
   created_at: string;
   domain_type?: 'personal' | 'business';
-  display_order?: number;
 }
 
 const DomainsPage: React.FC = () => {
@@ -85,11 +84,11 @@ const DomainsPage: React.FC = () => {
 
         const { data: customerData, error: customerError } = await supabase
           .from('customers')
-          .select('id, role')
+          .select('id, role, active_domain_id')
           .eq('user_id', user.id)
           .maybeSingle();
 
-        console.log('VERSION 445 - Customer query result:', {
+        console.log('VERSION 447 - Customer query result:', {
           data: customerData,
           error: customerError,
           hasData: !!customerData,
@@ -97,18 +96,18 @@ const DomainsPage: React.FC = () => {
         });
 
         if (!isMounted) {
-          console.log('VERSION 445 - Component unmounted');
+          console.log('VERSION 447 - Component unmounted');
           return;
         }
 
         if (customerError) {
-          console.error('VERSION 445 - Customer query error:', customerError);
+          console.error('VERSION 447 - Customer query error:', customerError);
           setLoading(false);
           return;
         }
 
         if (!customerData) {
-          console.log('VERSION 445 - No customer data, session may have expired');
+          console.log('VERSION 447 - No customer data, session may have expired');
           setLoading(false);
           return;
         }
@@ -116,15 +115,14 @@ const DomainsPage: React.FC = () => {
         const isUserAdmin = customerData.role === 'admin';
         setIsAdmin(isUserAdmin);
         setCustomerId(customerData.id);
-        setActiveDomainId(customerData.active_domain_id);
-        console.log('VERSION 442 - User is admin:', isUserAdmin);
+        setActiveDomainId(customerData.active_domain_id || null);
+        console.log('VERSION 447 - User is admin:', isUserAdmin, 'Customer ID:', customerData.id);
 
-        console.log('VERSION 446 - Fetching domains for customer:', customerData.id);
+        console.log('VERSION 448 - Fetching domains for customer:', customerData.id);
         const { data: domainsData, error: domainsError } = await supabase
           .from('domains')
           .select('*')
           .eq('customer_id', customerData.id)
-          .order('display_order', { ascending: true })
           .order('created_at', { ascending: true });
 
         console.log('VERSION 446 - Domains query result:', {
@@ -320,7 +318,6 @@ const DomainsPage: React.FC = () => {
           .from('domains')
           .select('*')
           .eq('customer_id', customerData.id)
-          .order('display_order', { ascending: true })
           .order('created_at', { ascending: true });
 
         setDomains(domainsData || []);
@@ -406,14 +403,14 @@ const DomainsPage: React.FC = () => {
     setDomains(newDomains);
 
     try {
-      const updates = newDomains.map((domain, index) =>
-        supabase
-          .from('domains')
-          .update({ display_order: index + 1 })
-          .eq('id', domain.id)
-      );
-
-      await Promise.all(updates);
+      // Ordering removed since display_order column doesn't exist
+      // const updates = newDomains.map((domain, index) =>
+      //   supabase
+      //     .from('domains')
+      //     .update({ display_order: index + 1 })
+      //     .eq('id', domain.id)
+      // );
+      // await Promise.all(updates);
     } catch (error) {
       console.error('Error updating domain order:', error);
       const { data: customerData } = await supabase
@@ -427,7 +424,6 @@ const DomainsPage: React.FC = () => {
           .from('domains')
           .select('*')
           .eq('customer_id', customerData.id)
-          .order('display_order', { ascending: true })
           .order('created_at', { ascending: true });
 
         setDomains(domainsData || []);
