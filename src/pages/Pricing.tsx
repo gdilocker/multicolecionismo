@@ -33,11 +33,11 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
       'Analytics: visualizações, cliques e engajamento',
       'Destaque em buscas e categorias',
       'Participação em eventos e feiras',
-      'Programa de afiliados: 25% de comissão',
+      'Programa de afiliados: 10% de comissão',
       'Suporte prioritário'
     ],
     is_active: true,
-    commission_rate: 0.25
+    commission_rate: 0.10
   },
   {
     id: 'elite',
@@ -55,11 +55,11 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
       'Acesso antecipado a eventos premium',
       'Cartão de visita digital com QR Code',
       'Estatísticas avançadas e relatórios',
-      'Programa de afiliados: 50% de comissão',
+      'Programa de afiliados: 25% de comissão',
       'Suporte dedicado 24/7'
     ],
     is_active: true,
-    commission_rate: 0.50
+    commission_rate: 0.25
   },
   {
     id: 'supreme',
@@ -79,11 +79,11 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
       'Relatórios avançados e Business Intelligence',
       'API completa para integração',
       'Gerente de conta dedicado',
-      'Programa de afiliados: 60% de comissão',
+      'Programa de afiliados: 35% de comissão',
       'Suporte prioritário 24/7 com SLA'
     ],
     is_active: true,
-    commission_rate: 0.60
+    commission_rate: 0.35
   }
 ];
 
@@ -459,7 +459,27 @@ const Pricing: React.FC = () => {
                             {isPrime ? (
                               <div className="space-y-3">
                                 <p className="text-sm text-slate-900 leading-relaxed">
-                                  Ao se tornar Membro Prime, você recebe 25% de comissão em todas as vendas realizadas pelos seus convidados.
+                                  Ao se tornar Membro Prime, você recebe 10% de comissão em todas as vendas realizadas pelos seus convidados.
+                                </p>
+                                <div className="space-y-2">
+                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
+                                    <TrendingUp className="w-4 h-4 text-green-600" />
+                                    R$ 7 por venda do Plano Prime
+                                  </p>
+                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
+                                    <TrendingUp className="w-4 h-4 text-green-600" />
+                                    R$ 9,90 por venda do Plano Elite
+                                  </p>
+                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
+                                    <TrendingUp className="w-4 h-4 text-green-600" />
+                                    R$ 15 por venda do Plano Supreme
+                                  </p>
+                                </div>
+                              </div>
+                            ) : isElite ? (
+                              <div className="space-y-3">
+                                <p className="text-sm text-slate-900 leading-relaxed">
+                                  Ao se tornar Membro Elite, você recebe 25% de comissão em todas as vendas realizadas pelos seus convidados.
                                 </p>
                                 <div className="space-y-2">
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
@@ -476,43 +496,23 @@ const Pricing: React.FC = () => {
                                   </p>
                                 </div>
                               </div>
-                            ) : isElite ? (
-                              <div className="space-y-3">
-                                <p className="text-sm text-slate-900 leading-relaxed">
-                                  Ao se tornar Membro Elite, você recebe 50% de comissão em todas as vendas realizadas pelos seus convidados.
-                                </p>
-                                <div className="space-y-2">
-                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
-                                    <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 35 por venda do Plano Prime
-                                  </p>
-                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
-                                    <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 49,50 por venda do Plano Elite
-                                  </p>
-                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
-                                    <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 75 por venda do Plano Supreme
-                                  </p>
-                                </div>
-                              </div>
                             ) : (
                               <div className="space-y-3">
                                 <p className="text-sm text-slate-900 leading-relaxed">
-                                  Ao se tornar Membro Supreme, você recebe 60% de comissão em todas as vendas realizadas pelos seus convidados.
+                                  Ao se tornar Membro Supreme, você recebe 35% de comissão em todas as vendas realizadas pelos seus convidados.
                                 </p>
                                 <div className="space-y-2">
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 42 por venda do Plano Prime
+                                    R$ 24,50 por venda do Plano Prime
                                   </p>
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 59,40 por venda do Plano Elite
+                                    R$ 34,65 por venda do Plano Elite
                                   </p>
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 90 por venda do Plano Supreme
+                                    R$ 52,50 por venda do Plano Supreme
                                   </p>
                                 </div>
                               </div>
