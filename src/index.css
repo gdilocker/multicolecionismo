@@ -352,4 +352,36 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
+
+  /* ====== TAMANHOS FLUIDOS RESPONSIVOS ====== */
+  /* Título principal: grande no desktop, ajusta suave em telas menores */
+  .text-fluid-hero {
+    font-size: clamp(2.25rem, 8vw, 5.25rem); /* 36px → 84px */
+    line-height: 1.05;
+  }
+
+  /* Subtítulo/linha de apoio do hero */
+  .text-fluid-sub {
+    font-size: clamp(1rem, 2.8vw, 1.5rem);   /* 16px → 24px */
+    line-height: 1.35;
+  }
+
+  /* Domínio/URL destacado (mantém inteiro e ajusta) */
+  .text-fluid-domain {
+    font-size: clamp(1.75rem, 7vw, 5rem);    /* 28px → 80px */
+    line-height: 1.05;
+    white-space: nowrap;
+  }
+
+  /* Títulos de seção (H2) */
+  .text-fluid-section {
+    font-size: clamp(1.875rem, 6vw, 4.5rem); /* 30px → 72px */
+    line-height: 1.1;
+  }
+
+  /* Textos de destaque/descrições */
+  .text-fluid-body {
+    font-size: clamp(0.875rem, 2.2vw, 1.25rem); /* 14px → 20px */
+    line-height: 1.5;
+  }
 }

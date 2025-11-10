@@ -38,19 +38,19 @@ export default function RichClub() {
               <span className="text-amber-400 text-xs font-semibold tracking-[0.3em] uppercase">Collector's Community</span>
             </div>
 
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-tight break-keep">
+            <h1 className="font-bold text-white mb-8 tracking-tight break-keep text-fluid-hero">
               <span className="block">Bem-vindo ao</span>
               <span className="block">Clube do</span>
-              <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent whitespace-nowrap">
+              <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent inline-block whitespace-nowrap">
                 Multicolecionismo
               </span>
             </h1>
 
             <div className="space-y-3 mb-12">
-              <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-relaxed font-light">
+              <p className="text-gray-300 font-light break-keep text-fluid-sub">
                 A rede social dos verdadeiros colecionadores.
               </p>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed font-light">
+              <p className="text-gray-400 font-light break-keep text-fluid-body">
                 Compartilhe coleções. Participe de eventos. Conecte-se com a paixão.
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function RichClub() {
               <span className="text-white/90 text-xs font-semibold tracking-widest uppercase">Collector's Events</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
+            <h2 className="font-bold text-white mb-6 tracking-tight break-keep text-fluid-section">
               <span className="block">Eventos e Encontros</span>
               <span className="block whitespace-nowrap">de Colecionadores</span>
             </h2>
@@ -111,10 +111,10 @@ export default function RichClub() {
             <div className="h-1 w-20 bg-gradient-to-r from-amber-400 to-transparent mb-6"></div>
 
             <div className="space-y-3 mb-8">
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
+              <p className="text-gray-300 font-light break-keep text-fluid-sub">
                 Descubra feiras, exposições e encontros de colecionismo em todo o Brasil.
               </p>
-              <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
+              <p className="text-gray-400 font-light break-keep text-fluid-body">
                 Conecte-se com expositores, comerciantes e outros apaixonados por colecionar. Participe, exponha e compartilhe sua paixão.
               </p>
               <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4 mt-4">
@@ -163,17 +163,17 @@ export default function RichClub() {
               <span className="text-amber-300 text-xs font-semibold tracking-widest uppercase">Featured Collections</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
+            <h2 className="font-bold text-white mb-6 tracking-tight break-keep text-fluid-section">
               Lojas, Espaços e Coleções em Destaque
             </h2>
 
             <div className="h-1 w-20 bg-gradient-to-r from-amber-400 to-transparent mb-6"></div>
 
             <div className="space-y-3 mb-8">
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-                O destaque do <span className="text-amber-400 font-semibold">Multicolecionismo.Social</span> reconhece perfis e coleções inspiradoras.
+              <p className="text-gray-300 font-light break-keep text-fluid-sub">
+                O destaque do <span className="text-amber-400 font-semibold whitespace-nowrap">Multicolecionismo.Social</span> reconhece perfis e coleções inspiradoras.
               </p>
-              <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
+              <p className="text-gray-400 font-light break-keep text-fluid-body">
                 Colecionadores dedicados, lojas especializadas, espaços culturais e galerias que definem o padrão de autenticidade e paixão pelo colecionismo.
               </p>
             </div>
@@ -218,7 +218,7 @@ export default function RichClub() {
               <span className="text-white/90 text-xs font-semibold tracking-widest uppercase">Passion & Authenticity</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
+            <h2 className="font-bold text-white mb-6 tracking-tight break-keep text-fluid-section">
               <span className="block">Paixão, História</span>
               <span className="block whitespace-nowrap">e Autenticidade</span>
             </h2>
@@ -226,10 +226,10 @@ export default function RichClub() {
             <div className="h-1 w-20 bg-gradient-to-r from-amber-400 to-transparent mb-6"></div>
 
             <div className="space-y-3 mb-12">
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
+              <p className="text-gray-300 font-light break-keep text-fluid-sub">
                 Celebramos colecionadores que preservam memórias e histórias através de suas coleções.
               </p>
-              <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
+              <p className="text-gray-400 font-light break-keep text-fluid-body">
                 Cada item colecionável representa uma história, uma época, uma paixão. Aqui você compartilha essas narrativas e inspira outros colecionadores.
               </p>
             </div>
@@ -269,7 +269,7 @@ export default function RichClub() {
               <span className="text-amber-300 text-xs font-bold tracking-widest uppercase">Verified Collector</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
+            <h2 className="font-bold text-white mb-6 tracking-tight break-keep text-fluid-section">
               <span className="block sm:inline">Reconhecimento como</span>
               <br className="hidden sm:block lg:block" />
               <span className="block sm:inline whitespace-nowrap">Colecionador</span>
@@ -280,10 +280,10 @@ export default function RichClub() {
             <div className="h-1 w-20 bg-gradient-to-r from-amber-400 to-transparent mb-6"></div>
 
             <div className="space-y-3 mb-8">
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
+              <p className="text-gray-300 font-light break-keep text-fluid-sub">
                 Seu perfil verificado e credencial digital não são apenas símbolos, são validações do seu comprometimento com o colecionismo, autenticidade e pertencimento a uma comunidade apaixonada.
               </p>
-              <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
+              <p className="text-gray-400 font-light break-keep text-fluid-body">
                 Perfis Premium recebem destaque especial, domínio personalizado e ferramentas avançadas de organização.
               </p>
             </div>
@@ -327,16 +327,16 @@ export default function RichClub() {
               <span className="text-amber-400 text-xs font-semibold tracking-[0.3em] uppercase">Your Digital Showcase</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
+            <h2 className="font-bold text-white mb-6 tracking-tight break-keep text-fluid-domain">
               <span className="text-gray-400">seunome</span>
-              <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent whitespace-nowrap">.multicolecionismo.social</span>
+              <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">.multicolecionismo⁠.social</span>
             </h2>
 
             <div className="space-y-3 mb-12">
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-                Seu domínio personalizado .multicolecionismo.social é mais que um endereço web, é sua vitrine digital para organizar, exibir e comercializar suas coleções mais valiosas.
+              <p className="text-gray-300 font-light break-keep text-fluid-sub">
+                Seu domínio personalizado <span className="whitespace-nowrap">.multicolecionismo⁠.social</span> é mais que um endereço web, é sua vitrine digital para organizar, exibir e comercializar suas coleções mais valiosas.
               </p>
-              <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
+              <p className="text-gray-400 font-light break-keep text-fluid-body">
                 Uma URL que comunica paixão e dedicação instantaneamente.
               </p>
             </div>
@@ -383,7 +383,7 @@ export default function RichClub() {
               <span className="text-emerald-300 text-xs font-semibold tracking-widest uppercase">Earn Commission</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
+            <h2 className="font-bold text-white mb-6 tracking-tight break-keep text-fluid-section">
               Programa de Afiliados
             </h2>
 
@@ -396,11 +396,11 @@ export default function RichClub() {
             </div>
 
             <div className="space-y-3 mb-8">
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
+              <p className="text-gray-300 font-light break-keep text-fluid-sub">
                 Convide amigos colecionadores e ganhe recompensas.
               </p>
-              <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
-                Ao recomendar o Multicolecionismo.Social para outros colecionadores, você é recompensado com comissões por cada novo membro que se juntar à comunidade.
+              <p className="text-gray-400 font-light break-keep text-fluid-body">
+                Ao recomendar o <span className="whitespace-nowrap">Multicolecionismo.Social</span> para outros colecionadores, você é recompensado com comissões por cada novo membro que se juntar à comunidade.
               </p>
             </div>
 
@@ -421,7 +421,7 @@ export default function RichClub() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-12 leading-[1.3] tracking-tight break-keep">
+            <h2 className="font-bold text-white mb-12 tracking-tight break-keep text-fluid-section">
               <span className="block mb-2">Pronto para destacar</span>
               <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent pb-6">
                 sua coleção online?
@@ -429,10 +429,10 @@ export default function RichClub() {
             </h2>
 
             <div className="space-y-3 mb-12 max-w-2xl mx-auto">
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
+              <p className="text-gray-300 font-light break-keep text-fluid-sub">
                 Junte-se a uma comunidade brasileira de colecionadores apaixonados e dedicados.
               </p>
-              <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
+              <p className="text-gray-400 font-light break-keep text-fluid-body">
                 Sua jornada no mundo do colecionismo digital começa agora.
               </p>
             </div>
