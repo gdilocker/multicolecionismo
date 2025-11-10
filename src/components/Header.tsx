@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, ChevronDown, Home, Store, Bookmark, Radio, DollarSign, Users, LogIn, UserPlus, UserCircle } from 'lucide-react';
+import { Menu, X, User, LogOut, ChevronDown, Home, Store, Bookmark, Radio, DollarSign, Users, LogIn, UserPlus, UserCircle, Crown, Globe, CreditCard, Settings } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import Logo from './Logo';
@@ -186,16 +186,26 @@ export default function Header() {
                 </Link>
                 {userType === 'member' && (
                   <Link
-                    to="/panel/dashboard"
+                    to="/dashboard"
                     className={`px-3 py-2 font-medium transition-colors ${
-                      location.pathname === '/dashboard' ||
-                      location.pathname === '/panel/dashboard' ||
-                      location.pathname === '/app/dashboard'
+                      location.pathname === '/dashboard'
                         ? 'text-white'
                         : 'text-gray-400 hover:text-white'
                     }`}
                   >
                     Dashboard
+                  </Link>
+                )}
+                {userType === 'admin' && (
+                  <Link
+                    to="/admin/dashboard"
+                    className={`px-3 py-2 font-medium transition-colors ${
+                      location.pathname.startsWith('/admin')
+                        ? 'text-white'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Admin
                   </Link>
                 )}
                 <div className="relative">
@@ -221,15 +231,78 @@ export default function Header() {
                         <div className="p-3 border-b border-gray-100 bg-gray-50">
                           <p className="text-xs text-[#6B7280] mb-1">Conectado como</p>
                           <p className="text-sm font-medium text-black truncate">{user.email}</p>
+                          {userType === 'social' && (
+                            <span className="inline-block mt-1 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full">
+                              Usuário Social
+                            </span>
+                          )}
+                          {userType === 'member' && (
+                            <span className="inline-block mt-1 px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full">
+                              Membro Premium
+                            </span>
+                          )}
+                          {userType === 'admin' && (
+                            <span className="inline-block mt-1 px-2 py-0.5 bg-red-100 text-red-700 text-xs rounded-full">
+                              Admin
+                            </span>
+                          )}
                         </div>
                         <div className="p-2">
-                          <button
-                            onClick={handleSair}
-                            className="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded transition-colors flex items-center gap-2"
+                          {userType === 'social' && (
+                            <Link
+                              to="/valores"
+                              onClick={() => setIsUserMenuOpen(false)}
+                              className="w-full text-left px-3 py-2 text-sm text-purple-600 hover:bg-purple-50 rounded transition-colors flex items-center gap-2 font-medium"
+                            >
+                              <Crown className="w-4 h-4" />
+                              Upgrade Premium
+                            </Link>
+                          )}
+                          {userType === 'member' && (
+                            <>
+                              <Link
+                                to="/dominios"
+                                onClick={() => setIsUserMenuOpen(false)}
+                                className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                              >
+                                <Globe className="w-4 h-4" />
+                                Meus Domínios
+                              </Link>
+                              <Link
+                                to="/loja"
+                                onClick={() => setIsUserMenuOpen(false)}
+                                className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                              >
+                                <Store className="w-4 h-4" />
+                                Minha Loja
+                              </Link>
+                              <Link
+                                to="/cobranca"
+                                onClick={() => setIsUserMenuOpen(false)}
+                                className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                              >
+                                <CreditCard className="w-4 h-4" />
+                                Cobrança
+                              </Link>
+                            </>
+                          )}
+                          <Link
+                            to="/configuracoes"
+                            onClick={() => setIsUserMenuOpen(false)}
+                            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
                           >
-                            <LogOut className="w-4 h-4" />
-                            Sair
-                          </button>
+                            <Settings className="w-4 h-4" />
+                            Configurações
+                          </Link>
+                          <div className="border-t border-gray-100 mt-2 pt-2">
+                            <button
+                              onClick={handleSair}
+                              className="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded transition-colors flex items-center gap-2"
+                            >
+                              <LogOut className="w-4 h-4" />
+                              Sair
+                            </button>
+                          </div>
                         </div>
                       </motion.div>
                     )}
@@ -279,15 +352,49 @@ export default function Header() {
                         <span className="text-sm font-medium">Rede Social</span>
                       </button>
                       {userType === 'member' && (
+                        <>
+                          <button
+                            onClick={() => {
+                              setIsMenuOpen(false);
+                              navigate('/dashboard');
+                            }}
+                            className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                          >
+                            <UserCircle className="w-5 h-5" />
+                            <span className="text-sm font-medium">Dashboard</span>
+                          </button>
+                          <button
+                            onClick={() => {
+                              setIsMenuOpen(false);
+                              navigate('/dominios');
+                            }}
+                            className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                          >
+                            <Globe className="w-5 h-5" />
+                            <span className="text-sm font-medium">Domínios</span>
+                          </button>
+                          <button
+                            onClick={() => {
+                              setIsMenuOpen(false);
+                              navigate('/loja');
+                            }}
+                            className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                          >
+                            <Store className="w-5 h-5" />
+                            <span className="text-sm font-medium">Loja</span>
+                          </button>
+                        </>
+                      )}
+                      {userType === 'social' && (
                         <button
                           onClick={() => {
                             setIsMenuOpen(false);
-                            navigate('/panel/dashboard');
+                            navigate('/valores');
                           }}
-                          className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                          className="w-full flex items-center gap-3 px-4 py-3 text-purple-400 hover:text-purple-300 hover:bg-gray-800 transition-colors font-semibold"
                         >
-                          <UserCircle className="w-5 h-5" />
-                          <span className="text-sm font-medium">Dashboard</span>
+                          <Crown className="w-5 h-5" />
+                          <span className="text-sm">Upgrade Premium</span>
                         </button>
                       )}
                       <button

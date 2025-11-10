@@ -1,10 +1,12 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { DrawerProvider } from './contexts/DrawerContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import { SubscriptionProtectedRoute } from './components/SubscriptionProtectedRoute';
 import ResellerProtectedRoute from './components/ResellerProtectedRoute';
+import { UserTypeRoute } from './components/UserTypeRoute';
+import { SmartRedirect } from './components/SmartRedirect';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
@@ -227,27 +229,18 @@ function AppRoutes() {
             </ProtectedRoute>
           } />
 
-          {/* Protected User Routes - Unified Dashboard */}
-          <Route path="/app" element={
-            <ProtectedRoute>
-              <SubscriptionProtectedRoute>
-                <UserDashboard />
-              </SubscriptionProtectedRoute>
-            </ProtectedRoute>
-          } />
+          {/* Smart Redirects - Old routes redirect to proper location */}
+          <Route path="/app" element={<SmartRedirect />} />
+          <Route path="/app/dashboard" element={<SmartRedirect />} />
+          <Route path="/panel/dashboard" element={<SmartRedirect />} />
+
+          {/* MEMBER ONLY: Main Dashboard */}
           <Route path="/dashboard" element={
-            <ProtectedRoute>
+            <UserTypeRoute allowedTypes={['member', 'admin']}>
               <SubscriptionProtectedRoute>
-                <UserDashboard />
+                <PanelDashboard />
               </SubscriptionProtectedRoute>
-            </ProtectedRoute>
-          } />
-          <Route path="/app/dashboard" element={
-            <ProtectedRoute>
-              <SubscriptionProtectedRoute>
-                <UserDashboard />
-              </SubscriptionProtectedRoute>
-            </ProtectedRoute>
+            </UserTypeRoute>
           } />
           <Route path="/app/orders" element={
             <ProtectedRoute>
@@ -261,24 +254,38 @@ function AppRoutes() {
           } />
           <Route path="/app/support" element={<Contact />} />
 
-          {/* New Panel Routes */}
-          <Route path="/panel/dashboard" element={
-            <ProtectedRoute>
-              <PanelDashboard />
-            </ProtectedRoute>
+          {/* MEMBER ONLY: Domains Management */}
+          <Route path="/dominios" element={
+            <UserTypeRoute allowedTypes={['member', 'admin']} redirectTo="/social">
+              <DomainsPageNew />
+            </UserTypeRoute>
           } />
-          <Route path="/panel/billing" element={
-            <ProtectedRoute>
+          <Route path="/dominios/:id" element={
+            <UserTypeRoute allowedTypes={['member', 'admin']} redirectTo="/social">
+              <DomainDetails />
+            </UserTypeRoute>
+          } />
+
+          {/* MEMBER ONLY: Store Management */}
+          <Route path="/loja" element={
+            <UserTypeRoute allowedTypes={['member', 'admin']} redirectTo="/social">
+              <StoreManager />
+            </UserTypeRoute>
+          } />
+
+          {/* MEMBER ONLY: Billing */}
+          <Route path="/cobranca" element={
+            <UserTypeRoute allowedTypes={['member', 'admin']} redirectTo="/social">
               <SubscriptionProtectedRoute>
                 <Billing />
               </SubscriptionProtectedRoute>
-            </ProtectedRoute>
+            </UserTypeRoute>
           } />
-          <Route path="/panel/settings" element={
+
+          {/* ALL USERS: Account Settings */}
+          <Route path="/configuracoes" element={
             <ProtectedRoute>
-              <SubscriptionProtectedRoute>
-                <AccountSettings />
-              </SubscriptionProtectedRoute>
+              <AccountSettings />
             </ProtectedRoute>
           } />
           <Route path="/panel/settings/2fa" element={
@@ -286,6 +293,52 @@ function AppRoutes() {
               <TwoFactorSetup />
             </ProtectedRoute>
           } />
+
+          {/* ALL USERS: Social Network */}
+          <Route path="/social" element={
+            <ProtectedRoute>
+              <SocialFeed />
+            </ProtectedRoute>
+          } />
+          <Route path="/salvos" element={
+            <ProtectedRoute>
+              <SavedPosts />
+            </ProtectedRoute>
+          } />
+          <Route path="/meu-perfil" element={
+            <ProtectedRoute>
+              <MyProfile />
+            </ProtectedRoute>
+          } />
+
+          {/* MEMBER ONLY: Profile Manager */}
+          <Route path="/perfil" element={
+            <UserTypeRoute allowedTypes={['member', 'admin']} redirectTo="/social">
+              <ProfileManager />
+            </UserTypeRoute>
+          } />
+          <Route path="/perfil/:domainId" element={
+            <UserTypeRoute allowedTypes={['member', 'admin']} redirectTo="/social">
+              <ProfileManager />
+            </UserTypeRoute>
+          } />
+
+          {/* MEMBER ONLY: DNS Management */}
+          <Route path="/dns" element={
+            <UserTypeRoute allowedTypes={['member', 'admin']} redirectTo="/social">
+              <DNSManagement />
+            </UserTypeRoute>
+          } />
+
+          {/* Legacy panel routes - redirect to new locations */}
+          <Route path="/panel/billing" element={<Navigate to="/cobranca" replace />} />
+          <Route path="/panel/settings" element={<Navigate to="/configuracoes" replace />} />
+          <Route path="/panel/domains" element={<Navigate to="/dominios" replace />} />
+          <Route path="/panel/domains/:id" element={<Navigate to="/dominios/:id" replace />} />
+          <Route path="/panel/profile" element={<Navigate to="/perfil" replace />} />
+          <Route path="/panel/profile/:domainId" element={<Navigate to="/perfil/:domainId" replace />} />
+          <Route path="/panel/loja" element={<Navigate to="/loja" replace />} />
+          <Route path="/panel/dns" element={<Navigate to="/dns" replace />} />
           <Route path="/panel/domains" element={
             <ProtectedRoute>
               <DomainsPageNew />

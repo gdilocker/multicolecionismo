@@ -135,12 +135,17 @@ const Register: React.FC = () => {
       // Redirect based on user type
       if (userType === 'social') {
         navigate('/social');
-      } else if (redirectTo) {
-        navigate(redirectTo, {
-          state: prefilledDomain ? { domain: prefilledDomain, fromMarketplace: true } : undefined
-        });
+      } else if (userType === 'member') {
+        if (redirectTo) {
+          navigate(redirectTo, {
+            state: prefilledDomain ? { domain: prefilledDomain, fromMarketplace: true } : undefined
+          });
+        } else {
+          navigate('/dashboard');
+        }
       } else {
-        navigate('/panel/dashboard');
+        // Fallback
+        navigate('/dashboard');
       }
     } catch (err) {
       if (err instanceof yup.ValidationError) {
