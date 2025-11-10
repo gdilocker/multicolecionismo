@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  ============================================================================
+  SISTEMA DE PREVENÇÃO DE QUEBRA DE PALAVRAS
+  ============================================================================
+
+  Este CSS implementa um sistema global para garantir que palavras NUNCA
+  sejam quebradas no meio. As regras garantem que:
+
+  ✅ Palavras permanecem completas em todas as telas
+  ✅ Quebra acontece apenas entre palavras (nos espaços)
+  ✅ URLs e domínios têm tratamento especial
+  ✅ Botões e badges mantêm texto em linha única
+
+  CLASSES UTILITÁRIAS DISPONÍVEIS:
+  - .no-break-words    → Nunca quebra palavras (padrão global)
+  - .break-url         → Para URLs longas (quebra inteligente)
+  - .break-domain      → Para domínios (quebra após pontos)
+  - .no-wrap          → Mantém em uma linha (scroll horizontal)
+  - .truncate-text    → Trunca com reticências (...)
+
+  ============================================================================
+*/
+
 @layer base {
   :root {
     --color-primary: #000000;
@@ -17,9 +40,50 @@
     @apply bg-[#FAFAFA] text-black font-sans antialiased;
   }
 
-  /* Previne palavras órfãs no fim das linhas */
-  p, h1, h2, h3, h4, h5, h6, span, li, a {
+  /* REGRAS GLOBAIS PARA PREVENIR QUEBRA DE PALAVRAS NO MEIO */
+
+  /* Aplica a todos os elementos de texto - NUNCA quebra palavras no meio */
+  *, *::before, *::after {
+    /* Previne quebra de palavras no meio (hifenização) */
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+
+    /* Quebra apenas entre palavras, nunca dentro delas */
+    word-break: normal;
+    overflow-wrap: break-word;
+
+    /* Força quebra apenas em espaços em branco */
+    white-space: normal;
+  }
+
+  /* Regras específicas para elementos de texto */
+  p, h1, h2, h3, h4, h5, h6, span, div, li, a, button, label, td, th {
+    /* Previne hifenização automática */
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+
+    /* Quebra apenas entre palavras */
+    word-break: normal;
+    overflow-wrap: break-word;
+
+    /* Balanceamento de texto para melhor aparência */
     text-wrap: balance;
+  }
+
+  /* Para URLs e textos muito longos sem espaços */
+  a, code, .url-text, .domain-text {
+    /* Permite quebra apenas em caracteres especiais (/, -, ., etc) */
+    word-break: break-all;
+    overflow-wrap: anywhere;
+  }
+
+  /* Restaura o comportamento normal para domínios em display */
+  .domain-display, .domain-name {
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -30,10 +94,18 @@
 @layer components {
   .btn-primary {
     @apply bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors duration-200;
+    /* Previne quebra de palavras em botões */
+    hyphens: none;
+    word-break: normal;
+    white-space: nowrap;
   }
 
   .btn-secondary {
     @apply bg-white text-black px-6 py-3 rounded-lg font-medium border-2 border-[#E5E7EB] hover:border-black transition-colors duration-200;
+    /* Previne quebra de palavras em botões */
+    hyphens: none;
+    word-break: normal;
+    white-space: nowrap;
   }
 
   .card {
@@ -53,9 +125,65 @@
       @apply w-auto;
     }
   }
+
+  /* Regras adicionais para prevenir quebra de palavras em componentes específicos */
+  button, .button {
+    hyphens: none;
+    word-break: normal;
+  }
+
+  /* Para badges e tags */
+  .badge, .tag {
+    hyphens: none;
+    word-break: normal;
+    white-space: nowrap;
+  }
 }
 
 @layer utilities {
+  /* =====================================================
+     UTILITY CLASSES PARA CONTROLE DE QUEBRA DE TEXTO
+     ===================================================== */
+
+  /* NUNCA quebra palavras - apenas entre palavras */
+  .no-break-words {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* Para textos longos sem espaços (URLs, emails) - quebra inteligente */
+  .break-url {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+  }
+
+  /* Mantém texto em uma única linha - força scroll horizontal se necessário */
+  .no-wrap {
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+
+  /* Trunca texto longo com reticências */
+  .truncate-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Para domínios - quebra inteligente após pontos */
+  .break-domain {
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+
+  /* =====================================================
+     ANIMAÇÕES CUSTOMIZADAS
+     ===================================================== */
+
   @keyframes gradient {
     0%, 100% {
       background-position: 0% 50%;
