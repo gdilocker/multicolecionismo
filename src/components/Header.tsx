@@ -204,7 +204,7 @@ export default function Header() {
                 >
                   Lojas
                 </Link>
-                {(userType === 'member' || userType === 'admin') && (
+                {(user?.role === 'member' || user?.role === 'admin') && (
                   <Link
                     to="/panel/dashboard"
                     className={`px-3 py-2 font-medium transition-colors ${
@@ -216,15 +216,7 @@ export default function Header() {
                     Dashboard
                   </Link>
                 )}
-                {userType === 'social' && (
-                  <Link
-                    to="/valores"
-                    className="px-3 py-2 font-medium text-purple-400 hover:text-purple-300 transition-colors"
-                  >
-                    Planos
-                  </Link>
-                )}
-                {userType === 'admin' && (
+                {user?.role === 'admin' && (
                   <Link
                     to="/admin/dashboard"
                     className={`px-3 py-2 font-medium transition-colors ${
