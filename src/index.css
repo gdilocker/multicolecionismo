@@ -356,8 +356,9 @@
   /* ====== TAMANHOS FLUIDOS RESPONSIVOS ====== */
   /* Título principal: grande no desktop, ajusta suave em telas menores */
   .text-fluid-hero {
-    font-size: clamp(2.25rem, 8vw, 5.25rem); /* 36px → 84px */
+    font-size: clamp(2.25rem, 6vw, 5.25rem); /* 36px → 84px */
     line-height: 1.05;
+    font-weight: 800;
   }
 
   /* Subtítulo/linha de apoio do hero */
