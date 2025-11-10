@@ -73,14 +73,21 @@
   }
 
   /* Para URLs e textos muito longos sem espaços */
-  a, code, .url-text, .domain-text {
+  code, .url-text {
     /* Permite quebra apenas em caracteres especiais (/, -, ., etc) */
     word-break: break-all;
     overflow-wrap: anywhere;
   }
 
-  /* Restaura o comportamento normal para domínios em display */
-  .domain-display, .domain-name {
+  /* Links devem quebrar de forma inteligente */
+  a {
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+
+  /* Para domínios em display - NUNCA quebra palavras */
+  .domain-text, .domain-display, .domain-name, strong {
     word-break: normal;
     overflow-wrap: break-word;
     hyphens: none;
@@ -178,6 +185,17 @@
     word-break: normal;
     overflow-wrap: break-word;
     hyphens: none;
+    /* Força quebra apenas após caracteres especiais, não no meio de palavras */
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  /* Para URLs longas - mantém palavras intactas */
+  .url-safe {
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+    /* Permite quebra em / e . mas não quebra palavras */
   }
 
   /* =====================================================
