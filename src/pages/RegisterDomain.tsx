@@ -1287,10 +1287,7 @@ const Home = () => {
         {/* Success Modal */}
         <SuccessModal
           isOpen={showSuccessModal}
-          onClose={() => {
-            setShowSuccessModal(false);
-            setTimeout(() => navigate('/panel/dashboard'), 300);
-          }}
+          onClose={() => setShowSuccessModal(false)}
           title="Domínio Registrado!"
           message={successMessage}
           isAdmin={isAdmin}
