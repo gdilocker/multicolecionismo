@@ -34,11 +34,11 @@ const FAQ: React.FC = () => {
       icon: <Building2 className="w-5 h-5" />,
       items: [
         {
-          question: 'O que é o com.rich?',
+          question: 'O que é o Multicolecionismo.Social?',
           answer: (
             <div className="space-y-2">
-              <p>O <strong>com.rich</strong> é uma plataforma de identidade digital que oferece domínios exclusivos com a extensão <strong>.multicolecionismo.social</strong>, desenvolvida para profissionais e marcas que desejam destacar-se online com um nome de domínio sofisticado e premium.</p>
-              <p>Além do registro de domínio, oferecemos integração com perfis sociais personalizáveis, permitindo que você centralize sua presença digital em um único lugar profissional.</p>
+              <p>O <strong>Multicolecionismo.Social</strong> é a maior rede social brasileira dedicada ao colecionismo, oferecendo perfis gratuitos e premium com a extensão <strong>.multicolecionismo.social</strong>, criada para reunir colecionadores de miniaturas, selos, moedas, quadrinhos, games e muito mais em uma comunidade ativa.</p>
+              <p>Oferecemos perfis gratuitos para todos os colecionadores, e perfis Premium com domínio exclusivo, galeria profissional e loja integrada, para você organizar suas coleções, participar de eventos e vender ou trocar peças com segurança.</p>
               <p className="mt-3 text-sm">O serviço é operado por:<br />
                 <strong>Global Digital Identity LTD</strong><br />
                 Registered in England and Wales<br />
@@ -50,8 +50,8 @@ const FAQ: React.FC = () => {
           )
         },
         {
-          question: 'O com.rich é uma empresa independente?',
-          answer: 'Sim. O com.rich é operado pela Global Digital Identity LTD, empresa independente registrada no Reino Unido, que atua de forma autônoma em sua operação comercial e tecnológica. A plataforma mantém controle total sobre a experiência do usuário, suporte e gestão de contas.'
+          question: 'O Multicolecionismo.Social é uma empresa independente?',
+          answer: 'Sim. O Multicolecionismo.Social é operado pela Global Digital Identity LTD, empresa independente registrada no Reino Unido, que atua de forma autônoma em sua operação comercial e tecnológica. A plataforma mantém controle total sobre a experiência do usuário, suporte e gestão de contas.'
         },
         {
           question: 'Onde os serviços são hospedados?',

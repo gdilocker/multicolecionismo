@@ -98,8 +98,8 @@ const PremiumLanding: React.FC<PremiumLandingProps> = ({ domain }) => {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 max-w-2xl mx-auto mb-12"
           >
-            Este domínio premium representa exclusividade, autoridade e prestígio.
-            Ideal para marcas que desejam se destacar.
+            Este domínio premium é perfeito para se tornar referência no colecionismo brasileiro.
+            Ideal para grandes lojas, marcas estabelecidas e organizações do setor.
           </motion.p>
 
           {/* CTAs */}
@@ -147,7 +147,7 @@ const PremiumLanding: React.FC<PremiumLandingProps> = ({ domain }) => {
                   <Award className="w-6 h-6 text-yellow-600" />
                 </h3>
                 <p className="text-lg text-gray-800 leading-relaxed mb-4">
-                  <span className="font-semibold">Para quem tem o objetivo de se tornar referência mundial no seu segmento.</span> O Supreme não é apenas um domínio premium - é uma plataforma completa e exclusiva que posiciona sua marca como líder global.
+                  <span className="font-semibold">Para marcas e lojas que querem dominar o mercado brasileiro de colecionismo.</span> O Supreme oferece domínios VIP exclusivos, loja ilimitada, API personalizada e infraestrutura dedicada para grande escala.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   Com infraestrutura dedicada, suporte corporativo de elite e total flexibilidade contratual, você terá todos os recursos necessários para consolidar sua presença digital em escala internacional. <span className="font-semibold text-gray-900">Ideal para empresas, executivos e profissionais que pensam grande e não aceitam menos que a excelência.</span>

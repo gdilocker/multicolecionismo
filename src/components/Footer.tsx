@@ -24,8 +24,8 @@ export default function Footer() {
             </div>
             <p className="text-[#6B7280] text-sm leading-relaxed max-w-md mb-4">
               A Global Digital Identity é detentora da mais prestigiada extensão digital do mundo, o domínio .multicolecionismo.social.
-              Oferecemos registro, proteção e gestão profissional com infraestrutura de alta performance, suporte internacional 24/7 e tecnologia de ponta.
-              Eleve sua presença online com um domínio .multicolecionismo.social que reflete sucesso, credibilidade e sofisticação.
+              Reunimos colecionadores de todo Brasil em uma plataforma completa: perfis, galerias, eventos, loja e comunidade ativa para compartilhar a paixão por colecionar.
+              Conecte-se com outros colecionadores, organize suas coleções e participe de eventos e feiras em todo o país.
             </p>
           </div>
 
@@ -37,7 +37,7 @@ export default function Footer() {
                   onClick={() => handleNavigation('/club')}
                   className="text-[#6B7280] hover:text-black transition-colors text-sm"
                 >
-                  Sobre o Rich Club
+                  Sobre o Multicolecionismo
                 </button>
               </li>
               <li>
