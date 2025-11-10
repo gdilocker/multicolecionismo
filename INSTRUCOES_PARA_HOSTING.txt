@@ -1,0 +1,94 @@
+══════════════════════════════════════════════════════════════
+  INSTRUÇÕES PARA QUEM FAZ O DEPLOY DE https://com.rich
+══════════════════════════════════════════════════════════════
+
+PROBLEMA ATUAL:
+---------------
+Os arquivos PWA não estão acessíveis em produção:
+- https://com.rich/manifest.json → 404
+- https://com.rich/sw.js → 404  
+- https://com.rich/icons/icon-192x192.png → 404
+
+SOLUÇÃO:
+--------
+Fazer upload de TODOS os arquivos da pasta dist/ para a raiz 
+do servidor que hospeda https://com.rich
+
+ESTRUTURA NECESSÁRIA NO SERVIDOR:
+----------------------------------
+
+https://com.rich/
+├── index.html              (já existe ✓)
+├── manifest.json           (FALTANDO - precisa ser adicionado)
+├── sw.js                   (FALTANDO - precisa ser adicionado)
+├── icons/                  (FALTANDO - precisa ser adicionado)
+│   ├── icon-192x192.png
+│   ├── icon-512x512.png
+│   └── outros...
+└── assets/
+    ├── *.css               (já existe ✓)
+    └── *.js                (já existe ✓)
+
+ARQUIVOS QUE PRECISAM SER ADICIONADOS:
+---------------------------------------
+
+1. manifest.json (554 bytes) - colocar na RAIZ
+2. sw.js (535 bytes) - colocar na RAIZ
+3. pasta icons/ completa - colocar na RAIZ
+
+ONDE ESTÃO OS ARQUIVOS:
+------------------------
+Todos estão na pasta dist/ do projeto:
+- dist/manifest.json
+- dist/sw.js
+- dist/icons/
+
+COMO VALIDAR DEPOIS:
+--------------------
+Abrir no navegador e verificar que retornam 200 OK:
+
+✓ https://com.rich/manifest.json 
+  (deve mostrar JSON, não 404)
+
+✓ https://com.rich/sw.js
+  (deve mostrar código JavaScript, não 404)
+
+✓ https://com.rich/icons/icon-192x192.png
+  (deve mostrar imagem PNG, não 404)
+
+PROVEDOR DE HOSTING:
+--------------------
+Se o site está hospedado em:
+- Netlify → fazer novo deploy via interface web ou CLI
+- Vercel → fazer novo deploy via git push ou CLI
+- Cloudflare Pages → fazer novo deploy via interface web
+- Servidor próprio → fazer upload via FTP/SFTP
+
+IMPORTANTE:
+-----------
+Os arquivos PRECISAM estar na RAIZ do domínio, não em subpasta.
+
+Errado: https://com.rich/public/manifest.json
+Certo:  https://com.rich/manifest.json
+
+══════════════════════════════════════════════════════════════
+
+CONTATO COM O SUPORTE DO HOSTING:
+----------------------------------
+
+Se você não sabe como fazer o deploy, entre em contato com
+o suporte do provedor de hosting e envie esta mensagem:
+
+"Preciso que os seguintes arquivos sejam publicados na raiz
+do domínio https://com.rich:
+
+- manifest.json (arquivo JSON)
+- sw.js (arquivo JavaScript)  
+- icons/ (pasta com imagens PNG)
+
+Esses arquivos estão na pasta dist/ do build do projeto.
+
+Atualmente eles retornam 404 e precisam retornar 200 OK
+para que o PWA funcione no Chrome."
+
+══════════════════════════════════════════════════════════════

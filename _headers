@@ -1,0 +1,83 @@
+# Security headers for all pages
+/*
+  # Prevent clickjacking attacks
+  X-Frame-Options: DENY
+
+  # Prevent MIME type sniffing
+  X-Content-Type-Options: nosniff
+
+  # Enable XSS protection (legacy browsers)
+  X-XSS-Protection: 1; mode=block
+
+  # Control referrer information
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Restrict dangerous browser features
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+
+  # Content Security Policy - prevents XSS and injection attacks
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.supabase.co https://*.paypal.com https://*.paypalobjects.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://*.supabase.co https://*.paypal.com wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://*.paypal.com https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.paypal.com; frame-ancestors 'none'; upgrade-insecure-requests
+
+  # Force HTTPS for 2 years
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # Remove server information
+  X-Powered-By:
+  Server:
+
+# API endpoints
+/api/*
+  X-Robots-Tag: noindex
+  Cache-Control: no-cache, no-store, must-revalidate
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Accept, Cache-Control
+
+/.netlify/functions/*
+  X-Robots-Tag: noindex
+  Cache-Control: no-cache, no-store, must-revalidate
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Accept, Cache-Control
+
+# Static assets
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts
+*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  
+# Images
+*.jpg
+  Cache-Control: public, max-age=86400
+*.png
+  Cache-Control: public, max-age=86400
+*.svg
+  Cache-Control: public, max-age=86400
+
+# Critical brand assets (logo and background) - longer cache
+/logo.png
+  Cache-Control: public, max-age=86400
+  Content-Type: image/png
+/logo-comrich.png
+  Cache-Control: public, max-age=31536000, immutable
+/background-gala.png
+  Cache-Control: public, max-age=31536000, immutable
+
+# PWA files
+/manifest.json
+  Content-Type: application/manifest+json
+  Cache-Control: public, max-age=3600
+
+/sw.js
+  Content-Type: application/javascript
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/apple-touch-icon.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
+/icons/*
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable

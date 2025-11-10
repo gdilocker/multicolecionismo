@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Rich Club" />
+
+    <title>The Rich Club - Identidade Digital Premium Exclusiva</title>
+    <meta name="description" content="The Rich Club - Registre seu domínio premium .com.rich e tenha acesso à plataforma exclusiva de networking de alto nível. Perfil profissional, marketplace e comunidade premium." />
+    <meta name="keywords" content="the rich club, domínio premium, .com.rich, identidade digital, perfil profissional, domínio exclusivo, networking premium, comunidade exclusiva" />
+    <meta name="application-name" content="The Rich Club" />
+
+    <meta name="author" content="Global Digital Identity LTD" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://com.rich" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Rich Club - Identidade Digital Premium" />
+    <meta property="og:description" content="Plataforma exclusiva de identidade digital premium. Domínios .com.rich, perfis profissionais e networking de alto nível." />
+    <meta property="og:url" content="https://com.rich" />
+    <meta property="og:site_name" content="The Rich Club" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Rich Club - Identidade Digital Premium" />
+    <meta name="twitter:description" content="Plataforma exclusiva de identidade digital premium. Domínios .com.rich, perfis profissionais e networking de alto nível." />
+
+    <meta name="theme-color" content="#000000" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- SERVICE WORKER REGISTRATION -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration)
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError)
+            })
+        })
+      }
+    </script>
+  </body>
+</html>
