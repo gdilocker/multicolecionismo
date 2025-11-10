@@ -168,11 +168,24 @@ export default function SocialFeed() {
                 {isLoggedIn && (
                   <>
                     <button
+                      onClick={() => navigate('/panel/domains')}
+                      className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                    >
+                      <Globe className="w-5 h-5" />
+                      <span>Domínios</span>
+                    </button>
+                    <button
                       onClick={handleCreatePost}
                       className="flex items-center gap-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all"
                     >
                       <Plus className="w-5 h-5" />
                       <span>Criar Post</span>
+                    </button>
+                    <button
+                      onClick={() => navigate('/panel/dashboard')}
+                      className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                    >
+                      <Home className="w-5 h-5" />
                     </button>
                     <button
                       onClick={handlePerfilClick}

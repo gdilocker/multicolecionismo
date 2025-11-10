@@ -102,13 +102,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       if (!rpcError && rpcData && Array.isArray(rpcData) && rpcData.length > 0) {
         const info = rpcData[0];
+        const isAdmin = info.role === 'admin';
         const userData = {
           id: authUser.id,
           email: authUser.email!,
           name: authUser.user_metadata?.name,
           role: info.role || 'user',
-          hasActiveSubscription: info.has_active_subscription || false,
-          subscriptionPlan: info.subscription_plan
+          hasActiveSubscription: isAdmin ? true : (info.has_active_subscription || false),
+          subscriptionPlan: isAdmin ? 'supreme' : info.subscription_plan
         };
         // Cache the user data
         cacheUser(userData);
