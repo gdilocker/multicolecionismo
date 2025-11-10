@@ -35,23 +35,25 @@ export default function RichClub() {
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-8 mt-8 sm:mt-0">
               <div className="h-px w-12 bg-gradient-to-r from-amber-400 to-transparent"></div>
-              <span className="text-amber-400 text-xs font-semibold tracking-[0.3em] uppercase">Exclusive Community</span>
+              <span className="text-amber-400 text-xs font-semibold tracking-[0.3em] uppercase">Collector's Community</span>
             </div>
 
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-tight">
-              <span className="block">Bem-vindo</span>
-              <span className="block">ao Clube dos</span>
+              <span className="block">Bem-vindo ao</span>
               <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
-                Milionários
+                Multicolecionismo
+              </span>
+              <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
+                .Social
               </span>
             </h1>
 
             <div className="space-y-3 mb-12">
               <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-relaxed font-light">
-                A plataforma premium para colecionadores de alto nível.
+                A rede social dos verdadeiros colecionadores.
               </p>
               <p className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed font-light">
-                Conexões autênticas. Oportunidades globais. Resultados extraordinários.
+                Compartilhe coleções. Participe de eventos. Conecte-se com a paixão.
               </p>
             </div>
 
@@ -59,15 +61,15 @@ export default function RichClub() {
             <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-6 mb-8">
               <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
                 <Crown className="w-5 h-5 text-amber-400" />
-                <span>Certificação Oficial</span>
+                <span>Perfis Verificados</span>
               </div>
               <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
                 <Globe2 className="w-5 h-5 text-amber-400" />
-                <span>Presença Global</span>
+                <span>Comunidade Ativa</span>
               </div>
               <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
                 <Shield className="w-5 h-5 text-amber-400" />
-                <span>Exclusividade Garantida</span>
+                <span>Autenticidade Garantida</span>
               </div>
             </div>
 
@@ -100,26 +102,26 @@ export default function RichClub() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 mb-8">
               <Sparkles className="w-4 h-4 text-amber-400" />
-              <span className="text-white/90 text-xs font-semibold tracking-widest uppercase">Private Events</span>
+              <span className="text-white/90 text-xs font-semibold tracking-widest uppercase">Collector's Events</span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-              <span className="block">Experiências globais</span>
-              <span className="block whitespace-nowrap">e encontros estratégicos</span>
+              <span className="block">Eventos e Encontros</span>
+              <span className="block whitespace-nowrap">de Colecionadores</span>
             </h2>
 
             <div className="h-1 w-20 bg-gradient-to-r from-amber-400 to-transparent mb-6"></div>
 
             <div className="space-y-3 mb-8">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-                Conecte-se com líderes, empreendedores e visionários em eventos exclusivos ao redor do mundo.
+                Descubra feiras, exposições e encontros de colecionismo em todo o Brasil.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
-                Cada encontro é cuidadosamente curado para criar valor, fortalecer relações e gerar oportunidades únicas.
+                Conecte-se com expositores, comerciantes e outros apaixonados por colecionar. Participe, exponha e compartilhe sua paixão.
               </p>
               <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4 mt-4">
                 <p className="text-sm text-amber-300 leading-relaxed">
-                  <strong className="text-amber-400">Nota:</strong> Acesso a eventos de alto prestígio e locais exclusivos requer processo de verificação. Alguns eventos têm acesso imediato, outros podem levar de 6 meses a 2 anos para aprovação.
+                  <strong className="text-amber-400">Nota:</strong> Participação em eventos e feiras pode exigir inscrição prévia. Alguns eventos têm entrada livre, outros podem ter requisitos específicos ou períodos de agenda.
                 </p>
               </div>
             </div>
@@ -127,15 +129,15 @@ export default function RichClub() {
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 text-amber-400">
                 <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                <span className="text-sm font-medium">Networking Premium</span>
+                <span className="text-sm font-medium">Encontros Presenciais</span>
               </div>
               <div className="flex items-center gap-2 text-amber-400">
                 <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                <span className="text-sm font-medium">Eventos Exclusivos</span>
+                <span className="text-sm font-medium">Feiras e Exposições</span>
               </div>
               <div className="flex items-center gap-2 text-amber-400">
                 <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                <span className="text-sm font-medium">Conexões Estratégicas</span>
+                <span className="text-sm font-medium">Comunidade Ativa</span>
               </div>
             </div>
           </div>
@@ -160,21 +162,21 @@ export default function RichClub() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-amber-500/10 backdrop-blur-md border border-amber-500/30 rounded-full px-6 py-2 mb-8">
               <Award className="w-4 h-4 text-amber-400" />
-              <span className="text-amber-300 text-xs font-semibold tracking-widest uppercase">Rich Approved</span>
+              <span className="text-amber-300 text-xs font-semibold tracking-widest uppercase">Featured Collections</span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-              Espaços, experiências e estabelecimentos aprovados
+              Lojas, Espaços e Coleções em Destaque
             </h2>
 
             <div className="h-1 w-20 bg-gradient-to-r from-amber-400 to-transparent mb-6"></div>
 
             <div className="space-y-3 mb-8">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-                O selo <span className="text-amber-400 font-semibold">Rich Approved</span> identifica locais de excelência incomparável.
+                O destaque do <span className="text-amber-400 font-semibold">Multicolecionismo.Social</span> reconhece perfis e coleções inspiradoras.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
-                Restaurantes sofisticados, hotéis boutique, lounges exclusivos e destinos que definem o padrão de luxo e autenticidade.
+                Colecionadores dedicados, lojas especializadas, espaços culturais e galerias que definem o padrão de autenticidade e paixão pelo colecionismo.
               </p>
             </div>
 
@@ -186,9 +188,9 @@ export default function RichClub() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold mb-2">Padrão de Excelência</h3>
+                  <h3 className="text-white font-semibold mb-2">Curadoria de Qualidade</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Cada estabelecimento passa por rigorosa avaliação de design, hospitalidade e experiência do cliente.
+                    Cada perfil destacado demonstra dedicação, organização exemplar e contribuição ativa para a comunidade de colecionadores.
                   </p>
                 </div>
               </div>
@@ -215,33 +217,33 @@ export default function RichClub() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 mb-8">
               <Shield className="w-4 h-4 text-amber-400" />
-              <span className="text-white/90 text-xs font-semibold tracking-widest uppercase">Heritage & Innovation</span>
+              <span className="text-white/90 text-xs font-semibold tracking-widest uppercase">Passion & Authenticity</span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-              <span className="block">Design aprovado,</span>
-              <span className="block whitespace-nowrap">legado e autenticidade</span>
+              <span className="block">Paixão, História</span>
+              <span className="block whitespace-nowrap">e Autenticidade</span>
             </h2>
 
             <div className="h-1 w-20 bg-gradient-to-r from-amber-400 to-transparent mb-6"></div>
 
             <div className="space-y-3 mb-12">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-                Celebramos marcas e projetos que honram tradição enquanto abraçam inovação.
+                Celebramos colecionadores que preservam memórias e histórias através de suas coleções.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
-                Cada item reconhecido pelo Rich Club representa o ápice da qualidade, estética refinada e narrativa autêntica.
+                Cada item colecionável representa uma história, uma época, uma paixão. Aqui você compartilha essas narrativas e inspira outros colecionadores.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4">
-                <div className="text-3xl font-bold text-amber-400 mb-1">100+</div>
-                <div className="text-sm text-gray-400">Marcas Aprovadas</div>
+                <div className="text-3xl font-bold text-amber-400 mb-1">5000+</div>
+                <div className="text-sm text-gray-400">Colecionadores</div>
               </div>
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4">
-                <div className="text-3xl font-bold text-amber-400 mb-1">50+</div>
-                <div className="text-sm text-gray-400">Países Representados</div>
+                <div className="text-3xl font-bold text-amber-400 mb-1">500+</div>
+                <div className="text-sm text-gray-400">Categorias</div>
               </div>
             </div>
           </div>
@@ -266,25 +268,25 @@ export default function RichClub() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500/20 to-amber-600/20 backdrop-blur-md border border-amber-500/40 rounded-full px-6 py-2 mb-8 shadow-lg shadow-amber-500/20">
               <Crown className="w-5 h-5 text-amber-400" />
-              <span className="text-amber-300 text-xs font-bold tracking-widest uppercase">Official Certification</span>
+              <span className="text-amber-300 text-xs font-bold tracking-widest uppercase">Verified Collector</span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-              <span className="block sm:inline">Reconhecimento</span>
+              <span className="block sm:inline">Reconhecimento como</span>
               <br className="hidden sm:block lg:block" />
-              <span className="block sm:inline whitespace-nowrap">oficial como membro</span>
+              <span className="block sm:inline whitespace-nowrap">Colecionador</span>
               <br className="hidden sm:block lg:block" />
-              <span className="block sm:inline">do Rich Club</span>
+              <span className="block sm:inline">Verificado</span>
             </h2>
 
             <div className="h-1 w-20 bg-gradient-to-r from-amber-400 to-transparent mb-6"></div>
 
             <div className="space-y-3 mb-8">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-                Seu certificado digital e selo oficial não são apenas símbolos, são validações tangíveis do seu comprometimento com excelência, autenticidade e pertencimento a uma comunidade global de influência.
+                Seu perfil verificado e credencial digital não são apenas símbolos, são validações do seu comprometimento com o colecionismo, autenticidade e pertencimento a uma comunidade apaixonada.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
-                Membros Elite recebem também uma identidade física personalizada com QR Code dinâmico.
+                Perfis Premium recebem destaque especial, domínio personalizado e ferramentas avançadas de organização.
               </p>
             </div>
 
@@ -294,12 +296,12 @@ export default function RichClub() {
                   <Crown className="w-8 h-8 text-black" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-1">Certificado Rich Club</h3>
-                  <p className="text-amber-400 text-sm font-medium">Validação Digital Oficial</p>
+                  <h3 className="text-2xl font-bold text-white mb-1">Perfil Verificado</h3>
+                  <p className="text-amber-400 text-sm font-medium">Colecionador Autêntico</p>
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                Cada membro recebe credenciais digitais verificadas, perfil oficial na plataforma e acesso aos benefícios exclusivos da comunidade.
+                Cada colecionador verificado recebe badge oficial, perfil destacado na plataforma e acesso aos benefícios exclusivos da comunidade.
               </p>
             </div>
           </div>
@@ -324,28 +326,28 @@ export default function RichClub() {
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px w-12 bg-gradient-to-r from-amber-400 to-transparent"></div>
-              <span className="text-amber-400 text-xs font-semibold tracking-[0.3em] uppercase">Your Domain</span>
+              <span className="text-amber-400 text-xs font-semibold tracking-[0.3em] uppercase">Your Digital Showcase</span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-              <span className="text-gray-400">yourname</span>
+              <span className="text-gray-400">seunome</span>
               <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">.multicolecionismo.social</span>
             </h2>
 
             <div className="space-y-3 mb-12">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-                Seu domínio personalizado .multicolecionismo.social é mais que um endereço web, é sua vitrine premium para organizar, exibir e comercializar suas coleções mais valiosas.
+                Seu domínio personalizado .multicolecionismo.social é mais que um endereço web, é sua vitrine digital para organizar, exibir e comercializar suas coleções mais valiosas.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
-                Uma URL que comunica sucesso instantaneamente.
+                Uma URL que comunica paixão e dedicação instantaneamente.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-3 gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <Globe2 className="w-8 h-8 text-amber-400 mb-4" />
-                <h3 className="text-white font-semibold mb-2">Presença Global</h3>
-                <p className="text-gray-400 text-sm">Reconhecimento instantâneo em qualquer mercado</p>
+                <h3 className="text-white font-semibold mb-2">Vitrine Digital</h3>
+                <p className="text-gray-400 text-sm">Compartilhe suas coleções com o mundo todo</p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <Shield className="w-8 h-8 text-amber-400 mb-4" />
@@ -354,8 +356,8 @@ export default function RichClub() {
               </div>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <Sparkles className="w-8 h-8 text-amber-400 mb-4" />
-                <h3 className="text-white font-semibold mb-2">Credibilidade</h3>
-                <p className="text-gray-400 text-sm">Autoridade e confiança em cada interação</p>
+                <h3 className="text-white font-semibold mb-2">Destaque Profissional</h3>
+                <p className="text-gray-400 text-sm">Profissionalismo e organização em cada detalhe</p>
               </div>
             </div>
           </div>
@@ -397,10 +399,10 @@ export default function RichClub() {
 
             <div className="space-y-3 mb-8">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-                Compartilhe a excelência do Rich Club com sua rede profissional.
+                Convide amigos colecionadores e ganhe recompensas.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
-                Ao recomendar nossos serviços, você é recompensado com comissões competitivas por cada novo membro.
+                Ao recomendar o Multicolecionismo.Social para outros colecionadores, você é recompensado com comissões por cada novo membro que se juntar à comunidade.
               </p>
             </div>
 
@@ -422,18 +424,18 @@ export default function RichClub() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-12 leading-[1.3] tracking-tight">
-              <span className="block mb-2">Pronto para elevar sua</span>
+              <span className="block mb-2">Pronto para destacar</span>
               <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent pb-6">
-                presença digital?
+                sua coleção online?
               </span>
             </h2>
 
             <div className="space-y-3 mb-12 max-w-2xl mx-auto">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-                Junte-se a uma comunidade global de líderes, empreendedores e visionários.
+                Junte-se a uma comunidade brasileira de colecionadores apaixonados e dedicados.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
-                Sua jornada no Rich Club começa agora.
+                Sua jornada no mundo do colecionismo digital começa agora.
               </p>
             </div>
 
