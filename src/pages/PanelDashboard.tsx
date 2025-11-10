@@ -84,7 +84,6 @@ const PanelDashboard: React.FC = () => {
           .from('domains')
           .select('*')
           .eq('customer_id', custId)
-          .order('display_order', { ascending: true })
           .order('created_at', { ascending: true });
 
         if (isMounted) {
