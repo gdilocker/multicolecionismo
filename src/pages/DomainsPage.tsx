@@ -85,7 +85,7 @@ const DomainsPage: React.FC = () => {
 
         const { data: customerData, error: customerError } = await supabase
           .from('customers')
-          .select('id, role, active_domain_id')
+          .select('id, role')
           .eq('user_id', user.id)
           .maybeSingle();
 
