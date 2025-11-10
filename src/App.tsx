@@ -243,10 +243,9 @@ function AppRoutes() {
           {/* Smart Redirects - Old routes redirect to proper location */}
           <Route path="/app" element={<SmartRedirect />} />
           <Route path="/app/dashboard" element={<SmartRedirect />} />
-          <Route path="/panel/dashboard" element={<SmartRedirect />} />
 
           {/* MEMBER ONLY: Main Dashboard */}
-          <Route path="/dashboard" element={
+          <Route path="/panel/dashboard" element={
             <UserTypeRoute allowedTypes={['member', 'admin']}>
               <SubscriptionProtectedRoute>
                 <PanelDashboard />
@@ -341,15 +340,7 @@ function AppRoutes() {
             </UserTypeRoute>
           } />
 
-          {/* Legacy panel routes - redirect to new locations */}
-          <Route path="/panel/billing" element={<Navigate to="/cobranca" replace />} />
-          <Route path="/panel/settings" element={<Navigate to="/configuracoes" replace />} />
-          <Route path="/panel/domains" element={<Navigate to="/dominios" replace />} />
-          <Route path="/panel/domains/:id" element={<Navigate to="/dominios/:id" replace />} />
-          <Route path="/panel/profile" element={<Navigate to="/perfil" replace />} />
-          <Route path="/panel/profile/:domainId" element={<Navigate to="/perfil/:domainId" replace />} />
-          <Route path="/panel/loja" element={<Navigate to="/loja" replace />} />
-          <Route path="/panel/dns" element={<Navigate to="/dns" replace />} />
+          {/* Panel routes */}
           <Route path="/panel/domains" element={
             <ProtectedRoute>
               <DomainsPageNew />
@@ -363,6 +354,21 @@ function AppRoutes() {
           <Route path="/panel/domains/:id/transfer" element={
             <ProtectedRoute>
               <DomainTransfer />
+            </ProtectedRoute>
+          } />
+          <Route path="/panel/billing" element={
+            <ProtectedRoute>
+              <Billing />
+            </ProtectedRoute>
+          } />
+          <Route path="/panel/store" element={
+            <ProtectedRoute>
+              <StoreManager />
+            </ProtectedRoute>
+          } />
+          <Route path="/panel/settings" element={
+            <ProtectedRoute>
+              <AccountSettings />
             </ProtectedRoute>
           } />
           <Route path="/panel/dns" element={

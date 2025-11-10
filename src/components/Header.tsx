@@ -186,9 +186,9 @@ export default function Header() {
                 </Link>
                 {userType === 'member' && (
                   <Link
-                    to="/dashboard"
+                    to="/panel/dashboard"
                     className={`px-3 py-2 font-medium transition-colors ${
-                      location.pathname === '/dashboard'
+                      location.pathname === '/panel/dashboard'
                         ? 'text-white'
                         : 'text-gray-400 hover:text-white'
                     }`}
@@ -261,7 +261,7 @@ export default function Header() {
                           {userType === 'member' && (
                             <>
                               <Link
-                                to="/dominios"
+                                to="/panel/domains"
                                 onClick={() => setIsUserMenuOpen(false)}
                                 className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
                               >
@@ -269,7 +269,7 @@ export default function Header() {
                                 Meus Domínios
                               </Link>
                               <Link
-                                to="/loja"
+                                to="/panel/store"
                                 onClick={() => setIsUserMenuOpen(false)}
                                 className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
                               >
@@ -277,7 +277,7 @@ export default function Header() {
                                 Minha Loja
                               </Link>
                               <Link
-                                to="/cobranca"
+                                to="/panel/billing"
                                 onClick={() => setIsUserMenuOpen(false)}
                                 className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
                               >
@@ -356,7 +356,7 @@ export default function Header() {
                           <button
                             onClick={() => {
                               setIsMenuOpen(false);
-                              navigate('/dashboard');
+                              navigate('/panel/dashboard');
                             }}
                             className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                           >
@@ -366,22 +366,22 @@ export default function Header() {
                           <button
                             onClick={() => {
                               setIsMenuOpen(false);
-                              navigate('/dominios');
+                              navigate('/panel/domains');
                             }}
                             className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                           >
                             <Globe className="w-5 h-5" />
-                            <span className="text-sm font-medium">Domínios</span>
+                            <span className="text-sm font-medium">Meus Domínios</span>
                           </button>
                           <button
                             onClick={() => {
                               setIsMenuOpen(false);
-                              navigate('/loja');
+                              navigate('/panel/store');
                             }}
                             className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                           >
                             <Store className="w-5 h-5" />
-                            <span className="text-sm font-medium">Loja</span>
+                            <span className="text-sm font-medium">Minha Loja</span>
                           </button>
                         </>
                       )}

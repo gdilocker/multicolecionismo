@@ -63,13 +63,13 @@ export const SmartRedirect: React.FC = () => {
 
   // Redirect based on user type
   if (userType === 'social') {
-    return <Navigate to="/social" replace />;
+    return <Navigate to="/" replace />;
   } else if (userType === 'member') {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/panel/dashboard" replace />;
   } else if (userType === 'admin') {
     return <Navigate to="/admin/dashboard" replace />;
   }
 
   // Fallback
-  return <Navigate to="/social" replace />;
+  return <Navigate to="/" replace />;
 };
