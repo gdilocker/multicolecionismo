@@ -270,11 +270,8 @@ export default function RichClub() {
             </div>
 
             <h2 className="font-bold text-white mb-6 tracking-tight break-keep text-fluid-section">
-              <span className="block sm:inline">Reconhecimento como</span>
-              <br className="hidden sm:block lg:block" />
-              <span className="block sm:inline whitespace-nowrap">Colecionador</span>
-              <br className="hidden sm:block lg:block" />
-              <span className="block sm:inline">Verificado</span>
+              <span className="inline-block">Reconhecimento como</span>{' '}
+              <span className="inline-block whitespace-nowrap">Colecionador Verificado</span>
             </h2>
 
             <div className="h-1 w-20 bg-gradient-to-r from-amber-400 to-transparent mb-6"></div>
