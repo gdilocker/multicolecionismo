@@ -39,8 +39,7 @@ export default function RichClub() {
             </div>
 
             <h1 className="font-bold text-white mb-8 tracking-tight break-keep text-fluid-hero">
-              <span className="block">Bem-vindo ao</span>
-              <span className="block">Clube do</span>
+              <span className="block">Bem-vindo ao Clube do</span>
               <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent inline-block whitespace-nowrap">
                 Multicolecionismo
               </span>
