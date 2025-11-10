@@ -4,7 +4,10 @@ import { Crown, Sparkles, Award, Globe as Globe2, TrendingUp, Shield, ChevronRig
 
 // Import images
 import heroImage from '../assets/download-_5_.png';
-import eventosImage from '../assets/eventos-richclub.jpg.png';
+// Events section background - optimized for performance
+// TODO: Replace with uploaded 'evento-colecionismo-970x550.webp' when available
+// Current: Using high-quality Pexels stock photo (royalty-free, auto-compressed)
+const eventosImage = 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2';
 import espacosImage from '../assets/espacos-richapproved.jpg.jpg';
 import designImage from '../assets/design-legado.jpg.jpeg';
 import reconhecimentoImage from '../assets/reconhecimento-oficial.jpg.png';
@@ -84,17 +87,19 @@ export default function RichClub() {
       </section>
 
       {/* Global Experiences Section */}
-      <section className="relative flex items-center overflow-hidden">
+      <section className="relative flex items-center overflow-hidden min-h-[600px]" aria-label="Eventos e Encontros de Colecionadores">
         <div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 bg-eventos-section"
           style={{
             backgroundImage: `url(${eventosImage})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center 40%',
             backgroundRepeat: 'no-repeat'
           }}
+          role="img"
+          aria-label="Feira de colecionismo com expositores, mesas e público em circulação"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/20"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">

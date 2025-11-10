@@ -386,3 +386,36 @@
     line-height: 1.5;
   }
 }
+
+/* ============================================================================
+   BACKGROUND RESPONSIVO - SEÇÃO DE EVENTOS
+   ============================================================================
+   Otimiza o foco da imagem de fundo em diferentes tamanhos de tela
+   para garantir que a área principal (mesas e expositores) fique visível
+   ============================================================================ */
+@layer utilities {
+  .bg-eventos-section {
+    background-position: center 40%;
+  }
+
+  /* Mobile: foca na área central com as mesas */
+  @media (max-width: 640px) {
+    .bg-eventos-section {
+      background-position: center 35%;
+    }
+  }
+
+  /* Tablet: mantém foco balanceado */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .bg-eventos-section {
+      background-position: center 38%;
+    }
+  }
+
+  /* Desktop: exibe vista completa */
+  @media (min-width: 1025px) {
+    .bg-eventos-section {
+      background-position: center 40%;
+    }
+  }
+}
