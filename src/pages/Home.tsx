@@ -53,19 +53,10 @@ const Home = () => {
 
   const loadPricingPlans = async () => {
     try {
-      const { data, error } = await supabase
-        .from('pricing_plans')
-        .select('*')
-        .eq('is_active', true)
-        .order('sort_order', { ascending: true });
-
-      if (error) throw error;
-
-      const domain = data?.find(p => p.product_type === 'domain');
-      const emails = data?.filter(p => p.product_type === 'email') || [];
-
-      setDomainProduct(domain || null);
-      setEmailPlans(emails);
+      // Domain pricing is now subscription-based, not separate products
+      // Setting default values for backward compatibility
+      setDomainProduct(null);
+      setEmailPlans([]);
     } catch (error) {
       console.error('Error loading pricing plans:', error);
     } finally {

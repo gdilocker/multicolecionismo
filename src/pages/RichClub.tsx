@@ -4,7 +4,9 @@ import { Crown, Sparkles, Award, Globe as Globe2, TrendingUp, Shield, ChevronRig
 
 // Import images
 import heroImage from '../assets/download-_5_.png';
-import eventosImage from '../assets/evento-colecionismo-970x550.png';
+// TEMPORARY: Using fallback image until 'evento-colecionismo-970x550.png' is uploaded
+// TODO: Replace with actual uploaded image
+import eventosImage from '../assets/pessoas-que-participam-de-um-evento-de-alto-protocolo.jpg';
 import espacosImage from '../assets/espacos-richapproved.jpg.jpg';
 import designImage from '../assets/design-legado.jpg.jpeg';
 import reconhecimentoImage from '../assets/reconhecimento-oficial.jpg.png';
