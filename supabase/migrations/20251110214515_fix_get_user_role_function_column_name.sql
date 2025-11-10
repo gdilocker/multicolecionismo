@@ -1,0 +1,65 @@
+/*
+  # Fix get_user_role_and_subscription function - correct column name
+
+  1. Changes
+    - Use correct column name: name (not plan_type)
+  
+  2. Notes
+    - subscription_plans table has 'name' column, not 'plan_type'
+*/
+
+-- Drop existing function
+DROP FUNCTION IF EXISTS get_user_role_and_subscription(uuid);
+
+-- Create function with correct column name
+CREATE OR REPLACE FUNCTION get_user_role_and_subscription(user_uuid uuid)
+RETURNS TABLE(
+  role text,
+  has_active_subscription boolean,
+  subscription_plan text
+)
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+SET statement_timeout = '5s'
+AS $$
+DECLARE
+  v_role text;
+  v_has_sub boolean;
+  v_plan text;
+BEGIN
+  -- Get customer role first (fastest query)
+  SELECT COALESCE(c.role, 'user')
+  INTO v_role
+  FROM customers c
+  WHERE c.user_id = user_uuid
+  LIMIT 1;
+
+  -- If no customer found, return default user role
+  IF v_role IS NULL THEN
+    v_role := 'user';
+  END IF;
+
+  -- Get subscription info (separate query for better performance)
+  SELECT
+    true as has_sub,
+    sp.name
+  INTO v_has_sub, v_plan
+  FROM user_subscriptions s
+  INNER JOIN subscription_plans sp ON sp.id = s.plan_id
+  WHERE s.user_id = user_uuid
+    AND s.status = 'active'
+  ORDER BY s.created_at DESC
+  LIMIT 1;
+
+  -- Return combined result
+  RETURN QUERY SELECT
+    v_role,
+    COALESCE(v_has_sub, false),
+    v_plan;
+END;
+$$;
+
+-- Grant execute permission
+GRANT EXECUTE ON FUNCTION get_user_role_and_subscription(uuid) TO authenticated;
+GRANT EXECUTE ON FUNCTION get_user_role_and_subscription(uuid) TO anon;
