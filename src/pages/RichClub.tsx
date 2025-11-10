@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Crown, Sparkles, Award, Globe as Globe2, TrendingUp, Shield, ChevronRight } from 'lucide-react';
 
 // Import images
-import heroImage from '../assets/Mcm-London-was-it-good-_-of-course-_-could-it-have-been-better-yes-__Overcrowded-_-not-enough-food-s.png';
+import heroImage from '../assets/download-_5_.png';
 import eventosImage from '../assets/eventos-richclub.jpg.png';
 import espacosImage from '../assets/espacos-richapproved.jpg.jpg';
 import designImage from '../assets/design-legado.jpg.jpeg';
@@ -22,12 +22,12 @@ export default function RichClub() {
           style={{
             backgroundImage: `url(${heroImage})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center right',
             backgroundRepeat: 'no-repeat'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/40"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
