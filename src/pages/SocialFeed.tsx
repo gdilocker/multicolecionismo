@@ -137,6 +137,65 @@ export default function SocialFeed() {
         </header>
       )}
 
+      {/* Desktop Header */}
+      {!subdomain && (
+        <header className="hidden md:block fixed top-0 left-0 right-0 bg-black border-b border-gray-800 z-50">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex items-center justify-between h-16">
+              <button
+                onClick={() => navigate('/')}
+                className="flex items-center gap-2"
+              >
+                <Logo size={32} />
+                <span className="text-white font-bold text-lg">Multicolecionismo</span>
+              </button>
+
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={() => navigate('/marketplace')}
+                  className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                >
+                  <Store className="w-5 h-5" />
+                  <span>Marketplace</span>
+                </button>
+                <button
+                  onClick={() => navigate('/lojas')}
+                  className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                >
+                  <Users className="w-5 h-5" />
+                  <span>Lojas</span>
+                </button>
+                {isLoggedIn && (
+                  <>
+                    <button
+                      onClick={handleCreatePost}
+                      className="flex items-center gap-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all"
+                    >
+                      <Plus className="w-5 h-5" />
+                      <span>Criar Post</span>
+                    </button>
+                    <button
+                      onClick={handlePerfilClick}
+                      className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                    >
+                      <User className="w-5 h-5" />
+                    </button>
+                  </>
+                )}
+                {!isLoggedIn && (
+                  <button
+                    onClick={() => navigate('/login')}
+                    className="flex items-center gap-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all"
+                  >
+                    Entrar
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        </header>
+      )}
+
       {/* Mobile Top Header - Simple (when NOT viewing specific user) */}
       {!subdomain && (
         <header className="md:hidden fixed top-0 left-0 right-0 bg-black border-b border-gray-800 z-50 pt-[env(safe-area-inset-top)]">
@@ -391,9 +450,9 @@ export default function SocialFeed() {
       )}
 
       {/* Feed Content */}
-      <div className="fixed inset-0 md:pt-[60px]">
+      <div className="fixed inset-0 md:pt-[64px]">
         {/* Vertical Feed */}
-        <div className={subdomain ? "md:pt-20" : "md:pt-4"}>
+        <div className={subdomain ? "md:pt-20" : ""}>
           {subdomain && profileData ? (
             <VerticalFeed mode="my_posts" userId={profileData.user_id} key={refreshKey} />
           ) : (

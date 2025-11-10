@@ -41,9 +41,8 @@ export default function Home() {
         .from('social_posts')
         .select(`
           *,
-          user_profiles!inner(subdomain, display_name, avatar_url)
+          user_profiles!social_posts_user_id_fkey(subdomain, display_name, avatar_url)
         `)
-        .eq('is_active', true)
         .eq('privacy', 'public')
         .order('created_at', { ascending: false })
         .limit(20);
