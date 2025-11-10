@@ -164,10 +164,11 @@ function AppRoutes() {
       <main className={hideLayout ? '' : 'flex-1'}>
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<Home />} />
-          <Route path="/pt" element={<Home />} />
-          <Route path="/en" element={<Home />} />
-          <Route path="/es" element={<Home />} />
+          <Route path="/" element={<SocialFeed />} />
+          <Route path="/pt" element={<SocialFeed />} />
+          <Route path="/en" element={<SocialFeed />} />
+          <Route path="/es" element={<SocialFeed />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/valores" element={<Pricing />} />
           <Route path="/registrar-dominio" element={<RegisterDomain />} />
           <Route path="/marketplace" element={<MarketplaceNew />} />
@@ -304,12 +305,7 @@ function AppRoutes() {
             </ProtectedRoute>
           } />
 
-          {/* ALL USERS: Social Network */}
-          <Route path="/social" element={
-            <ProtectedRoute>
-              <SocialFeed />
-            </ProtectedRoute>
-          } />
+          {/* Saved Posts - Protected Route */}
           <Route path="/salvos" element={
             <ProtectedRoute>
               <SavedPosts />
