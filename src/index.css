@@ -42,34 +42,19 @@
 
   /* REGRAS GLOBAIS PARA PREVENIR QUEBRA DE PALAVRAS NO MEIO */
 
-  /* Aplica a todos os elementos de texto - NUNCA quebra palavras no meio */
-  *, *::before, *::after {
-    /* Previne quebra de palavras no meio (hifenização) */
-    hyphens: none;
-    -webkit-hyphens: none;
-    -ms-hyphens: none;
-
-    /* Quebra apenas entre palavras, nunca dentro delas */
-    word-break: normal;
-    overflow-wrap: break-word;
-
-    /* Força quebra apenas em espaços em branco */
-    white-space: normal;
+  /* Aplica a todos os elementos - GLOBAL: não quebra dentro da palavra */
+  html, body {
+    word-break: keep-all;      /* não quebra dentro da palavra */
+    overflow-wrap: normal;     /* não força divisão estranha */
+    hyphens: none;             /* sem hifenização automática */
   }
 
   /* Regras específicas para elementos de texto */
-  p, h1, h2, h3, h4, h5, h6, span, div, li, a, button, label, td, th {
-    /* Previne hifenização automática */
+  h1, h2, h3, h4, h5, h6,
+  p, a, button, label, strong, span {
+    word-break: keep-all;
+    overflow-wrap: normal;
     hyphens: none;
-    -webkit-hyphens: none;
-    -ms-hyphens: none;
-
-    /* Quebra apenas entre palavras */
-    word-break: normal;
-    overflow-wrap: break-word;
-
-    /* Balanceamento de texto para melhor aparência */
-    text-wrap: balance;
   }
 
   /* Para URLs e textos muito longos sem espaços */
@@ -345,5 +330,26 @@
   .scrollbar-hide {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+  }
+
+  /* ====== GLOBAL: não quebrar palavras (ATUALIZADO) ====== */
+  /* Para DOMÍNIOS/URLs/NOMES que NUNCA devem quebrar */
+  .text-nowrap-url {
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    hyphens: none;
+  }
+
+  /* Para strings gigantes (hash, ID) que podem quebrar em QUALQUER lugar */
+  .text-wrap-anywhere {
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  /* Scroll horizontal suave quando ficar maior que a largura (mobile) */
+  .overflow-x-soft {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }

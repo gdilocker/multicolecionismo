@@ -38,13 +38,11 @@ export default function RichClub() {
               <span className="text-amber-400 text-xs font-semibold tracking-[0.3em] uppercase">Collector's Community</span>
             </div>
 
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-tight">
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-tight break-keep">
               <span className="block">Bem-vindo ao</span>
-              <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
+              <span className="block">Clube do</span>
+              <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent whitespace-nowrap">
                 Multicolecionismo
-              </span>
-              <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
-                .Social
               </span>
             </h1>
 
@@ -59,15 +57,15 @@ export default function RichClub() {
 
             {/* Features badges - now in normal flow */}
             <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-6 mb-8">
-              <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
+              <div className="flex items-center gap-2 text-white/80 text-sm font-medium whitespace-nowrap">
                 <Crown className="w-5 h-5 text-amber-400" />
                 <span>Perfis Verificados</span>
               </div>
-              <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
+              <div className="flex items-center gap-2 text-white/80 text-sm font-medium whitespace-nowrap">
                 <Globe2 className="w-5 h-5 text-amber-400" />
                 <span>Comunidade Ativa</span>
               </div>
-              <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
+              <div className="flex items-center gap-2 text-white/80 text-sm font-medium whitespace-nowrap">
                 <Shield className="w-5 h-5 text-amber-400" />
                 <span>Autenticidade Garantida</span>
               </div>
@@ -75,7 +73,7 @@ export default function RichClub() {
 
             <Link
               to="/valores"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-2xl shadow-amber-500/50 hover:shadow-amber-400/60 hover:scale-105 group"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-2xl shadow-amber-500/50 hover:shadow-amber-400/60 hover:scale-105 group whitespace-nowrap break-keep"
             >
               Explore os Planos
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -105,7 +103,7 @@ export default function RichClub() {
               <span className="text-white/90 text-xs font-semibold tracking-widest uppercase">Collector's Events</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
               <span className="block">Eventos e Encontros</span>
               <span className="block whitespace-nowrap">de Colecionadores</span>
             </h2>
@@ -127,15 +125,15 @@ export default function RichClub() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-amber-400">
+              <div className="flex items-center gap-2 text-amber-400 whitespace-nowrap">
                 <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
                 <span className="text-sm font-medium">Encontros Presenciais</span>
               </div>
-              <div className="flex items-center gap-2 text-amber-400">
+              <div className="flex items-center gap-2 text-amber-400 whitespace-nowrap">
                 <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
                 <span className="text-sm font-medium">Feiras e Exposições</span>
               </div>
-              <div className="flex items-center gap-2 text-amber-400">
+              <div className="flex items-center gap-2 text-amber-400 whitespace-nowrap">
                 <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
                 <span className="text-sm font-medium">Comunidade Ativa</span>
               </div>
@@ -165,7 +163,7 @@ export default function RichClub() {
               <span className="text-amber-300 text-xs font-semibold tracking-widest uppercase">Featured Collections</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
               Lojas, Espaços e Coleções em Destaque
             </h2>
 
@@ -220,7 +218,7 @@ export default function RichClub() {
               <span className="text-white/90 text-xs font-semibold tracking-widest uppercase">Passion & Authenticity</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
               <span className="block">Paixão, História</span>
               <span className="block whitespace-nowrap">e Autenticidade</span>
             </h2>
@@ -271,7 +269,7 @@ export default function RichClub() {
               <span className="text-amber-300 text-xs font-bold tracking-widest uppercase">Verified Collector</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
               <span className="block sm:inline">Reconhecimento como</span>
               <br className="hidden sm:block lg:block" />
               <span className="block sm:inline whitespace-nowrap">Colecionador</span>
@@ -329,9 +327,9 @@ export default function RichClub() {
               <span className="text-amber-400 text-xs font-semibold tracking-[0.3em] uppercase">Your Digital Showcase</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
               <span className="text-gray-400">seunome</span>
-              <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">.multicolecionismo.social</span>
+              <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent whitespace-nowrap">.multicolecionismo.social</span>
             </h2>
 
             <div className="space-y-3 mb-12">
@@ -385,7 +383,7 @@ export default function RichClub() {
               <span className="text-emerald-300 text-xs font-semibold tracking-widest uppercase">Earn Commission</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight break-keep">
               Programa de Afiliados
             </h2>
 
@@ -408,7 +406,7 @@ export default function RichClub() {
 
             <Link
               to="/afiliados/termos"
-              className="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 hover:border-emerald-500/50 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 group"
+              className="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 hover:border-emerald-500/50 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 group whitespace-nowrap"
             >
               Conheça o Programa
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -423,7 +421,7 @@ export default function RichClub() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-12 leading-[1.3] tracking-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-12 leading-[1.3] tracking-tight break-keep">
               <span className="block mb-2">Pronto para destacar</span>
               <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent pb-6">
                 sua coleção online?
@@ -442,7 +440,7 @@ export default function RichClub() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/valores"
-                className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 shadow-2xl shadow-amber-500/50 hover:shadow-amber-400/60 hover:scale-105 group"
+                className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 shadow-2xl shadow-amber-500/50 hover:shadow-amber-400/60 hover:scale-105 group whitespace-nowrap"
               >
                 Ver Planos
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
