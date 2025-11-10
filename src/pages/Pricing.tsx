@@ -65,14 +65,13 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
     id: 'supreme',
     plan_name: 'Supreme',
     plan_type: 'supreme',
-    price_brl: 199,
+    price_brl: 150,
     billing_cycle: 'monthly',
     description: 'O plano definitivo para grandes marcas e colecionadores profissionais. Máxima visibilidade, recursos ilimitados e suporte VIP.',
     features: [
       'Tudo do plano Elite',
       'Domínios premium exclusivos (VIP, Brasil, etc)',
-      'Loja integrada: anúncios ilimitados',
-      'Subdomínios personalizados ilimitados',
+      'Loja integrada: até 1000 produtos',
       'Selo Supreme Badge (destaque dourado)',
       'Posição premium garantida em todas as buscas',
       'Eventos exclusivos e networking VIP',
@@ -473,7 +472,7 @@ const Pricing: React.FC = () => {
                                   </p>
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 49,75 por venda do Plano Supreme
+                                    R$ 37,50 por venda do Plano Supreme
                                   </p>
                                 </div>
                               </div>
@@ -493,7 +492,7 @@ const Pricing: React.FC = () => {
                                   </p>
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 99,50 por venda do Plano Supreme
+                                    R$ 75 por venda do Plano Supreme
                                   </p>
                                 </div>
                               </div>
@@ -513,7 +512,7 @@ const Pricing: React.FC = () => {
                                   </p>
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 119,40 por venda do Plano Supreme
+                                    R$ 90 por venda do Plano Supreme
                                   </p>
                                 </div>
                               </div>
