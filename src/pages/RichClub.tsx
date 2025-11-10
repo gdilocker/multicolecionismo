@@ -4,10 +4,7 @@ import { Crown, Sparkles, Award, Globe as Globe2, TrendingUp, Shield, ChevronRig
 
 // Import images
 import heroImage from '../assets/download-_5_.png';
-// Events section background - optimized for performance
-// TODO: Replace with uploaded 'evento-colecionismo-970x550.webp' when available
-// Current: Using high-quality Pexels stock photo (royalty-free, auto-compressed)
-const eventosImage = 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2';
+import eventosImage from '../assets/evento-colecionismo-970x550.png';
 import espacosImage from '../assets/espacos-richapproved.jpg.jpg';
 import designImage from '../assets/design-legado.jpg.jpeg';
 import reconhecimentoImage from '../assets/reconhecimento-oficial.jpg.png';
@@ -97,7 +94,7 @@ export default function RichClub() {
             backgroundRepeat: 'no-repeat'
           }}
           role="img"
-          aria-label="Feira de colecionismo com expositores, mesas e público em circulação"
+          aria-label="Feira de colecionismo com estandes, mesas e público circulando"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/20"></div>
         </div>
