@@ -552,7 +552,7 @@ const Home = () => {
               variants={item}
               className="text-base sm:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed font-light px-4"
             >
-              Possua a identidade digital mais prestigiada e exclusiva do mundo.
+              Organize, compartilhe e venda suas coleções em uma comunidade apaixonada por colecionar.
             </motion.p>
 
             <motion.div
