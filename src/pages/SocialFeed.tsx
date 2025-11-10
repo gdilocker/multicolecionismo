@@ -151,14 +151,79 @@ export default function SocialFeed() {
               </button>
 
               <div className="flex items-center gap-4">
+                <button
+                  onClick={() => navigate('/marketplace')}
+                  className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                >
+                  <Store className="w-5 h-5" />
+                  <span>Marketplace</span>
+                </button>
+                <button
+                  onClick={() => navigate('/lojas')}
+                  className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                >
+                  <Users className="w-5 h-5" />
+                  <span>Lojas</span>
+                </button>
                 {isLoggedIn && (
-                  <button
-                    onClick={handleCreatePost}
-                    className="flex items-center gap-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all"
-                  >
-                    <Plus className="w-5 h-5" />
-                    <span>Criar Post</span>
-                  </button>
+                  <>
+                    <button
+                      onClick={handleCreatePost}
+                      className="flex items-center gap-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all"
+                    >
+                      <Plus className="w-5 h-5" />
+                      <span>Criar Post</span>
+                    </button>
+                    {(user?.role === 'member' || user?.role === 'admin') && (
+                      <button
+                        onClick={() => navigate('/panel/dashboard')}
+                        className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                      >
+                        <Home className="w-5 h-5" />
+                        <span>Dashboard</span>
+                      </button>
+                    )}
+                    {user?.role === 'social' && (
+                      <button
+                        onClick={() => navigate('/valores')}
+                        className="flex items-center gap-2 px-4 py-2 text-purple-400 hover:text-purple-300 transition-colors"
+                      >
+                        <Sparkles className="w-5 h-5" />
+                        <span>Planos</span>
+                      </button>
+                    )}
+                    {user?.role === 'admin' && (
+                      <button
+                        onClick={() => navigate('/admin/dashboard')}
+                        className="flex items-center gap-2 px-4 py-2 text-red-400 hover:text-red-300 transition-colors"
+                      >
+                        <Lock className="w-5 h-5" />
+                        <span>Admin</span>
+                      </button>
+                    )}
+                    <button
+                      onClick={handlePerfilClick}
+                      className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                    >
+                      <User className="w-5 h-5" />
+                    </button>
+                  </>
+                )}
+                {!isLoggedIn && (
+                  <>
+                    <button
+                      onClick={() => navigate('/valores')}
+                      className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                    >
+                      <span>Planos</span>
+                    </button>
+                    <button
+                      onClick={() => navigate('/login')}
+                      className="flex items-center gap-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all"
+                    >
+                      Entrar
+                    </button>
+                  </>
                 )}
               </div>
             </div>
@@ -202,7 +267,27 @@ export default function SocialFeed() {
                       className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                     >
                       <Radio className="w-5 h-5" />
-                      <span className="text-sm font-medium">Comunidade</span>
+                      <span className="text-sm font-medium">Feed</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowHamburgerMenu(false);
+                        navigate('/marketplace');
+                      }}
+                      className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                    >
+                      <Store className="w-5 h-5" />
+                      <span className="text-sm font-medium">Marketplace</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowHamburgerMenu(false);
+                        navigate('/lojas');
+                      }}
+                      className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                    >
+                      <Users className="w-5 h-5" />
+                      <span className="text-sm font-medium">Lojas</span>
                     </button>
                     <button
                       onClick={() => {
@@ -224,16 +309,42 @@ export default function SocialFeed() {
                       <Bookmark className="w-5 h-5" />
                       <span className="text-sm font-medium">Salvos</span>
                     </button>
-                    <button
-                      onClick={() => {
-                        setShowHamburgerMenu(false);
-                        navigate('/panel/dashboard');
-                      }}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
-                    >
-                      <Home className="w-5 h-5" />
-                      <span className="text-sm font-medium">Dashboard</span>
-                    </button>
+                    {(user?.role === 'member' || user?.role === 'admin') && (
+                      <button
+                        onClick={() => {
+                          setShowHamburgerMenu(false);
+                          navigate('/panel/dashboard');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <Home className="w-5 h-5" />
+                        <span className="text-sm font-medium">Dashboard</span>
+                      </button>
+                    )}
+                    {user?.role === 'social' && (
+                      <button
+                        onClick={() => {
+                          setShowHamburgerMenu(false);
+                          navigate('/valores');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-purple-400 hover:text-purple-300 hover:bg-gray-800 transition-colors"
+                      >
+                        <Sparkles className="w-5 h-5" />
+                        <span className="text-sm font-medium">Planos</span>
+                      </button>
+                    )}
+                    {user?.role === 'admin' && (
+                      <button
+                        onClick={() => {
+                          setShowHamburgerMenu(false);
+                          navigate('/admin/dashboard');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:text-red-300 hover:bg-gray-800 transition-colors"
+                      >
+                        <Lock className="w-5 h-5" />
+                        <span className="text-sm font-medium">Admin</span>
+                      </button>
+                    )}
                     <button
                       onClick={async () => {
                         setShowHamburgerMenu(false);
@@ -255,8 +366,28 @@ export default function SocialFeed() {
                       }}
                       className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                     >
-                      <Home className="w-5 h-5" />
-                      <span className="text-sm font-medium">Inicial</span>
+                      <Radio className="w-5 h-5" />
+                      <span className="text-sm font-medium">Feed</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowHamburgerMenu(false);
+                        navigate('/marketplace');
+                      }}
+                      className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                    >
+                      <Store className="w-5 h-5" />
+                      <span className="text-sm font-medium">Marketplace</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowHamburgerMenu(false);
+                        navigate('/lojas');
+                      }}
+                      className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                    >
+                      <Users className="w-5 h-5" />
+                      <span className="text-sm font-medium">Lojas</span>
                     </button>
                     <button
                       onClick={() => {
@@ -265,7 +396,7 @@ export default function SocialFeed() {
                       }}
                       className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                     >
-                      <DollarSign className="w-5 h-5" />
+                      <Sparkles className="w-5 h-5" />
                       <span className="text-sm font-medium">Planos</span>
                     </button>
                     <button
