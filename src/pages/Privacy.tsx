@@ -39,21 +39,39 @@ const Privacy: React.FC = () => {
           className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
         >
           <div className="relative group mb-8">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-slate-500 to-slate-900 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-500" />
-            <div className="relative bg-white backdrop-blur-xl border border-gray-200 rounded-xl p-6">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-500" />
+            <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 backdrop-blur-xl border-2 border-blue-200 rounded-xl p-6">
               <div className="flex items-start gap-4">
-                <Lock className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" />
-                <div>
-                  <h2 className="text-xl font-semibold text-black mb-2">Global Digital Identity LTD</h2>
-                  <p className="text-[#6B7280]/80 leading-relaxed mb-2">
-                    A presente Política de Privacidade descreve como a <strong>Global Digital Identity LTD</strong>, registrada na Inglaterra e País de Gales sob o número <strong>Company No. 16339013</strong>, com sede em <strong>71–75 Shelton Street, Covent Garden, Londres, WC2H 9JQ, Reino Unido</strong>, coleta, utiliza, armazena e protege informações pessoais de usuários.
-                  </p>
-                  <p className="text-[#6B7280]/70 text-sm">
-                    O <strong>.multicolecionismo.social</strong> atua como <strong>Controlador de Dados</strong> conforme o UK GDPR (Data Protection Act 2018) e o GDPR (UE).
-                  </p>
-                  <p className="text-[#6B7280]/70 text-sm mt-2">
-                    <strong>Contato oficial de privacidade:</strong> <a href="mailto:support@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280]">support@multicolecionismo.social</a>
-                  </p>
+                <Lock className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+                <div className="space-y-4">
+                  <div>
+                    <h2 className="text-xl font-bold text-gray-900 mb-3">Estrutura de Responsabilidade e Proteção de Dados</h2>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      Esta Política de Privacidade descreve como o <strong>Multicolecionismo.Social</strong> coleta, utiliza, armazena e protege
+                      informações pessoais de usuários, em conformidade com o UK GDPR (Data Protection Act 2018) e GDPR (UE).
+                    </p>
+                  </div>
+
+                  <div className="bg-white rounded-lg p-4 border border-blue-200">
+                    <h3 className="font-semibold text-gray-900 mb-2">Tecnologia e Licenciamento:</h3>
+                    <p className="text-gray-600 text-sm">
+                      <strong>Global Digital Identity LTD</strong>, Company No. 16339013, registrada na Inglaterra e País de Gales,
+                      71-75 Shelton Street, Covent Garden, Londres, WC2H 9JQ, Reino Unido.
+                      Atua como <strong>Controlador de Dados</strong> e responsável técnica pela plataforma.
+                    </p>
+                  </div>
+
+                  <div className="bg-white rounded-lg p-4 border border-blue-200">
+                    <h3 className="font-semibold text-gray-900 mb-2">Operação no Brasil:</h3>
+                    <p className="text-gray-600 text-sm mb-2">
+                      <strong>[NOME DA EMPRESA OPERADORA]</strong>, CNPJ [CNPJ DA EMPRESA], [ENDEREÇO COMPLETO].
+                      Responsável por todas as operações, atendimento e gestão de dados de usuários brasileiros.
+                    </p>
+                    <p className="text-gray-600 text-sm">
+                      <strong>Contato de Privacidade:</strong>
+                      <a href="mailto:privacy@multicolecionismo.social" className="text-blue-600 hover:text-blue-800"> privacy@multicolecionismo.social</a>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

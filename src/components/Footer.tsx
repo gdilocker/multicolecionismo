@@ -23,10 +23,14 @@ export default function Footer() {
               <Logo size={56} />
             </div>
             <p className="text-[#6B7280] text-sm leading-relaxed max-w-md mb-4">
-              A Global Digital Identity é detentora da mais prestigiada extensão digital do mundo, o domínio .multicolecionismo.social.
+              O <strong>Multicolecionismo.Social</strong> é a maior rede social brasileira dedicada ao colecionismo.
               Reunimos colecionadores de todo Brasil em uma plataforma completa: perfis, galerias, eventos, loja e comunidade ativa para compartilhar a paixão por colecionar.
-              Conecte-se com outros colecionadores, organize suas coleções e participe de eventos e feiras em todo o país.
             </p>
+            <div className="text-[#6B7280] text-xs leading-relaxed max-w-md space-y-2 border-t border-gray-200 pt-3 mt-3">
+              <p><strong className="text-gray-700">Tecnologia:</strong> Global Digital Identity LTD (Reino Unido)</p>
+              <p><strong className="text-gray-700">Operação Brasil:</strong> [NOME DA EMPRESA OPERADORA]</p>
+              <p><strong className="text-gray-700">CNPJ:</strong> [CNPJ DA EMPRESA]</p>
+            </div>
           </div>
 
           <div>
@@ -182,10 +186,25 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#6B7280]">
-            <div>
-              <p>© 2025 Global Digital Identity LTD. All rights reserved.</p>
-              <p className="text-xs mt-1">Company №  16339013 • Registered in England and Wales</p>
+          <div className="text-center md:text-left space-y-3">
+            <div className="text-sm text-[#6B7280]">
+              <p className="font-semibold text-gray-700">© 2025 Multicolecionismo.Social - Todos os direitos reservados</p>
+            </div>
+            <div className="text-xs text-[#6B7280] space-y-1 max-w-4xl">
+              <p>
+                <strong className="text-gray-700">Tecnologia e Licenciamento:</strong> Global Digital Identity LTD,
+                Company № 16339013, registrada na Inglaterra e País de Gales,
+                71-75 Shelton Street, Covent Garden, Londres, WC2H 9JQ, Reino Unido.
+              </p>
+              <p>
+                <strong className="text-gray-700">Operação e Administração no Brasil:</strong> [NOME DA EMPRESA OPERADORA],
+                CNPJ [CNPJ DA EMPRESA], [ENDEREÇO COMPLETO].
+                Contato: <a href="mailto:contact@multicolecionismo.social" className="text-blue-600 hover:text-blue-800">contact@multicolecionismo.social</a>
+              </p>
+              <p className="text-[10px] text-gray-500 pt-2">
+                A Global Digital Identity LTD é a criadora da tecnologia e detentora dos direitos da plataforma.
+                A [NOME DA EMPRESA OPERADORA] é titular da licença de uso comercial e responsável por todas as atividades operacionais, comerciais e legais no Brasil.
+              </p>
             </div>
           </div>
         </div>
