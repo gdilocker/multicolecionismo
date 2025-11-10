@@ -113,7 +113,7 @@ async function checkDomain(fqdn: string, userId?: string): Promise<DomainCheckRe
     throw new Error('Domínio inválido. Use apenas domínios .multicolecionismo.social');
   }
 
-  if (!/^[a-z0-9-]+\.com\.rich$/.test(normalizedFqdn)) {
+  if (!/^[a-z0-9-]+\.multicolecionismo\.social$/.test(normalizedFqdn)) {
     throw new Error('Formato de domínio inválido. Use apenas letras minúsculas, números e hífens.');
   }
 
