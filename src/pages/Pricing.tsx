@@ -33,7 +33,7 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
       'Analytics: visualizações, cliques e engajamento',
       'Destaque em buscas e categorias',
       'Participação em eventos e feiras',
-      'Programa de afiliados: 10% de comissão',
+      'Programa de afiliados: 10% de comissão sobre venda de planos',
       'Suporte prioritário'
     ],
     is_active: true,
@@ -55,7 +55,7 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
       'Acesso antecipado a eventos premium',
       'Cartão de visita digital com QR Code',
       'Estatísticas avançadas e relatórios',
-      'Programa de afiliados: 25% de comissão',
+      'Programa de afiliados: 25% de comissão sobre venda de planos',
       'Suporte dedicado 24/7'
     ],
     is_active: true,
@@ -79,7 +79,7 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
       'Relatórios avançados e Business Intelligence',
       'API completa para integração',
       'Gerente de conta dedicado',
-      'Programa de afiliados: 35% de comissão',
+      'Programa de afiliados: 35% de comissão sobre venda de planos',
       'Suporte prioritário 24/7 com SLA'
     ],
     is_active: true,
@@ -459,7 +459,7 @@ const Pricing: React.FC = () => {
                             {isPrime ? (
                               <div className="space-y-3">
                                 <p className="text-sm text-slate-900 leading-relaxed">
-                                  Ao se tornar Membro Prime, você recebe 10% de comissão em todas as vendas realizadas pelos seus convidados.
+                                  Ao se tornar Membro Prime, você recebe 10% de comissão sobre cada assinatura de plano vendida através do seu link de afiliado. A comissão não se aplica a produtos ou serviços vendidos na loja.
                                 </p>
                                 <div className="space-y-2">
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
@@ -479,7 +479,7 @@ const Pricing: React.FC = () => {
                             ) : isElite ? (
                               <div className="space-y-3">
                                 <p className="text-sm text-slate-900 leading-relaxed">
-                                  Ao se tornar Membro Elite, você recebe 25% de comissão em todas as vendas realizadas pelos seus convidados.
+                                  Ao se tornar Membro Elite, você recebe 25% de comissão sobre cada assinatura de plano vendida através do seu link de afiliado. A comissão não se aplica a produtos ou serviços vendidos na loja.
                                 </p>
                                 <div className="space-y-2">
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
@@ -499,7 +499,7 @@ const Pricing: React.FC = () => {
                             ) : (
                               <div className="space-y-3">
                                 <p className="text-sm text-slate-900 leading-relaxed">
-                                  Ao se tornar Membro Supreme, você recebe 35% de comissão em todas as vendas realizadas pelos seus convidados.
+                                  Ao se tornar Membro Supreme, você recebe 35% de comissão sobre cada assinatura de plano vendida através do seu link de afiliado. A comissão não se aplica a produtos ou serviços vendidos na loja.
                                 </p>
                                 <div className="space-y-2">
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
@@ -534,7 +534,7 @@ const Pricing: React.FC = () => {
                       {/* Observação sobre comissões */}
                       <div className="mt-6 pt-4 border-t border-gray-200">
                         <p className="text-xs text-gray-500 text-center leading-relaxed">
-                          As comissões são calculadas sobre o valor líquido efetivamente recebido, após deduções e taxas aplicáveis. Não há repasse de comissão em casos de estorno, cancelamento ou inadimplência.
+                          <strong>Importante:</strong> As comissões são exclusivamente sobre vendas de assinaturas de planos (Prime, Elite, Supreme), não incluindo produtos ou serviços vendidos nas lojas. Os valores são calculados sobre o valor líquido efetivamente recebido, após deduções e taxas aplicáveis. Não há repasse em casos de estorno, cancelamento ou inadimplência.
                         </p>
                       </div>
                     </div>
