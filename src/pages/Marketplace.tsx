@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import { useAuth } from '../contexts/AuthContext';
 import ConfirmModal from '../components/ConfirmModal';
-import marketplaceHeroBackground from '../assets/marketplace-hero-bg.jpg';
+import marketplaceHeroBackground from '../assets/marketplace-hero-bg.jpeg';
 
 interface PremiumDomain {
   fqdn: string;
