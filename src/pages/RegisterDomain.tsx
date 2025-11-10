@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { Search, Shield, Zap, Globe, Check, ArrowRight, Mail, Lock, Sparkles, Loader2, X, LogIn, AlertCircle, Crown, Link2, CheckCircle } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { ProvisioningStepper } from '../components/ProvisioningStepper';
@@ -28,6 +28,8 @@ interface PricingPlan {
 const Home = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
+  const [searchParams] = useSearchParams();
+  const selectedPlan = searchParams.get('plan');
   const [domain, setDomain] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [networkIssueDetected, setNetworkIssueDetected] = useState(false);
@@ -556,6 +558,29 @@ const Home = () => {
                 • Sem compromisso
               </div>
             </motion.div>
+
+            {selectedPlan && (
+              <motion.div
+                variants={item}
+                className="max-w-2xl mx-auto mb-6 px-4"
+              >
+                <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-md border border-blue-400/30 rounded-xl p-4 shadow-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">
+                        Plano {selectedPlan.charAt(0).toUpperCase() + selectedPlan.slice(1)} selecionado
+                      </p>
+                      <p className="text-gray-300 text-xs">
+                        Escolha seu domínio para continuar
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
 
             <motion.form
               variants={item}
@@ -1158,7 +1183,13 @@ const Home = () => {
                     <span className="inline-block">https://multicolecionismo.social/suamarca</span>
                   </p>
                   <button
-                    onClick={() => navigate('/register')}
+                    onClick={() => {
+                      const domainToUse = domain.endsWith('.multicolecionismo.social') ? domain : `${domain}.multicolecionismo.social`;
+                      const params = new URLSearchParams();
+                      if (selectedPlan) params.append('plan', selectedPlan);
+                      params.append('domain', domainToUse);
+                      navigate(`/register?${params.toString()}`);
+                    }}
                     className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black text-lg font-bold rounded-full transition-all duration-300 shadow-lg shadow-amber-500/30 hover:shadow-amber-400/40 hover:scale-105"
                   >
                     Começar Agora
@@ -1219,7 +1250,13 @@ const Home = () => {
                     Fazer Login
                   </motion.button>
                   <button
-                    onClick={() => navigate('/register')}
+                    onClick={() => {
+                      const domainToUse = domain.endsWith('.multicolecionismo.social') ? domain : `${domain}.multicolecionismo.social`;
+                      const params = new URLSearchParams();
+                      if (selectedPlan) params.append('plan', selectedPlan);
+                      if (domain) params.append('domain', domainToUse);
+                      navigate(`/register?${params.toString()}`);
+                    }}
                     className="w-full px-6 py-4 bg-white/5 hover:bg-white/10 text-white rounded-xl font-semibold text-lg transition-all duration-200 border border-white/10"
                   >
                     Criar Conta

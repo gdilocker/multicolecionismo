@@ -419,7 +419,7 @@ const Pricing: React.FC = () => {
                       )}
 
                       <Link
-                        to={`/register?plan=${plan.plan_type}`}
+                        to={`/registrar-dominio?plan=${plan.plan_type}`}
                         className={`block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 text-center mb-8 ${
                           isSupreme
                             ? 'bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-white shadow-md'
