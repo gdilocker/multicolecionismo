@@ -93,6 +93,7 @@ const AuthCallback = lazy(() => import('./pages/AuthCallback'));
 const SelectUserType = lazy(() => import('./pages/SelectUserType'));
 const MarketplaceNew = lazy(() => import('./pages/MarketplaceNew'));
 const StoresDirectory = lazy(() => import('./pages/StoresDirectory'));
+const RegisterDomain = lazy(() => import('./pages/RegisterDomain'));
 
 // Loading component
 const LoadingFallback = () => (
@@ -133,7 +134,8 @@ function AppRoutes() {
     '/politica-seguranca', '/politica-transferencia-dominio',
     '/politica-conteudo-usuario', '/aviso-direitos-autorais',
     '/conformidade-legal', '/adendo-processamento-dados',
-    '/politica-acessibilidade', '/politica-exclusao', '/politica-solicitacao-dados'
+    '/politica-acessibilidade', '/politica-exclusao', '/politica-solicitacao-dados',
+    '/registrar-dominio'
   ];
 
   // Check if path starts with known public route prefixes
@@ -167,6 +169,7 @@ function AppRoutes() {
           <Route path="/en" element={<Home />} />
           <Route path="/es" element={<Home />} />
           <Route path="/valores" element={<Pricing />} />
+          <Route path="/registrar-dominio" element={<RegisterDomain />} />
           <Route path="/marketplace" element={<MarketplaceNew />} />
           <Route path="/lojas" element={<StoresDirectory />} />
           <Route path="/transferencia" element={<Transfer />} />

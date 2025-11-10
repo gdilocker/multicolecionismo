@@ -54,6 +54,14 @@ export default function Footer() {
               </li>
               <li>
                 <button
+                  onClick={() => handleNavigation('/registrar-dominio')}
+                  className="text-[#6B7280] hover:text-black transition-colors text-sm"
+                >
+                  Registrar Domínio
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => handleNavigation('/premium')}
                   className="text-[#6B7280] hover:text-black transition-colors text-sm flex items-center gap-1.5"
                 >
