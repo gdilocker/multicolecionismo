@@ -322,14 +322,14 @@ export default function RichClub() {
               <span className="text-amber-400 text-xs font-semibold tracking-[0.3em] uppercase">Your Digital Showcase</span>
             </div>
 
-            <h2 className="font-bold text-white mb-6 tracking-tight break-keep text-fluid-domain">
-              <span className="text-gray-400">seunome</span>
-              <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">.multicolecionismo⁠.social</span>
+            <h2 className="font-bold text-white mb-6 tracking-tight break-keep leading-tight" style={{ fontSize: 'clamp(1.5rem, 5vw, 3.5rem)' }}>
+              <span className="text-gray-400 whitespace-nowrap">suamarca</span>
+              <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent whitespace-nowrap">.multicolecionismo.social</span>
             </h2>
 
             <div className="space-y-3 mb-12">
               <p className="text-gray-300 font-light break-keep text-fluid-sub">
-                Seu domínio personalizado <span className="whitespace-nowrap">.multicolecionismo⁠.social</span> é mais que um endereço web, é sua vitrine digital para organizar, exibir e comercializar suas coleções mais valiosas.
+                Seu domínio personalizado <span className="whitespace-nowrap">.multicolecionismo.social</span> é mais que um endereço web, é sua vitrine digital para organizar, exibir e comercializar suas coleções mais valiosas.
               </p>
               <p className="text-gray-400 font-light break-keep text-fluid-body">
                 Uma URL que comunica paixão e dedicação instantaneamente.

@@ -1162,8 +1162,8 @@ const Home = () => {
                   <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-1.5 max-w-2xl mx-auto font-light leading-relaxed px-4">
                     Sua licença exclusiva protegida:
                   </p>
-                  <p className="text-sm sm:text-base md:text-lg text-amber-400/90 mb-4 sm:mb-6 max-w-2xl mx-auto font-medium px-4 break-domain overflow-wrap-anywhere">
-                    https://seunome.multicolecionismo.social / https://multicolecionismo.social/seunome
+                  <p className="text-sm sm:text-base md:text-lg text-amber-400/90 mb-4 sm:mb-6 max-w-2xl mx-auto font-medium px-4" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.125rem)' }}>
+                    <span className="inline-block">https://suamarca.multicolecionismo.social</span>
                   </p>
                   <button
                     onClick={() => navigate('/register')}
