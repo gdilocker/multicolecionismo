@@ -125,59 +125,6 @@ export default function SocialFeed() {
 
       {/* Feed Content */}
       <div className="fixed inset-0 pt-[64px]">
-        {/* Feed Mode Switcher - Desktop */}
-        {!subdomain && (
-          <div className="hidden md:block bg-black border-b border-gray-800">
-            <div className="max-w-7xl mx-auto px-4 py-3">
-              <div className="flex items-center justify-between">
-                {isLoggedIn && (
-                  <div className="flex items-center gap-2 bg-white/5 rounded-lg px-2 py-1 border border-white/10">
-                    <button
-                      onClick={() => setFeedMode('all')}
-                      className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors ${
-                        feedMode === 'all'
-                          ? 'bg-gradient-to-r from-[#F4D03F] via-[#D4AF37] to-[#C6941E] text-black font-semibold'
-                          : 'text-gray-400 hover:text-white'
-                      }`}
-                    >
-                      Todos
-                    </button>
-                    <button
-                      onClick={handleFollowingClick}
-                      className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors ${
-                        feedMode === 'following'
-                          ? 'bg-gradient-to-r from-[#F4D03F] via-[#D4AF37] to-[#C6941E] text-black font-semibold'
-                          : 'text-gray-400 hover:text-white'
-                      }`}
-                    >
-                      Seguindo
-                    </button>
-                  </div>
-                )}
-
-                {isLoggedIn && (
-                  <div className="flex items-center gap-4">
-                    <button
-                      onClick={() => navigate('/minha-pagina', { state: { from: '/social' } })}
-                      className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white font-medium transition-colors"
-                    >
-                      <User className="w-4 h-4" />
-                      <span>Meu Feed</span>
-                    </button>
-                    <button
-                      onClick={() => navigate('/salvos')}
-                      className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white font-medium transition-colors"
-                    >
-                      <Bookmark className="w-4 h-4" />
-                      <span>Salvos</span>
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Vertical Feed */}
         <div className={subdomain ? "md:pt-20" : ""}>
           {subdomain && profileData ? (
@@ -189,7 +136,7 @@ export default function SocialFeed() {
       </div>
 
       {/* Mobile Bottom Navigation - Fixed */}
-      {!subdomain && (
+      {!subdomain && isLoggedIn && (
         <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-black border-t border-gray-800 z-50 pb-[env(safe-area-inset-bottom)] safe-area-bottom">
           <div className="grid grid-cols-5 items-end px-2 py-2">
             <button
@@ -200,7 +147,7 @@ export default function SocialFeed() {
               className={`flex flex-col items-center gap-1 py-2 ${feedMode === 'all' ? 'text-white' : 'text-gray-400'}`}
             >
               <Home className="w-6 h-6" />
-              <span className="text-xs font-medium">Início</span>
+              <span className="text-xs font-medium">Todos</span>
             </button>
             <button
               onClick={handleFollowingClick}
@@ -220,7 +167,7 @@ export default function SocialFeed() {
               className="flex flex-col items-center gap-1 py-2 text-gray-400"
             >
               <User className="w-6 h-6" />
-              <span className="text-xs font-medium">Meu Feed</span>
+              <span className="text-xs font-medium">Perfil</span>
             </button>
             <button
               onClick={() => navigate('/salvos')}
