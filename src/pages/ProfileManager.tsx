@@ -257,7 +257,7 @@ export default function ProfileManager() {
         const newProfile = {
           user_id: user?.id,
           domain_id: currentDomainId,
-          subdomain: domainData.fqdn.split('.')[0],
+          slug: domainData.fqdn.split('.')[0],
           display_name: domainData.fqdn.split('.')[0],
           bio: '',
           is_public: true
