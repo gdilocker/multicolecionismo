@@ -1,6 +1,5 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.75.0";
-import { rateLimitMiddleware } from "../_shared/rateLimit.middleware.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -340,10 +339,6 @@ Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { status: 200, headers: corsHeaders });
   }
-
-  // Rate limiting
-  const rateLimitResponse = await rateLimitMiddleware(req, 'POST:/domains');
-  if (rateLimitResponse) return rateLimitResponse;
 
   try {
     const url = new URL(req.url);
