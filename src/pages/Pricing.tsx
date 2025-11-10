@@ -22,7 +22,7 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
     id: 'prime',
     plan_name: 'Prime',
     plan_type: 'prime',
-    price_brl: 250,
+    price_brl: 70,
     billing_cycle: 'monthly',
     description: 'Ideal para colecionadores que querem destaque. Domínio exclusivo, galeria profissional e loja integrada.',
     features: [
@@ -43,9 +43,9 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
     id: 'elite',
     plan_name: 'Elite',
     plan_type: 'elite',
-    price_brl: 350,
+    price_brl: 99,
     billing_cycle: 'monthly',
-    description: 'Para marcas e lojas estabelecidas. Todos os recursos Premium + ferramentas avançadas e prioridade máxima.',
+    description: 'Para marcas e lojas estabelecidas. Todos os recursos Prime + ferramentas avançadas e prioridade máxima.',
     features: [
       'Tudo do plano Prime',
       'Loja integrada: até 200 anúncios ativos',
@@ -65,24 +65,26 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
     id: 'supreme',
     plan_name: 'Supreme',
     plan_type: 'supreme',
-    price_brl: 'By Request',
+    price_brl: 199,
     billing_cycle: 'monthly',
-    description: 'Solução corporativa para grandes marcas e organizações. Infraestrutura dedicada, API personalizada e suporte white-glove.',
+    description: 'O plano definitivo para grandes marcas e colecionadores profissionais. Máxima visibilidade, recursos ilimitados e suporte VIP.',
     features: [
+      'Tudo do plano Elite',
       'Domínios premium exclusivos (VIP, Brasil, etc)',
       'Loja integrada: anúncios ilimitados',
-      'API completa para integração com sistemas próprios',
-      'Infraestrutura dedicada e escalabilidade',
-      'Plataforma white-label customizável',
-      'Gerente de conta dedicado 24/7',
-      'Consultoria estratégica e onboarding',
-      'Prioridade absoluta em eventos e feiras',
-      'Relatórios personalizados e BI',
-      'Garantias contratuais de SLA',
-      'Programa de afiliados: 50% de comissão'
+      'Subdomínios personalizados ilimitados',
+      'Selo Supreme Badge (destaque dourado)',
+      'Posição premium garantida em todas as buscas',
+      'Eventos exclusivos e networking VIP',
+      'Cartões de visita digitais ilimitados',
+      'Relatórios avançados e Business Intelligence',
+      'API completa para integração',
+      'Gerente de conta dedicado',
+      'Programa de afiliados: 60% de comissão',
+      'Suporte prioritário 24/7 com SLA'
     ],
     is_active: true,
-    commission_rate: 0.50
+    commission_rate: 0.60
   }
 ];
 
@@ -373,12 +375,12 @@ const Pricing: React.FC = () => {
                         <div className="flex items-baseline gap-2 mb-2">
                           {isElite && (
                             <span className="text-2xl font-bold text-gray-400 line-through">
-                              R$ 500
+                              R$ 149
                             </span>
                           )}
-                          {isSupreme || (typeof plan.price_brl === 'number' && plan.price_brl === 0) || (typeof plan.price_brl === 'string' && parseFloat(plan.price_brl) === 0) ? (
+                          {(typeof plan.price_brl === 'number' && plan.price_brl === 0) || (typeof plan.price_brl === 'string' && parseFloat(plan.price_brl) === 0) ? (
                             <span className="text-4xl font-bold text-black">
-                              By Request
+                              Gratuito
                             </span>
                           ) : (
                             <>
@@ -399,7 +401,7 @@ const Pricing: React.FC = () => {
                         )}
                         {isElite && (
                           <p className="text-sm text-teal-700 font-semibold mt-1">
-                            Promoção até 31/12/2024. Depois R$ 500/mês
+                            Promoção até 31/12/2024. Depois R$ 149/mês
                           </p>
                         )}
                       </div>
@@ -417,26 +419,18 @@ const Pricing: React.FC = () => {
                         </>
                       )}
 
-                      {isSupreme ? (
-                        <Link
-                          to="/contact"
-                          className="block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 text-center mb-8 bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-white shadow-md"
-                        >
-                          Solicitar Licença
-                        </Link>
-                      ) : (
-                        <Link
-                          to={`/register?plan=${plan.plan_type}`}
-                          className={`block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 text-center mb-8 ${
-                            isElite
-                              ? 'bg-gradient-to-r from-slate-500 to-teal-600 hover:from-slate-600 hover:to-teal-700 text-white shadow-md'
-                              : 'bg-gradient-to-r from-slate-400 to-slate-900 hover:from-slate-500 hover:to-slate-600 text-white shadow-md'
-                          }`}
-                          
-                        >
-                          Começar
-                        </Link>
-                      )}
+                      <Link
+                        to={`/register?plan=${plan.plan_type}`}
+                        className={`block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 text-center mb-8 ${
+                          isSupreme
+                            ? 'bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-white shadow-md'
+                            : isElite
+                            ? 'bg-gradient-to-r from-slate-500 to-teal-600 hover:from-slate-600 hover:to-teal-700 text-white shadow-md'
+                            : 'bg-gradient-to-r from-slate-400 to-slate-900 hover:from-slate-500 hover:to-slate-600 text-white shadow-md'
+                        }`}
+                      >
+                        Começar
+                      </Link>
 
                       <div className="space-y-4">
                         <p className="font-semibold text-black mb-3">
@@ -453,7 +447,7 @@ const Pricing: React.FC = () => {
                       </div>
 
                       {/* Affiliate CTA */}
-                      {(isElite || isPrime) && plan.commission_rate && plan.commission_rate > 0 && (
+                      {(isSupreme || isElite || isPrime) && plan.commission_rate && plan.commission_rate > 0 && (
                         <div className="mt-6 pt-6 border-t border-gray-200">
                           <div className="bg-slate-50 rounded-lg border border-slate-200 p-5">
                             <div className="flex items-center gap-2 mb-3">
@@ -466,32 +460,60 @@ const Pricing: React.FC = () => {
                             {isPrime ? (
                               <div className="space-y-3">
                                 <p className="text-sm text-slate-900 leading-relaxed">
-                                  Ao se tornar Membro Prime, você recebe 25% de comissão em todas as vendas realizadas pelos seus convidados, tanto no plano Prime quanto no Elite.
+                                  Ao se tornar Membro Prime, você recebe 25% de comissão em todas as vendas realizadas pelos seus convidados.
                                 </p>
                                 <div className="space-y-2">
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 62,50 por venda do Plano Prime
+                                    R$ 17,50 por venda do Plano Prime
                                   </p>
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 87,50 por venda do Plano Elite
+                                    R$ 24,75 por venda do Plano Elite
+                                  </p>
+                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
+                                    <TrendingUp className="w-4 h-4 text-green-600" />
+                                    R$ 49,75 por venda do Plano Supreme
+                                  </p>
+                                </div>
+                              </div>
+                            ) : isElite ? (
+                              <div className="space-y-3">
+                                <p className="text-sm text-slate-900 leading-relaxed">
+                                  Ao se tornar Membro Elite, você recebe 50% de comissão em todas as vendas realizadas pelos seus convidados.
+                                </p>
+                                <div className="space-y-2">
+                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
+                                    <TrendingUp className="w-4 h-4 text-green-600" />
+                                    R$ 35 por venda do Plano Prime
+                                  </p>
+                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
+                                    <TrendingUp className="w-4 h-4 text-green-600" />
+                                    R$ 49,50 por venda do Plano Elite
+                                  </p>
+                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
+                                    <TrendingUp className="w-4 h-4 text-green-600" />
+                                    R$ 99,50 por venda do Plano Supreme
                                   </p>
                                 </div>
                               </div>
                             ) : (
                               <div className="space-y-3">
                                 <p className="text-sm text-slate-900 leading-relaxed">
-                                  Ao se tornar Membro Elite, você recebe 50% de comissão em todas as vendas realizadas pelos seus convidados, tanto no plano Prime quanto no Elite.
+                                  Ao se tornar Membro Supreme, você recebe 60% de comissão em todas as vendas realizadas pelos seus convidados.
                                 </p>
                                 <div className="space-y-2">
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 125 por venda do Plano Prime
+                                    R$ 42 por venda do Plano Prime
                                   </p>
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    R$ 175 por venda do Plano Elite
+                                    R$ 59,40 por venda do Plano Elite
+                                  </p>
+                                  <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
+                                    <TrendingUp className="w-4 h-4 text-green-600" />
+                                    R$ 119,40 por venda do Plano Supreme
                                   </p>
                                 </div>
                               </div>
