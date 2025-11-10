@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import { supabase } from '../lib/supabase';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -12,8 +14,10 @@ interface TestResult {
 }
 
 const DiagnosticTest: React.FC = () => {
+  const { user, loading } = useAuth();
   const [results, setResults] = useState<TestResult[]>([]);
   const [testing, setTesting] = useState(false);
+  const [userInfo, setUserInfo] = useState<any>(null);
 
   const testDomain = async (domain: string) => {
     const timestamp = new Date().toISOString();
@@ -75,6 +79,59 @@ const DiagnosticTest: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    const loadUserInfo = async () => {
+      if (!user) return;
+
+      try {
+        const { data, error } = await supabase
+          .from('customers')
+          .select('*')
+          .eq('user_id', user.id)
+          .maybeSingle();
+
+        if (error) {
+          console.error('Error loading customer:', error);
+          setUserInfo({ error: error.message });
+        } else {
+          setUserInfo(data);
+        }
+      } catch (err) {
+        console.error('Exception:', err);
+        setUserInfo({ error: String(err) });
+      }
+    };
+
+    loadUserInfo();
+  }, [user]);
+
+  const forceAdminRole = async () => {
+    if (!user) return;
+
+    try {
+      const { error } = await supabase
+        .from('customers')
+        .upsert({
+          user_id: user.id,
+          email: user.email,
+          role: 'admin',
+          has_active_subscription: true,
+          subscription_plan: 'supreme'
+        }, {
+          onConflict: 'user_id'
+        });
+
+      if (error) {
+        alert('Erro: ' + error.message);
+      } else {
+        alert('✅ Role atualizada para admin! Recarregue a página.');
+        window.location.reload();
+      }
+    } catch (err) {
+      alert('Erro: ' + err);
+    }
+  };
+
   const testAllScenarios = async () => {
     const domains = ['cidades.email', 'melissa.email', 'api.email'];
     for (const domain of domains) {
@@ -83,10 +140,50 @@ const DiagnosticTest: React.FC = () => {
     }
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-xl">Carregando...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">🔍 Diagnostic Test - Domain Pricing</h1>
+        <h1 className="text-3xl font-bold mb-8">🔍 Diagnostic Test - User Info</h1>
+
+        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h2 className="text-xl font-semibold mb-4">Current User (AuthContext)</h2>
+          <pre className="bg-gray-100 p-4 rounded text-xs overflow-auto">
+            {JSON.stringify(user, null, 2)}
+          </pre>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h2 className="text-xl font-semibold mb-4">Customer Data (Database)</h2>
+          <pre className="bg-gray-100 p-4 rounded text-xs overflow-auto">
+            {JSON.stringify(userInfo, null, 2)}
+          </pre>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h2 className="text-xl font-semibold mb-4">Access Check</h2>
+          <div className="space-y-2 text-sm mb-4">
+            <div><strong>Is Admin:</strong> {user?.role === 'admin' ? '✅ YES' : '❌ NO'}</div>
+            <div><strong>Has Active Subscription:</strong> {user?.hasActiveSubscription ? '✅ YES' : '❌ NO'}</div>
+            <div><strong>Subscription Plan:</strong> {user?.subscriptionPlan || 'none'}</div>
+            <div><strong>Can Access Dashboard:</strong> {(user?.role === 'admin' || user?.hasActiveSubscription) ? '✅ YES' : '❌ NO - Will redirect to /valores'}</div>
+          </div>
+          {user?.role !== 'admin' && (
+            <button
+              onClick={forceAdminRole}
+              className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+            >
+              🔧 Force Admin Role (DEBUG)
+            </button>
+          )}
+        </div>
 
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
           <h2 className="text-xl font-semibold mb-4">Environment</h2>
