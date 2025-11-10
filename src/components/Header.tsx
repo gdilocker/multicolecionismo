@@ -11,6 +11,7 @@ export default function Header() {
   const [isProgramsMenuOpen, setIsProgramsMenuOpen] = useState(false);
   const [isPoliciesMenuOpen, setIsPoliciesMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [userType, setUserType] = useState<'social' | 'member' | null>(null);
   const { user, logout, loading } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
@@ -30,6 +31,31 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const fetchUserType = async () => {
+      if (!user?.id) {
+        setUserType(null);
+        return;
+      }
+
+      try {
+        const { data } = await import('../lib/supabase').then(m => m.supabase
+          .from('customers')
+          .select('user_type')
+          .eq('user_id', user.id)
+          .maybeSingle()
+        );
+
+        setUserType(data?.user_type || 'member');
+      } catch (error) {
+        console.error('Error fetching user type:', error);
+        setUserType('member');
+      }
+    };
+
+    fetchUserType();
+  }, [user]);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -149,17 +175,29 @@ export default function Header() {
                   Inicial
                 </Link>
                 <Link
-                  to="/panel/dashboard"
+                  to="/social"
                   className={`px-3 py-2 font-medium transition-colors ${
-                    location.pathname === '/dashboard' ||
-                    location.pathname === '/panel/dashboard' ||
-                    location.pathname === '/app/dashboard'
+                    location.pathname === '/social'
                       ? 'text-white'
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  Dashboard
+                  Rede Social
                 </Link>
+                {userType === 'member' && (
+                  <Link
+                    to="/panel/dashboard"
+                    className={`px-3 py-2 font-medium transition-colors ${
+                      location.pathname === '/dashboard' ||
+                      location.pathname === '/panel/dashboard' ||
+                      location.pathname === '/app/dashboard'
+                        ? 'text-white'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Dashboard
+                  </Link>
+                )}
                 <div className="relative">
                   <button
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
@@ -233,13 +271,25 @@ export default function Header() {
                       <button
                         onClick={() => {
                           setIsMenuOpen(false);
-                          navigate('/panel/dashboard');
+                          navigate('/social');
                         }}
                         className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                       >
-                        <UserCircle className="w-5 h-5" />
-                        <span className="text-sm font-medium">Dashboard</span>
+                        <Radio className="w-5 h-5" />
+                        <span className="text-sm font-medium">Rede Social</span>
                       </button>
+                      {userType === 'member' && (
+                        <button
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            navigate('/panel/dashboard');
+                          }}
+                          className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                        >
+                          <UserCircle className="w-5 h-5" />
+                          <span className="text-sm font-medium">Dashboard</span>
+                        </button>
+                      )}
                       <button
                         onClick={async () => {
                           setIsMenuOpen(false);

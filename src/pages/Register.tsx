@@ -325,11 +325,15 @@ const Register: React.FC = () => {
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Users className="w-5 h-5 text-blue-600" />
-                        <span className="font-bold text-sm">Social</span>
+                        <span className="font-bold text-sm">Usuário Social</span>
                       </div>
                       <p className="text-xs text-gray-600">
-                        Curtir, comentar e compartilhar
+                        Quero apenas participar da rede social
                       </p>
+                      <div className="mt-2 flex items-center gap-1 text-xs text-green-600">
+                        <CheckCircle className="w-3 h-3" />
+                        <span>Acesso gratuito e ilimitado</span>
+                      </div>
                     </motion.button>
 
                     {/* Member Option */}
@@ -346,11 +350,15 @@ const Register: React.FC = () => {
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Store className="w-5 h-5 text-purple-600" />
-                        <span className="font-bold text-sm">Premium</span>
+                        <span className="font-bold text-sm">Membro Premium</span>
                       </div>
                       <p className="text-xs text-gray-600">
-                        Domínio e loja
+                        Quero criar meu domínio e loja profissional
                       </p>
+                      <div className="mt-2 flex items-center gap-1 text-xs text-purple-600">
+                        <CheckCircle className="w-3 h-3" />
+                        <span>14 dias de teste grátis</span>
+                      </div>
                     </motion.button>
                   </div>
 
