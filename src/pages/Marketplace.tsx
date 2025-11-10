@@ -396,11 +396,15 @@ export default function Marketplace() {
     <PageLayout>
       {/* Background Layer with Hero Image */}
       <div className="fixed inset-0 top-16 -z-10">
+        {/* Base gradient fallback */}
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-100"></div>
+        {/* Hero image overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
           style={{ backgroundImage: `url(${marketplaceHeroBackground})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/90 via-white/95 to-yellow-50/90 backdrop-blur-sm" />
+        {/* Premium overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/80 via-white/90 to-yellow-50/80" />
       </div>
 
       {/* Content */}
