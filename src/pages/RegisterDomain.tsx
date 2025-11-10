@@ -245,7 +245,23 @@ const Home = () => {
         console.log('👑 ADMIN: Registrando domínio gratuitamente...');
         setProvisioning(true);
 
-        // 1. Ensure customer exists
+        // 1. Check if domain already exists
+        const { data: existingDomain } = await supabase
+          .from('domains')
+          .select('id, customer_id, fqdn')
+          .eq('fqdn', domainToRegister)
+          .maybeSingle();
+
+        if (existingDomain) {
+          console.log('✅ Domínio já registrado:', existingDomain);
+          setRegisteredDomain(domainToRegister);
+          setSuccessMessage('Licença vitalícia ativada');
+          setShowSuccessModal(true);
+          setProvisioning(false);
+          return;
+        }
+
+        // 2. Ensure customer exists
         let customerId: string;
         const { data: existingCustomer } = await supabase
           .from('customers')
@@ -269,7 +285,7 @@ const Home = () => {
           customerId = newCustomer.id;
         }
 
-        // 2. Create order
+        // 3. Create order
         const { data: order, error: orderError } = await supabase
           .from('orders')
           .insert({
@@ -285,7 +301,7 @@ const Home = () => {
 
         if (orderError) throw orderError;
 
-        // 3. Create domain
+        // 4. Create domain
         const domainPayload = {
           customer_id: customerId,
           fqdn: domainToRegister,
@@ -310,7 +326,7 @@ const Home = () => {
 
         console.log('✅ Domínio criado:', domainData);
 
-        // 4. Create pending_order for tracking
+        // 5. Create pending_order for tracking
         await supabase
           .from('pending_orders')
           .insert({
