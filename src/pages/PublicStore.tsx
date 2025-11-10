@@ -776,7 +776,7 @@ export default function PublicStore() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Logo size={32} />
-            <span className="text-yellow-600 font-bold">com.rich</span>
+            <span className="text-yellow-600 font-bold">Multicolecionismo.Social</span>
           </div>
           <p className="text-gray-600 text-sm">
             Crie sua identidade digital profissional com loja integrada

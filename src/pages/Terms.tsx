@@ -63,7 +63,7 @@ const Terms: React.FC = () => {
                       Bem-vindo ao <strong className="text-black">.multicolecionismo.social</strong>, um serviço operado pela <strong className="text-black">Global Digital Identity LTD</strong>, empresa registrada na Inglaterra e País de Gales sob o número <strong className="text-black">Company No. 16339013</strong>, com sede em <strong className="text-black">71–75 Shelton Street, Covent Garden, Londres, WC2H 9JQ, Reino Unido</strong> (".multicolecionismo.social", "Plataforma", "Serviço", "nós", "nosso").
                     </p>
                     <p>
-                      <strong className="text-black">Contato oficial:</strong> <a href="mailto:support@com.rich" className="text-[#3B82F6] hover:text-[#6B7280]">support@com.rich</a>
+                      <strong className="text-black">Contato oficial:</strong> <a href="mailto:support@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280]">support@multicolecionismo.social</a>
                     </p>
                     <p>
                       Ao acessar, criar uma conta ou utilizar qualquer serviço do .multicolecionismo.social, você ("Usuário", "Cliente") declara ter lido, compreendido e aceitado integralmente estes <strong className="text-black">Termos de Uso</strong> e a <strong className="text-black">Política de Privacidade</strong> correspondente.
@@ -374,7 +374,7 @@ const Terms: React.FC = () => {
                       <li>revogação de consentimento a qualquer momento.</li>
                     </ul>
                     <p>
-                      Solicitações devem ser enviadas a <a href="mailto:support@com.rich" className="text-[#3B82F6] hover:text-[#6B7280]">support@com.rich</a>.
+                      Solicitações devem ser enviadas a <a href="mailto:support@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280]">support@multicolecionismo.social</a>.
                     </p>
                     <p>
                       Os dados podem ser armazenados em servidores localizados dentro ou fora do Reino Unido, mantendo-se sempre <strong className="text-black">níveis adequados de proteção e criptografia</strong>.
@@ -424,8 +424,8 @@ const Terms: React.FC = () => {
                   <div className="text-[#6B7280]/80 space-y-4">
                     <p>O suporte é realizado <strong className="text-black">exclusivamente por e-mail</strong> ou pelo formulário de contato no site.</p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
-                      <li><strong className="text-black">E-mail:</strong> <a href="mailto:support@com.rich" className="text-[#3B82F6] hover:text-[#6B7280]">support@com.rich</a></li>
-                      <li><strong className="text-black">Formulário:</strong> disponível em com.rich/contato</li>
+                      <li><strong className="text-black">E-mail:</strong> <a href="mailto:support@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280]">support@multicolecionismo.social</a></li>
+                      <li><strong className="text-black">Formulário:</strong> disponível em multicolecionismo.social/contato</li>
                     </ul>
                     <p>O suporte cobre questões relacionadas a:</p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
@@ -490,7 +490,7 @@ const Terms: React.FC = () => {
                     <p>Londres, WC2H 9JQ — Reino Unido</p>
                     <p>Company No. 16339013</p>
                     <p>
-                      E-mail: <a href="mailto:support@com.rich" className="text-[#3B82F6] hover:text-[#6B7280]">support@com.rich</a>
+                      E-mail: <a href="mailto:support@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280]">support@multicolecionismo.social</a>
                     </p>
                   </div>
                 )

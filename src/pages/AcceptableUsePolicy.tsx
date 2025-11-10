@@ -113,7 +113,7 @@ const AcceptableUsePolicy: React.FC = () => {
         <div className="text-[#6B7280]/80 space-y-4">
           <p>
             Para denunciar violações desta política:<br />
-            Email: contact@com.rich<br />
+            Email: contact@multicolecionismo.social<br />
             Todas as denúncias serão investigadas confidencialmente.
           </p>
         </div>

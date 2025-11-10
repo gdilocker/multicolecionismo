@@ -68,7 +68,7 @@ const SecurityPolicy: React.FC = () => {
         <div className="text-[#6B7280]/80 space-y-4">
           <p>Se você descobrir uma vulnerabilidade de segurança:</p>
           <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
-            <li>Reporte imediatamente para <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:text-[#6B7280]">contact@com.rich</a></li>
+            <li>Reporte imediatamente para <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280]">contact@multicolecionismo.social</a></li>
             <li><strong className="text-black">Não explore</strong> a vulnerabilidade</li>
             <li>Não divulgue publicamente até que seja corrigida</li>
             <li>Forneça detalhes técnicos suficientes para reprodução</li>
@@ -117,7 +117,7 @@ const SecurityPolicy: React.FC = () => {
           <p>Londres, WC2H 9JQ — Reino Unido</p>
           <p>Company No. 16339013</p>
           <p>
-            E-mail de segurança: <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:text-[#6B7280]">contact@com.rich</a>
+            E-mail de segurança: <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280]">contact@multicolecionismo.social</a>
           </p>
           <p className="text-sm">Resposta prioritária para vulnerabilidades críticas</p>
         </div>

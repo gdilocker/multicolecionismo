@@ -74,11 +74,11 @@ const SupportNew: React.FC = () => {
             </p>
 
             <a
-              href="mailto:support@com.rich"
+              href="mailto:support@multicolecionismo.social"
               className="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 py-3 px-6 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 border-2 border-slate-200"
             >
               <Mail className="w-5 h-5" />
-              support@com.rich
+              support@multicolecionismo.social
             </a>
           </motion.div>
         </div>

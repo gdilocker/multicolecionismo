@@ -322,10 +322,10 @@ const Cookies: React.FC = () => {
                     <p>Londres, WC2H 9JQ — Reino Unido</p>
                     <p>Company No. <strong>16339013</strong></p>
                     <p className="mt-3">
-                      E-mail: <a href="mailto:privacy@com.rich" className="text-[#3B82F6] hover:text-[#6B7280] font-semibold">privacy@com.rich</a>
+                      E-mail: <a href="mailto:privacy@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280] font-semibold">privacy@multicolecionismo.social</a>
                     </p>
                     <p>
-                      Suporte: <a href="mailto:support@com.rich" className="text-[#3B82F6] hover:text-[#6B7280] font-semibold">support@com.rich</a>
+                      Suporte: <a href="mailto:support@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280] font-semibold">support@multicolecionismo.social</a>
                     </p>
                     <p className="mt-3 text-[#6B7280]/70">
                       <strong className="text-black">Centro de Preferências de Cookies:</strong> disponível no rodapé do site.

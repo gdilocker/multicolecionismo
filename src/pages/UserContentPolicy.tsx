@@ -97,7 +97,7 @@ const UserContentPolicy: React.FC = () => {
         <div className="text-[#6B7280]/80 space-y-4">
           <p>Para denunciar conteúdo inadequado:</p>
           <ol className="space-y-2 text-[#6B7280]/70 list-decimal list-inside">
-            <li>Envie email para contact@com.rich</li>
+            <li>Envie email para contact@multicolecionismo.social</li>
             <li>Descreva o conteúdo e localização</li>
             <li>Explique por que viola políticas</li>
             <li>Forneça evidências se disponível</li>

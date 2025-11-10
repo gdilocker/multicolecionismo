@@ -1018,7 +1018,7 @@ export default function ProfileManager() {
                   Username
                 </label>
                 <div className="flex items-center gap-2 px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg overflow-x-auto">
-                  <span className="text-slate-500 text-sm whitespace-nowrap">com.rich/</span>
+                  <span className="text-slate-500 text-sm whitespace-nowrap">multicolecionismo.social/</span>
                   <span className="text-slate-800 font-medium text-sm break-all">{profile.subdomain}</span>
                 </div>
                 <p className="text-xs text-slate-500 mt-1">O username não pode ser alterado</p>

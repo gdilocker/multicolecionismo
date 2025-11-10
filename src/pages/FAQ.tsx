@@ -83,7 +83,7 @@ const FAQ: React.FC = () => {
         },
         {
           question: 'Posso transferir minha licença para outra pessoa?',
-          answer: 'Sim, transferências de licença são permitidas mediante aprovação. Entre em contato com support@com.rich para iniciar o processo.'
+          answer: 'Sim, transferências de licença são permitidas mediante aprovação. Entre em contato com support@multicolecionismo.social para iniciar o processo.'
         },
         {
           question: 'O que acontece se eu cancelar minha assinatura?',
@@ -577,12 +577,12 @@ const FAQ: React.FC = () => {
           )
         },
         {
-          question: 'O com.rich utiliza cookies?',
+          question: 'O Multicolecionismo.Social utiliza cookies?',
           answer: 'Sim, apenas cookies técnicos essenciais para autenticação, idioma e manutenção de sessão. Não utilizamos cookies de rastreamento publicitário de terceiros.'
         },
         {
           question: 'O que devo fazer em caso de suspeita de fraude?',
-          answer: 'Entre em contato imediatamente pelo e-mail contact@com.rich. Casos comprovados de uso fraudulento resultam em suspensão imediata da conta e notificação às autoridades competentes.'
+          answer: 'Entre em contato imediatamente pelo e-mail contact@multicolecionismo.social. Casos comprovados de uso fraudulento resultam em suspensão imediata da conta e notificação às autoridades competentes.'
         }
       ]
     },
@@ -722,7 +722,7 @@ const FAQ: React.FC = () => {
           )
         },
         {
-          question: 'O com.rich é responsável pelo conteúdo publicado pelos usuários?',
+          question: 'O Multicolecionismo.Social é responsável pelo conteúdo publicado pelos usuários?',
           answer: 'Não. Todo o conteúdo publicado nos perfis públicos ou hospedado através dos domínios é de responsabilidade exclusiva do titular da conta. A Global Digital Identity LTD atua apenas como intermediária técnica e administrativa.'
         },
         {
@@ -741,7 +741,7 @@ const FAQ: React.FC = () => {
           )
         },
         {
-          question: 'Qual é a jurisdição legal do com.rich?',
+          question: 'Qual é a jurisdição legal do Multicolecionismo.Social?',
           answer: 'Todas as relações contratuais são regidas pelas leis da Inglaterra e País de Gales (England and Wales). Qualquer disputa será resolvida nos tribunais de Londres, Reino Unido.'
         },
         {
@@ -761,7 +761,7 @@ const FAQ: React.FC = () => {
             <div className="space-y-2">
               <p>O atendimento é realizado <strong>exclusivamente por e-mail</strong> ou pelo <strong>formulário de contato disponível no site</strong>.</p>
               <ul className="list-disc list-inside space-y-1 ml-2">
-                <li><strong>E-mail:</strong> contact@com.rich</li>
+                <li><strong>E-mail:</strong> contact@multicolecionismo.social</li>
                 <li><strong>Formulário:</strong> disponível na página "Contato"</li>
               </ul>
               <p>Não há atendimento telefônico, WhatsApp ou redes sociais, para garantir segurança, privacidade e registro formal de todas as comunicações.</p>
@@ -773,19 +773,19 @@ const FAQ: React.FC = () => {
           answer: 'Respondemos em até 24 horas. Dependendo da complexidade, a resolução pode levar de 3 a 5 dias úteis. Casos urgentes (como problemas críticos de domínio ou falhas técnicas) recebem prioridade imediata.'
         },
         {
-          question: 'O com.rich oferece suporte em outros idiomas?',
+          question: 'O Multicolecionismo.Social oferece suporte em outros idiomas?',
           answer: 'Sim. Oferecemos atendimento em português, espanhol e inglês, conforme a origem do cliente. Contudo, em caso de conflito de interpretação, prevalece sempre o idioma inglês.'
         },
         {
           question: 'Como posso reportar abuso ou uso indevido?',
-          answer: 'Envie um e-mail para abuse@com.rich com o máximo de informações possíveis (capturas de tela, URLs, data, domínio envolvido). As denúncias são analisadas pela equipe de conformidade dentro de 48h.'
+          answer: 'Envie um e-mail para abuse@multicolecionismo.social com o máximo de informações possíveis (capturas de tela, URLs, data, domínio envolvido). As denúncias são analisadas pela equipe de conformidade dentro de 48h.'
         },
         {
-          question: 'Posso usar o com.rich em qualquer país?',
+          question: 'Posso usar o Multicolecionismo.Social em qualquer país?',
           answer: 'Sim. O sistema é global, acessível de qualquer lugar do mundo. Alguns países podem ter restrições legais específicas para registro de domínios, que serão informadas caso se apliquem.'
         },
         {
-          question: 'O que diferencia o com.rich de outros serviços?',
+          question: 'O que diferencia o Multicolecionismo.Social de outros serviços?',
           answer: (
             <ul className="list-disc list-inside space-y-1">
               <li>Extensão de domínio exclusiva e premium (.multicolecionismo.social).</li>

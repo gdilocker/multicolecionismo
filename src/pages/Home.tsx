@@ -1163,7 +1163,7 @@ const Home = () => {
                     Sua licença exclusiva protegida:
                   </p>
                   <p className="text-sm sm:text-base md:text-lg text-amber-400/90 mb-4 sm:mb-6 max-w-2xl mx-auto font-medium px-4 break-all">
-                    https://seunome.multicolecionismo.social / https://com.rich/seunome
+                    https://seunome.multicolecionismo.social / https://multicolecionismo.social/seunome
                   </p>
                   <button
                     onClick={() => navigate('/register')}

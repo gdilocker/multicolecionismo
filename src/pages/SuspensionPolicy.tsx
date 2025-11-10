@@ -234,7 +234,7 @@ const SuspensionPolicy: React.FC = () => {
                       Para transferir domínios após suspensão ou encerramento:
                     </p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
-                      <li>Entre em contato com o suporte em <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:underline">contact@com.rich</a></li>
+                      <li>Entre em contato com o suporte em <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:underline">contact@multicolecionismo.social</a></li>
                       <li>Forneça documentação de identidade e comprovação de titularidade</li>
                       <li>Quite eventuais débitos pendentes</li>
                       <li>Solicite o código de autorização (EPP code) para transferência</li>
@@ -248,7 +248,7 @@ const SuspensionPolicy: React.FC = () => {
                   <div className="text-[#6B7280]/80 space-y-4">
                     <h3 className="text-lg font-semibold text-black">7.1 Como Contestar</h3>
                     <p>
-                      Você tem o direito de contestar qualquer suspensão ou encerramento através do email <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:underline">contact@com.rich</a>, fornecendo:
+                      Você tem o direito de contestar qualquer suspensão ou encerramento através do email <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:underline">contact@multicolecionismo.social</a>, fornecendo:
                     </p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
                       <li><strong className="text-black">Número da conta</strong> ou domínio afetado</li>
@@ -343,7 +343,7 @@ const SuspensionPolicy: React.FC = () => {
                               Para questões sobre suspensões, encerramentos ou contestações:
                             </p>
                             <p className="text-[#6B7280]/80 mb-2">
-                              <strong className="text-black">Email:</strong> <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:underline">contact@com.rich</a>
+                              <strong className="text-black">Email:</strong> <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:underline">contact@multicolecionismo.social</a>
                             </p>
                             <p className="text-[#6B7280]/80 mb-2">
                               <strong className="text-black">Suporte:</strong> Disponível 24/7

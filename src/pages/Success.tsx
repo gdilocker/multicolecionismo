@@ -65,8 +65,8 @@ export default function Success() {
           <div className="mt-8 pt-6 border-t border-gray-200">
             <p className="text-sm text-gray-500">
               Dúvidas? Entre em contato conosco em{' '}
-              <a href="mailto:support@com.rich" className="text-slate-900 hover:underline">
-                support@com.rich
+              <a href="mailto:support@multicolecionismo.social" className="text-slate-900 hover:underline">
+                support@multicolecionismo.social
               </a>
             </p>
           </div>

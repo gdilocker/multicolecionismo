@@ -284,7 +284,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete, 
                     Escolha sua identidade exclusiva
                   </h3>
                   <p className="text-gray-600">
-                    Seu nome único no ecossistema com.rich
+                    Seu nome único no ecossistema Multicolecionismo.Social
                   </p>
                 </div>
 
@@ -329,7 +329,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete, 
                       className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl"
                     >
                       <p className="text-sm text-blue-800">
-                        <strong>{domainName}.multicolecionismo.social</strong> será sua licença exclusiva de uso dentro do ecossistema com.rich
+                        <strong>{domainName}.multicolecionismo.social</strong> será sua licença exclusiva de uso dentro do ecossistema Multicolecionismo.Social
                       </p>
                     </motion.div>
                   )}
@@ -621,7 +621,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete, 
                     💼 Programa de Afiliados
                   </h4>
                   <p className="text-sm text-amber-800 mb-3">
-                    Promova com.rich e receba 25-50% de comissão recorrente em vendas confirmadas
+                    Promova o Multicolecionismo.Social e receba 25-50% de comissão recorrente em vendas confirmadas
                   </p>
                   <button
                     onClick={() => navigate('/affiliate-dashboard')}

@@ -287,8 +287,8 @@ const DomainTransferPolicy: React.FC = () => {
                   Para questões relacionadas a domínios, prazos ou recuperação, entre em contato:
                 </p>
                 <div className="space-y-2 text-sm">
-                  <p><strong>Suporte Geral:</strong> support@com.rich</p>
-                  <p><strong>Questões Jurídicas:</strong> legal@com.rich</p>
+                  <p><strong>Suporte Geral:</strong> support@multicolecionismo.social</p>
+                  <p><strong>Questões Jurídicas:</strong> legal@multicolecionismo.social</p>
                 </div>
               </div>
             </motion.div>

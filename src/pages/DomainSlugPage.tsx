@@ -266,7 +266,7 @@ const DomainSlugPage: React.FC = () => {
           // Canonical URL
           const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
           if (canonical) {
-            canonical.href = `https://com.rich/${normalizedSlug}`;
+            canonical.href = `https://multicolecionismo.social/${normalizedSlug}`;
           }
         } catch (apiError) {
           console.error('[DomainSlugPage] API Error:', apiError);

@@ -239,8 +239,8 @@ const AccessibilityPolicy: React.FC = () => {
                           <div>
                             <h3 className="text-lg font-semibold text-black mb-2">Contato para Acessibilidade</h3>
                             <ul className="space-y-2 text-[#6B7280]/80">
-                              <li><strong className="text-black">Email:</strong> <a href="mailto:accessibility@com.rich" className="text-[#3B82F6] hover:underline">accessibility@com.rich</a></li>
-                              <li><strong className="text-black">Email geral:</strong> <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:underline">contact@com.rich</a></li>
+                              <li><strong className="text-black">Email:</strong> <a href="mailto:accessibility@multicolecionismo.social" className="text-[#3B82F6] hover:underline">accessibility@multicolecionismo.social</a></li>
+                              <li><strong className="text-black">Email geral:</strong> <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:underline">contact@multicolecionismo.social</a></li>
                               <li><strong className="text-black">Prazo de resposta:</strong> Até 5 dias úteis</li>
                             </ul>
                             <p className="text-[#6B7280]/70 mt-4 text-sm">

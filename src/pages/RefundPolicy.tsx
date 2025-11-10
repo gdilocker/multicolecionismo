@@ -59,7 +59,7 @@ const RefundPolicy: React.FC = () => {
         <div className="text-[#6B7280]/80 space-y-4">
           <p>Para solicitar um reembolso elegível:</p>
           <ol className="space-y-2 text-[#6B7280]/70 list-decimal list-inside">
-            <li>Entre em contato através do email <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:text-[#6B7280]">contact@com.rich</a></li>
+            <li>Entre em contato através do email <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280]">contact@multicolecionismo.social</a></li>
             <li>Forneça o número do pedido e detalhes da transação</li>
             <li>Explique o motivo da solicitação</li>
             <li>Aguarde análise em até <strong className="text-black">5 dias úteis</strong></li>
@@ -89,7 +89,7 @@ const RefundPolicy: React.FC = () => {
           <p>Londres, WC2H 9JQ — Reino Unido</p>
           <p>Company No. 16339013</p>
           <p>
-            E-mail: <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:text-[#6B7280]">contact@com.rich</a>
+            E-mail: <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280]">contact@multicolecionismo.social</a>
           </p>
         </div>
       )

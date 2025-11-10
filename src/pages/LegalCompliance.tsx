@@ -13,7 +13,7 @@ const LegalCompliance: React.FC = () => {
             <strong className="text-black">Número de Registro:</strong> 16339013<br />
             <strong className="text-black">Jurisdição:</strong> England and Wales<br />
             <strong className="text-black">Tipo de Empresa:</strong> Limited Company<br />
-            <strong className="text-black">Email de Contato:</strong> contact@com.rich
+            <strong className="text-black">Email de Contato:</strong> contact@multicolecionismo.social
           </p>
         </div>
       )
@@ -211,12 +211,12 @@ const LegalCompliance: React.FC = () => {
         <div className="text-[#6B7280]/80 space-y-4">
           <p>
             Para questões relacionadas à conformidade legal:<br />
-            <strong className="text-black">Email:</strong> contact@com.rich<br />
+            <strong className="text-black">Email:</strong> contact@multicolecionismo.social<br />
             <strong className="text-black">Assunto:</strong> "Legal Compliance Inquiry"
           </p>
           <p className="mt-4">
             <strong className="text-black">Data Protection Officer:</strong><br />
-            Email: contact@com.rich<br />
+            Email: contact@multicolecionismo.social<br />
             Assunto: "DPO - Data Protection Inquiry"
           </p>
         </div>

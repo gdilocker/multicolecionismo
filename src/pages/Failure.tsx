@@ -211,7 +211,7 @@ const Failure: React.FC = () => {
               <span>Falar com Suporte</span>
             </Link>
             <a
-              href="mailto:contact@com.rich"
+              href="mailto:contact@multicolecionismo.social"
               className="inline-flex items-center px-6 py-2 bg-slate-700 text-white rounded-lg font-medium hover:bg-slate-800 transition-colors space-x-2"
             >
               <Mail className="w-5 h-5" />

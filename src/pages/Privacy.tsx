@@ -52,7 +52,7 @@ const Privacy: React.FC = () => {
                     O <strong>.multicolecionismo.social</strong> atua como <strong>Controlador de Dados</strong> conforme o UK GDPR (Data Protection Act 2018) e o GDPR (UE).
                   </p>
                   <p className="text-[#6B7280]/70 text-sm mt-2">
-                    <strong>Contato oficial de privacidade:</strong> <a href="mailto:support@com.rich" className="text-[#3B82F6] hover:text-[#6B7280]">support@com.rich</a>
+                    <strong>Contato oficial de privacidade:</strong> <a href="mailto:support@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280]">support@multicolecionismo.social</a>
                   </p>
                 </div>
               </div>
@@ -208,7 +208,7 @@ const Privacy: React.FC = () => {
                       <li><strong className="text-black">Retirada de consentimento</strong> (se aplicável).</li>
                     </ul>
                     <p>
-                      Para exercer seus direitos, envie um e-mail para <a href="mailto:support@com.rich" className="text-[#3B82F6] hover:text-[#6B7280] font-semibold">support@com.rich</a> com o assunto <strong className="text-black">"Data Request"</strong>. Podemos solicitar informações adicionais para verificar sua identidade antes de atender ao pedido.
+                      Para exercer seus direitos, envie um e-mail para <a href="mailto:support@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280] font-semibold">support@multicolecionismo.social</a> com o assunto <strong className="text-black">"Data Request"</strong>. Podemos solicitar informações adicionais para verificar sua identidade antes de atender ao pedido.
                     </p>
                   </div>
                 )
@@ -334,7 +334,7 @@ const Privacy: React.FC = () => {
                     <p>Londres, WC2H 9JQ — Reino Unido</p>
                     <p>Company No. <strong>16339013</strong></p>
                     <p>
-                      E-mail: <a href="mailto:support@com.rich" className="text-[#3B82F6] hover:text-[#6B7280] font-semibold">support@com.rich</a>
+                      E-mail: <a href="mailto:support@multicolecionismo.social" className="text-[#3B82F6] hover:text-[#6B7280] font-semibold">support@multicolecionismo.social</a>
                     </p>
                   </div>
                 )

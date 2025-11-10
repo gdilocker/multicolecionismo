@@ -584,7 +584,7 @@ export default function PublicProfile({ subdomain: subdomainProp }: PublicProfil
             <div className="inline-block mb-8 p-4 bg-gradient-to-br from-[#1F1F1F] via-[#252525] to-[#1F1F1F] border-2 border-[#D4AF37] rounded-2xl shadow-2xl shadow-[#D4AF37]/30">
               <img
                 src="/logo.png"
-                alt="com.rich"
+                alt="Multicolecionismo.Social"
                 className="h-24 w-24"
               />
             </div>
@@ -823,7 +823,7 @@ export default function PublicProfile({ subdomain: subdomainProp }: PublicProfil
               <div className="w-32 h-32 rounded-full mx-auto mb-3 sm:mb-4 border-4 border-[#D4AF37] bg-[#1F1F1F] flex items-center justify-center shadow-2xl">
                 <img
                   src="/logo.png"
-                  alt="com.rich"
+                  alt="Multicolecionismo.Social"
                   className="w-20 h-20 object-contain"
                 />
               </div>

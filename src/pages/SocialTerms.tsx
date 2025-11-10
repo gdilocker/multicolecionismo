@@ -40,7 +40,7 @@ const SocialTerms: React.FC = () => {
       content: (
         <div className="text-[#6B7280]/80 space-y-4">
           <p>
-            Você mantém direitos sobre seu conteúdo, mas concede à com.rich uma licença
+            Você mantém direitos sobre seu conteúdo, mas concede ao Multicolecionismo.Social uma licença
             <strong className="text-black"> mundial, não exclusiva e gratuita</strong> para usar,
             copiar, exibir e distribuir seu conteúdo na plataforma.
           </p>
@@ -138,7 +138,7 @@ const SocialTerms: React.FC = () => {
           <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
             <li>Botão "Denunciar" em cada post</li>
             <li>Formulário em <a href="/support" className="text-[#3B82F6] hover:text-[#6B7280]">/support</a></li>
-            <li>E-mail: abuse@com.rich</li>
+            <li>E-mail: abuse@multicolecionismo.social</li>
           </ul>
           <p className="mt-4">
             Para violações de propriedade intelectual, utilize nosso processo DMCA conforme
@@ -179,7 +179,7 @@ const SocialTerms: React.FC = () => {
       title: '10. Limitação de Responsabilidade',
       content: (
         <div className="text-[#6B7280]/80 space-y-4">
-          <p>A com.rich <strong className="text-black">não endossa ou assume responsabilidade</strong> por:</p>
+          <p>O Multicolecionismo.Social <strong className="text-black">não endossa ou assume responsabilidade</strong> por:</p>
           <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
             <li>Conteúdo publicado por usuários</li>
             <li>Conflitos entre usuários</li>
@@ -214,10 +214,10 @@ const SocialTerms: React.FC = () => {
         <div className="text-[#6B7280]/80 space-y-4">
           <p>Para questões sobre estes Termos da Rede Social:</p>
           <ul className="space-y-1 text-[#6B7280]/70">
-            <li><strong>Denúncias:</strong> abuse@com.rich</li>
-            <li><strong>Legal:</strong> legal@com.rich</li>
-            <li><strong>Suporte:</strong> <a href="/support" className="text-[#3B82F6] hover:text-[#6B7280]">com.rich/support</a></li>
-            <li><strong>Direitos autorais:</strong> copyright@com.rich</li>
+            <li><strong>Denúncias:</strong> abuse@multicolecionismo.social</li>
+            <li><strong>Legal:</strong> legal@multicolecionismo.social</li>
+            <li><strong>Suporte:</strong> <a href="/support" className="text-[#3B82F6] hover:text-[#6B7280]">multicolecionismo.social/support</a></li>
+            <li><strong>Direitos autorais:</strong> copyright@multicolecionismo.social</li>
           </ul>
         </div>
       )
@@ -321,7 +321,7 @@ const SocialTerms: React.FC = () => {
               <div className="text-[#6B7280]/80 space-y-4">
                 <p>
                   Pais e responsáveis devem monitorar o uso por menores. Se você acredita que um menor está
-                  sendo explorado ou em perigo, reporte para abuse@com.rich e contate autoridades locais.
+                  sendo explorado ou em perigo, reporte para abuse@multicolecionismo.social e contate autoridades locais.
                 </p>
               </div>
             </div>

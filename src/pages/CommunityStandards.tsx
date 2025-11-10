@@ -57,7 +57,7 @@ const CommunityStandards: React.FC = () => {
                 content: (
                   <div className="text-[#6B7280]/80 space-y-4">
                     <p>
-                      A <strong className="text-black">com.rich</strong> se compromete a criar e manter uma comunidade digital <strong className="text-black">segura, respeitosa, inclusiva e profissional</strong>. Acreditamos que um ambiente positivo beneficia todos os usuários e fortalece nossa rede global.
+                      A <strong className="text-black">Multicolecionismo.Social</strong> se compromete a criar e manter uma comunidade digital <strong className="text-black">segura, respeitosa, inclusiva e profissional</strong>. Acreditamos que um ambiente positivo beneficia todos os usuários e fortalece nossa rede global.
                     </p>
                     <p>
                       Esta Política de Padrões da Comunidade estabelece as diretrizes de conduta que todos os usuários devem seguir ao interagir na plataforma, seja através de perfis públicos, mensagens, comentários ou qualquer outra forma de comunicação.
@@ -98,7 +98,7 @@ const CommunityStandards: React.FC = () => {
                 content: (
                   <div className="text-[#6B7280]/80 space-y-4">
                     <p>
-                      A <strong className="text-black">com.rich</strong> <strong className="text-black">não tolera absolutamente</strong> os seguintes comportamentos:
+                      A <strong className="text-black">Multicolecionismo.Social</strong> <strong className="text-black">não tolera absolutamente</strong> os seguintes comportamentos:
                     </p>
 
                     <h3 className="text-lg font-semibold text-black mt-4">3.1 Assédio e Intimidação</h3>
@@ -271,11 +271,11 @@ const CommunityStandards: React.FC = () => {
                   <div className="text-[#6B7280]/80 space-y-4">
                     <h3 className="text-lg font-semibold text-black">7.1 Sistema de Denúncias</h3>
                     <p>
-                      A <strong className="text-black">com.rich</strong> disponibiliza ferramentas para que usuários reportem violações desta política:
+                      A <strong className="text-black">Multicolecionismo.Social</strong> disponibiliza ferramentas para que usuários reportem violações desta política:
                     </p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside ml-4">
                       <li><strong className="text-black">Botões de denúncia</strong> em conteúdos e perfis;</li>
-                      <li><strong className="text-black">Email de suporte</strong> para casos graves: <a href="mailto:legal@com.rich" className="text-slate-700 hover:text-black underline">legal@com.rich</a>;</li>
+                      <li><strong className="text-black">Email de suporte</strong> para casos graves: <a href="mailto:legal@multicolecionismo.social" className="text-slate-700 hover:text-black underline">legal@multicolecionismo.social</a>;</li>
                       <li><strong className="text-black">Formulário de contato</strong> para denúncias detalhadas;</li>
                       <li><strong className="text-black">Proteção de denunciantes</strong> contra retaliação.</li>
                     </ul>
@@ -336,7 +336,7 @@ const CommunityStandards: React.FC = () => {
                       Usuários que discordam de decisões de moderação podem:
                     </p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside ml-4">
-                      <li>Enviar recurso formal para <a href="mailto:legal@com.rich" className="text-slate-700 hover:text-black underline">legal@com.rich</a>;</li>
+                      <li>Enviar recurso formal para <a href="mailto:legal@multicolecionismo.social" className="text-slate-700 hover:text-black underline">legal@multicolecionismo.social</a>;</li>
                       <li>Fornecer contexto adicional ou evidências;</li>
                       <li>Solicitar revisão por equipe sênior de moderação;</li>
                       <li>Receber resposta dentro de 5-7 dias úteis.</li>
@@ -354,7 +354,7 @@ const CommunityStandards: React.FC = () => {
 
                     <h3 className="text-lg font-semibold text-black mt-4">9.1 Papel da Plataforma</h3>
                     <p>
-                      A <strong className="text-black">com.rich</strong> se compromete a:
+                      A <strong className="text-black">Multicolecionismo.Social</strong> se compromete a:
                     </p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside ml-4">
                       <li>Fornecer ferramentas de moderação e denúncia eficazes;</li>
@@ -385,7 +385,7 @@ const CommunityStandards: React.FC = () => {
                 content: (
                   <div className="text-[#6B7280]/80 space-y-4">
                     <p>
-                      A <strong className="text-black">com.rich</strong> reserva-se o direito de <strong className="text-black">atualizar esta Política de Padrões da Comunidade</strong> a qualquer momento para refletir:
+                      A <strong className="text-black">Multicolecionismo.Social</strong> reserva-se o direito de <strong className="text-black">atualizar esta Política de Padrões da Comunidade</strong> a qualquer momento para refletir:
                     </p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside ml-4">
                       <li>Mudanças em leis e regulamentações aplicáveis;</li>
@@ -425,14 +425,14 @@ const CommunityStandards: React.FC = () => {
                       <div className="space-y-3 text-[#6B7280]/70">
                         <p>
                           <strong className="text-black">Email geral:</strong>{' '}
-                          <a href="mailto:support@com.rich" className="text-slate-700 hover:text-black underline">
-                            support@com.rich
+                          <a href="mailto:support@multicolecionismo.social" className="text-slate-700 hover:text-black underline">
+                            support@multicolecionismo.social
                           </a>
                         </p>
                         <p>
                           <strong className="text-black">Questões legais e denúncias graves:</strong>{' '}
-                          <a href="mailto:legal@com.rich" className="text-slate-700 hover:text-black underline">
-                            legal@com.rich
+                          <a href="mailto:legal@multicolecionismo.social" className="text-slate-700 hover:text-black underline">
+                            legal@multicolecionismo.social
                           </a>
                         </p>
                         <p>
@@ -480,8 +480,8 @@ const CommunityStandards: React.FC = () => {
                 © Global Digital Identity LTD — 71–75 Shelton Street, Covent Garden, London WC2H 9JQ, Reino Unido
               </p>
               <p>
-                <a href="mailto:legal@com.rich" className="text-slate-700 hover:text-black underline">
-                  legal@com.rich
+                <a href="mailto:legal@multicolecionismo.social" className="text-slate-700 hover:text-black underline">
+                  legal@multicolecionismo.social
                 </a>
                 {' | '}
                 Company No. 16339013

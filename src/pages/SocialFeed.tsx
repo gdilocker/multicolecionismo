@@ -494,7 +494,7 @@ export default function SocialFeed() {
               <div className="space-y-3">
                 <h2 className="text-2xl font-bold text-white">Entre para Continuar</h2>
                 <p className="text-gray-300 text-base">
-                  Faça login para acessar conteúdo exclusivo, seguir perfis e interagir com a comunidade com.rich
+                  Faça login para acessar conteúdo exclusivo, seguir perfis e interagir com a comunidade Multicolecionismo.Social
                 </p>
               </div>
 

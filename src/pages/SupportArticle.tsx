@@ -315,7 +315,7 @@ const SupportArticle: React.FC = () => {
               Abrir Chamado
             </button>
             <a
-              href="mailto:support@com.rich"
+              href="mailto:support@multicolecionismo.social"
               className="flex items-center gap-2 px-6 py-3 border-2 border-slate-200 text-slate-700 rounded-xl font-semibold hover:bg-white transition-all"
             >
               <Mail className="w-5 h-5" />

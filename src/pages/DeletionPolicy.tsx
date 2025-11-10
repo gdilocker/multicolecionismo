@@ -134,7 +134,7 @@ const DeletionPolicy: React.FC = () => {
                       <p className="text-black font-semibold mb-2">Opção 2: Solicitação por Email</p>
                       <p className="text-[#6B7280]/80 mb-2">Envie um email para:</p>
                       <ul className="space-y-1 text-[#6B7280]/80 list-disc list-inside">
-                        <li><strong>Email:</strong> <a href="mailto:deletion@com.rich" className="text-[#3B82F6] hover:underline">deletion@com.rich</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:deletion@multicolecionismo.social" className="text-[#3B82F6] hover:underline">deletion@multicolecionismo.social</a></li>
                         <li><strong>Assunto:</strong> "Solicitação de Exclusão de Conta"</li>
                         <li><strong>Informações necessárias:</strong></li>
                       </ul>
@@ -469,8 +469,8 @@ const DeletionPolicy: React.FC = () => {
                               Nossa equipe está disponível para esclarecer qualquer dúvida sobre o processo de exclusão antes que você tome a decisão final.
                             </p>
                             <ul className="space-y-2 text-[#6B7280]/80">
-                              <li><strong className="text-black">Email para exclusão:</strong> <a href="mailto:deletion@com.rich" className="text-[#3B82F6] hover:underline">deletion@com.rich</a></li>
-                              <li><strong className="text-black">Suporte geral:</strong> <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:underline">contact@com.rich</a></li>
+                              <li><strong className="text-black">Email para exclusão:</strong> <a href="mailto:deletion@multicolecionismo.social" className="text-[#3B82F6] hover:underline">deletion@multicolecionismo.social</a></li>
+                              <li><strong className="text-black">Suporte geral:</strong> <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:underline">contact@multicolecionismo.social</a></li>
                               <li><strong className="text-black">Prazo de resposta:</strong> Até 48 horas</li>
                             </ul>
                           </div>

@@ -86,7 +86,7 @@ const StoreTerms: React.FC = () => {
       title: '5. Limitação de Responsabilidade',
       content: (
         <div className="text-[#6B7280]/80 space-y-4">
-          <p>A com.rich <strong className="text-black">NÃO possui responsabilidade</strong> sobre:</p>
+          <p>O Multicolecionismo.Social <strong className="text-black">NÃO possui responsabilidade</strong> sobre:</p>
           <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
             <li>Qualidade, autenticidade ou legalidade dos produtos</li>
             <li>Capacidade dos vendedores de entregar</li>
@@ -124,7 +124,7 @@ const StoreTerms: React.FC = () => {
         <div className="text-[#6B7280]/80 space-y-4">
           <p>
             O acesso à Loja está disponível conforme planos de assinatura.
-            A com.rich <strong className="text-black">não cobra comissões sobre vendas</strong>.
+            O Multicolecionismo.Social <strong className="text-black">não cobra comissões sobre vendas</strong>.
             Você paga apenas a assinatura da plataforma.
           </p>
         </div>
@@ -152,8 +152,8 @@ const StoreTerms: React.FC = () => {
         <div className="text-[#6B7280]/80 space-y-4">
           <p>Para questões sobre estes Termos da Loja:</p>
           <ul className="space-y-1 text-[#6B7280]/70">
-            <li><strong>E-mail:</strong> legal@com.rich</li>
-            <li><strong>Formulário:</strong> <a href="/support" className="text-[#3B82F6] hover:text-[#6B7280]">com.rich/support</a></li>
+            <li><strong>E-mail:</strong> legal@multicolecionismo.social</li>
+            <li><strong>Formulário:</strong> <a href="/support" className="text-[#3B82F6] hover:text-[#6B7280]">multicolecionismo.social/support</a></li>
             <li><strong>Endereço:</strong> Global Digital Identity LTD, 124 City Road, London, EC1V 2NX, England</li>
           </ul>
         </div>
@@ -236,7 +236,7 @@ const StoreTerms: React.FC = () => {
               <h2 className="text-2xl font-bold text-black mb-4">Aviso Importante para Compradores</h2>
               <div className="text-[#6B7280]/80 space-y-4">
                 <p>
-                  A com.rich não processa pagamentos nem oferece proteção ao comprador.
+                  O Multicolecionismo.Social não processa pagamentos nem oferece proteção ao comprador.
                   Verifique a reputação do vendedor antes de comprar.
                   Denuncie produtos suspeitos através do botão de denúncia.
                 </p>

@@ -392,7 +392,7 @@ const AffiliateTerms: React.FC = () => {
                 <div>
                   <h2 className="text-xl font-semibold text-black mb-2">Leia atentamente antes de participar</h2>
                   <p className="text-[#6B7280]/80 leading-relaxed">
-                    Este documento estabelece as regras oficiais do Programa de Afiliados com.rich. Ao participar, você concorda integralmente com todos os termos aqui descritos.
+                    Este documento estabelece as regras oficiais do Programa de Afiliados Multicolecionismo.Social. Ao participar, você concorda integralmente com todos os termos aqui descritos.
                   </p>
                 </div>
               </div>

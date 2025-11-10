@@ -148,7 +148,7 @@ const OpenTicket: React.FC = () => {
       }, 3000);
     } catch (err: any) {
       console.error('Error creating ticket:', err);
-      setError(err.message || 'Não foi possível enviar seu chamado. Por favor, tente novamente ou escreva para support@com.rich');
+      setError(err.message || 'Não foi possível enviar seu chamado. Por favor, tente novamente ou escreva para support@multicolecionismo.social');
     } finally {
       setLoading(false);
     }

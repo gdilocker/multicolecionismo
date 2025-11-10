@@ -213,7 +213,7 @@ const DataProcessingAddendum: React.FC = () => {
                     <h3 className="text-lg font-semibold text-black mt-6">5.8 Como Exercer Seus Direitos</h3>
                     <p>Para exercer qualquer um desses direitos, entre em contato através de:</p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
-                      <li><strong className="text-black">Email:</strong> <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:underline">contact@com.rich</a></li>
+                      <li><strong className="text-black">Email:</strong> <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:underline">contact@multicolecionismo.social</a></li>
                       <li><strong className="text-black">Prazo de resposta:</strong> Até 30 dias corridos</li>
                     </ul>
                   </div>
@@ -378,10 +378,10 @@ const DataProcessingAddendum: React.FC = () => {
                               Para questões sobre processamento de Dados Pessoais ou para exercer seus direitos:
                             </p>
                             <p className="text-[#6B7280]/80 mb-2">
-                              <strong className="text-black">Encarregado de Proteção de Dados (DPO):</strong> dpo@com.rich
+                              <strong className="text-black">Encarregado de Proteção de Dados (DPO):</strong> dpo@multicolecionismo.social
                             </p>
                             <p className="text-[#6B7280]/80 mb-2">
-                              <strong className="text-black">Email geral:</strong> <a href="mailto:contact@com.rich" className="text-[#3B82F6] hover:underline">contact@com.rich</a>
+                              <strong className="text-black">Email geral:</strong> <a href="mailto:contact@multicolecionismo.social" className="text-[#3B82F6] hover:underline">contact@multicolecionismo.social</a>
                             </p>
                             <p className="text-[#6B7280]/80">
                               <strong className="text-black">Empresa:</strong> Global Digital Identity LTD<br />
