@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import { useAuth } from '../contexts/AuthContext';
 import ConfirmModal from '../components/ConfirmModal';
-// Clean gradient background without image
 
 interface PremiumDomain {
   fqdn: string;
@@ -394,7 +393,7 @@ export default function Marketplace() {
 
   return (
     <PageLayout>
-      {/* Background Layer */}
+      {/* Background Layer - Ready for marketplace-hero-bg.jpg */}
       <div className="fixed inset-0 top-16 -z-10 bg-gradient-to-br from-amber-50/80 via-white to-yellow-50/80" />
 
       {/* Content */}
