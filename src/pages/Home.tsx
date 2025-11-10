@@ -541,10 +541,10 @@ const Home = () => {
               className="font-bold text-4xl sm:text-6xl lg:text-7xl xl:text-8xl mb-3 sm:mb-4 leading-[1.1] sm:leading-[0.95] tracking-tight px-2"
             >
               <span className="text-white block">
-                Sua Identidade
+                A Rede Social dos
               </span>
               <span className="text-amber-400 block">
-                .multicolecionismo.social
+                Colecionadores
               </span>
             </motion.h1>
 
@@ -1003,19 +1003,19 @@ const Home = () => {
           >
             <div className="text-center mb-6 sm:mb-8" >
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 sm:mb-3 leading-tight tracking-tight font-bold px-4">
-                <span className="text-white">Valor e identidade</span>
+                <span className="text-white">União e paixão</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4 sm:mb-6 leading-relaxed font-light px-4">
-                Mais do que um domínio, <strong className="text-amber-400">.multicolecionismo.social</strong> é a chave para um mundo de oportunidades e reconhecimento global.
+                O <strong className="text-amber-400">Multicolecionismo.Social</strong> é a rede que une todos os colecionadores do Brasil em um só lugar. Compartilhe suas coleções, participe de eventos e conecte-se com quem vive a mesma paixão.
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 sm:mb-3 leading-tight tracking-tight font-bold px-4">
-                <span className="text-white">Seu nome. Sua marca.</span>
+                <span className="text-white">Seu perfil. Sua coleção.</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-2 sm:mb-3 leading-relaxed font-light px-4">
-                Com um domínio único, sua presença online é exclusivamente sua. Haverá apenas uma <strong className="text-amber-400">olivia.multicolecionismo.social</strong>, uma <strong className="text-amber-400">james.multicolecionismo.social</strong>, uma <strong className="text-amber-400">isabella.multicolecionismo.social</strong>.
+                Perfis Premium ganham domínio exclusivo: <strong className="text-amber-400">lojadocolecionador.multicolecionismo.social</strong>, <strong className="text-amber-400">hotwheelsbrasil.multicolecionismo.social</strong>, <strong className="text-amber-400">raridadesretro.multicolecionismo.social</strong>.
               </p>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light px-4">
-                Essa exclusividade representa uma oportunidade real para fortalecer sua marca pessoal e ser reconhecido de forma autêntica no cenário digital global.
+                Destaque sua marca, organize suas coleções com galeria profissional e tenha sua própria loja integrada para vender, trocar ou exibir peças raras.
               </p>
             </div>
           </motion.div>
@@ -1043,20 +1043,20 @@ const Home = () => {
                 {
                   step: '01',
                   icon: Search,
-                  title: 'Busque sua licença',
-                  description: 'Encontre o nome perfeito dentro do universo .multicolecionismo.social e garanta sua licença exclusiva de uso.'
+                  title: 'Crie seu perfil gratuito',
+                  description: 'Cadastre-se gratuitamente e comece a publicar suas coleções, curtir, comentar e participar da comunidade de colecionadores.'
                 },
                 {
                   step: '02',
                   icon: Lock,
-                  title: 'Adquira sua licença',
-                  description: 'Finalize sua contratação com segurança. Sua licença exclusiva .multicolecionismo.social será ativada instantaneamente e vinculada ao seu perfil.'
+                  title: 'Organize suas coleções',
+                  description: 'Publique fotos, descrições e categorias das suas peças. Use hashtags como #HotWheels, #Filatelia, #Numismática para facilitar descobertas.'
                 },
                 {
                   step: '03',
                   icon: Link2,
-                  title: 'Tudo em um só lugar',
-                  description: 'Sua licença .multicolecionismo.social inclui uma página moderna e personalizável, onde você conecta redes, negócios e oportunidades, tudo em um\u00A0só\u00A0link.'
+                  title: 'Venda, troque e conecte',
+                  description: 'Use a loja integrada para anúncio de peças. Participe de eventos e feiras. Perfis Premium ganham domínio próprio e ferramentas avançadas.'
                 }
               ].map((step, index) => (
                 <motion.div
@@ -1096,11 +1096,11 @@ const Home = () => {
           >
             <div className="text-center mb-6 sm:mb-10 lg:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 sm:mb-3 leading-tight tracking-tight font-bold text-white px-4">
-                O que é .multicolecionismo.social?
+                O que é o Multicolecionismo.Social?
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-0 leading-relaxed font-light px-4">
-                O domínio .multicolecionismo.social representa uma nova forma de presença digital feita para quem quer unir valor, propósito e exclusividade.
-                Mais do que um endereço na web, ele é uma declaração de identidade: cada nome em .multicolecionismo.social reflete quem você é e o que deseja transmitir ao mundo.
+                O Multicolecionismo.Social é a maior rede social brasileira dedicada ao colecionismo, reunindo apaixonados por miniaturas, selos, moedas, quadrinhos, games, brinquedos e muito mais.
+                Aqui você encontra outros colecionadores, participa de eventos e feiras, organiza suas coleções com galerias profissionais e vende ou troca peças com segurança.
               </p>
             </div>
 
@@ -1108,18 +1108,18 @@ const Home = () => {
               {[
                 {
                   icon: Shield,
-                  title: 'Máxima segurança',
-                  description: 'Cada licença .multicolecionismo.social é protegida com tecnologia avançada e protocolos de segurança global, garantindo total proteção para sua identidade digital.'
+                  title: 'Perfis Gratuitos e Premium',
+                  description: 'Crie um perfil gratuito e participe da comunidade. Perfis Premium ganham domínio exclusivo, loja própria e ferramentas profissionais para destacar suas coleções.'
                 },
                 {
                   icon: Zap,
-                  title: 'Ativação instantânea',
-                  description: 'Tudo é preparado automaticamente. Em poucos instantes, sua licença .multicolecionismo.social estará ativa e conectada à sua página personalizada.'
+                  title: 'Eventos e Feiras',
+                  description: 'Fique por dentro de todos os eventos de colecionismo no Brasil: feiras, exposições e encontros. Conecte-se com expositores e outros colecionadores.'
                 },
                 {
                   icon: Globe,
-                  title: 'Identidade profissional',
-                  description: 'Uma licença .multicolecionismo.social transforma sua presença online em algo memorável, distinto e visualmente sofisticado.'
+                  title: 'Loja e Classificados',
+                  description: 'Publique anúncios de venda, troca ou exibição. Filtros por categoria facilitam a descoberta. Perfis Premium têm limite maior de anúncios e destaque.'
                 }
               ].map((feature, index) => (
                 <motion.div
