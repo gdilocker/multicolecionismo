@@ -9,7 +9,6 @@ import { createCloudflare } from '../server/adapters/cloudflare';
 import { createEmailProvider } from '../server/adapters/emailProvider';
 import { supabase } from '../lib/supabase';
 import SuccessModal from '../components/SuccessModal';
-import backgroundImage from '../assets/image copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy.png';
 
 interface PricingPlan {
   id: string;
@@ -498,18 +497,13 @@ const Home = () => {
       )}
 
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            filter: 'brightness(1.12)'
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-black/40"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent"></div>
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-900/20 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-amber-950/30 via-transparent to-transparent"></div>
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(217, 119, 6, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(217, 119, 6, 0.08) 0%, transparent 50%)'
+          }}></div>
         </div>
         <motion.section
           className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12"

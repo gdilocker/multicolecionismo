@@ -2,16 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Crown, Sparkles, Award, Globe as Globe2, TrendingUp, Shield, ChevronRight } from 'lucide-react';
 
-// Import images
-import heroImage from '../assets/download-_5_.png';
-// TEMPORARY: Using fallback image until 'evento-colecionismo-970x550.png' is uploaded
-// TODO: Replace with actual uploaded image
-import eventosImage from '../assets/pessoas-que-participam-de-um-evento-de-alto-protocolo.jpg';
-import espacosImage from '../assets/espacos-richapproved.jpg.jpg';
-import designImage from '../assets/design-legado.jpg.jpeg';
-import reconhecimentoImage from '../assets/reconhecimento-oficial.jpg.png';
-import domainImage from '../assets/Fundo-Imagem-Perfil-Geral.png';
-import affiliateImage from '../assets/pessoas-que-participam-de-um-evento-de-alto-protocolo.jpg';
+// Images replaced with CSS gradients for better performance
 
 export default function RichClub() {
   return (
@@ -19,15 +10,9 @@ export default function RichClub() {
 
       {/* Hero Section - Ultra Premium */}
       <section className="relative flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center right',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-900/20 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/30"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
         </div>
@@ -88,16 +73,12 @@ export default function RichClub() {
       {/* Global Experiences Section */}
       <section className="relative flex items-center overflow-hidden min-h-[600px]" aria-label="Eventos e Encontros de Colecionadores">
         <div
-          className="absolute inset-0 z-0 bg-eventos-section"
-          style={{
-            backgroundImage: `url(${eventosImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 40%',
-            backgroundRepeat: 'no-repeat'
-          }}
+          className="absolute inset-0 z-0"
           role="img"
           aria-label="Feira de colecionismo com estandes, mesas e público circulando"
         >
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-900/15 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/20"></div>
         </div>
 
@@ -149,15 +130,9 @@ export default function RichClub() {
 
       {/* Rich Approved Spaces */}
       <section className="relative flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${espacosImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-950 to-zinc-900"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-900/15 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
         </div>
 
@@ -204,15 +179,9 @@ export default function RichClub() {
 
       {/* Design & Legacy */}
       <section className="relative flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${designImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-black to-zinc-900"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-900/15 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
         </div>
 
@@ -255,15 +224,9 @@ export default function RichClub() {
 
       {/* Official Recognition */}
       <section className="relative flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${reconhecimentoImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-zinc-950"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-amber-900/15 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
         </div>
 
@@ -310,15 +273,9 @@ export default function RichClub() {
 
       {/* Your Digital Identity */}
       <section className="relative flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${domainImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-900/15 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/40"></div>
         </div>
 
@@ -366,15 +323,9 @@ export default function RichClub() {
 
       {/* Affiliate Program */}
       <section className="relative flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${affiliateImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-black to-zinc-950"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center_left,_var(--tw-gradient-stops))] from-emerald-900/10 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/40"></div>
         </div>
 

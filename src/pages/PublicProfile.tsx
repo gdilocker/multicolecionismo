@@ -17,8 +17,6 @@ import { SettingsButton } from '../components/SettingsButton';
 import { ProfileFooterCTA } from '../components/ProfileFooterCTA';
 import { profileLinksService, ProfileLink } from '../lib/services/profileLinks';
 
-import BackgroundImage from '../assets/Fundo-Imagem-Perfil-Geral.png';
-
 interface UserProfile {
   id: string;
   subdomain: string;
@@ -567,10 +565,10 @@ export default function PublicProfile({ subdomain: subdomainProp }: PublicProfil
     return (
       <div className="min-h-screen relative py-12 px-4 overflow-hidden">
         {/* Premium Background with Overlay */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: `url(${BackgroundImage})` }}
-        />
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/10 via-transparent to-transparent"></div>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/80 to-black/85 backdrop-blur-[2px]" />
 
         <div className="max-w-3xl mx-auto relative z-10">
