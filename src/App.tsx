@@ -5,7 +5,6 @@ import { DrawerProvider } from './contexts/DrawerContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import { SubscriptionProtectedRoute } from './components/SubscriptionProtectedRoute';
 import ResellerProtectedRoute from './components/ResellerProtectedRoute';
-import { UserTypeGate } from './components/UserTypeGate';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
@@ -104,9 +103,7 @@ function App() {
     <AuthProvider>
       <DrawerProvider>
         <Router>
-          <UserTypeGate>
-            <AppRoutes />
-          </UserTypeGate>
+          <AppRoutes />
         </Router>
       </DrawerProvider>
     </AuthProvider>

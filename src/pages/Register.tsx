@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
-import { Mail, Lock, User, Eye, EyeOff, AlertCircle, Loader2, CheckCircle, ArrowRight, Gift } from 'lucide-react';
+import { Mail, Lock, User, Eye, EyeOff, AlertCircle, Loader2, CheckCircle, ArrowRight, Gift, Users, Store, Heart, MessageCircle, Share2, Globe, TrendingUp } from 'lucide-react';
 import PhoneInput from '../components/PhoneInput';
 import { RegisterForm } from '../types';
 import * as yup from 'yup';
@@ -56,6 +56,7 @@ const registerSchema = yup.object().shape({
 });
 
 const Register: React.FC = () => {
+  const [userType, setUserType] = useState<'social' | 'member' | null>(null);
   const [formData, setFormData] = useState<RegisterForm>({
     email: '',
     password: '',
@@ -119,7 +120,22 @@ const Register: React.FC = () => {
         affiliateSource: location.state?.returnTo ? 'login_modal' : 'direct'
       });
 
-      if (redirectTo) {
+      // Save user type
+      if (userType) {
+        const { data: { user } } = await import('../lib/supabase').then(m => m.supabase.auth.getUser());
+        if (user) {
+          await import('../lib/supabase').then(m => m.supabase
+            .from('customers')
+            .update({ user_type: userType, onboarding_completed: true })
+            .eq('user_id', user.id)
+          );
+        }
+      }
+
+      // Redirect based on user type
+      if (userType === 'social') {
+        navigate('/social');
+      } else if (redirectTo) {
         navigate(redirectTo, {
           state: prefilledDomain ? { domain: prefilledDomain, fromMarketplace: true } : undefined
         });
@@ -288,6 +304,65 @@ const Register: React.FC = () => {
               )}
 
               <form className="space-y-5" onSubmit={handleSubmit}>
+                {/* User Type Selection */}
+                <div className="space-y-3">
+                  <label className="block text-sm font-semibold text-black mb-3">
+                    Como você pretende usar a plataforma?
+                  </label>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    {/* Social User Option */}
+                    <motion.button
+                      type="button"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => setUserType('social')}
+                      className={`p-4 rounded-xl border-2 transition-all text-left ${
+                        userType === 'social'
+                          ? 'border-blue-500 bg-blue-50'
+                          : 'border-gray-200 hover:border-blue-300'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2 mb-2">
+                        <Users className="w-5 h-5 text-blue-600" />
+                        <span className="font-bold text-sm">Social</span>
+                      </div>
+                      <p className="text-xs text-gray-600">
+                        Curtir, comentar e compartilhar
+                      </p>
+                    </motion.button>
+
+                    {/* Member Option */}
+                    <motion.button
+                      type="button"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => setUserType('member')}
+                      className={`p-4 rounded-xl border-2 transition-all text-left ${
+                        userType === 'member'
+                          ? 'border-purple-500 bg-purple-50'
+                          : 'border-gray-200 hover:border-purple-300'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2 mb-2">
+                        <Store className="w-5 h-5 text-purple-600" />
+                        <span className="font-bold text-sm">Premium</span>
+                      </div>
+                      <p className="text-xs text-gray-600">
+                        Domínio e loja
+                      </p>
+                    </motion.button>
+                  </div>
+
+                  {!userType && (
+                    <p className="text-xs text-gray-500 mt-2">
+                      Escolha uma opção para continuar
+                    </p>
+                  )}
+                </div>
+
+                {userType && (
+                  <>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-black mb-2">Nome</label>
@@ -470,7 +545,7 @@ const Register: React.FC = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  disabled={loading}
+                  disabled={loading || !userType}
                   className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-black hover:bg-[#1a1b2e] text-white font-bold rounded-xl transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
@@ -482,6 +557,8 @@ const Register: React.FC = () => {
                     </>
                   )}
                 </motion.button>
+                </>
+                )}
               </form>
 
               <div className="mt-6">
