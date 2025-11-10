@@ -123,7 +123,27 @@ export default function Header() {
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  Inicial
+                  Feed
+                </Link>
+                <Link
+                  to="/marketplace"
+                  className={`px-3 py-2 font-medium transition-colors ${
+                    location.pathname === '/marketplace'
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  Marketplace
+                </Link>
+                <Link
+                  to="/lojas"
+                  className={`px-3 py-2 font-medium transition-colors ${
+                    location.pathname === '/lojas'
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  Lojas
                 </Link>
                 <Link
                   to="/valores"
@@ -134,16 +154,6 @@ export default function Header() {
                   }`}
                 >
                   Planos
-                </Link>
-                <Link
-                  to="/afiliados/sobre"
-                  className={`px-3 py-2 font-medium transition-colors ${
-                    location.pathname === '/afiliados/sobre'
-                      ? 'text-white'
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  Afiliados
                 </Link>
 
                 {/* Subtle divider */}
@@ -167,24 +177,34 @@ export default function Header() {
                 <Link
                   to="/"
                   className={`px-3 py-2 font-medium transition-colors ${
-                    location.pathname === '/'
+                    location.pathname === '/' || location.pathname === '/social'
                       ? 'text-white'
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  Inicial
+                  Feed
                 </Link>
                 <Link
-                  to="/social"
+                  to="/marketplace"
                   className={`px-3 py-2 font-medium transition-colors ${
-                    location.pathname === '/social'
+                    location.pathname === '/marketplace'
                       ? 'text-white'
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  Rede Social
+                  Marketplace
                 </Link>
-                {userType === 'member' && (
+                <Link
+                  to="/lojas"
+                  className={`px-3 py-2 font-medium transition-colors ${
+                    location.pathname === '/lojas'
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  Lojas
+                </Link>
+                {(userType === 'member' || userType === 'admin') && (
                   <Link
                     to="/panel/dashboard"
                     className={`px-3 py-2 font-medium transition-colors ${
@@ -194,6 +214,14 @@ export default function Header() {
                     }`}
                   >
                     Dashboard
+                  </Link>
+                )}
+                {userType === 'social' && (
+                  <Link
+                    to="/valores"
+                    className="px-3 py-2 font-medium text-purple-400 hover:text-purple-300 transition-colors"
+                  >
+                    Planos
                   </Link>
                 )}
                 {userType === 'admin' && (

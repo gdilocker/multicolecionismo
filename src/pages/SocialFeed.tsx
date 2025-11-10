@@ -151,50 +151,13 @@ export default function SocialFeed() {
               </button>
 
               <div className="flex items-center gap-4">
-                <button
-                  onClick={() => navigate('/marketplace')}
-                  className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
-                >
-                  <Store className="w-5 h-5" />
-                  <span>Marketplace</span>
-                </button>
-                <button
-                  onClick={() => navigate('/lojas')}
-                  className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
-                >
-                  <Users className="w-5 h-5" />
-                  <span>Lojas</span>
-                </button>
                 {isLoggedIn && (
-                  <>
-                    <button
-                      onClick={handleCreatePost}
-                      className="flex items-center gap-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all"
-                    >
-                      <Plus className="w-5 h-5" />
-                      <span>Criar Post</span>
-                    </button>
-                    <button
-                      onClick={() => navigate('/panel/dashboard')}
-                      className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
-                    >
-                      <Home className="w-5 h-5" />
-                      <span>Dashboard</span>
-                    </button>
-                    <button
-                      onClick={handlePerfilClick}
-                      className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
-                    >
-                      <User className="w-5 h-5" />
-                    </button>
-                  </>
-                )}
-                {!isLoggedIn && (
                   <button
-                    onClick={() => navigate('/login')}
+                    onClick={handleCreatePost}
                     className="flex items-center gap-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all"
                   >
-                    Entrar
+                    <Plus className="w-5 h-5" />
+                    <span>Criar Post</span>
                   </button>
                 )}
               </div>
