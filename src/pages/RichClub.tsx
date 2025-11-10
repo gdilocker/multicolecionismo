@@ -41,7 +41,9 @@ export default function RichClub() {
               <h1 className="break-keep leading-tight">
                 <span className="block text-fluid-hero text-white">Bem-vindo</span>
                 <span className="block text-fluid-hero text-white">a Rede Social</span>
-                <span className="block text-fluid-hero">do <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">Multicolecionismo</span></span>
+                <span className="inline-block whitespace-nowrap break-keep text-fluid-hero bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
+                  do Multicolecionismo
+                </span>
               </h1>
             </div>
 
