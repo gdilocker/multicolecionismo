@@ -15,6 +15,7 @@ interface AuthContextType {
   user: User | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
+  loginWithGoogle: () => Promise<void>;
   register: (data: {
     email: string;
     password: string;
@@ -272,6 +273,30 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   }, [getUserWithRole, ensureCustomerExists]);
 
+  const loginWithGoogle = useCallback(async () => {
+    try {
+      isProcessingAuth.current = true;
+
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/auth/callback`,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          }
+        }
+      });
+
+      if (error) throw error;
+
+      // OAuth redirect will happen automatically
+      // User state will be updated when they return via the callback
+    } finally {
+      isProcessingAuth.current = false;
+    }
+  }, []);
+
   const register = useCallback(async (data: {
     email: string;
     password: string;
@@ -382,9 +407,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     user,
     loading,
     login,
+    loginWithGoogle,
     register,
     logout
-  }), [user, loading, login, register, logout]);
+  }), [user, loading, login, loginWithGoogle, register, logout]);
 
   return (
     <AuthContext.Provider value={value}>

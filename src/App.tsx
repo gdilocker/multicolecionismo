@@ -89,6 +89,10 @@ const StoreTerms = lazy(() => import('./pages/StoreTerms'));
 const SocialTerms = lazy(() => import('./pages/SocialTerms'));
 const RichClub = lazy(() => import('./pages/RichClub'));
 const AdminEmail = lazy(() => import('./pages/AdminEmail'));
+const AuthCallback = lazy(() => import('./pages/AuthCallback'));
+const SelectUserType = lazy(() => import('./pages/SelectUserType'));
+const MarketplaceNew = lazy(() => import('./pages/MarketplaceNew'));
+const StoresDirectory = lazy(() => import('./pages/StoresDirectory'));
 
 // Loading component
 const LoadingFallback = () => (
@@ -163,6 +167,8 @@ function AppRoutes() {
           <Route path="/en" element={<Home />} />
           <Route path="/es" element={<Home />} />
           <Route path="/valores" element={<Pricing />} />
+          <Route path="/marketplace" element={<MarketplaceNew />} />
+          <Route path="/lojas" element={<StoresDirectory />} />
           <Route path="/transferencia" element={<Transfer />} />
           <Route path="/contato" element={<Contact />} />
           <Route path="/contact" element={<Contact />} />
@@ -210,6 +216,8 @@ function AppRoutes() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/iniciar" element={<Register />} />
+          <Route path="/auth/callback" element={<AuthCallback />} />
+          <Route path="/select-user-type" element={<SelectUserType />} />
 
           {/* Affiliate Redirect Route */}
           <Route path="/r/:code" element={<RefRedirect />} />
