@@ -3,12 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Check, Star, Crown, CreditCard, Users, TrendingUp, Sparkles, AlertCircle, Award, DollarSign, Lightbulb, X } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { formatBRL } from '../lib/formatCurrency';
 
 interface SubscriptionPlan {
   id: string;
   plan_name: string;
   plan_type: string;
-  price_usd: string | number;
+  price_brl: string | number;
   billing_cycle: string;
   description: string;
   features: string[];
@@ -21,7 +22,7 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
     id: 'prime',
     plan_name: 'Prime',
     plan_type: 'prime',
-    price_usd: 50,
+    price_brl: 250,
     billing_cycle: 'monthly',
     description: 'Ideal para colecionadores que querem destaque. Domínio exclusivo, galeria profissional e loja integrada.',
     features: [
@@ -42,7 +43,7 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
     id: 'elite',
     plan_name: 'Elite',
     plan_type: 'elite',
-    price_usd: 70,
+    price_brl: 350,
     billing_cycle: 'monthly',
     description: 'Para marcas e lojas estabelecidas. Todos os recursos Premium + ferramentas avançadas e prioridade máxima.',
     features: [
@@ -64,7 +65,7 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
     id: 'supreme',
     plan_name: 'Supreme',
     plan_type: 'supreme',
-    price_usd: 'By Request',
+    price_brl: 'By Request',
     billing_cycle: 'monthly',
     description: 'Solução corporativa para grandes marcas e organizações. Infraestrutura dedicada, API personalizada e suporte white-glove.',
     features: [
@@ -103,7 +104,7 @@ const Pricing: React.FC = () => {
         .select('*')
         .eq('is_active', true)
         .in('plan_type', ['prime', 'elite', 'supreme'])
-        .order('price_usd', { ascending: true });
+        .order('price_monthly_cents', { ascending: true });
 
       // Reorder to show Prime, Elite, Supreme (Supreme has price 0 so it comes first)
       const orderedData = data ? [
@@ -372,17 +373,17 @@ const Pricing: React.FC = () => {
                         <div className="flex items-baseline gap-2 mb-2">
                           {isElite && (
                             <span className="text-2xl font-bold text-gray-400 line-through">
-                              $100
+                              R$ 500
                             </span>
                           )}
-                          {isSupreme || (typeof plan.price_usd === 'number' && plan.price_usd === 0) || (typeof plan.price_usd === 'string' && parseFloat(plan.price_usd) === 0) ? (
+                          {isSupreme || (typeof plan.price_brl === 'number' && plan.price_brl === 0) || (typeof plan.price_brl === 'string' && parseFloat(plan.price_brl) === 0) ? (
                             <span className="text-4xl font-bold text-black">
                               By Request
                             </span>
                           ) : (
                             <>
                               <span className="text-5xl font-bold text-black">
-                                ${typeof plan.price_usd === 'string' ? parseFloat(plan.price_usd) : plan.price_usd}
+                                R$ {typeof plan.price_brl === 'string' ? parseFloat(plan.price_brl) : plan.price_brl}
                               </span>
                               <span className="text-[#6B7280] text-xl">/mês</span>
                             </>
@@ -398,7 +399,7 @@ const Pricing: React.FC = () => {
                         )}
                         {isElite && (
                           <p className="text-sm text-teal-700 font-semibold mt-1">
-                            Promoção até 31/12/2024. Depois $100/mês
+                            Promoção até 31/12/2024. Depois R$ 500/mês
                           </p>
                         )}
                       </div>
@@ -470,11 +471,11 @@ const Pricing: React.FC = () => {
                                 <div className="space-y-2">
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    $12,50 por venda do Plano Prime
+                                    R$ 62,50 por venda do Plano Prime
                                   </p>
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    $17,50 por venda do Plano Elite
+                                    R$ 87,50 por venda do Plano Elite
                                   </p>
                                 </div>
                               </div>
@@ -486,11 +487,11 @@ const Pricing: React.FC = () => {
                                 <div className="space-y-2">
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    $25 por venda do Plano Prime
+                                    R$ 125 por venda do Plano Prime
                                   </p>
                                   <p className="text-sm text-slate-800 font-semibold flex items-center gap-1">
                                     <TrendingUp className="w-4 h-4 text-green-600" />
-                                    $35 por venda do Plano Elite
+                                    R$ 175 por venda do Plano Elite
                                   </p>
                                 </div>
                               </div>

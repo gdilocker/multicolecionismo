@@ -10,7 +10,7 @@ import marketplaceHeroBackground from '../assets/marketplace-hero-bg.jpeg';
 
 interface PremiumDomain {
   fqdn: string;
-  price_usd: number;
+  price_brl: number;
   category: string;
   is_featured: boolean;
   description: string | null;
@@ -40,7 +40,7 @@ const ALL_CATEGORIES: Array<{ value: string; label: string; adminOnly?: boolean 
   { value: 'protected_brand', label: '🔒 Marcas Protegidas (Admin)', adminOnly: true }
 ];
 
-const DEFAULT_PRICE = 25000.00;
+const DEFAULT_PRICE = 125000;
 
 export default function Marketplace() {
   const [suggestions, setSuggestions] = useState<PremiumDomain[]>([]);
@@ -57,7 +57,7 @@ export default function Marketplace() {
   const [newDomain, setNewDomain] = useState({
     fqdn: '',
     category: 'lifestyle',
-    price_usd: 25000,
+    price_brl: 25000,
     status: 'available' as 'available' | 'sold' | 'reserved',
     is_featured: false,
     description: '',
@@ -215,7 +215,7 @@ export default function Marketplace() {
   };
 
   const getPrice = (domain: PremiumDomain) => {
-    return domain.price_usd || DEFAULT_PRICE;
+    return domain.price_brl || DEFAULT_PRICE;
   };
 
   const handleDeleteDomain = async (fqdn: string) => {
@@ -253,7 +253,7 @@ export default function Marketplace() {
         .from('premium_domains')
         .update({
           category: editingDomain.category,
-          price_usd: editingDomain.price_usd,
+          price_brl: editingDomain.price_brl,
           is_featured: editingDomain.is_featured,
           status: editingDomain.status,
           description: editingDomain.description,
@@ -309,7 +309,7 @@ export default function Marketplace() {
         .insert({
           fqdn: fullDomain,
           category: newDomain.category,
-          price_usd: newDomain.price_usd,
+          price_brl: newDomain.price_brl,
           status: newDomain.status,
           is_featured: newDomain.is_featured,
           description: newDomain.description || null,
@@ -338,7 +338,7 @@ export default function Marketplace() {
       setNewDomain({
         fqdn: '',
         category: 'lifestyle',
-        price_usd: 25000,
+        price_brl: 25000,
         status: 'available',
         is_featured: false,
         description: '',
@@ -355,7 +355,7 @@ export default function Marketplace() {
     setNewDomain({
       fqdn: '',
       category: 'lifestyle',
-      price_usd: 25000,
+      price_brl: 25000,
       status: 'available',
       is_featured: false,
       description: '',
@@ -841,14 +841,14 @@ export default function Marketplace() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Preço (USD)
+                  Preço (BRL em centavos)
                 </label>
                 <input
                   type="number"
                   step="1"
-                  value={editingDomain.price_usd || ''}
-                  onChange={(e) => setEditingDomain({ ...editingDomain, price_usd: e.target.value ? parseInt(e.target.value) : DEFAULT_PRICE })}
-                  placeholder={`Padrão: $${DEFAULT_PRICE.toLocaleString()}`}
+                  value={editingDomain.price_brl || ''}
+                  onChange={(e) => setEditingDomain({ ...editingDomain, price_brl: e.target.value ? parseInt(e.target.value) : DEFAULT_PRICE })}
+                  placeholder={`Padrão: R$ ${(DEFAULT_PRICE / 100).toLocaleString('pt-BR')}`}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent"
                 />
               </div>
@@ -963,14 +963,14 @@ export default function Marketplace() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Preço (USD)
+                  Preço (BRL em centavos)
                 </label>
                 <input
                   type="number"
                   step="1"
-                  value={newDomain.price_usd}
-                  onChange={(e) => setNewDomain({ ...newDomain, price_usd: e.target.value ? parseInt(e.target.value) : DEFAULT_PRICE })}
-                  placeholder={`Padrão: $${DEFAULT_PRICE.toLocaleString()}`}
+                  value={newDomain.price_brl}
+                  onChange={(e) => setNewDomain({ ...newDomain, price_brl: e.target.value ? parseInt(e.target.value) : DEFAULT_PRICE })}
+                  placeholder={`Padrão: R$ ${(DEFAULT_PRICE / 100).toLocaleString('pt-BR')}`}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent"
                 />
               </div>
