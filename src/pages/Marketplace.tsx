@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import { useAuth } from '../contexts/AuthContext';
 import ConfirmModal from '../components/ConfirmModal';
+import marketplaceHeroBackground from '../assets/marketplace-hero-bg.jpg';
 
 interface PremiumDomain {
   fqdn: string;
@@ -393,8 +394,14 @@ export default function Marketplace() {
 
   return (
     <PageLayout>
-      {/* Background Layer - Ready for marketplace-hero-bg.jpg */}
-      <div className="fixed inset-0 top-16 -z-10 bg-gradient-to-br from-amber-50/80 via-white to-yellow-50/80" />
+      {/* Background Layer with Hero Image */}
+      <div className="fixed inset-0 top-16 -z-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${marketplaceHeroBackground})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/90 via-white/95 to-yellow-50/90 backdrop-blur-sm" />
+      </div>
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
