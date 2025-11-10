@@ -42,50 +42,36 @@ async function checkDomain(fqdn: string, userId?: string): Promise<DomainCheckRe
 
   const normalizedFqdn = fqdn.toLowerCase().trim();
 
-  // Check if user is admin
   let isAdmin = false;
   let userHasSubscription = false;
   let userPlanType: string | null = null;
 
   console.log(`[DOMAIN CHECK] ========== ADMIN CHECK START ==========`);
   console.log(`[DOMAIN CHECK] userId:`, userId);
-  console.log(`[DOMAIN CHECK] userId type:`, typeof userId);
-  console.log(`[DOMAIN CHECK] userId is defined:`, userId !== undefined);
-  console.log(`[DOMAIN CHECK] userId is truthy:`, !!userId);
 
   if (userId) {
-    console.log(`[DOMAIN CHECK] 🔍 Checking admin status for userId: ${userId}`);
+    console.log(`[DOMAIN CHECK] Checking admin status for userId: ${userId}`);
 
-    // Check admin role first
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
       .select('role, email, user_id')
       .eq('user_id', userId)
       .maybeSingle();
 
-    console.log(`[DOMAIN CHECK] 📊 Customer query result:`, {
+    console.log(`[DOMAIN CHECK] Customer query result:`, {
       customerData,
       customerError,
       roleValue: customerData?.role,
-      roleType: typeof customerData?.role,
-      email: customerData?.email,
-      userId: customerData?.user_id,
-      comparison: customerData?.role === 'admin',
-      strictComparison: customerData?.role === 'admin'
     });
 
-    // Normalize and compare role (trim whitespace, lowercase)
     const normalizedRole = customerData?.role?.toString().trim().toLowerCase();
-    console.log(`[DOMAIN CHECK] 🔍 Normalized role: '${normalizedRole}' (original: '${customerData?.role}')`);
+    console.log(`[DOMAIN CHECK] Normalized role: '${normalizedRole}'`);
 
     if (normalizedRole === 'admin') {
       isAdmin = true;
-      console.log(`[DOMAIN CHECK] ✅✅✅ User ${userId} is ADMIN - free registration enabled!`);
-    } else {
-      console.log(`[DOMAIN CHECK] ❌ User ${userId} is NOT admin, normalized role: '${normalizedRole}' (expected: 'admin')`);
+      console.log(`[DOMAIN CHECK] User ${userId} is ADMIN - free registration enabled!`);
     }
 
-    // Check subscription only if not admin
     if (!isAdmin) {
       const { data: subscriptionData } = await supabase
         .from('subscriptions')
@@ -105,7 +91,7 @@ async function checkDomain(fqdn: string, userId?: string): Promise<DomainCheckRe
       }
     }
   } else {
-    console.log(`[DOMAIN CHECK] ❌ No userId provided - anonymous request`);
+    console.log(`[DOMAIN CHECK] No userId provided - anonymous request`);
   }
 
   if (!normalizedFqdn.endsWith('.multicolecionismo.social')) {
@@ -118,7 +104,6 @@ async function checkDomain(fqdn: string, userId?: string): Promise<DomainCheckRe
 
   console.log(`[DOMAIN CHECK] Checking: ${normalizedFqdn}`);
 
-  // Check for global protection (reserved keywords like "president" and translations)
   const { data: protectionCheck, error: protectionError } = await supabase
     .rpc('check_global_protection', { domain_name: normalizedFqdn });
 
@@ -139,7 +124,6 @@ async function checkDomain(fqdn: string, userId?: string): Promise<DomainCheckRe
     }
   }
 
-  // Check for club/clube protection (all language variants)
   const { data: clubValidation, error: clubError } = await supabase
     .rpc('validate_club_domain_registration', {
       p_domain_name: normalizedFqdn,
@@ -148,7 +132,7 @@ async function checkDomain(fqdn: string, userId?: string): Promise<DomainCheckRe
 
   if (!clubError && clubValidation) {
     if (!clubValidation.allowed && clubValidation.protected) {
-      console.log(`[DOMAIN CHECK] BLOCKED: ${normalizedFqdn} - Club Protection (${clubValidation.message})`);
+      console.log(`[DOMAIN CHECK] BLOCKED: ${normalizedFqdn} - Club Protection`);
       return {
         status: "UNAVAILABLE",
         fqdn: normalizedFqdn,
@@ -368,10 +352,10 @@ Deno.serve(async (req: Request) => {
 
         userId = user?.id;
       } catch (error) {
-        console.error('[DOMAIN CHECK] ❌ Could not extract user ID from auth header:', error);
+        console.error('[DOMAIN CHECK] Could not extract user ID from auth header:', error);
       }
     } else {
-      console.log('[DOMAIN CHECK] ❌ No valid Authorization header');
+      console.log('[DOMAIN CHECK] No valid Authorization header');
     }
 
     if (action === "check" || url.pathname.includes("/check")) {
