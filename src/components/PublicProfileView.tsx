@@ -147,7 +147,7 @@ export function PublicProfileView({
   };
 
   // Check if profile is empty
-  const defaultBio = "A plataforma premium para criar sua identidade digital profissional. Domínios personalizados, perfis elegantes e cartões exclusivos.";
+  const defaultBio = "Organize, compartilhe e venda suas coleções na maior rede social brasileira de colecionismo. Crie sua galeria profissional e conecte-se com outros colecionadores.";
   const userLinks = links.filter(link => !link.is_system_link);
   const hasCustomAvatar = profile?.avatar_url && !profile.avatar_url.includes('placeholder') && !profile.avatar_url.includes('default');
   const hasCustomBio = profile?.bio && profile.bio !== defaultBio && profile.bio.trim() !== '';
@@ -283,7 +283,7 @@ export function PublicProfileView({
               </p>
             ) : (
               <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg mx-auto mb-6">
-                A plataforma premium para criar sua identidade digital profissional. Domínios personalizados, perfis elegantes e cartões exclusivos.
+                Organize, compartilhe e venda suas coleções na maior rede social brasileira de colecionismo. Crie sua galeria profissional e conecte-se com outros colecionadores.
               </p>
             )}
 

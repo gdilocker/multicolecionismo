@@ -779,7 +779,7 @@ export default function PublicStore() {
             <span className="text-yellow-600 font-bold">Multicolecionismo.Social</span>
           </div>
           <p className="text-gray-600 text-sm">
-            Crie sua identidade digital profissional com loja integrada
+            Organize, compartilhe e venda suas coleções com loja integrada
           </p>
         </div>
       </footer>

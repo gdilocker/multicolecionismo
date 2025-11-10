@@ -102,7 +102,7 @@ const FAQ: React.FC = () => {
       items: [
         {
           question: 'O que é um domínio .multicolecionismo.social?',
-          answer: 'É uma extensão de domínio premium e exclusiva, projetada para profissionais, marcas e indivíduos que buscam uma identidade digital sofisticada. Com uma licença exclusiva .multicolecionismo.social (exemplo: seunome.multicolecionismo.social), você terá uma URL personalizada que reflete sucesso e exclusividade.'
+          answer: 'É uma extensão de domínio premium e exclusiva para colecionadores brasileiros. Com um domínio .multicolecionismo.social (exemplo: seunome.multicolecionismo.social), você terá uma URL personalizada para organizar, exibir e vender suas coleções, além de se conectar com outros colecionadores.'
         },
         {
           question: 'Como adquiro uma licença de domínio?',

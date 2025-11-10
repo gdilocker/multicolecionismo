@@ -532,7 +532,7 @@ const Home = () => {
               className="flex items-center justify-center gap-2 sm:gap-3 mb-2 sm:mb-3"
             >
               <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-amber-400 to-transparent"></div>
-              <span className="text-amber-400 text-[10px] sm:text-xs font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase">Premium Identity</span>
+              <span className="text-amber-400 text-[10px] sm:text-xs font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase">Colecionismo Digital</span>
               <div className="h-px w-8 sm:w-12 bg-gradient-to-l from-amber-400 to-transparent"></div>
             </motion.div>
 
@@ -1034,7 +1034,7 @@ const Home = () => {
                 Sua licença .multicolecionismo.social em três etapas
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-0 leading-relaxed font-light px-4">
-                Três passos simples separam você de uma identidade digital incomparável. Cada detalhe foi pensado para oferecer exclusividade, segurança e presença imediata.
+                Três passos simples para começar a organizar, compartilhar e vender suas coleções. Cada detalhe foi pensado para oferecer uma experiência completa de colecionismo digital.
               </p>
             </div>
 

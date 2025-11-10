@@ -48,7 +48,7 @@ export default function RichClub() {
 
             <div className="space-y-3 mb-12">
               <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-relaxed font-light">
-                Uma identidade digital que transcende o virtual.
+                A plataforma premium para colecionadores de alto nível.
               </p>
               <p className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed font-light">
                 Conexões autênticas. Oportunidades globais. Resultados extraordinários.
@@ -334,7 +334,7 @@ export default function RichClub() {
 
             <div className="space-y-3 mb-12">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-                Seu domínio personalizado .multicolecionismo.social é mais que um endereço web, é uma declaração de identidade, prestígio e posicionamento no cenário digital global.
+                Seu domínio personalizado .multicolecionismo.social é mais que um endereço web, é sua vitrine premium para organizar, exibir e comercializar suas coleções mais valiosas.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-light">
                 Uma URL que comunica sucesso instantaneamente.

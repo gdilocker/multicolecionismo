@@ -503,7 +503,7 @@ export default function PublicProfile({ subdomain: subdomainProp }: PublicProfil
   // 1. No avatar OR avatar is default/placeholder
   // 2. No bio OR bio is default text
   // 3. No links (excluding system links)
-  const defaultBio = "A plataforma premium para criar sua identidade digital profissional. Domínios personalizados, perfis elegantes e cartões exclusivos.";
+  const defaultBio = "Organize, compartilhe e venda suas coleções na maior rede social brasileira de colecionismo. Crie sua galeria profissional e conecte-se com outros colecionadores.";
   const userLinks = profileLinks.filter(link => !link.is_system_link);
   const hasCustomAvatar = profile?.avatar_url && !profile.avatar_url.includes('placeholder') && !profile.avatar_url.includes('default');
   const hasCustomBio = profile?.bio && profile.bio !== defaultBio && profile.bio.trim() !== '';
@@ -851,7 +851,7 @@ export default function PublicProfile({ subdomain: subdomainProp }: PublicProfil
               </p>
             ) : (
               <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg mx-auto mb-4 sm:mb-6">
-                A plataforma premium para criar sua identidade digital profissional. Domínios personalizados, perfis elegantes e cartões exclusivos.
+                Organize, compartilhe e venda suas coleções na maior rede social brasileira de colecionismo. Crie sua galeria profissional e conecte-se com outros colecionadores.
               </p>
             )}
 
