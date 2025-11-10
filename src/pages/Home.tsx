@@ -9,7 +9,7 @@ import { createCloudflare } from '../server/adapters/cloudflare';
 import { createEmailProvider } from '../server/adapters/emailProvider';
 import { supabase } from '../lib/supabase';
 import SuccessModal from '../components/SuccessModal';
-import heroBackground from '../assets/home-hero-bg.jpeg';
+import heroBackground from '../assets/home-hero-bg.jpg';
 
 interface PricingPlan {
   id: string;
