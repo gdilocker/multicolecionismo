@@ -1,5 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, Crown, Sparkles, X } from 'lucide-react';
+import { CheckCircle2, Crown, Sparkles, X, ArrowRight, ExternalLink } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 interface SuccessModalProps {
   isOpen: boolean;
@@ -18,6 +20,31 @@ export default function SuccessModal({
   isAdmin = false,
   domain
 }: SuccessModalProps) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen, onClose]);
+
+  const handleGoToDashboard = () => {
+    onClose();
+    navigate('/panel/domains');
+  };
+
+  const handleViewProfile = () => {
+    if (domain) {
+      const slug = domain.replace('.multicolecionismo.social', '');
+      window.open(`/${slug}`, '_blank');
+    }
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -28,22 +55,22 @@ export default function SuccessModal({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/70 backdrop-blur-md"
           />
 
           {/* Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: 'spring', duration: 0.5 }}
-            className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden"
+            exit={{ opacity: 0, scale: 0.8, y: 50 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+            className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden"
           >
             {/* Header with gradient */}
-            <div className={`relative p-8 text-center ${
+            <div className={`relative p-10 text-center ${
               isAdmin
-                ? 'bg-gradient-to-br from-amber-500 via-yellow-500 to-amber-600'
-                : 'bg-gradient-to-br from-emerald-500 via-teal-500 to-emerald-600'
+                ? 'bg-gradient-to-br from-amber-400 via-yellow-400 to-orange-500'
+                : 'bg-gradient-to-br from-emerald-400 via-teal-400 to-cyan-500'
             }`}>
               {/* Animated background particles */}
               <div className="absolute inset-0 overflow-hidden">
@@ -199,24 +226,50 @@ export default function SuccessModal({
                 </motion.div>
               )}
 
-              {/* Action button */}
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9 }}
-                onClick={onClose}
-                className={`
-                  mt-6 w-full py-3 px-6 rounded-xl font-semibold text-white
-                  transition-all duration-200 shadow-lg
-                  ${isAdmin
-                    ? 'bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700'
-                    : 'bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700'
-                  }
-                  hover:shadow-xl hover:scale-105 active:scale-95
-                `}
+              {/* Action buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 mt-8">
+                <motion.button
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.9 }}
+                  onClick={handleGoToDashboard}
+                  className={`
+                    flex-1 py-4 px-6 rounded-xl font-semibold text-white
+                    transition-all duration-200 shadow-lg flex items-center justify-center gap-2
+                    ${isAdmin
+                      ? 'bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700'
+                      : 'bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700'
+                    }
+                    hover:shadow-xl hover:scale-105 active:scale-95
+                  `}
+                >
+                  <span>Dashboard</span>
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
+
+                {domain && (
+                  <motion.button
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1.0 }}
+                    onClick={handleViewProfile}
+                    className="flex-1 py-4 px-6 rounded-xl font-semibold bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <span>Ver Perfil</span>
+                    <ExternalLink className="w-5 h-5" />
+                  </motion.button>
+                )}
+              </div>
+
+              {/* Close hint */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2 }}
+                className="text-center text-sm text-gray-500 mt-4"
               >
-                Ir para o Dashboard
-              </motion.button>
+                Pressione ESC ou clique fora para fechar
+              </motion.p>
             </motion.div>
           </motion.div>
         </div>
