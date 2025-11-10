@@ -19,7 +19,7 @@ const DataProcessingAddendum: React.FC = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-black mb-4">
               Adendo de Processamento de Dados
             </h1>
-            <p className="text-xl text-[#6B7280]/70 mb-4">.com.rich</p>
+            <p className="text-xl text-[#6B7280]/70 mb-4">.multicolecionismo.social</p>
             <div className="inline-flex items-center gap-2 text-[#6B7280]/80">
               <Calendar className="w-4 h-4" />
               <span className="text-sm">Última atualização: 26 de outubro de 2025</span>
@@ -74,7 +74,7 @@ const DataProcessingAddendum: React.FC = () => {
                       A Global Digital Identity processa Dados Pessoais nas seguintes atividades:
                     </p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
-                      <li>Registro, gerenciamento e renovação de domínios .com.rich</li>
+                      <li>Registro, gerenciamento e renovação de domínios .multicolecionismo.social</li>
                       <li>Fornecimento de serviços de perfis digitais profissionais</li>
                       <li>Manutenção de contas de usuários e perfis públicos</li>
                       <li>Processamento de pagamentos e emissão de faturas</li>

@@ -60,13 +60,13 @@ const Terms: React.FC = () => {
                 content: (
                   <div className="text-[#6B7280]/80 space-y-4">
                     <p>
-                      Bem-vindo ao <strong className="text-black">.com.rich</strong>, um serviço operado pela <strong className="text-black">Global Digital Identity LTD</strong>, empresa registrada na Inglaterra e País de Gales sob o número <strong className="text-black">Company No. 16339013</strong>, com sede em <strong className="text-black">71–75 Shelton Street, Covent Garden, Londres, WC2H 9JQ, Reino Unido</strong> (".com.rich", "Plataforma", "Serviço", "nós", "nosso").
+                      Bem-vindo ao <strong className="text-black">.multicolecionismo.social</strong>, um serviço operado pela <strong className="text-black">Global Digital Identity LTD</strong>, empresa registrada na Inglaterra e País de Gales sob o número <strong className="text-black">Company No. 16339013</strong>, com sede em <strong className="text-black">71–75 Shelton Street, Covent Garden, Londres, WC2H 9JQ, Reino Unido</strong> (".multicolecionismo.social", "Plataforma", "Serviço", "nós", "nosso").
                     </p>
                     <p>
                       <strong className="text-black">Contato oficial:</strong> <a href="mailto:support@com.rich" className="text-[#3B82F6] hover:text-[#6B7280]">support@com.rich</a>
                     </p>
                     <p>
-                      Ao acessar, criar uma conta ou utilizar qualquer serviço do .com.rich, você ("Usuário", "Cliente") declara ter lido, compreendido e aceitado integralmente estes <strong className="text-black">Termos de Uso</strong> e a <strong className="text-black">Política de Privacidade</strong> correspondente.
+                      Ao acessar, criar uma conta ou utilizar qualquer serviço do .multicolecionismo.social, você ("Usuário", "Cliente") declara ter lido, compreendido e aceitado integralmente estes <strong className="text-black">Termos de Uso</strong> e a <strong className="text-black">Política de Privacidade</strong> correspondente.
                     </p>
                     <p>
                       O uso contínuo da plataforma constitui aceitação plena e irrevogável das condições aqui estabelecidas.
@@ -78,9 +78,9 @@ const Terms: React.FC = () => {
                 title: '2. OBJETO',
                 content: (
                   <div className="text-[#6B7280]/80 space-y-4">
-                    <p>O <strong className="text-black">.com.rich</strong> é uma plataforma digital que oferece:</p>
+                    <p>O <strong className="text-black">.multicolecionismo.social</strong> é uma plataforma digital que oferece:</p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
-                      <li>Registro, renovação e administração de domínios com a extensão <strong className="text-black">.com.rich</strong>;</li>
+                      <li>Registro, renovação e administração de domínios com a extensão <strong className="text-black">.multicolecionismo.social</strong>;</li>
                       <li>Criação, gerenciamento e hospedagem de <strong className="text-black">perfis digitais profissionais personalizados</strong>;</li>
                       <li><strong className="text-black">Funcionalidade Loja:</strong> Vitrine digital para exposição de produtos e serviços (conforme <a href="/policies/store-terms" className="text-[#3B82F6] hover:underline">Termos da Loja</a>);</li>
                       <li><strong className="text-black">Funcionalidade Social:</strong> Rede social integrada para criação e compartilhamento de conteúdo (conforme <a href="/policies/social-terms" className="text-[#3B82F6] hover:underline">Termos da Rede Social</a>);</li>
@@ -98,7 +98,7 @@ const Terms: React.FC = () => {
                 content: (
                   <div className="text-[#6B7280]/80 space-y-4">
                     <h3 className="text-lg font-semibold text-black">3.1 Requisitos</h3>
-                    <p>Para utilizar o .com.rich, o usuário deve:</p>
+                    <p>Para utilizar o .multicolecionismo.social, o usuário deve:</p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
                       <li>Ter no mínimo 18 anos;</li>
                       <li>Fornecer informações verdadeiras, completas e atualizadas;</li>
@@ -147,11 +147,11 @@ const Terms: React.FC = () => {
                   <div className="text-[#6B7280]/80 space-y-4">
                     <h3 className="text-lg font-semibold text-black">5.1 Modelo de Assinatura</h3>
                     <p>
-                      O acesso à plataforma .com.rich requer uma <strong className="text-black">assinatura mensal ativa</strong>.
+                      O acesso à plataforma .multicolecionismo.social requer uma <strong className="text-black">assinatura mensal ativa</strong>.
                       Existem dois planos principais:
                     </p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside ml-4">
-                      <li><strong className="text-black">Prime ($50/mês):</strong> Inclui 1 domínio .com.rich, sistema completo de links personalizados, analytics, QR codes e participação no programa de afiliados com comissão de 25% sobre vendas de planos de assinatura.</li>
+                      <li><strong className="text-black">Prime ($50/mês):</strong> Inclui 1 domínio .multicolecionismo.social, sistema completo de links personalizados, analytics, QR codes e participação no programa de afiliados com comissão de 25% sobre vendas de planos de assinatura.</li>
                       <li><strong className="text-black">Elite ($70/mês, aumentando para $100/mês em 1º jan/2026):</strong> Inclui todos os recursos do Prime, acesso exclusivo à Galeria Premium, suporte prioritário, comissão de afiliado de 50% sobre vendas de planos de assinatura e benefícios exclusivos.</li>
                     </ul>
 
@@ -219,7 +219,7 @@ const Terms: React.FC = () => {
 
                     <h3 className="text-lg font-semibold text-black mt-4">5.6 Titularidade dos Domínios</h3>
                     <p>
-                      <strong className="text-black">IMPORTANTE:</strong> Todos os domínios .com.rich são propriedade exclusiva da
+                      <strong className="text-black">IMPORTANTE:</strong> Todos os domínios .multicolecionismo.social são propriedade exclusiva da
                       <strong className="text-black"> Global Digital Identity LTD</strong>.
                       Os usuários recebem apenas <strong className="text-black">licenças exclusivas de uso</strong>, que são:
                     </p>
@@ -348,7 +348,7 @@ const Terms: React.FC = () => {
                       <li>não assume responsabilidade por atos ou omissões de terceiros prestadores de serviço de rede, DNS ou e-mail.</li>
                     </ul>
                     <p>
-                      O uso do .com.rich é feito <strong className="text-black">sob inteira responsabilidade do usuário</strong>.
+                      O uso do .multicolecionismo.social é feito <strong className="text-black">sob inteira responsabilidade do usuário</strong>.
                     </p>
                   </div>
                 )
@@ -358,7 +358,7 @@ const Terms: React.FC = () => {
                 content: (
                   <div className="text-[#6B7280]/80 space-y-4">
                     <p>
-                      O .com.rich cumpre integralmente o <strong className="text-black">UK Data Protection Act 2018</strong> e o <strong className="text-black">General Data Protection Regulation (GDPR)</strong> da União Europeia.
+                      O .multicolecionismo.social cumpre integralmente o <strong className="text-black">UK Data Protection Act 2018</strong> e o <strong className="text-black">General Data Protection Regulation (GDPR)</strong> da União Europeia.
                     </p>
                     <p>Os dados pessoais são tratados para:</p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
@@ -392,7 +392,7 @@ const Terms: React.FC = () => {
                     <p>É proibido:</p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
                       <li>reproduzir, modificar, distribuir ou explorar qualquer parte do sistema;</li>
-                      <li>utilizar as marcas ".com.rich" ou "Global Digital Identity LTD" sem autorização;</li>
+                      <li>utilizar as marcas ".multicolecionismo.social" ou "Global Digital Identity LTD" sem autorização;</li>
                       <li>realizar engenharia reversa, scraping ou automação não autorizada.</li>
                     </ul>
                     <p>
@@ -521,7 +521,7 @@ const Terms: React.FC = () => {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-slate-500 to-slate-900 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-500" />
             <div className="relative bg-white backdrop-blur-xl border border-gray-200 rounded-xl p-8 text-center">
               <p className="text-[#6B7280]/80 mb-2 text-sm">
-                © 2025 <strong className="text-black">.com.rich</strong> — Todos os direitos reservados.
+                © 2025 <strong className="text-black">.multicolecionismo.social</strong> — Todos os direitos reservados.
               </p>
               <p className="text-[#6B7280]/80 mb-6">
                 Se você tiver dúvidas sobre estes termos, entre em contato conosco.

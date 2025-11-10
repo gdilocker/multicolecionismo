@@ -18,7 +18,7 @@ const DomainTransferPolicy: React.FC = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-black mb-4">
               Política de Domínios Premium
             </h1>
-            <p className="text-xl text-[#6B7280]/70 mb-4">.com.rich</p>
+            <p className="text-xl text-[#6B7280]/70 mb-4">.multicolecionismo.social</p>
             <div className="inline-flex items-center gap-2 text-[#6B7280]/80">
               <Calendar className="w-4 h-4" />
               <span className="text-sm">Última atualização: 13 de novembro de 2025</span>
@@ -65,12 +65,12 @@ const DomainTransferPolicy: React.FC = () => {
                 </h2>
                 <div className="text-[#6B7280]/80 space-y-4">
                   <p>
-                    Os domínios <strong>.com.rich</strong> são ativos digitais exclusivos e não se
+                    Os domínios <strong>.multicolecionismo.social</strong> são ativos digitais exclusivos e não se
                     destinam ao uso genérico ou massivo. Cada registro é analisado e aprovado
                     individualmente pela Global Digital Identity LTD.
                   </p>
                   <p>
-                    Ao adquirir um domínio .com.rich, você recebe uma <strong>licença exclusiva e
+                    Ao adquirir um domínio .multicolecionismo.social, você recebe uma <strong>licença exclusiva e
                     pessoal de uso</strong>, condicionada ao pagamento regular e conformidade com
                     nossos Termos de Uso.
                   </p>
@@ -93,7 +93,7 @@ const DomainTransferPolicy: React.FC = () => {
                 </h2>
                 <div className="text-[#6B7280]/80 space-y-4">
                   <p className="mb-4">
-                    Todos os domínios .com.rich seguem um ciclo de vida estruturado para proteger
+                    Todos os domínios .multicolecionismo.social seguem um ciclo de vida estruturado para proteger
                     tanto o titular quanto a integridade da rede.
                   </p>
 

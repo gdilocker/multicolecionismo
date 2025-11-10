@@ -64,14 +64,14 @@ const Transfer: React.FC = () => {
             >
               Transferência de
               <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-slate-800 bg-clip-text text-transparent">
-                Domínio .com.rich
+                Domínio .multicolecionismo.social
               </span>
             </motion.h1>
             <motion.p
               variants={item}
               className="text-xl text-slate-200/80 leading-relaxed"
             >
-              Transfira seu domínio .com.rich para nós e aproveite preços competitivos com suporte excepcional
+              Transfira seu domínio .multicolecionismo.social para nós e aproveite preços competitivos com suporte excepcional
             </motion.p>
           </div>
         </motion.section>
@@ -135,7 +135,7 @@ const Transfer: React.FC = () => {
                       name="domain"
                       value={formData.domain}
                       onChange={handleInputChange}
-                      placeholder="exemplo.com.rich"
+                      placeholder="exemplo.multicolecionismo.social"
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-blue-300/50 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                       required
                     />

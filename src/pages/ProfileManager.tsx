@@ -623,7 +623,7 @@ export default function ProfileManager() {
       <div className="max-w-7xl mx-auto">
         <div className="px-4 sm:px-6 lg:px-8">
           <PageHeader
-            title={domainName ? `Gerenciar Página - ${domainName.replace('.com.rich', '')}` : "Gerenciar Página"}
+            title={domainName ? `Gerenciar Página - ${domainName.replace('.multicolecionismo.social', '')}` : "Gerenciar Página"}
             subtitle={domainName ? `Personalize a página pública do domínio https://${domainName}` : "Personalize sua página pública"}
             badge={isEliteMember ? <EliteBadge size="md" /> : undefined}
             primaryAction={

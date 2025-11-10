@@ -128,7 +128,7 @@ ORDER BY routine_name;
 cat > .env.dr <<EOF
 VITE_SUPABASE_URL=$DR_PROJECT_URL
 VITE_SUPABASE_ANON_KEY=$DR_ANON_KEY
-VITE_APP_URL=https://dr-staging.com.rich
+VITE_APP_URL=https://dr-staging.multicolecionismo.social
 
 # Backend
 SUPABASE_URL=$DR_PROJECT_URL
@@ -171,7 +171,7 @@ netlify deploy --prod --dir=dist --site=comrich-dr
 ### 4.1 Authentication Test
 ```bash
 # Test user login
-curl -X POST https://dr-staging.com.rich/api/auth/login \
+curl -X POST https://dr-staging.multicolecionismo.social/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email":"test@com.rich","password":"DrillTest123!"}'
 ```
@@ -190,7 +190,7 @@ curl -X POST https://dr-staging.com.rich/api/auth/login \
 ### 4.2 Critical Operations Test
 ```bash
 # Test domain search
-curl "https://dr-staging.com.rich/api/domains/search?q=example"
+curl "https://dr-staging.multicolecionismo.social/api/domains/search?q=example"
 
 # Test checkout flow (do NOT complete payment)
 # 1. Search domain
@@ -279,7 +279,7 @@ curl "https://$DR_PROJECT_URL/functions/v1/qr?data=test"
 for endpoint in /api/health /api/domains /api/auth/login; do
   echo "Testing $endpoint..."
   curl -w "\nTime: %{time_total}s\n" -o /dev/null -s \
-    https://dr-staging.com.rich$endpoint
+    https://dr-staging.multicolecionismo.social$endpoint
 done
 ```
 

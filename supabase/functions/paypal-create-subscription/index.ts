@@ -54,7 +54,7 @@ async function createPayPalSubscription(params: {
     plan_id: planId,
     custom_id: `${userId}|${domain}`,
     application_context: {
-      brand_name: ".com.rich",
+      brand_name: ".multicolecionismo.social",
       locale: "en-US",
       shipping_preference: "NO_SHIPPING",
       user_action: "SUBSCRIBE_NOW",

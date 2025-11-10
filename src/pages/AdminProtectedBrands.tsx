@@ -111,7 +111,7 @@ export default function AdminProtectedBrands() {
         await supabase
           .from('premium_domains')
           .update({ is_protected_brand: true })
-          .eq('fqdn', `${formData.domain_name}.com.rich`);
+          .eq('fqdn', `${formData.domain_name}.multicolecionismo.social`);
       }
 
       handleCancelEdit();
@@ -137,7 +137,7 @@ export default function AdminProtectedBrands() {
       await supabase
         .from('premium_domains')
         .update({ is_protected_brand: false })
-        .eq('fqdn', `${domainName}.com.rich`);
+        .eq('fqdn', `${domainName}.multicolecionismo.social`);
 
       showMessage('success', 'Marca removida com sucesso');
       loadBrands();
@@ -224,7 +224,7 @@ export default function AdminProtectedBrands() {
                 placeholder="ex: tesla"
                 className="w-full px-4 py-2 border-2 border-yellow-300 rounded-lg focus:border-yellow-500 focus:outline-none"
               />
-              <p className="text-xs text-gray-600 mt-1">Sem .com.rich - apenas o nome</p>
+              <p className="text-xs text-gray-600 mt-1">Sem .multicolecionismo.social - apenas o nome</p>
             </div>
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-1">
@@ -384,7 +384,7 @@ export default function AdminProtectedBrands() {
                       </div>
                     </td>
                     <td className="py-4 px-6">
-                      <code className="text-sm bg-slate-100 px-2 py-1 rounded">{brand.domain_name}.com.rich</code>
+                      <code className="text-sm bg-slate-100 px-2 py-1 rounded">{brand.domain_name}.multicolecionismo.social</code>
                     </td>
                     <td className="py-4 px-6 text-sm text-[#6B7280]">
                       {brand.description || '-'}

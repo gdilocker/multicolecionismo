@@ -92,7 +92,7 @@ const Home = () => {
 
     for (let attempt = 0; attempt <= maxRetries; attempt++) {
       try {
-        const domainToCheck = domain.endsWith('.com.rich') ? domain : `${domain}.com.rich`;
+        const domainToCheck = domain.endsWith('.multicolecionismo.social') ? domain : `${domain}.multicolecionismo.social`;
 
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 15000); // Reduzido para 15s
@@ -245,7 +245,7 @@ const Home = () => {
       return;
     }
 
-    const domainToRegister = domain.endsWith('.com.rich') ? domain : `${domain}.com.rich`;
+    const domainToRegister = domain.endsWith('.multicolecionismo.social') ? domain : `${domain}.multicolecionismo.social`;
 
     if (isAdmin) {
       try {
@@ -544,7 +544,7 @@ const Home = () => {
                 Sua Identidade
               </span>
               <span className="text-amber-400 block">
-                .com.rich
+                .multicolecionismo.social
               </span>
             </motion.h1>
 
@@ -589,7 +589,7 @@ const Home = () => {
                         disabled={provisioning}
                       />
                       <div className="flex items-center px-3 sm:px-4 text-amber-400 text-sm sm:text-lg font-semibold select-none pointer-events-none whitespace-nowrap">
-                        .com.rich
+                        .multicolecionismo.social
                       </div>
                     </div>
                     <button
@@ -704,7 +704,7 @@ const Home = () => {
                                 ? 'text-xl sm:text-2xl md:text-3xl'
                                 : 'text-lg sm:text-xl md:text-2xl'
                             }`}>
-                              .com.rich
+                              .multicolecionismo.social
                             </span>
                           </div>
                         </div>
@@ -809,7 +809,7 @@ const Home = () => {
                                 ? 'text-xl sm:text-2xl md:text-3xl'
                                 : 'text-lg sm:text-xl md:text-2xl'
                             }`}>
-                              .com.rich
+                              .multicolecionismo.social
                             </span>
                           </div>
                         </div>
@@ -913,7 +913,7 @@ const Home = () => {
                               ? 'text-xl sm:text-2xl md:text-3xl'
                               : 'text-lg sm:text-xl md:text-2xl'
                           }`}>
-                            .com.rich
+                            .multicolecionismo.social
                           </span>
                         </div>
                       </div>
@@ -1006,13 +1006,13 @@ const Home = () => {
                 <span className="text-white">Valor e identidade</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4 sm:mb-6 leading-relaxed font-light px-4">
-                Mais do que um domínio, <strong className="text-amber-400">.com.rich</strong> é a chave para um mundo de oportunidades e reconhecimento global.
+                Mais do que um domínio, <strong className="text-amber-400">.multicolecionismo.social</strong> é a chave para um mundo de oportunidades e reconhecimento global.
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 sm:mb-3 leading-tight tracking-tight font-bold px-4">
                 <span className="text-white">Seu nome. Sua marca.</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-2 sm:mb-3 leading-relaxed font-light px-4">
-                Com um domínio único, sua presença online é exclusivamente sua. Haverá apenas uma <strong className="text-amber-400">olivia.com.rich</strong>, uma <strong className="text-amber-400">james.com.rich</strong>, uma <strong className="text-amber-400">isabella.com.rich</strong>.
+                Com um domínio único, sua presença online é exclusivamente sua. Haverá apenas uma <strong className="text-amber-400">olivia.multicolecionismo.social</strong>, uma <strong className="text-amber-400">james.multicolecionismo.social</strong>, uma <strong className="text-amber-400">isabella.multicolecionismo.social</strong>.
               </p>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light px-4">
                 Essa exclusividade representa uma oportunidade real para fortalecer sua marca pessoal e ser reconhecido de forma autêntica no cenário digital global.
@@ -1031,7 +1031,7 @@ const Home = () => {
           >
             <div className="text-center mb-6 sm:mb-10 lg:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 sm:mb-3 leading-tight tracking-tight font-bold text-white px-4">
-                Sua licença .com.rich em três etapas
+                Sua licença .multicolecionismo.social em três etapas
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-0 leading-relaxed font-light px-4">
                 Três passos simples separam você de uma identidade digital incomparável. Cada detalhe foi pensado para oferecer exclusividade, segurança e presença imediata.
@@ -1044,19 +1044,19 @@ const Home = () => {
                   step: '01',
                   icon: Search,
                   title: 'Busque sua licença',
-                  description: 'Encontre o nome perfeito dentro do universo .com.rich e garanta sua licença exclusiva de uso.'
+                  description: 'Encontre o nome perfeito dentro do universo .multicolecionismo.social e garanta sua licença exclusiva de uso.'
                 },
                 {
                   step: '02',
                   icon: Lock,
                   title: 'Adquira sua licença',
-                  description: 'Finalize sua contratação com segurança. Sua licença exclusiva .com.rich será ativada instantaneamente e vinculada ao seu perfil.'
+                  description: 'Finalize sua contratação com segurança. Sua licença exclusiva .multicolecionismo.social será ativada instantaneamente e vinculada ao seu perfil.'
                 },
                 {
                   step: '03',
                   icon: Link2,
                   title: 'Tudo em um só lugar',
-                  description: 'Sua licença .com.rich inclui uma página moderna e personalizável, onde você conecta redes, negócios e oportunidades, tudo em um\u00A0só\u00A0link.'
+                  description: 'Sua licença .multicolecionismo.social inclui uma página moderna e personalizável, onde você conecta redes, negócios e oportunidades, tudo em um\u00A0só\u00A0link.'
                 }
               ].map((step, index) => (
                 <motion.div
@@ -1096,11 +1096,11 @@ const Home = () => {
           >
             <div className="text-center mb-6 sm:mb-10 lg:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 sm:mb-3 leading-tight tracking-tight font-bold text-white px-4">
-                O que é .com.rich?
+                O que é .multicolecionismo.social?
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-0 leading-relaxed font-light px-4">
-                O domínio .com.rich representa uma nova forma de presença digital feita para quem quer unir valor, propósito e exclusividade.
-                Mais do que um endereço na web, ele é uma declaração de identidade: cada nome em .com.rich reflete quem você é e o que deseja transmitir ao mundo.
+                O domínio .multicolecionismo.social representa uma nova forma de presença digital feita para quem quer unir valor, propósito e exclusividade.
+                Mais do que um endereço na web, ele é uma declaração de identidade: cada nome em .multicolecionismo.social reflete quem você é e o que deseja transmitir ao mundo.
               </p>
             </div>
 
@@ -1109,17 +1109,17 @@ const Home = () => {
                 {
                   icon: Shield,
                   title: 'Máxima segurança',
-                  description: 'Cada licença .com.rich é protegida com tecnologia avançada e protocolos de segurança global, garantindo total proteção para sua identidade digital.'
+                  description: 'Cada licença .multicolecionismo.social é protegida com tecnologia avançada e protocolos de segurança global, garantindo total proteção para sua identidade digital.'
                 },
                 {
                   icon: Zap,
                   title: 'Ativação instantânea',
-                  description: 'Tudo é preparado automaticamente. Em poucos instantes, sua licença .com.rich estará ativa e conectada à sua página personalizada.'
+                  description: 'Tudo é preparado automaticamente. Em poucos instantes, sua licença .multicolecionismo.social estará ativa e conectada à sua página personalizada.'
                 },
                 {
                   icon: Globe,
                   title: 'Identidade profissional',
-                  description: 'Uma licença .com.rich transforma sua presença online em algo memorável, distinto e visualmente sofisticado.'
+                  description: 'Uma licença .multicolecionismo.social transforma sua presença online em algo memorável, distinto e visualmente sofisticado.'
                 }
               ].map((feature, index) => (
                 <motion.div
@@ -1163,7 +1163,7 @@ const Home = () => {
                     Sua licença exclusiva protegida:
                   </p>
                   <p className="text-sm sm:text-base md:text-lg text-amber-400/90 mb-4 sm:mb-6 max-w-2xl mx-auto font-medium px-4 break-all">
-                    https://seunome.com.rich / https://com.rich/seunome
+                    https://seunome.multicolecionismo.social / https://com.rich/seunome
                   </p>
                   <button
                     onClick={() => navigate('/register')}

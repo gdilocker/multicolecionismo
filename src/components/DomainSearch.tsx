@@ -28,13 +28,13 @@ interface DomainSearchResult {
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-// Converte input do usuário para domínio .com.rich
+// Converte input do usuário para domínio .multicolecionismo.social
 function toDomain(value: string): string {
   const s = value.trim().toLowerCase();
   if (!s) throw new Error("Informe um nome de domínio");
-  if (s.endsWith(".com.rich")) return s;
+  if (s.endsWith(".multicolecionismo.social")) return s;
   if (s.includes(".")) return s;
-  return `${s}.com.rich`;
+  return `${s}.multicolecionismo.social`;
 }
 
 async function checkDomainAvailability(fqdn: string): Promise<DomainSearchResult> {
@@ -116,7 +116,7 @@ const DomainSearch: React.FC<DomainSearchProps> = ({ onDomainSelected }) => {
     setSuggestions([]);
 
     try {
-      // First, check if it's a profile search (without .com.rich extension)
+      // First, check if it's a profile search (without .multicolecionismo.social extension)
       if (!cleanSld.includes('.')) {
         // Check if profile exists
         const profileCheckUrl = `${SUPABASE_URL}/rest/v1/user_profiles?subdomain=eq.${cleanSld}&is_public=eq.true&select=subdomain`;
@@ -138,7 +138,7 @@ const DomainSearch: React.FC<DomainSearchProps> = ({ onDomainSelected }) => {
       }
 
       // If not a profile or profile doesn't exist, check domain availability
-      const domainToCheck = cleanSld.endsWith(".com.rich") ? cleanSld : `${cleanSld}.com.rich`;
+      const domainToCheck = cleanSld.endsWith(".multicolecionismo.social") ? cleanSld : `${cleanSld}.multicolecionismo.social`;
       const result = await checkDomainAvailability(domainToCheck);
       setSearchResult(result);
 
@@ -148,7 +148,7 @@ const DomainSearch: React.FC<DomainSearchProps> = ({ onDomainSelected }) => {
         result.isPremium === true &&
         result.isAvailable === true
       ) {
-        const slug = result.fqdn.replace('.com.rich', '');
+        const slug = result.fqdn.replace('.multicolecionismo.social', '');
         navigate(`/${slug}`);
         return;
       }
@@ -166,10 +166,10 @@ const DomainSearch: React.FC<DomainSearchProps> = ({ onDomainSelected }) => {
       if (result.status === "UNAVAILABLE" && (!result.suggestions || result.suggestions.length === 0)) {
         const baseName = cleanSld.replace(/\.com\.rich$/, '');
         const suggestionVariations = [
-          `${baseName}1.com.rich`,
-          `${baseName}app.com.rich`,
-          `${baseName}pro.com.rich`,
-          `my${baseName}.com.rich`
+          `${baseName}1.multicolecionismo.social`,
+          `${baseName}app.multicolecionismo.social`,
+          `${baseName}pro.multicolecionismo.social`,
+          `my${baseName}.multicolecionismo.social`
         ];
 
         const suggestionPromises = suggestionVariations.map(async (domain) => {
@@ -219,7 +219,7 @@ const DomainSearch: React.FC<DomainSearchProps> = ({ onDomainSelected }) => {
               disabled={isSearching}
             />
             <div className="flex items-center px-4 bg-white border border-l-0 border-gray-300 rounded-r-lg text-gray-500 text-lg font-medium select-none">
-              .com.rich
+              .multicolecionismo.social
             </div>
           </div>
           <button
@@ -346,7 +346,7 @@ const DomainSearch: React.FC<DomainSearchProps> = ({ onDomainSelected }) => {
                     <button
                       key={idx}
                       onClick={() => {
-                        const name = sugg.replace('.com.rich', '');
+                        const name = sugg.replace('.multicolecionismo.social', '');
                         setSld(name);
                         handleSearch(new Event('submit') as any);
                       }}

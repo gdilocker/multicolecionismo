@@ -19,7 +19,7 @@ const Cookies: React.FC = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-black mb-4">
               Política de Cookies
             </h1>
-            <p className="text-xl text-[#6B7280]/70 mb-4">.com.rich</p>
+            <p className="text-xl text-[#6B7280]/70 mb-4">.multicolecionismo.social</p>
             <div className="inline-flex items-center gap-2 text-[#6B7280]/80">
               <Calendar className="w-4 h-4" />
               <span className="text-sm">Última atualização: 16 de outubro de 2025</span>
@@ -46,7 +46,7 @@ const Cookies: React.FC = () => {
                 <div>
                   <h2 className="text-xl font-semibold text-black mb-2">Global Digital Identity LTD</h2>
                   <p className="text-[#6B7280]/80 leading-relaxed">
-                    O <strong>.com.rich</strong>, operado pela <strong>Global Digital Identity LTD</strong>, utiliza cookies e tecnologias similares para garantir o funcionamento seguro da plataforma e aprimorar nossos serviços.
+                    O <strong>.multicolecionismo.social</strong>, operado pela <strong>Global Digital Identity LTD</strong>, utiliza cookies e tecnologias similares para garantir o funcionamento seguro da plataforma e aprimorar nossos serviços.
                   </p>
                 </div>
               </div>
@@ -64,7 +64,7 @@ const Cookies: React.FC = () => {
                       Eles permitem que a plataforma reconheça seu navegador, memorize preferências e melhore sua experiência de navegação.
                     </p>
                     <p>
-                      O <strong className="text-black">.com.rich</strong>, operado pela <strong className="text-black">Global Digital Identity LTD</strong>, utiliza cookies e tecnologias similares (como <em>local storage</em> e <em>pixels</em>) para garantir o funcionamento seguro da plataforma e aprimorar nossos serviços.
+                      O <strong className="text-black">.multicolecionismo.social</strong>, operado pela <strong className="text-black">Global Digital Identity LTD</strong>, utiliza cookies e tecnologias similares (como <em>local storage</em> e <em>pixels</em>) para garantir o funcionamento seguro da plataforma e aprimorar nossos serviços.
                     </p>
                   </div>
                 )
@@ -82,7 +82,7 @@ const Cookies: React.FC = () => {
                       <li><strong className="text-black">Consentimento:</strong> registrar sua aceitação dos termos e políticas.</li>
                     </ul>
                     <p className="font-semibold text-black mt-4">
-                      O .com.rich não utiliza cookies de marketing nem rastreamento publicitário.
+                      O .multicolecionismo.social não utiliza cookies de marketing nem rastreamento publicitário.
                     </p>
                   </div>
                 )
@@ -222,7 +222,7 @@ const Cookies: React.FC = () => {
 
                     <h3 className="text-lg font-semibold text-black mt-4">5.2 Centro de Preferências</h3>
                     <p>
-                      O <strong className="text-black">.com.rich</strong> disponibiliza um <strong className="text-black">Centro de Preferências de Cookies</strong>, acessível pelo banner de consentimento no rodapé do site, onde você pode:
+                      O <strong className="text-black">.multicolecionismo.social</strong> disponibiliza um <strong className="text-black">Centro de Preferências de Cookies</strong>, acessível pelo banner de consentimento no rodapé do site, onde você pode:
                     </p>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
                       <li>Aceitar ou recusar cookies não essenciais;</li>
@@ -265,7 +265,7 @@ const Cookies: React.FC = () => {
                   <div className="text-[#6B7280]/80 space-y-4">
                     <h3 className="text-lg font-semibold text-black">7.1 UK GDPR e GDPR (UE)</h3>
                     <p>
-                      O .com.rich obtém <strong className="text-black">consentimento explícito</strong> para qualquer cookie não essencial, conforme exigido pelas legislações britânica e europeia de proteção de dados.
+                      O .multicolecionismo.social obtém <strong className="text-black">consentimento explícito</strong> para qualquer cookie não essencial, conforme exigido pelas legislações britânica e europeia de proteção de dados.
                     </p>
 
                     <h3 className="text-lg font-semibold text-black mt-4">7.2 Legislação Aplicável</h3>
@@ -359,7 +359,7 @@ const Cookies: React.FC = () => {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-slate-500 to-slate-900 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-500" />
             <div className="relative bg-white backdrop-blur-xl border border-gray-200 rounded-xl p-8 text-center">
               <p className="text-[#6B7280]/80 mb-2 text-sm">
-                © 2025 <strong className="text-black">.com.rich</strong> — Todos os direitos reservados.
+                © 2025 <strong className="text-black">.multicolecionismo.social</strong> — Todos os direitos reservados.
               </p>
               <p className="text-[#6B7280]/80 mb-6">
                 Para gerenciar suas preferências de cookies ou esclarecer dúvidas, entre em contato conosco.

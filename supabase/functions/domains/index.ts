@@ -26,13 +26,13 @@ interface DomainCheckResult {
 }
 
 function generateSuggestions(fqdn: string): string[] {
-  const base = fqdn.replace('.com.rich', '');
+  const base = fqdn.replace('.multicolecionismo.social', '');
   return [
-    `${base}1.com.rich`,
-    `${base}app.com.rich`,
-    `${base}online.com.rich`,
-    `${base}pro.com.rich`,
-    `my${base}.com.rich`,
+    `${base}1.multicolecionismo.social`,
+    `${base}app.multicolecionismo.social`,
+    `${base}online.multicolecionismo.social`,
+    `${base}pro.multicolecionismo.social`,
+    `my${base}.multicolecionismo.social`,
   ];
 }
 
@@ -109,8 +109,8 @@ async function checkDomain(fqdn: string, userId?: string): Promise<DomainCheckRe
     console.log(`[DOMAIN CHECK] ❌ No userId provided - anonymous request`);
   }
 
-  if (!normalizedFqdn.endsWith('.com.rich')) {
-    throw new Error('Domínio inválido. Use apenas domínios .com.rich');
+  if (!normalizedFqdn.endsWith('.multicolecionismo.social')) {
+    throw new Error('Domínio inválido. Use apenas domínios .multicolecionismo.social');
   }
 
   if (!/^[a-z0-9-]+\.com\.rich$/.test(normalizedFqdn)) {
@@ -398,7 +398,7 @@ Deno.serve(async (req: Request) => {
     }
 
     return new Response(
-      JSON.stringify({ error: "Endpoint não encontrado. Use: POST {action: 'check', fqdn: 'dominio.com.rich'}" }),
+      JSON.stringify({ error: "Endpoint não encontrado. Use: POST {action: 'check', fqdn: 'dominio.multicolecionismo.social'}" }),
       { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
 

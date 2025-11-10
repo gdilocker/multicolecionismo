@@ -53,7 +53,7 @@ async function registerDomainWithDynadot(fqdn: string, contactInfo: any, years: 
 ### 2. APP_URL
 
 **O que é:**
-URL base da aplicação (exemplo: `https://com.rich` ou `https://app.com.rich`)
+URL base da aplicação (exemplo: `https://com.rich` ou `https://app.multicolecionismo.social`)
 
 **Onde é usado:**
 - `supabase/functions/paypal-create-order/index.ts:217-218`

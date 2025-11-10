@@ -31,7 +31,7 @@ export function ProfileFooterCTA({ affiliateCode, isAffiliate }: ProfileFooterCT
         href={href}
         className="inline-flex items-center gap-2 text-gray-400 hover:text-[#D4AF37] text-sm font-medium transition-colors group"
       >
-        <span>Crie sua página .com.rich</span>
+        <span>Crie sua página .multicolecionismo.social</span>
         <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
       </a>
     </div>

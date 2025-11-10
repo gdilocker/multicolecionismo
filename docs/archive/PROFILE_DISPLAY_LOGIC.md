@@ -2,7 +2,7 @@
 
 ## 📋 Resumo
 
-Este documento explica como a plataforma decide o que mostrar quando alguém acessa um domínio `.com.rich`.
+Este documento explica como a plataforma decide o que mostrar quando alguém acessa um domínio `.multicolecionismo.social`.
 
 ---
 
@@ -10,7 +10,7 @@ Este documento explica como a plataforma decide o que mostrar quando alguém ace
 
 ```
 ┌─────────────────────────────────────────────────┐
-│ Usuário acessa: eriksonleif.com.rich            │
+│ Usuário acessa: eriksonleif.multicolecionismo.social            │
 └─────────────────────────────────────────────────┘
                       ▼
 ┌─────────────────────────────────────────────────┐
@@ -73,14 +73,14 @@ Este documento explica como a plataforma decide o que mostrar quando alguém ace
 │          │    dourada)       │              │
 │          └──────────────────┘              │
 │                                            │
-│        eriksonleif.com.rich                │
+│        eriksonleif.multicolecionismo.social                │
 │                                            │
 │        🟡 Perfil em construção             │
 │                                            │
 │    ┌─────────────────────────────────┐    │
-│    │    | Sobre o .com.rich |        │    │
+│    │    | Sobre o .multicolecionismo.social |        │    │
 │    │                                 │    │
-│    │  O .com.rich é a plataforma     │    │
+│    │  O .multicolecionismo.social é a plataforma     │    │
 │    │  premium para criar sua         │    │
 │    │  identidade digital única.      │    │
 │    │                                 │    │
@@ -91,7 +91,7 @@ Este documento explica como a plataforma decide o que mostrar quando alguém ace
 │    │  - Proteção por Senha           │    │
 │    └─────────────────────────────────┘    │
 │                                            │
-│     [Crie seu perfil .com.rich]           │
+│     [Crie seu perfil .multicolecionismo.social]           │
 │                                            │
 └────────────────────────────────────────────┘
 ```
@@ -101,7 +101,7 @@ Este documento explica como a plataforma decide o que mostrar quando alguém ace
 - Logo com.rich em moldura elegante
 - Título grande com o domínio do usuário
 - Badge "Perfil em construção" com animação
-- Seção "Sobre o .com.rich" com cards animados
+- Seção "Sobre o .multicolecionismo.social" com cards animados
 - CTA para criar perfil (com código de afiliado se aplicável)
 
 ---
@@ -110,7 +110,7 @@ Este documento explica como a plataforma decide o que mostrar quando alguém ace
 
 **Quando aparece:**
 - Domínio premium está **disponível para venda**
-- Exemplo: `luxo.com.rich`, `success.com.rich`
+- Exemplo: `luxo.multicolecionismo.social`, `success.multicolecionismo.social`
 
 **Visual:**
 - Página de vendas premium
@@ -139,7 +139,7 @@ Este documento explica como a plataforma decide o que mostrar quando alguém ace
 
 ### Cenário 1: Usuário Acabou de Registrar
 ```
-Domínio: eriksonleif.com.rich
+Domínio: eriksonleif.multicolecionismo.social
 Status: Registrado (tabela domains)
 Perfil: Vazio (sem customização)
 
@@ -148,7 +148,7 @@ Resultado: ✅ Página Luxuosa "Perfil em Construção"
 
 ### Cenário 2: Usuário Customizou o Perfil
 ```
-Domínio: eriksonleif.com.rich
+Domínio: eriksonleif.multicolecionismo.social
 Status: Registrado
 Perfil: Com foto, bio e links
 
@@ -157,7 +157,7 @@ Resultado: ✅ Perfil Customizado
 
 ### Cenário 3: Domínio Não Registrado
 ```
-Domínio: novousuario.com.rich
+Domínio: novousuario.multicolecionismo.social
 Status: Não existe na tabela domains
 Perfil: Não existe
 
@@ -166,7 +166,7 @@ Resultado: ✅ Página "Domínio Disponível" (ou Premium Landing)
 
 ### Cenário 4: Perfil sem Domínio
 ```
-Domínio: testuser.com.rich
+Domínio: testuser.multicolecionismo.social
 Status: Não registrado na tabela domains
 Perfil: Existe na tabela user_profiles
 
@@ -257,7 +257,7 @@ Legenda:
 1. **Perfil Vazio:**
    - Criar novo usuário
    - Não adicionar nada
-   - Acessar `seunome.com.rich`
+   - Acessar `seunome.multicolecionismo.social`
    - Deve ver página luxuosa "em construção"
 
 2. **Perfil Customizado:**

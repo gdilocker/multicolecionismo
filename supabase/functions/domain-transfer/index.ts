@@ -268,7 +268,7 @@ Deno.serve(async (req: Request) => {
           },
         ],
         application_context: {
-          brand_name: ".com.rich - Transferência de Domínio",
+          brand_name: ".multicolecionismo.social - Transferência de Domínio",
           landing_page: "NO_PREFERENCE",
           user_action: "PAY_NOW",
           return_url: returnUrl || `${req.headers.get('origin')}/transfer/success`,

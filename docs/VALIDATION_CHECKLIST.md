@@ -1,4 +1,4 @@
-# Checklist de Validação Final - .com.rich
+# Checklist de Validação Final - .multicolecionismo.social
 
 **Objetivo:** Garantir que todas as correções críticas foram aplicadas e o sistema está pronto para escalar
 

@@ -457,7 +457,7 @@ export default function AdminSettings() {
                       </label>
                       <input
                         type="text"
-                        defaultValue=".com.rich"
+                        defaultValue=".multicolecionismo.social"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent"
                       />
                     </div>

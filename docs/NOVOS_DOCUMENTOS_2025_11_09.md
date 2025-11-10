@@ -32,21 +32,21 @@ Foram criados **3 novos documentos essenciais** para eliminar confusões sobre a
 
 **Por que foi criado:**
 Havia confusão sobre:
-- "Como funcionam os subdomínios .com.rich?"
+- "Como funcionam os subdomínios .multicolecionismo.social?"
 - "URLs são reais ou fake?"
 - "Precisa configurar DNS wildcard?"
 
 **Resposta clara:**
 ```
 ❌ NÃO EXISTE:
-- DNS wildcard (*.com.rich)
+- DNS wildcard (*.multicolecionismo.social)
 - Subdomínios reais
-- Domínio .com.rich registrado
+- Domínio .multicolecionismo.social registrado
 
 ✅ EXISTE:
 - Um único domínio: therichclub.com
 - Rotas React: /u/:username
-- Display fake: username.com.rich (só visual)
+- Display fake: username.multicolecionismo.social (só visual)
 - URL real: therichclub.com/u/username
 ```
 
@@ -75,7 +75,7 @@ Havia confusão sobre:
                                     ↓
                         [Supabase: domains, profiles]
                                     ↓
-                        [Renderiza: username.com.rich]
+                        [Renderiza: username.multicolecionismo.social]
 ```
 
 **Localização:** `/docs/DIAGRAMA_ARQUITETURA.md`
@@ -112,7 +112,7 @@ Sintomas:
 - Qualquer domínio pesquisado retorna "já registrado"
 
 Diagnóstico:
-SELECT fqdn, customer_id FROM domains WHERE fqdn = 'teste.com.rich';
+SELECT fqdn, customer_id FROM domains WHERE fqdn = 'teste.multicolecionismo.social';
 
 Causas:
 - Bug na lógica

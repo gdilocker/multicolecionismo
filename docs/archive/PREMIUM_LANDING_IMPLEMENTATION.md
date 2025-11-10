@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-Sistema completo para exibir páginas de landing premium para domínios `.com.rich` que são premium e ainda não foram adquiridos.
+Sistema completo para exibir páginas de landing premium para domínios `.multicolecionismo.social` que são premium e ainda não foram adquiridos.
 
 ## Componentes Criados
 
@@ -66,7 +66,7 @@ Adicionada rota dinâmica catch-all:
 ```json
 {
   "action": "check",
-  "fqdn": "vip.com.rich"
+  "fqdn": "vip.multicolecionismo.social"
 }
 ```
 
@@ -74,7 +74,7 @@ Adicionada rota dinâmica catch-all:
 ```json
 {
   "status": "AVAILABLE",
-  "fqdn": "vip.com.rich",
+  "fqdn": "vip.multicolecionismo.social",
   "isAvailable": true,
   "isPremium": true,
   "planRequired": "ELITE",
@@ -87,13 +87,13 @@ Adicionada rota dinâmica catch-all:
 ```json
 {
   "status": "UNAVAILABLE",
-  "fqdn": "maria.com.rich",
+  "fqdn": "maria.multicolecionismo.social",
   "isAvailable": false,
   "isPremium": false,
   "planRequired": null,
   "price": null,
   "message": "❌ Este domínio já foi registrado por outro usuário.",
-  "suggestions": ["maria1.com.rich", "mariaapp.com.rich"]
+  "suggestions": ["maria1.multicolecionismo.social", "mariaapp.multicolecionismo.social"]
 }
 ```
 
@@ -101,7 +101,7 @@ Adicionada rota dinâmica catch-all:
 ```json
 {
   "status": "AVAILABLE",
-  "fqdn": "ola.com.rich",
+  "fqdn": "ola.multicolecionismo.social",
   "isAvailable": true,
   "isPremium": false,
   "planRequired": "STANDARD_OR_ELITE",
@@ -118,18 +118,18 @@ Adicionada rota dinâmica catch-all:
 ### Fluxo 1: Busca por Domínio Premium
 ```
 1. Usuário digita "vip" na home
-2. DomainSearch normaliza para "vip.com.rich"
+2. DomainSearch normaliza para "vip.multicolecionismo.social"
 3. API retorna: AVAILABLE + isPremium=true + isAvailable=true
 4. Navega para /vip
 5. DomainSlugPage consulta API
 6. Renderiza PremiumLanding
 7. Usuário clica "Falar com Especialista"
-8. Navega para /contact?domain=vip.com.rich&type=premium
+8. Navega para /contact?domain=vip.multicolecionismo.social&type=premium
 ```
 
 ### Fluxo 2: Acesso via Subdomínio
 ```
-1. Usuário acessa https://vip.com.rich
+1. Usuário acessa https://vip.multicolecionismo.social
 2. Cloudflare faz 301 para https://com.rich/vip
 3. React Router captura /:slug
 4. DomainSlugPage consulta API
@@ -178,7 +178,7 @@ Ver arquivo: `CLOUDFLARE_SUBDOMAIN_SETUP.md`
 ```typescript
 if (typeof window !== 'undefined' && (window as any).gtag) {
   (window as any).gtag('event', 'premium_view', {
-    domain: 'vip.com.rich',
+    domain: 'vip.multicolecionismo.social',
     slug: 'vip'
   });
 }
@@ -188,13 +188,13 @@ if (typeof window !== 'undefined' && (window as any).gtag) {
 
 ### Meta Tags
 ```html
-<title>vip.com.rich - Domínio Premium | com.rich</title>
+<title>vip.multicolecionismo.social - Domínio Premium | com.rich</title>
 <link rel="canonical" href="https://com.rich/vip">
 ```
 
 ### URL Canônica
 - ✅ Sempre: `https://com.rich/<slug>`
-- ❌ Nunca: `https://<slug>.com.rich`
+- ❌ Nunca: `https://<slug>.multicolecionismo.social`
 
 ## Teste Rápido
 
@@ -203,7 +203,7 @@ if (typeof window !== 'undefined' && (window as any).gtag) {
 curl -X POST https://[SUPABASE_URL]/functions/v1/domains \
   -H "Authorization: Bearer [ANON_KEY]" \
   -H "Content-Type: application/json" \
-  -d '{"action":"check","fqdn":"vip.com.rich"}'
+  -d '{"action":"check","fqdn":"vip.multicolecionismo.social"}'
 
 # Deve retornar isPremium=true, isAvailable=true
 ```
@@ -221,7 +221,7 @@ Espera: Página do perfil público OU "já registrado"
 
 ### Teste 3: Standard Disponível
 ```bash
-curl -X POST [...] -d '{"action":"check","fqdn":"teste123.com.rich"}'
+curl -X POST [...] -d '{"action":"check","fqdn":"teste123.multicolecionismo.social"}'
 ```
 
 Acesse: `https://com.rich/teste123`

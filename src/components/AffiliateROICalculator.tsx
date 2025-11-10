@@ -291,7 +291,7 @@ export const AffiliateROICalculator: React.FC = () => {
             Documento Oficial Registrado
           </p>
           <p className="text-xs text-gray-700 leading-relaxed text-center">
-            Os Termos de Afiliados do .com.rich são documentos oficiais registrados na <strong className="text-black">Companies House</strong> (Reino Unido), garantindo transparência jurídica e autenticidade internacional.
+            Os Termos de Afiliados do .multicolecionismo.social são documentos oficiais registrados na <strong className="text-black">Companies House</strong> (Reino Unido), garantindo transparência jurídica e autenticidade internacional.
           </p>
           <p className="text-xs text-gray-600 mt-2 text-center">
             <strong className="text-black">Global Digital Identity LTD</strong> — Companies House – England & Wales

@@ -291,8 +291,8 @@ export default function Marketplace() {
       return;
     }
 
-    // Adiciona .com.rich se não tiver
-    const fullDomain = fqdn.includes('.com.rich') ? fqdn : `${fqdn}.com.rich`;
+    // Adiciona .multicolecionismo.social se não tiver
+    const fullDomain = fqdn.includes('.multicolecionismo.social') ? fqdn : `${fqdn}.multicolecionismo.social`;
 
     // Verifica se já existe
     const exists = suggestions.find(s =>
@@ -414,7 +414,7 @@ export default function Marketplace() {
                 Premium
               </h1>
               <p className="text-lg text-gray-600 font-medium mb-3">
-                Domínios .com.rich exclusivos e cuidadosamente selecionados
+                Domínios .multicolecionismo.social exclusivos e cuidadosamente selecionados
               </p>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-500 to-amber-600 rounded-full shadow-lg">
                 <Crown className="w-4 h-4 text-white" />
@@ -440,7 +440,7 @@ export default function Marketplace() {
                     <Info className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-lg font-bold text-gray-900">
-                    O Que significa ser licenciado de um domínio Premium .com.rich
+                    O Que significa ser licenciado de um domínio Premium .multicolecionismo.social
                   </span>
                 </div>
                 <motion.div
@@ -464,11 +464,11 @@ export default function Marketplace() {
                     <div className="px-6 pb-6 border-t border-yellow-200/50">
                       <div className="bg-white/60 rounded-xl p-6 mt-4 space-y-4 text-gray-700 leading-relaxed">
                         <p>
-                          Tornar-se licenciado de um domínio <strong className="text-yellow-800">.com.rich</strong> significa obter o{' '}
+                          Tornar-se licenciado de um domínio <strong className="text-yellow-800">.multicolecionismo.social</strong> significa obter o{' '}
                           <strong className="text-gray-900">direito exclusivo de uso e administração global</strong> de um nome digital de prestígio — como{' '}
-                          <code className="px-2 py-1 bg-yellow-100 text-yellow-900 rounded font-semibold">socialmedia.com.rich</code>,{' '}
-                          <code className="px-2 py-1 bg-yellow-100 text-yellow-900 rounded font-semibold">luxurycars.com.rich</code> ou{' '}
-                          <code className="px-2 py-1 bg-yellow-100 text-yellow-900 rounded font-semibold">art.com.rich</code>.
+                          <code className="px-2 py-1 bg-yellow-100 text-yellow-900 rounded font-semibold">socialmedia.multicolecionismo.social</code>,{' '}
+                          <code className="px-2 py-1 bg-yellow-100 text-yellow-900 rounded font-semibold">luxurycars.multicolecionismo.social</code> ou{' '}
+                          <code className="px-2 py-1 bg-yellow-100 text-yellow-900 rounded font-semibold">art.multicolecionismo.social</code>.
                         </p>
 
                         <p>
@@ -489,27 +489,27 @@ export default function Marketplace() {
                           <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-lg p-4 border border-yellow-300/50">
                             <div className="font-bold text-yellow-900 mb-2">🏆 Setores de Luxo</div>
                             <div className="text-sm text-gray-700 space-y-1">
-                              <div>• fashion.com.rich</div>
-                              <div>• realestate.com.rich</div>
-                              <div>• crypto.com.rich</div>
+                              <div>• fashion.multicolecionismo.social</div>
+                              <div>• realestate.multicolecionismo.social</div>
+                              <div>• crypto.multicolecionismo.social</div>
                             </div>
                           </div>
 
                           <div className="bg-gradient-to-br from-amber-100 to-yellow-100 rounded-lg p-4 border border-yellow-300/50">
                             <div className="font-bold text-amber-900 mb-2">🎨 Comunidades Temáticas</div>
                             <div className="text-sm text-gray-700 space-y-1">
-                              <div>• art.com.rich</div>
-                              <div>• travel.com.rich</div>
-                              <div>• wellness.com.rich</div>
+                              <div>• art.multicolecionismo.social</div>
+                              <div>• travel.multicolecionismo.social</div>
+                              <div>• wellness.multicolecionismo.social</div>
                             </div>
                           </div>
 
                           <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-lg p-4 border border-yellow-300/50">
                             <div className="font-bold text-yellow-900 mb-2">🌍 Regiões e Países</div>
                             <div className="text-sm text-gray-700 space-y-1">
-                              <div>• dubai.com.rich</div>
-                              <div>• brazil.com.rich</div>
-                              <div>• france.com.rich</div>
+                              <div>• dubai.multicolecionismo.social</div>
+                              <div>• brazil.multicolecionismo.social</div>
+                              <div>• france.multicolecionismo.social</div>
                             </div>
                           </div>
                         </div>
@@ -525,7 +525,7 @@ export default function Marketplace() {
                         </div>
 
                         <p className="text-gray-600 italic">
-                          Esse modelo permite a criação de um <strong className="text-gray-800">ecossistema mundial de plataformas segmentadas</strong>, conectadas entre si, formando a rede digital internacional dos nomes e marcas <strong className="text-yellow-800">.com.rich</strong>.
+                          Esse modelo permite a criação de um <strong className="text-gray-800">ecossistema mundial de plataformas segmentadas</strong>, conectadas entre si, formando a rede digital internacional dos nomes e marcas <strong className="text-yellow-800">.multicolecionismo.social</strong>.
                         </p>
                       </div>
                     </div>
@@ -917,7 +917,7 @@ export default function Marketplace() {
                   type="text"
                   value={newDomain.fqdn}
                   onChange={(e) => setNewDomain({ ...newDomain, fqdn: e.target.value })}
-                  placeholder="exemplo.com.rich"
+                  placeholder="exemplo.multicolecionismo.social"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent"
                 />
                 <p className="text-xs text-gray-500 mt-1">Digite o domínio completo ou apenas o nome</p>

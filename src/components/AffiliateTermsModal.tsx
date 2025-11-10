@@ -213,7 +213,7 @@ export function AffiliateTermsModal({ isOpen, onClose, onAccept }: AffiliateTerm
                   <p className="text-yellow-500 text-sm font-medium flex items-start gap-2">
                     <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                     <span>
-                      Ao aceitar estes termos, você confirma que leu, entendeu e concorda em cumprir todas as condições do Programa de Afiliados .com.rich
+                      Ao aceitar estes termos, você confirma que leu, entendeu e concorda em cumprir todas as condições do Programa de Afiliados .multicolecionismo.social
                     </span>
                   </p>
                 </div>

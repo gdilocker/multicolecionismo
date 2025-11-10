@@ -194,7 +194,7 @@ export default function AdminReservedKeywords() {
                 value={testKeyword}
                 onChange={(e) => setTestKeyword(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleTest()}
-                placeholder="Digite um domínio para testar (ex: premium.com.rich)"
+                placeholder="Digite um domínio para testar (ex: premium.multicolecionismo.social)"
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
               <button

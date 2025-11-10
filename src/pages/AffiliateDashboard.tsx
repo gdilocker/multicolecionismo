@@ -149,7 +149,7 @@ export default function AffiliateDashboard() {
             </div>
             <h1 className="text-4xl font-bold text-white mb-4">Programa de Afiliados</h1>
             <p className="text-gray-400 text-lg mb-8">
-              Ganhe comissões recorrentes divulgando .com.rich
+              Ganhe comissões recorrentes divulgando .multicolecionismo.social
             </p>
             <div className="bg-gradient-to-br from-[#1F1F1F] to-[#252525] border border-[#D4AF37]/20 rounded-2xl p-8 text-left">
               <h2 className="text-2xl font-bold text-white mb-4">Antes de começar</h2>

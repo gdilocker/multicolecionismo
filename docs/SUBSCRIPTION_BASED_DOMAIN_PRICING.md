@@ -165,7 +165,7 @@ async function checkDomainAvailability(fqdn: string): Promise<DomainSearchResult
 ### **Fluxo 1: Usuário SEM Assinatura**
 
 ```
-1. Usuário busca "leif.com.rich"
+1. Usuário busca "leif.multicolecionismo.social"
 2. Frontend envia request SEM auth token válido
 3. Edge function detecta: userId = undefined
 4. Retorna: showDirectPurchase = false, price.monthly = 50
@@ -178,7 +178,7 @@ async function checkDomainAvailability(fqdn: string): Promise<DomainSearchResult
 ### **Fluxo 2: Usuário COM Assinatura Standard (domínio regular)**
 
 ```
-1. Usuário busca "leif.com.rich"
+1. Usuário busca "leif.multicolecionismo.social"
 2. Frontend envia request COM auth token
 3. Edge function detecta:
    - userId = "abc123"
@@ -197,7 +197,7 @@ async function checkDomainAvailability(fqdn: string): Promise<DomainSearchResult
 ### **Fluxo 3: Usuário COM Assinatura Standard (domínio premium)**
 
 ```
-1. Usuário busca "ferrari.com.rich" (premium)
+1. Usuário busca "ferrari.multicolecionismo.social" (premium)
 2. Frontend envia request COM auth token
 3. Edge function detecta:
    - userId = "abc123"
@@ -217,7 +217,7 @@ async function checkDomainAvailability(fqdn: string): Promise<DomainSearchResult
 ### **Fluxo 4: Usuário COM Assinatura Elite (domínio premium)**
 
 ```
-1. Usuário busca "ferrari.com.rich" (premium)
+1. Usuário busca "ferrari.multicolecionismo.social" (premium)
 2. Frontend envia request COM auth token
 3. Edge function detecta:
    - userId = "abc123"
@@ -241,10 +241,10 @@ async function checkDomainAvailability(fqdn: string): Promise<DomainSearchResult
 
 ### **Antes:**
 ```
-Busca: "leif.com.rich"
+Busca: "leif.multicolecionismo.social"
 Resultado para TODOS:
   ┌─────────────────────────────┐
-  │ leif.com.rich               │
+  │ leif.multicolecionismo.social               │
   │ ✅ Disponível               │
   │                             │
   │ $50/mês                     │
@@ -256,10 +256,10 @@ Resultado para TODOS:
 
 ### **Depois (Usuário COM assinatura):**
 ```
-Busca: "leif.com.rich"
+Busca: "leif.multicolecionismo.social"
 Resultado personalizado:
   ┌─────────────────────────────┐
-  │ leif.com.rich               │
+  │ leif.multicolecionismo.social               │
   │ ✅ Disponível               │
   │                             │
   │ $100/ano                    │
@@ -271,10 +271,10 @@ Resultado personalizado:
 
 ### **Depois (Usuário SEM assinatura):**
 ```
-Busca: "leif.com.rich"
+Busca: "leif.multicolecionismo.social"
 Resultado padrão:
   ┌─────────────────────────────┐
-  │ leif.com.rich               │
+  │ leif.multicolecionismo.social               │
   │ ✅ Disponível               │
   │                             │
   │ $50/mês                     │
@@ -292,7 +292,7 @@ Resultado padrão:
 ```bash
 # Browser incognito
 1. Acessar homepage
-2. Buscar qualquer domínio .com.rich
+2. Buscar qualquer domínio .multicolecionismo.social
 3. Verificar: "Ver Planos" aparece
 4. Verificar: Preço mostra mensalidade do plano
 ✅ Esperado: Redirecionamento para /valores
@@ -302,7 +302,7 @@ Resultado padrão:
 ```bash
 # Login sem plano ativo
 1. Login com conta sem assinatura
-2. Buscar qualquer domínio .com.rich
+2. Buscar qualquer domínio .multicolecionismo.social
 3. Verificar: "Ver Planos" aparece
 ✅ Esperado: Mesmo comportamento que não logado
 ```
@@ -311,7 +311,7 @@ Resultado padrão:
 ```bash
 # Login com plano Standard ativo
 1. Login com conta Standard ativa
-2. Buscar domínio regular (ex: test123.com.rich)
+2. Buscar domínio regular (ex: test123.multicolecionismo.social)
 3. Verificar: "$100/ano" aparece
 4. Verificar: Botão "Adicionar domínio por $100/ano"
 5. Clicar no botão
@@ -322,7 +322,7 @@ Resultado padrão:
 ```bash
 # Login com plano Standard ativo
 1. Login com conta Standard ativa
-2. Buscar domínio premium (ex: ferrari.com.rich)
+2. Buscar domínio premium (ex: ferrari.multicolecionismo.social)
 3. Verificar: Badge "PREMIUM" aparece
 4. Verificar: Botão "Fazer Upgrade para Elite"
 5. Clicar no botão
@@ -333,7 +333,7 @@ Resultado padrão:
 ```bash
 # Login com plano Elite ativo
 1. Login com conta Elite ativa
-2. Buscar domínio premium (ex: rolex.com.rich)
+2. Buscar domínio premium (ex: rolex.multicolecionismo.social)
 3. Verificar: "Sob Consulta" aparece
 4. Verificar: Botão "Solicitar Orçamento"
 5. Clicar no botão

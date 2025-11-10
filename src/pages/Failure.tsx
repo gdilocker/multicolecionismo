@@ -88,7 +88,7 @@ const Failure: React.FC = () => {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Domínio:</span>
-                  <span className="font-medium">exemplo.com.rich</span>
+                  <span className="font-medium">exemplo.multicolecionismo.social</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Valor:</span>

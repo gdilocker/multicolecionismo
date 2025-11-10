@@ -1,7 +1,7 @@
 # ✅ TRABALHO COMPLETO - TheRichClub
 
 **Data:** 2025-11-09
-**Sistema:** Perfis Digitais .com.rich (100% Frontend Simulado)
+**Sistema:** Perfis Digitais .multicolecionismo.social (100% Frontend Simulado)
 
 ---
 
@@ -26,10 +26,10 @@ Finalizei TODA a parte técnica que posso fazer sem acesso às suas contas exter
 
 ✅ **Sistema 100% Simulado no Frontend**
 - ❌ Sem Dynadot
-- ❌ Sem DNS wildcard real (*.com.rich)
-- ❌ Sem domínio .com.rich registrado
+- ❌ Sem DNS wildcard real (*.multicolecionismo.social)
+- ❌ Sem domínio .multicolecionismo.social registrado
 - ✅ Rotas React: `/u/:username`
-- ✅ Display fake: `username.com.rich` (só visual)
+- ✅ Display fake: `username.multicolecionismo.social` (só visual)
 - ✅ Tudo roda em `therichclub.com`
 - ✅ Criado `.env.example` limpo
 
@@ -78,7 +78,7 @@ Finalizei TODA a parte técnica que posso fazer sem acesso às suas contas exter
 ✅ **28 Artigos Completos (eram 19, adicionei 9):**
 
 **Novos Artigos:**
-1. O que é .com.rich?
+1. O que é .multicolecionismo.social?
 2. Diferença entre os planos
 3. Como fazer upgrade
 4. Como criar perfil digital
@@ -124,29 +124,29 @@ Finalizei TODA a parte técnica que posso fazer sem acesso às suas contas exter
 **Categorias Expandidas:**
 
 **Tech & Innovation:**
-- artificial-intelligence.com.rich
-- machine-learning.com.rich
-- quantum-computing.com.rich
-- robotics.com.rich
-- automation.com.rich
+- artificial-intelligence.multicolecionismo.social
+- machine-learning.multicolecionismo.social
+- quantum-computing.multicolecionismo.social
+- robotics.multicolecionismo.social
+- automation.multicolecionismo.social
 
 **Mais Países:**
-- italy.com.rich, spain.com.rich, portugal.com.rich
-- greece.com.rich, turkey.com.rich, thailand.com.rich
-- vietnam.com.rich, singapore.com.rich, dubai.com.rich
+- italy.multicolecionismo.social, spain.multicolecionismo.social, portugal.multicolecionismo.social
+- greece.multicolecionismo.social, turkey.multicolecionismo.social, thailand.multicolecionismo.social
+- vietnam.multicolecionismo.social, singapore.multicolecionismo.social, dubai.multicolecionismo.social
 
 **Cidades:**
-- newyork.com.rich, london.com.rich, tokyo.com.rich
-- paris.com.rich, miami.com.rich, lasvegas.com.rich
-- sydney.com.rich, beijing.com.rich, shanghai.com.rich
+- newyork.multicolecionismo.social, london.multicolecionismo.social, tokyo.multicolecionismo.social
+- paris.multicolecionismo.social, miami.multicolecionismo.social, lasvegas.multicolecionismo.social
+- sydney.multicolecionismo.social, beijing.multicolecionismo.social, shanghai.multicolecionismo.social
 
 **Professional Services:**
-- consulting.com.rich, advisory.com.rich, strategy.com.rich
-- marketing.com.rich, branding.com.rich, legal.com.rich
+- consulting.multicolecionismo.social, advisory.multicolecionismo.social, strategy.multicolecionismo.social
+- marketing.multicolecionismo.social, branding.multicolecionismo.social, legal.multicolecionismo.social
 
 **Industries:**
-- manufacturing.com.rich, logistics.com.rich
-- aviation.com.rich, automotive.com.rich, energy.com.rich
+- manufacturing.multicolecionismo.social, logistics.multicolecionismo.social
+- aviation.multicolecionismo.social, automotive.multicolecionismo.social, energy.multicolecionismo.social
 
 **Resultado:** Catálogo diversificado e atrativo!
 
@@ -196,7 +196,7 @@ Utils vendor: 45KB
 6. Configuração Google Safe Browsing
 7. Configuração Supabase
 8. Deploy Frontend (Netlify/Vercel)
-9. Configuração DNS (wildcard *.com.rich)
+9. Configuração DNS (wildcard *.multicolecionismo.social)
 10. Cron Jobs (SQL pronto)
 11. Testes Finais
 12. Checklist Completo
@@ -317,7 +317,7 @@ Dashboard → SQL Editor → Copiar scripts do `SETUP_GUIDE.md`
 
 #### **9. Configurar DNS:**
 
-**IMPORTANTE:** Subdomínios .com.rich são **simulados no frontend**.
+**IMPORTANTE:** Subdomínios .multicolecionismo.social são **simulados no frontend**.
 
 **Só precisa configurar o domínio principal:**
 ```
@@ -332,7 +332,7 @@ Value: seu-site.netlify.app
 
 **Como funciona:**
 - URL real: `therichclub.com/u/username`
-- Display fake: `username.com.rich` (só visual no perfil)
+- Display fake: `username.multicolecionismo.social` (só visual no perfil)
 - Sem DNS wildcard necessário!
 
 #### **10. Netlify - Adicionar Domínio:**
@@ -375,7 +375,7 @@ Value: seu-site.netlify.app
 - [ ] Fazer upgrade (pagamento real)
 - [ ] Verificar webhook recebido
 - [ ] Verificar email enviado
-- [ ] Testar perfil público: `therichclub.com/u/teste` (mostra "teste.com.rich")
+- [ ] Testar perfil público: `therichclub.com/u/teste` (mostra "teste.multicolecionismo.social")
 - [ ] Testar loja online
 - [ ] Testar rede social
 
@@ -417,7 +417,7 @@ Value: seu-site.netlify.app
 ## 🎓 CONHECIMENTO TRANSFERIDO
 
 Você agora tem:
-- ✅ Sistema completo de licenciamento .com.rich
+- ✅ Sistema completo de licenciamento .multicolecionismo.social
 - ✅ 596 subdomínios premium prontos
 - ✅ 161 marcas protegidas
 - ✅ 24 templates de email HTML

@@ -215,7 +215,7 @@ const Register: React.FC = () => {
             Criar Nova Conta
           </h2>
           <p className="mt-2 text-center text-lg text-[#6B7280]">
-            Comece sua jornada com .com.rich
+            Comece sua jornada com .multicolecionismo.social
           </p>
 
           {getAffiliateCode() && (

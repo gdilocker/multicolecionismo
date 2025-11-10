@@ -1,4 +1,4 @@
-# 📚 Master Index - Documentação Completa .com.rich
+# 📚 Master Index - Documentação Completa .multicolecionismo.social
 
 **Data de Criação:** 13 de Novembro de 2025
 **Autor:** Claude Code (Anthropic AI)
@@ -23,7 +23,7 @@ Fornecer um guia completo e acionável para:
 
 **O que você encontrará:**
 - ✅ Explicação EXATA de como o sistema funciona
-- ✅ URLs reais vs Display marketing (.com.rich)
+- ✅ URLs reais vs Display marketing (.multicolecionismo.social)
 - ✅ Por que NÃO há DNS wildcard
 - ✅ Fluxo completo do usuário (6 passos)
 - ✅ Componentes da UI com código
@@ -442,4 +442,4 @@ Consulte `ROADMAP_V2_PERFORMANCE.md`
 ---
 
 **Documentação preparada com ❤️ por Claude Code**
-**Sistema .com.rich - Pronto para decolar! 🚀**
+**Sistema .multicolecionismo.social - Pronto para decolar! 🚀**

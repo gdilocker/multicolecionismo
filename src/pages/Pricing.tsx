@@ -25,7 +25,7 @@ const FALLBACK_PLANS: SubscriptionPlan[] = [
     billing_cycle: 'monthly',
     description: 'A porta de entrada para o clube com.rich. Presença digital exclusiva com elegância e sofisticação.',
     features: [
-      'Licença exclusiva de domínio (seunome.com.rich)',
+      'Licença exclusiva de domínio (seunome.multicolecionismo.social)',
       'Página de perfil personalizável (pública ou privada)',
       'Editor completo: bio, avatar e links ilimitados',
       'Analytics profissional de acessos e cliques',
@@ -170,7 +170,7 @@ const Pricing: React.FC = () => {
               </span>
             </h1>
             <p className="text-xl text-[#6B7280] leading-relaxed mb-8">
-              Escolha o plano ideal para sua licença exclusiva .com.rich
+              Escolha o plano ideal para sua licença exclusiva .multicolecionismo.social
             </p>
 
             {/* Important Notice - Positioned BEFORE trial */}

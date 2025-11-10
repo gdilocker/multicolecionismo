@@ -1,4 +1,4 @@
-# Plano de Ação - Correções Críticas .com.rich
+# Plano de Ação - Correções Críticas .multicolecionismo.social
 
 **Data:** 13 de Novembro de 2025
 **Objetivo:** Corrigir 4 riscos críticos em **2 semanas** (80h de desenvolvimento)
@@ -1331,9 +1331,9 @@ export async function generateDeviceFingerprint(): Promise<string> {
       ctx.fillStyle = '#f60';
       ctx.fillRect(125, 1, 62, 20);
       ctx.fillStyle = '#069';
-      ctx.fillText('.com.rich fingerprint', 2, 15);
+      ctx.fillText('.multicolecionismo.social fingerprint', 2, 15);
       ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
-      ctx.fillText('.com.rich fingerprint', 4, 17);
+      ctx.fillText('.multicolecionismo.social fingerprint', 4, 17);
 
       const dataURL = canvas.toDataURL();
       components.push(dataURL.slice(-50)); // Últimos 50 chars

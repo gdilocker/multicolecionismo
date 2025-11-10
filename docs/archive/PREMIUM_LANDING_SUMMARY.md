@@ -2,18 +2,18 @@
 
 ## O Que Foi Implementado
 
-Sistema completo de **landing pages premium** para domínios `.com.rich` de alto valor que ainda não foram adquiridos.
+Sistema completo de **landing pages premium** para domínios `.multicolecionismo.social` de alto valor que ainda não foram adquiridos.
 
 ## Objetivo
 
-Quando um usuário busca ou acessa um **domínio premium disponível** (ex: `vip.com.rich`), ele vê uma **página de luxo** explicando que o domínio é exclusivo para o Plano Elite, com CTAs para contato e conversão.
+Quando um usuário busca ou acessa um **domínio premium disponível** (ex: `vip.multicolecionismo.social`), ele vê uma **página de luxo** explicando que o domínio é exclusivo para o Plano Elite, com CTAs para contato e conversão.
 
 ## Como Funciona
 
 ### Fluxo Simples
 
 ```
-Usuário busca "vip" ou acessa vip.com.rich
+Usuário busca "vip" ou acessa vip.multicolecionismo.social
           ↓
 Redireciona para https://com.rich/vip
           ↓
@@ -117,7 +117,7 @@ Espera: Página padrão (fundo claro, preço US$ 50)
 
 ### ✅ Teste 4: Subdomínio
 ```
-Acesse: vip.com.rich
+Acesse: vip.multicolecionismo.social
 Espera: Redirect 301 → com.rich/vip
 ```
 
@@ -128,7 +128,7 @@ Espera: Redirect 301 → com.rich/vip
 POST /functions/v1/domains
 {
   "action": "check",
-  "fqdn": "vip.com.rich"
+  "fqdn": "vip.multicolecionismo.social"
 }
 ```
 
@@ -136,7 +136,7 @@ POST /functions/v1/domains
 ```json
 {
   "status": "AVAILABLE",
-  "fqdn": "vip.com.rich",
+  "fqdn": "vip.multicolecionismo.social",
   "isAvailable": true,
   "isPremium": true,
   "planRequired": "ELITE",
@@ -160,7 +160,7 @@ Eventos Google Analytics:
 
 - URL Canônica: sempre `https://com.rich/<slug>`
 - Subdomínios apenas redirecionam (301)
-- Title dinâmico: `<slug>.com.rich - Domínio Premium | com.rich`
+- Title dinâmico: `<slug>.multicolecionismo.social - Domínio Premium | com.rich`
 - Canonical tag: `<link rel="canonical" href="https://com.rich/<slug>">`
 
 ## Critérios de Aceite ✅

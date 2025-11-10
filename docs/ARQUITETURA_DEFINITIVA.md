@@ -14,19 +14,19 @@ Este documento explica **EXATAMENTE** como o sistema funciona.
 
 ## 🎯 O QUE É O SISTEMA?
 
-TheRichClub é uma plataforma de **perfis digitais exclusivos** com identidade `.com.rich`.
+TheRichClub é uma plataforma de **perfis digitais exclusivos** com identidade `.multicolecionismo.social`.
 
 ### **NÃO É:**
 - ❌ Registrador de domínios reais
 - ❌ Integração com DNS (Cloudflare, Namecheap, Dynadot)
 - ❌ Venda de domínios .com externos
-- ❌ Sistema de wildcard DNS (*.com.rich)
+- ❌ Sistema de wildcard DNS (*.multicolecionismo.social)
 - ❌ Subdomínios reais no DNS
 
 ### **É:**
 - ✅ Sistema de perfis com usernames únicos
 - ✅ Rotas React Router: `/u/:username`
-- ✅ Display marketing: `username.com.rich` (só visual)
+- ✅ Display marketing: `username.multicolecionismo.social` (só visual)
 - ✅ URL real: `therichclub.com/u/username`
 - ✅ Licenciamento de identidade digital exclusiva
 - ✅ Tudo roda em um único domínio: `therichclub.com`
@@ -74,7 +74,7 @@ Value: seu-site.netlify.app
 -- Tabela principal: domains
 CREATE TABLE domains (
   id UUID PRIMARY KEY,
-  fqdn TEXT UNIQUE NOT NULL,           -- "username.com.rich"
+  fqdn TEXT UNIQUE NOT NULL,           -- "username.multicolecionismo.social"
   customer_id UUID REFERENCES customers(id),
   domain_type TEXT DEFAULT 'regular',  -- 'regular' | 'premium'
   status TEXT DEFAULT 'active',        -- 'active' | 'suspended' | 'cancelled'
@@ -84,7 +84,7 @@ CREATE TABLE domains (
 -- Tabela premium: premium_domains
 CREATE TABLE premium_domains (
   id UUID PRIMARY KEY,
-  fqdn TEXT UNIQUE NOT NULL,           -- "vip.com.rich", "usa.com.rich"
+  fqdn TEXT UNIQUE NOT NULL,           -- "vip.multicolecionismo.social", "usa.multicolecionismo.social"
   price_usd DECIMAL(10,2) DEFAULT 70.00,
   required_plan TEXT DEFAULT 'Elite',  -- Só Elite ou Supreme
   created_at TIMESTAMPTZ DEFAULT NOW()
@@ -116,7 +116,7 @@ CREATE TABLE user_profiles (
 **Interface:**
 ```
 ┌─────────────────────────────────┐
-│ [username      ] .com.rich      │
+│ [username      ] .multicolecionismo.social      │
 │       [🔍 Buscar]               │
 └─────────────────────────────────┘
 ```
@@ -125,7 +125,7 @@ CREATE TABLE user_profiles (
 
 **Sistema faz:**
 1. Chama Edge Function: `POST /functions/v1/domains`
-2. Body: `{ action: 'check', fqdn: 'maria.com.rich' }`
+2. Body: `{ action: 'check', fqdn: 'maria.multicolecionismo.social' }`
 3. Edge Function verifica no banco:
 
 ```typescript
@@ -133,7 +133,7 @@ CREATE TABLE user_profiles (
 const { data: existing } = await supabase
   .from('domains')
   .select('*')
-  .eq('fqdn', 'maria.com.rich')
+  .eq('fqdn', 'maria.multicolecionismo.social')
   .maybeSingle();
 
 if (existing && existing.customer_id) {
@@ -144,7 +144,7 @@ if (existing && existing.customer_id) {
 const { data: premium } = await supabase
   .from('premium_domains')
   .select('*')
-  .eq('fqdn', 'maria.com.rich')
+  .eq('fqdn', 'maria.multicolecionismo.social')
   .maybeSingle();
 
 if (premium) {
@@ -170,7 +170,7 @@ return {
 #### **A) AVAILABLE (Regular)**
 ```
 ┌─────────────────────────────────────┐
-│ ✅ maria.com.rich                   │
+│ ✅ maria.multicolecionismo.social                   │
 │                                     │
 │ Domínio disponível para registro!  │
 │                                     │
@@ -185,7 +185,7 @@ return {
 #### **B) UNAVAILABLE (Já Registrado)**
 ```
 ┌─────────────────────────────────────┐
-│ ❌ maria.com.rich                   │
+│ ❌ maria.multicolecionismo.social                   │
 │                                     │
 │ Este domínio já está registrado    │
 │ por outro usuário.                 │
@@ -195,7 +195,7 @@ return {
 #### **C) AVAILABLE (Premium)**
 ```
 ┌─────────────────────────────────────┐
-│ 👑 vip.com.rich                     │
+│ 👑 vip.multicolecionismo.social                     │
 │                                     │
 │ Domínio Premium - disponível       │
 │ apenas para plano Elite            │
@@ -233,7 +233,7 @@ Usuário escolhe plano → vai para `/checkout`:
 5. ✅ Sistema cria:
    - Customer no banco
    - Subscription ativa
-   - Domain reservado: `maria.com.rich`
+   - Domain reservado: `maria.multicolecionismo.social`
    - User profile vinculado
 
 ### **Passo 5: Perfil Criado**
@@ -242,7 +242,7 @@ Usuário escolhe plano → vai para `/checkout`:
 ```sql
 -- domains
 INSERT INTO domains (fqdn, customer_id, domain_type, status)
-VALUES ('maria.com.rich', 'uuid-customer', 'regular', 'active');
+VALUES ('maria.multicolecionismo.social', 'uuid-customer', 'regular', 'active');
 
 -- user_profiles
 INSERT INTO user_profiles (user_id, domain_id, display_name)
@@ -256,7 +256,7 @@ VALUES ('uuid-user', 'uuid-domain', 'Maria Silva');
 **Perfil público fica disponível em:**
 ```
 URL REAL: https://therichclub.com/u/maria
-Display Marketing: maria.com.rich
+Display Marketing: maria.multicolecionismo.social
 ```
 
 ### **Passo 6: Compartilhamento**
@@ -264,7 +264,7 @@ Display Marketing: maria.com.rich
 **Interface mostra:**
 ```
 Seu perfil:
-🔗 maria.com.rich
+🔗 maria.multicolecionismo.social
 
 [📋 Copiar Link]
 ```
@@ -276,7 +276,7 @@ https://therichclub.com/u/maria
 
 **Header do perfil público mostra:**
 ```html
-<h1>maria.com.rich</h1>
+<h1>maria.multicolecionismo.social</h1>
 <p class="text-sm text-gray-400">Identidade Digital Exclusiva</p>
 ```
 
@@ -294,9 +294,9 @@ https://therichclub.com/u/maria
 // Linha 80-238
 const handleSearch = async (e: React.FormEvent) => {
   // 1. Monta FQDN
-  const domainToCheck = domain.endsWith('.com.rich')
+  const domainToCheck = domain.endsWith('.multicolecionismo.social')
     ? domain
-    : `${domain}.com.rich`;
+    : `${domain}.multicolecionismo.social`;
 
   // 2. Chama Edge Function
   const response = await fetch(
@@ -335,11 +335,11 @@ const { data: profile } = await supabase
     *,
     domains!inner(fqdn, domain_type)
   `)
-  .eq('domains.fqdn', `${username}.com.rich`)
+  .eq('domains.fqdn', `${username}.multicolecionismo.social`)
   .single();
 
-// Mostra "username.com.rich" no header
-<h1 className="text-4xl font-bold">{username}.com.rich</h1>
+// Mostra "username.multicolecionismo.social" no header
+<h1 className="text-4xl font-bold">{username}.multicolecionismo.social</h1>
 ```
 
 ### **Edge Function: domains/index.ts**
@@ -399,7 +399,7 @@ Deno.serve(async (req: Request) => {
 Column         | Type         | Description
 ---------------|--------------|--------------------------------
 id             | UUID         | Primary key
-fqdn           | TEXT UNIQUE  | "username.com.rich"
+fqdn           | TEXT UNIQUE  | "username.multicolecionismo.social"
 customer_id    | UUID         | Dono (NULL = disponível)
 domain_type    | TEXT         | 'regular' ou 'premium'
 status         | TEXT         | 'active', 'suspended', etc
@@ -411,7 +411,7 @@ created_at     | TIMESTAMPTZ  | Data de criação
 Column         | Type         | Description
 ---------------|--------------|--------------------------------
 id             | UUID         | Primary key
-fqdn           | TEXT UNIQUE  | "vip.com.rich", "usa.com.rich"
+fqdn           | TEXT UNIQUE  | "vip.multicolecionismo.social", "usa.multicolecionismo.social"
 price_usd      | DECIMAL      | Preço mensal (ex: 70.00)
 required_plan  | TEXT         | 'Elite' ou 'Supreme'
 is_available   | BOOLEAN      | true = disponível para venda
@@ -419,12 +419,12 @@ created_at     | TIMESTAMPTZ  | Data de criação
 ```
 
 **Exemplos de Premium:**
-- `vip.com.rich` - $70/mês
-- `usa.com.rich` - $70/mês
-- `brasil.com.rich` - $70/mês
-- `rich.com.rich` - $70/mês
-- `president.com.rich` - PROTEGIDO (não vende)
-- `club.com.rich` - PROTEGIDO (não vende)
+- `vip.multicolecionismo.social` - $70/mês
+- `usa.multicolecionismo.social` - $70/mês
+- `brasil.multicolecionismo.social` - $70/mês
+- `rich.multicolecionismo.social` - $70/mês
+- `president.multicolecionismo.social` - PROTEGIDO (não vende)
+- `club.multicolecionismo.social` - PROTEGIDO (não vende)
 
 ### **user_profiles**
 ```sql
@@ -457,17 +457,17 @@ is_active      | BOOLEAN      | Plano ativo?
 ## 🚫 O QUE NUNCA FAZER
 
 ### **❌ NÃO TENTE:**
-1. Configurar DNS wildcard (*.com.rich)
+1. Configurar DNS wildcard (*.multicolecionismo.social)
 2. Integrar com registradores de domínio (Dynadot, Namecheap)
 3. Fazer subdomínios reais funcionarem
 4. Usar servidores separados por usuário
 5. Configurar SSL para subdomínios
-6. Criar domínio .com.rich real
+6. Criar domínio .multicolecionismo.social real
 
 ### **✅ SEMPRE LEMBRE:**
 1. É um sistema de perfis, não de domínios
 2. URLs reais são: `therichclub.com/u/username`
-3. Display `.com.rich` é só marketing/visual
+3. Display `.multicolecionismo.social` é só marketing/visual
 4. Tudo roda em um único domínio
 5. Backend é Supabase (PostgreSQL + Edge Functions)
 6. Frontend é React + Vite
@@ -553,7 +553,7 @@ WITH CHECK (auth.uid() = user_id);
 5. Paga via PayPal
 6. Perfil criado: `therichclub.com/u/joao`
 7. Edita perfil, adiciona links
-8. Compartilha: "Acesse joao.com.rich" (mas link real é therichclub.com/u/joao)
+8. Compartilha: "Acesse joao.multicolecionismo.social" (mas link real é therichclub.com/u/joao)
 
 ### **Exemplo 2: Premium Domain**
 1. Acessa `com.rich`
@@ -602,7 +602,7 @@ Perfil Público: https://therichclub.com/u/username
 
 **Display Marketing nos perfis:**
 ```
-username.com.rich
+username.multicolecionismo.social
 ```
 
 ---
@@ -612,7 +612,7 @@ username.com.rich
 - [ ] Entendi que NÃO há DNS wildcard
 - [ ] Entendi que NÃO há subdomínios reais
 - [ ] Entendi que URLs reais são `/u/:username`
-- [ ] Entendi que `.com.rich` é só display visual
+- [ ] Entendi que `.multicolecionismo.social` é só display visual
 - [ ] Entendi a diferença entre domínios regulares e premium
 - [ ] Entendi o fluxo de busca → escolha de plano → registro
 - [ ] Entendi as tabelas do banco de dados

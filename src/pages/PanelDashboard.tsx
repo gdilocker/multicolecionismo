@@ -438,7 +438,7 @@ const PanelDashboard: React.FC = () => {
                     <div className="flex items-center gap-1.5 mb-3">
                       <Globe className="w-3.5 h-3.5 text-slate-400" />
                       <span className="text-xs font-medium text-slate-500">
-                        {action.domain ? `${action.domain}.com.rich` : 'Nenhum domínio'}
+                        {action.domain ? `${action.domain}.multicolecionismo.social` : 'Nenhum domínio'}
                       </span>
                     </div>
                     <p className={`${
@@ -552,7 +552,7 @@ const PanelDashboard: React.FC = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-2 text-white">Registre seu primeiro domínio</h3>
                 <p className="text-slate-200 mb-4">
-                  Comece sua jornada digital registrando um domínio .com.rich personalizado.
+                  Comece sua jornada digital registrando um domínio .multicolecionismo.social personalizado.
                 </p>
                 <button
                   onClick={() => navigate('/')}

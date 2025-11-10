@@ -227,7 +227,7 @@ ORDER BY week DESC, count DESC;
 - [ ] **Security Header Audit**
   ```bash
   # Automated header check
-  curl -I https://app.com.rich | tee headers-$(date +%Y%m%d).txt
+  curl -I https://app.multicolecionismo.social | tee headers-$(date +%Y%m%d).txt
 
   # Check for:
   # - Content-Security-Policy
@@ -449,7 +449,7 @@ Automatically alert when:
 | Low | Recognition | Minor config issues |
 
 **Scope:**
-- ✅ In-scope: app.com.rich, api.com.rich
+- ✅ In-scope: app.multicolecionismo.social, api.multicolecionismo.social
 - ❌ Out-of-scope: Social engineering, physical, 3rd party
 - ❌ DoS attacks (test only logic, not volume)
 

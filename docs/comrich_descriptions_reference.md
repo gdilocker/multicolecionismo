@@ -1,22 +1,22 @@
 # 🗂️ comrich_descriptions_reference.md
 
-### Reference Guide — Premium Domain Descriptions (.com.rich)
+### Reference Guide — Premium Domain Descriptions (.multicolecionismo.social)
 
 ---
 
 ## 🌍 COUNTRIES
 
-Each country domain represents an exclusive national license under the .com.rich global ecosystem.
+Each country domain represents an exclusive national license under the .multicolecionismo.social global ecosystem.
 
 **Tone:** institutional, global, aspirational.
 
 **Examples:**
 
-* **brazil.com.rich** → *"Exclusive license representing Brazil within the .com.rich global network."*
-* **france.com.rich** → *"Represents France — elegance, culture, and innovation combined under the .com.rich brand."*
-* **usa.com.rich** → *"Dedicated to the United States — hub of business, technology, and global leadership."*
-* **italy.com.rich** → *"Represents Italy — heritage, art, and sophistication within the .com.rich lifestyle."*
-* **japan.com.rich** → *"Japan's exclusive digital identity within the .com.rich ecosystem — tradition meets innovation."*
+* **brazil.multicolecionismo.social** → *"Exclusive license representing Brazil within the .multicolecionismo.social global network."*
+* **france.multicolecionismo.social** → *"Represents France — elegance, culture, and innovation combined under the .multicolecionismo.social brand."*
+* **usa.multicolecionismo.social** → *"Dedicated to the United States — hub of business, technology, and global leadership."*
+* **italy.multicolecionismo.social** → *"Represents Italy — heritage, art, and sophistication within the .multicolecionismo.social lifestyle."*
+* **japan.multicolecionismo.social** → *"Japan's exclusive digital identity within the .multicolecionismo.social ecosystem — tradition meets innovation."*
 
 ---
 
@@ -28,11 +28,11 @@ Each city domain reflects a luxury hub or iconic destination worldwide.
 
 **Examples:**
 
-* **dubai.com.rich** → *"Global hub of luxury, innovation, and world-class living."*
-* **london.com.rich** → *"The heart of finance, fashion, and culture — London within .com.rich."*
-* **paris.com.rich** → *"The city of elegance and timeless style in the .com.rich universe."*
-* **newyork.com.rich** → *"Symbol of ambition, success, and influence — New York.com.rich."*
-* **miami.com.rich** → *"Luxury, lifestyle, and vibrant energy — Miami's digital identity in .com.rich."*
+* **dubai.multicolecionismo.social** → *"Global hub of luxury, innovation, and world-class living."*
+* **london.multicolecionismo.social** → *"The heart of finance, fashion, and culture — London within .multicolecionismo.social."*
+* **paris.multicolecionismo.social** → *"The city of elegance and timeless style in the .multicolecionismo.social universe."*
+* **newyork.multicolecionismo.social** → *"Symbol of ambition, success, and influence — New York.multicolecionismo.social."*
+* **miami.multicolecionismo.social** → *"Luxury, lifestyle, and vibrant energy — Miami's digital identity in .multicolecionismo.social."*
 
 ---
 
@@ -44,11 +44,11 @@ Domains that define exclusivity, prestige, and high-end living.
 
 **Examples:**
 
-* **luxurycars.com.rich** → *"Dedicated to the elite world of high-end vehicles and supercar culture."*
-* **yachts.com.rich** → *"For connoisseurs of the sea — exclusive domain for luxury yachts and lifestyle."*
-* **jets.com.rich** → *"Private aviation and prestige combined in one global digital brand."*
-* **fashion.com.rich** → *"The center of luxury fashion, haute couture, and elite design worldwide."*
-* **diamonds.com.rich** → *"Representing rarity, beauty, and eternal value in the world of .com.rich."*
+* **luxurycars.multicolecionismo.social** → *"Dedicated to the elite world of high-end vehicles and supercar culture."*
+* **yachts.multicolecionismo.social** → *"For connoisseurs of the sea — exclusive domain for luxury yachts and lifestyle."*
+* **jets.multicolecionismo.social** → *"Private aviation and prestige combined in one global digital brand."*
+* **fashion.multicolecionismo.social** → *"The center of luxury fashion, haute couture, and elite design worldwide."*
+* **diamonds.multicolecionismo.social** → *"Representing rarity, beauty, and eternal value in the world of .multicolecionismo.social."*
 
 ---
 
@@ -60,11 +60,11 @@ Focused on global industries, leadership, consulting, and innovation.
 
 **Examples:**
 
-* **finance.com.rich** → *"The global center of wealth, investment, and financial excellence."*
-* **consulting.com.rich** → *"Strategic insight and corporate intelligence — the .com.rich way."*
-* **law.com.rich** → *"Legal expertise and international authority, licensed under .com.rich."*
-* **startups.com.rich** → *"The home for innovation, entrepreneurship, and bold new ventures."*
-* **leadership.com.rich** → *"Empowering global leaders and organizations under the .com.rich standard."*
+* **finance.multicolecionismo.social** → *"The global center of wealth, investment, and financial excellence."*
+* **consulting.multicolecionismo.social** → *"Strategic insight and corporate intelligence — the .multicolecionismo.social way."*
+* **law.multicolecionismo.social** → *"Legal expertise and international authority, licensed under .multicolecionismo.social."*
+* **startups.multicolecionismo.social** → *"The home for innovation, entrepreneurship, and bold new ventures."*
+* **leadership.multicolecionismo.social** → *"Empowering global leaders and organizations under the .multicolecionismo.social standard."*
 
 ---
 
@@ -76,11 +76,11 @@ Represents modern industries and the digital future.
 
 **Examples:**
 
-* **ai.com.rich** → *"Artificial intelligence excellence — shaping the intelligent era of .com.rich."*
-* **blockchain.com.rich** → *"Secure, decentralized, and future-ready — blockchain within .com.rich."*
-* **digital.com.rich** → *"The core of digital transformation and identity innovation."*
-* **cyber.com.rich** → *"Defining cybersecurity and data protection for the new digital age."*
-* **metaverse.com.rich** → *"The immersive frontier of luxury and technology in .com.rich."*
+* **ai.multicolecionismo.social** → *"Artificial intelligence excellence — shaping the intelligent era of .multicolecionismo.social."*
+* **blockchain.multicolecionismo.social** → *"Secure, decentralized, and future-ready — blockchain within .multicolecionismo.social."*
+* **digital.multicolecionismo.social** → *"The core of digital transformation and identity innovation."*
+* **cyber.multicolecionismo.social** → *"Defining cybersecurity and data protection for the new digital age."*
+* **metaverse.multicolecionismo.social** → *"The immersive frontier of luxury and technology in .multicolecionismo.social."*
 
 ---
 
@@ -92,11 +92,11 @@ Domains for tourism, exploration, and premium travel brands.
 
 **Examples:**
 
-* **travel.com.rich** → *"The world's finest destinations united under one global license."*
-* **resorts.com.rich** → *"Luxury hospitality and exclusive experiences worldwide."*
-* **islands.com.rich** → *"Private paradise, global exclusivity — the island life in .com.rich."*
-* **voyage.com.rich** → *"A tribute to adventure, discovery, and freedom through travel."*
-* **hotel.com.rich** → *"The definitive destination for luxury accommodations worldwide."*
+* **travel.multicolecionismo.social** → *"The world's finest destinations united under one global license."*
+* **resorts.multicolecionismo.social** → *"Luxury hospitality and exclusive experiences worldwide."*
+* **islands.multicolecionismo.social** → *"Private paradise, global exclusivity — the island life in .multicolecionismo.social."*
+* **voyage.multicolecionismo.social** → *"A tribute to adventure, discovery, and freedom through travel."*
+* **hotel.multicolecionismo.social** → *"The definitive destination for luxury accommodations worldwide."*
 
 ---
 
@@ -108,11 +108,11 @@ High-end property, development, and investment.
 
 **Examples:**
 
-* **realestate.com.rich** → *"Luxury properties and global investment opportunities."*
-* **mansion.com.rich** → *"Exclusive estates and architectural masterpieces around the world."*
-* **villa.com.rich** → *"Prestigious villas and timeless elegance in the .com.rich portfolio."*
-* **penthouse.com.rich** → *"Luxury above the skyline — a digital property of prestige."*
-* **architecture.com.rich** → *"The art of design and innovation, redefined under .com.rich."*
+* **realestate.multicolecionismo.social** → *"Luxury properties and global investment opportunities."*
+* **mansion.multicolecionismo.social** → *"Exclusive estates and architectural masterpieces around the world."*
+* **villa.multicolecionismo.social** → *"Prestigious villas and timeless elegance in the .multicolecionismo.social portfolio."*
+* **penthouse.multicolecionismo.social** → *"Luxury above the skyline — a digital property of prestige."*
+* **architecture.multicolecionismo.social** → *"The art of design and innovation, redefined under .multicolecionismo.social."*
 
 ---
 
@@ -124,11 +124,11 @@ Elite performance, clubs, and global sport identity.
 
 **Examples:**
 
-* **golf.com.rich** → *"The refined world of golf — precision, prestige, and performance."*
-* **tennis.com.rich** → *"Where passion and excellence meet — tennis at its finest."*
-* **racing.com.rich** → *"Speed, innovation, and power — the motorsport domain of .com.rich."*
-* **fitness.com.rich** → *"Premium health and elite performance united."*
-* **surf.com.rich** → *"Freedom, adrenaline, and connection with nature — surf the .com.rich way."*
+* **golf.multicolecionismo.social** → *"The refined world of golf — precision, prestige, and performance."*
+* **tennis.multicolecionismo.social** → *"Where passion and excellence meet — tennis at its finest."*
+* **racing.multicolecionismo.social** → *"Speed, innovation, and power — the motorsport domain of .multicolecionismo.social."*
+* **fitness.multicolecionismo.social** → *"Premium health and elite performance united."*
+* **surf.multicolecionismo.social** → *"Freedom, adrenaline, and connection with nature — surf the .multicolecionismo.social way."*
 
 ---
 
@@ -140,11 +140,11 @@ Wellness, aesthetics, clinics, and holistic care.
 
 **Examples:**
 
-* **wellness.com.rich** → *"The global space for balance, health, and longevity."*
-* **beauty.com.rich** → *"Where aesthetics meet exclusivity — the beauty of .com.rich."*
-* **clinic.com.rich** → *"Excellence in care, precision, and trust in healthcare."*
-* **spa.com.rich** → *"Rejuvenation and peace — the art of luxury wellness."*
-* **meditation.com.rich** → *"Calm, clarity, and connection within the .com.rich ecosystem."*
+* **wellness.multicolecionismo.social** → *"The global space for balance, health, and longevity."*
+* **beauty.multicolecionismo.social** → *"Where aesthetics meet exclusivity — the beauty of .multicolecionismo.social."*
+* **clinic.multicolecionismo.social** → *"Excellence in care, precision, and trust in healthcare."*
+* **spa.multicolecionismo.social** → *"Rejuvenation and peace — the art of luxury wellness."*
+* **meditation.multicolecionismo.social** → *"Calm, clarity, and connection within the .multicolecionismo.social ecosystem."*
 
 ---
 
@@ -156,11 +156,11 @@ Creativity, luxury, and expression.
 
 **Examples:**
 
-* **art.com.rich** → *"The intersection of creativity, prestige, and digital excellence."*
-* **gallery.com.rich** → *"The world's finest artists united under .com.rich."*
-* **music.com.rich** → *"Where sound and emotion converge — music elevated by .com.rich."*
-* **cinema.com.rich** → *"The home of visual storytelling — the art of film in .com.rich."*
-* **design.com.rich** → *"Elegance and innovation redefined through digital art and design."*
+* **art.multicolecionismo.social** → *"The intersection of creativity, prestige, and digital excellence."*
+* **gallery.multicolecionismo.social** → *"The world's finest artists united under .multicolecionismo.social."*
+* **music.multicolecionismo.social** → *"Where sound and emotion converge — music elevated by .multicolecionismo.social."*
+* **cinema.multicolecionismo.social** → *"The home of visual storytelling — the art of film in .multicolecionismo.social."*
+* **design.multicolecionismo.social** → *"Elegance and innovation redefined through digital art and design."*
 
 ---
 
@@ -172,11 +172,11 @@ Gastronomy, luxury dining, and refined taste.
 
 **Examples:**
 
-* **chef.com.rich** → *"Culinary mastery and refined experiences worldwide."*
-* **gourmet.com.rich** → *"The art of taste, culture, and perfection."*
-* **wine.com.rich** → *"A tribute to vineyards, heritage, and global sophistication."*
-* **champagne.com.rich** → *"Celebration and refinement — bubbles of prestige."*
-* **restaurant.com.rich** → *"The world's finest dining experiences gathered under .com.rich."*
+* **chef.multicolecionismo.social** → *"Culinary mastery and refined experiences worldwide."*
+* **gourmet.multicolecionismo.social** → *"The art of taste, culture, and perfection."*
+* **wine.multicolecionismo.social** → *"A tribute to vineyards, heritage, and global sophistication."*
+* **champagne.multicolecionismo.social** → *"Celebration and refinement — bubbles of prestige."*
+* **restaurant.multicolecionismo.social** → *"The world's finest dining experiences gathered under .multicolecionismo.social."*
 
 ---
 
@@ -188,11 +188,11 @@ Elite learning and global institutions.
 
 **Examples:**
 
-* **academy.com.rich** → *"A global space for innovation, leadership, and education."*
-* **university.com.rich** → *"The digital home of elite learning and global excellence."*
-* **school.com.rich** → *"Education, innovation, and vision — the foundation of .com.rich."*
-* **knowledge.com.rich** → *"Sharing expertise and insight across the world."*
-* **science.com.rich** → *"Discovery and intelligence driving the future of humanity."*
+* **academy.multicolecionismo.social** → *"A global space for innovation, leadership, and education."*
+* **university.multicolecionismo.social** → *"The digital home of elite learning and global excellence."*
+* **school.multicolecionismo.social** → *"Education, innovation, and vision — the foundation of .multicolecionismo.social."*
+* **knowledge.multicolecionismo.social** → *"Sharing expertise and insight across the world."*
+* **science.multicolecionismo.social** → *"Discovery and intelligence driving the future of humanity."*
 
 ---
 

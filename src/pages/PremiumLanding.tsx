@@ -4,12 +4,12 @@ import { Crown, Shield, Zap, TrendingUp, Mail, ArrowRight, Sparkles, Award, Lock
 import { useNavigate } from 'react-router-dom';
 
 interface PremiumLandingProps {
-  domain: string; // Ex: "vip.com.rich"
+  domain: string; // Ex: "vip.multicolecionismo.social"
 }
 
 const PremiumLanding: React.FC<PremiumLandingProps> = ({ domain }) => {
   const navigate = useNavigate();
-  const slug = domain.replace('.com.rich', '');
+  const slug = domain.replace('.multicolecionismo.social', '');
 
   useEffect(() => {
     // Analytics event
@@ -83,7 +83,7 @@ const PremiumLanding: React.FC<PremiumLandingProps> = ({ domain }) => {
               <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent">
                 {slug}
               </span>
-              <span className="text-white/60">.com.rich</span>
+              <span className="text-white/60">.multicolecionismo.social</span>
             </h1>
             <div className="flex items-center justify-center gap-2 text-yellow-400">
               <Crown className="w-5 h-5" />

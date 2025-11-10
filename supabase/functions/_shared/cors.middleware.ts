@@ -8,8 +8,8 @@
 // Official allowed origins - ONLY these domains can access the API
 const ALLOWED_ORIGINS = new Set([
   'https://com.rich',
-  'https://www.com.rich',
-  'https://app.com.rich',
+  'https://www.multicolecionismo.social',
+  'https://app.multicolecionismo.social',
   'http://localhost:5173', // Development
   'http://localhost:4173', // Vite preview
   'http://127.0.0.1:5173',

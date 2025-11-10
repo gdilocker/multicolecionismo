@@ -7,11 +7,11 @@
 ```sql
 -- 1. Adicionar à lista premium
 INSERT INTO premium_domains (fqdn, is_active)
-VALUES ('vip.com.rich', true);
+VALUES ('vip.multicolecionismo.social', true);
 
 -- 2. Adicionar ao catálogo (disponível)
 INSERT INTO domain_catalog (fqdn, is_available, is_premium)
-VALUES ('vip.com.rich', true, true)
+VALUES ('vip.multicolecionismo.social', true, true)
 ON CONFLICT (fqdn) DO UPDATE
 SET is_available = true, is_premium = true;
 ```
@@ -39,7 +39,7 @@ SET is_available = true, is_premium = true;
 
 **Cenário C: Subdomínio**
 ```
-1. Usuário digita: vip.com.rich
+1. Usuário digita: vip.multicolecionismo.social
 2. Cloudflare intercepta
 3. Redirect 301 → com.rich/vip
 4. (continua como Cenário B)
@@ -51,7 +51,7 @@ SET is_available = true, is_premium = true;
 ╔══════════════════════════════════════════╗
 ║         [👑 Domínio Premium]           ║
 ║                                          ║
-║           vip .com.rich                  ║
+║           vip .multicolecionismo.social                  ║
 ║         (dourado) (branco/60%)           ║
 ║                                          ║
 ║  Disponível apenas para o Plano Elite   ║
@@ -82,10 +82,10 @@ SET is_available = true, is_premium = true;
 
 ```sql
 INSERT INTO premium_domains (fqdn, is_active)
-VALUES ('ceo.com.rich', true);
+VALUES ('ceo.multicolecionismo.social', true);
 
 INSERT INTO domain_catalog (fqdn, is_available, is_premium)
-VALUES ('ceo.com.rich', true, true);
+VALUES ('ceo.multicolecionismo.social', true, true);
 ```
 
 ### Response da API
@@ -93,7 +93,7 @@ VALUES ('ceo.com.rich', true, true);
 ```json
 {
   "status": "AVAILABLE",
-  "fqdn": "ceo.com.rich",
+  "fqdn": "ceo.multicolecionismo.social",
   "isAvailable": true,
   "isPremium": true,
   "planRequired": "ELITE",
@@ -107,13 +107,13 @@ VALUES ('ceo.com.rich', true, true);
 ```javascript
 // Quando página carrega
 gtag('event', 'premium_view', {
-  domain: 'ceo.com.rich',
+  domain: 'ceo.multicolecionismo.social',
   slug: 'ceo'
 });
 
 // Quando clica "Falar com Especialista"
 gtag('event', 'premium_contact_click', {
-  domain: 'ceo.com.rich',
+  domain: 'ceo.multicolecionismo.social',
   slug: 'ceo'
 });
 ```
@@ -127,15 +127,15 @@ gtag('event', 'premium_contact_click', {
 ```sql
 -- Maria comprou o domínio premium "elite"
 INSERT INTO premium_domains (fqdn, is_active)
-VALUES ('elite.com.rich', true);
+VALUES ('elite.multicolecionismo.social', true);
 
 -- Marcar como INDISPONÍVEL
 INSERT INTO domain_catalog (fqdn, is_available, is_premium)
-VALUES ('elite.com.rich', false, true);
+VALUES ('elite.multicolecionismo.social', false, true);
 
 -- Registro real
 INSERT INTO domains (fqdn, customer_id, status)
-VALUES ('elite.com.rich', 'uuid-maria', 'active');
+VALUES ('elite.multicolecionismo.social', 'uuid-maria', 'active');
 ```
 
 ### Fluxo do Usuário
@@ -162,14 +162,14 @@ VALUES ('elite.com.rich', 'uuid-maria', 'active');
 ╔══════════════════════════════════════════╗
 ║         ❌ Domínio Indisponível          ║
 ║                                          ║
-║           elite.com.rich                 ║
+║           elite.multicolecionismo.social                 ║
 ║                                          ║
 ║  Este domínio já foi registrado.        ║
 ║                                          ║
 ║  Sugestões:                             ║
-║  • elite1.com.rich    [Verificar]      ║
-║  • eliteapp.com.rich  [Verificar]      ║
-║  • myelite.com.rich   [Verificar]      ║
+║  • elite1.multicolecionismo.social    [Verificar]      ║
+║  • eliteapp.multicolecionismo.social  [Verificar]      ║
+║  • myelite.multicolecionismo.social   [Verificar]      ║
 ║                                          ║
 ║  [🔍 Buscar Outro Domínio]              ║
 ╚══════════════════════════════════════════╝
@@ -191,7 +191,7 @@ VALUES ('elite.com.rich', 'uuid-maria', 'active');
 ```json
 {
   "status": "AVAILABLE",
-  "fqdn": "hello.com.rich",
+  "fqdn": "hello.multicolecionismo.social",
   "isAvailable": true,
   "isPremium": false,
   "planRequired": "STANDARD_OR_ELITE",
@@ -217,7 +217,7 @@ VALUES ('elite.com.rich', 'uuid-maria', 'active');
 ╔══════════════════════════════════════════╗
 ║         ✅ Domínio Disponível            ║
 ║                                          ║
-║          hello.com.rich                  ║
+║          hello.multicolecionismo.social                  ║
 ║                                          ║
 ║  Domínio disponível para registro.      ║
 ║                                          ║
@@ -243,12 +243,12 @@ Admin decide que "nice" não é mais premium.
 
 ```sql
 -- 1. Remover da lista premium
-DELETE FROM premium_domains WHERE fqdn = 'nice.com.rich';
+DELETE FROM premium_domains WHERE fqdn = 'nice.multicolecionismo.social';
 
 -- 2. Atualizar catálogo
 UPDATE domain_catalog
 SET is_premium = false
-WHERE fqdn = 'nice.com.rich';
+WHERE fqdn = 'nice.multicolecionismo.social';
 ```
 
 ### Resultado
@@ -267,7 +267,7 @@ Próxima busca por "nice":
 ```
 1. Usuário em Premium Landing de "vip"
 2. Clica "Falar com Especialista"
-3. Navega para: /contact?domain=vip.com.rich&type=premium
+3. Navega para: /contact?domain=vip.multicolecionismo.social&type=premium
 ```
 
 ### Página de Contato
@@ -275,7 +275,7 @@ Próxima busca por "nice":
 ```jsx
 // Contact.tsx deve ler query params
 const query = new URLSearchParams(location.search);
-const domain = query.get('domain'); // "vip.com.rich"
+const domain = query.get('domain'); // "vip.multicolecionismo.social"
 const type = query.get('type');     // "premium"
 
 // Pré-preencher campo "Assunto"
@@ -289,11 +289,11 @@ const defaultSubject = domain
 ```
 De: joao@example.com
 Para: contact@com.rich
-Assunto: Interesse em domínio premium: vip.com.rich
+Assunto: Interesse em domínio premium: vip.multicolecionismo.social
 
 Olá,
 
-Gostaria de mais informações sobre o domínio premium vip.com.rich.
+Gostaria de mais informações sobre o domínio premium vip.multicolecionismo.social.
 Estou interessado no Plano Elite.
 
 [...]
@@ -379,7 +379,7 @@ const t = messages[lang];
 // Após 10 segundos na Premium Landing
 setTimeout(() => {
   showChatBot({
-    message: `Olá! Vi que você está interessado em ${slug}.com.rich. Posso ajudar?`,
+    message: `Olá! Vi que você está interessado em ${slug}.multicolecionismo.social. Posso ajudar?`,
     options: [
       'Quero saber mais sobre o Plano Elite',
       'Como funciona o registro?',
@@ -422,9 +422,9 @@ WHERE created_at > NOW() - INTERVAL '7 days'
 
 ```sql
 -- Sempre executar os 2 comandos juntos
-INSERT INTO premium_domains (fqdn, is_active) VALUES ('novo.com.rich', true);
+INSERT INTO premium_domains (fqdn, is_active) VALUES ('novo.multicolecionismo.social', true);
 INSERT INTO domain_catalog (fqdn, is_available, is_premium)
-VALUES ('novo.com.rich', true, true)
+VALUES ('novo.multicolecionismo.social', true, true)
 ON CONFLICT (fqdn) DO UPDATE SET is_premium = true;
 ```
 
@@ -434,14 +434,14 @@ ON CONFLICT (fqdn) DO UPDATE SET is_premium = true;
 -- Após venda bem-sucedida
 UPDATE domain_catalog
 SET is_available = false
-WHERE fqdn = 'vip.com.rich';
+WHERE fqdn = 'vip.multicolecionismo.social';
 ```
 
 ### Remover do Premium
 
 ```sql
-DELETE FROM premium_domains WHERE fqdn = 'antigo.com.rich';
-UPDATE domain_catalog SET is_premium = false WHERE fqdn = 'antigo.com.rich';
+DELETE FROM premium_domains WHERE fqdn = 'antigo.multicolecionismo.social';
+UPDATE domain_catalog SET is_premium = false WHERE fqdn = 'antigo.multicolecionismo.social';
 ```
 
 ### Listar Todos os Premium Disponíveis

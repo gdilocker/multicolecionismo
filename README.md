@@ -1,14 +1,14 @@
-# TheRichClub - Identidade Digital Exclusiva
+# Multi Colecionismo - Identidade Digital Exclusiva
 
-Sistema de perfis digitais exclusivos com identidade `.com.rich`.
+Sistema de perfis digitais exclusivos com identidade `.multicolecionismo.social`.
 
 ## ⚠️ IMPORTANTE: Leia Primeiro
 
 **📘 [docs/ARQUITETURA_DEFINITIVA.md](./docs/ARQUITETURA_DEFINITIVA.md)**
 
 Este documento explica **EXATAMENTE** como o sistema funciona:
-- ✅ URLs reais: `therichclub.com/u/username`
-- ✅ Display marketing: `username.com.rich` (visual)
+- ✅ URLs reais: `multicolecionismo.social/u/username`
+- ✅ Display marketing: `username.multicolecionismo.social` (visual)
 - ❌ **NÃO** há DNS wildcard real
 - ❌ **NÃO** há subdomínios reais no DNS
 - ✅ Tudo roda em um único domínio
@@ -67,7 +67,7 @@ npm run build
 ## 🎯 Funcionalidades
 
 ### **Perfis Digitais:**
-- ✅ Username exclusivo (ex: `maria.com.rich`)
+- ✅ Username exclusivo (ex: `maria.multicolecionismo.social`)
 - ✅ Perfil customizável (foto, bio, background)
 - ✅ Links personalizados
 - ✅ Loja online integrada
@@ -90,18 +90,18 @@ npm run build
 
 ### **URLs Reais (no navegador):**
 ```
-Home:           https://therichclub.com
-Pricing:        https://therichclub.com/pricing
-Dashboard:      https://therichclub.com/dashboard
-Perfil Público: https://therichclub.com/u/username
+Home:           https://multicolecionismo.social
+Pricing:        https://multicolecionismo.social/pricing
+Dashboard:      https://multicolecionismo.social/dashboard
+Perfil Público: https://multicolecionismo.social/u/username
 ```
 
 ### **Display Marketing (mostrado no perfil):**
 ```
-username.com.rich
+username.multicolecionismo.social
 ```
 
-**IMPORTANTE:** O display `.com.rich` é apenas visual. A URL real sempre é `therichclub.com/u/username`.
+**IMPORTANTE:** O display `.multicolecionismo.social` é apenas visual. A URL real sempre é `multicolecionismo.social/u/username`.
 
 ---
 

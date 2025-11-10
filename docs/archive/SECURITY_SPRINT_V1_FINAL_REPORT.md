@@ -542,7 +542,7 @@ ORDER BY frequency DESC;
    PAYPAL_CLIENT_ID=AeB...
    PAYPAL_CLIENT_SECRET=EF...
    PAYPAL_MODE=sandbox  # Change to 'live' for production
-   APP_URL=https://app.com.rich
+   APP_URL=https://app.multicolecionismo.social
    ```
 
 2. ✅ **Enable GitHub Security Features**

@@ -84,7 +84,7 @@ async function createPayPalOrder(params: {
       },
     ],
     application_context: {
-      brand_name: ".com.rich",
+      brand_name: ".multicolecionismo.social",
       landing_page: "NO_PREFERENCE",
       user_action: "PAY_NOW",
       return_url: returnUrl,

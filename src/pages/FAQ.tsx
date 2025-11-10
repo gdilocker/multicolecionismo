@@ -37,7 +37,7 @@ const FAQ: React.FC = () => {
           question: 'O que é o com.rich?',
           answer: (
             <div className="space-y-2">
-              <p>O <strong>com.rich</strong> é uma plataforma de identidade digital que oferece domínios exclusivos com a extensão <strong>.com.rich</strong>, desenvolvida para profissionais e marcas que desejam destacar-se online com um nome de domínio sofisticado e premium.</p>
+              <p>O <strong>com.rich</strong> é uma plataforma de identidade digital que oferece domínios exclusivos com a extensão <strong>.multicolecionismo.social</strong>, desenvolvida para profissionais e marcas que desejam destacar-se online com um nome de domínio sofisticado e premium.</p>
               <p>Além do registro de domínio, oferecemos integração com perfis sociais personalizáveis, permitindo que você centralize sua presença digital em um único lugar profissional.</p>
               <p className="mt-3 text-sm">O serviço é operado por:<br />
                 <strong>Global Digital Identity LTD</strong><br />
@@ -68,7 +68,7 @@ const FAQ: React.FC = () => {
           question: 'O que é o modelo de licenciamento exclusivo?',
           answer: (
             <div className="space-y-2">
-              <p>Ao adquirir um domínio .com.rich, você recebe uma <strong>licença exclusiva de uso</strong>. Isso significa que você tem direitos totais de personalização, configuração e uso do domínio, mas a titularidade permanece com Global Digital Identity LTD.</p>
+              <p>Ao adquirir um domínio .multicolecionismo.social, você recebe uma <strong>licença exclusiva de uso</strong>. Isso significa que você tem direitos totais de personalização, configuração e uso do domínio, mas a titularidade permanece com Global Digital Identity LTD.</p>
               <p>É similar a alugar um imóvel premium: você tem uso exclusivo e total controle, mas não é o proprietário legal do registro.</p>
             </div>
           )
@@ -91,7 +91,7 @@ const FAQ: React.FC = () => {
         },
         {
           question: 'Por que vocês usam modelo de licenciamento?',
-          answer: 'O modelo de licenciamento nos permite manter controle central sobre a rede .com.rich, garantir qualidade do ecossistema, prevenir abuso e oferecer melhor suporte. Além disso, facilita resolução de disputas e proteção de marca.'
+          answer: 'O modelo de licenciamento nos permite manter controle central sobre a rede .multicolecionismo.social, garantir qualidade do ecossistema, prevenir abuso e oferecer melhor suporte. Além disso, facilita resolução de disputas e proteção de marca.'
         }
       ]
     },
@@ -101,8 +101,8 @@ const FAQ: React.FC = () => {
       icon: <Globe className="w-5 h-5" />,
       items: [
         {
-          question: 'O que é um domínio .com.rich?',
-          answer: 'É uma extensão de domínio premium e exclusiva, projetada para profissionais, marcas e indivíduos que buscam uma identidade digital sofisticada. Com uma licença exclusiva .com.rich (exemplo: seunome.com.rich), você terá uma URL personalizada que reflete sucesso e exclusividade.'
+          question: 'O que é um domínio .multicolecionismo.social?',
+          answer: 'É uma extensão de domínio premium e exclusiva, projetada para profissionais, marcas e indivíduos que buscam uma identidade digital sofisticada. Com uma licença exclusiva .multicolecionismo.social (exemplo: seunome.multicolecionismo.social), você terá uma URL personalizada que reflete sucesso e exclusividade.'
         },
         {
           question: 'Como adquiro uma licença de domínio?',
@@ -122,7 +122,7 @@ const FAQ: React.FC = () => {
         },
         {
           question: 'Posso transferir minha licença para outro registrador?',
-          answer: 'Não. A extensão .com.rich é proprietária e exclusiva da Global Digital Identity LTD, e o modelo de licenciamento não permite transferência para outros registradores. Você mantém total controle sobre sua licença e configurações DNS enquanto sua assinatura estiver ativa, podendo apontar para qualquer hospedagem e gerenciar todos os aspectos técnicos através do nosso painel.'
+          answer: 'Não. A extensão .multicolecionismo.social é proprietária e exclusiva da Global Digital Identity LTD, e o modelo de licenciamento não permite transferência para outros registradores. Você mantém total controle sobre sua licença e configurações DNS enquanto sua assinatura estiver ativa, podendo apontar para qualquer hospedagem e gerenciar todos os aspectos técnicos através do nosso painel.'
         },
         {
           question: 'O que acontece se eu não renovar minha licença?',
@@ -168,7 +168,7 @@ const FAQ: React.FC = () => {
         },
         {
           question: 'Posso usar minha licença para criar um site?',
-          answer: 'Sim. Por padrão, sua licença .com.rich exibe seu perfil social personalizado dentro da nossa plataforma. No entanto, você tem total flexibilidade para configurar os registros DNS pelo painel e redirecionar para qualquer site externo, serviço de hospedagem ou aplicação web de sua escolha. Sua licença permanece sob seu controle exclusivo durante todo o período contratado.'
+          answer: 'Sim. Por padrão, sua licença .multicolecionismo.social exibe seu perfil social personalizado dentro da nossa plataforma. No entanto, você tem total flexibilidade para configurar os registros DNS pelo painel e redirecionar para qualquer site externo, serviço de hospedagem ou aplicação web de sua escolha. Sua licença permanece sob seu controle exclusivo durante todo o período contratado.'
         },
         {
           question: 'Quantos domínios posso ter no meu plano?',
@@ -228,7 +228,7 @@ const FAQ: React.FC = () => {
       items: [
         {
           question: 'O que é o perfil social personalizado?',
-          answer: 'É uma página web vinculada ao seu domínio .com.rich onde você pode centralizar todos os seus links importantes: redes sociais, portfólio, contatos e muito mais. Funciona como um cartão de visitas digital profissional.'
+          answer: 'É uma página web vinculada ao seu domínio .multicolecionismo.social onde você pode centralizar todos os seus links importantes: redes sociais, portfólio, contatos e muito mais. Funciona como um cartão de visitas digital profissional.'
         },
         {
           question: 'Como personalizo meu perfil?',
@@ -240,7 +240,7 @@ const FAQ: React.FC = () => {
         },
         {
           question: 'Posso usar meu domínio para criar um site completo?',
-          answer: 'Sim. Seu domínio .com.rich vem com um perfil social personalizado integrado na plataforma, mas você tem liberdade total para configurar os registros DNS e redirecionar para qualquer site ou serviço de hospedagem externo. Dessa forma, você mantém controle completo sobre como utiliza seu domínio.'
+          answer: 'Sim. Seu domínio .multicolecionismo.social vem com um perfil social personalizado integrado na plataforma, mas você tem liberdade total para configurar os registros DNS e redirecionar para qualquer site ou serviço de hospedagem externo. Dessa forma, você mantém controle completo sobre como utiliza seu domínio.'
         },
         {
           question: 'Como funciona a personalização de temas?',
@@ -351,7 +351,7 @@ const FAQ: React.FC = () => {
                   <li><strong>Afiliados vinculados:</strong> Liberados para se associar a outro patrocinador</li>
                   <li><strong>Comissões ou pontos:</strong> Cancelados definitivamente</li>
                   <li><strong>Posição na estrutura:</strong> Removida da rede</li>
-                  <li><strong>Domínio .com.rich:</strong> Entra em estado protegido</li>
+                  <li><strong>Domínio .multicolecionismo.social:</strong> Entra em estado protegido</li>
                   <li><strong>Acesso a áreas exclusivas:</strong> Bloqueado</li>
                 </ul>
               </div>
@@ -469,7 +469,7 @@ const FAQ: React.FC = () => {
                 <p className="font-semibold text-blue-900 mb-2">🎁 Período Trial do Prime</p>
                 <p className="text-blue-800">O plano Prime oferece <strong>14 dias de teste</strong>. Se não pagar após o trial, o sistema bloqueia automaticamente a assinatura e impede mudanças de plano até o pagamento.</p>
               </div>
-              <p className="text-sm mt-3"><strong>Por que essas regras?</strong> Elas garantem estabilidade nas assinaturas, protegem contra abusos e reforçam a exclusividade da plataforma .com.rich.</p>
+              <p className="text-sm mt-3"><strong>Por que essas regras?</strong> Elas garantem estabilidade nas assinaturas, protegem contra abusos e reforçam a exclusividade da plataforma .multicolecionismo.social.</p>
             </div>
           )
         },
@@ -595,7 +595,7 @@ const FAQ: React.FC = () => {
           question: 'Como funciona o Programa de Afiliados?',
           answer: (
             <div className="space-y-3">
-              <p>O Programa de Afiliados permite que você ganhe comissões recorrentes promovendo <strong className="text-black">exclusivamente planos de assinatura</strong> da plataforma .com.rich.</p>
+              <p>O Programa de Afiliados permite que você ganhe comissões recorrentes promovendo <strong className="text-black">exclusivamente planos de assinatura</strong> da plataforma .multicolecionismo.social.</p>
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-2">
                 <p className="text-sm text-amber-900">
                   <strong>⚠️ Importante:</strong> Comissões aplicam-se apenas a vendas de planos de assinatura. Domínios premium são receita exclusiva da empresa e não geram comissão.
@@ -659,7 +659,7 @@ const FAQ: React.FC = () => {
             <div className="space-y-2">
               <p>Para participar do programa de afiliados você DEVE ter:</p>
               <ul className="list-disc list-inside space-y-1 ml-2">
-                <li><strong>Licença .com.rich ativa</strong></li>
+                <li><strong>Licença .multicolecionismo.social ativa</strong></li>
                 <li><strong>Plano de assinatura pago ativo</strong> (Prime ou Elite)</li>
                 <li>Perfil social integrado</li>
                 <li>Ser maior de 18 anos</li>
@@ -788,7 +788,7 @@ const FAQ: React.FC = () => {
           question: 'O que diferencia o com.rich de outros serviços?',
           answer: (
             <ul className="list-disc list-inside space-y-1">
-              <li>Extensão de domínio exclusiva e premium (.com.rich).</li>
+              <li>Extensão de domínio exclusiva e premium (.multicolecionismo.social).</li>
               <li>Perfil social integrado para centralizar sua presença online.</li>
               <li>Interface moderna e intuitiva.</li>
               <li>Registro e ativação instantânea.</li>
@@ -816,7 +816,7 @@ const FAQ: React.FC = () => {
               Perguntas <span className="bg-gradient-to-r from-[#60A5FA] via-[#3B82F6] to-[#60A5FA] bg-clip-text text-transparent">Frequentes</span>
             </h1>
             <p className="text-xl text-[#6B7280] leading-relaxed">
-              Encontre respostas para as dúvidas mais comuns sobre domínios .com.rich, perfis sociais, pagamentos, segurança e muito mais
+              Encontre respostas para as dúvidas mais comuns sobre domínios .multicolecionismo.social, perfis sociais, pagamentos, segurança e muito mais
             </p>
           </div>
         </motion.section>

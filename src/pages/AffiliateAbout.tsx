@@ -65,7 +65,7 @@ const AffiliateAbout: React.FC = () => {
               Registre-se e ative seu plano
             </h3>
             <p className="leading-relaxed pl-9">
-              Adquira sua licença exclusiva .com.rich, crie sua conta e ative um dos planos pagos disponíveis.
+              Adquira sua licença exclusiva .multicolecionismo.social, crie sua conta e ative um dos planos pagos disponíveis.
             </p>
           </div>
 
@@ -116,7 +116,7 @@ const AffiliateAbout: React.FC = () => {
               <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
               <div className="space-y-3">
                 <p className="leading-relaxed text-amber-900">
-                  O recebimento de comissões está condicionado à validação interna, manutenção da conta ativa e confirmação da assinatura pelo cliente. <strong>É OBRIGATÓRIO ter licença .com.rich ativa E plano de assinatura pago para participar.</strong>
+                  O recebimento de comissões está condicionado à validação interna, manutenção da conta ativa e confirmação da assinatura pelo cliente. <strong>É OBRIGATÓRIO ter licença .multicolecionismo.social ativa E plano de assinatura pago para participar.</strong>
                 </p>
                 <p className="leading-relaxed text-amber-900 font-medium">
                   Este programa não garante retorno financeiro e não constitui oferta de investimento.
@@ -192,7 +192,7 @@ const AffiliateAbout: React.FC = () => {
           <div className="text-left">
             <h3 className="text-xl font-bold text-blue-900 mb-3">Documento Oficial Registrado</h3>
             <p className="text-[#6B7280]/90 leading-relaxed mb-3">
-              Os <strong className="text-black">Termos de Afiliados do .com.rich</strong> são documentos oficiais registrados na <strong className="text-black">Companies House</strong>, órgão do governo do Reino Unido responsável pelo registro e supervisão de empresas.
+              Os <strong className="text-black">Termos de Afiliados do .multicolecionismo.social</strong> são documentos oficiais registrados na <strong className="text-black">Companies House</strong>, órgão do governo do Reino Unido responsável pelo registro e supervisão de empresas.
             </p>
             <p className="text-[#6B7280]/90 leading-relaxed mb-3">
               Essa formalização garante <strong className="text-black">transparência jurídica e autenticidade internacional</strong>, assegurando que todas as regras de afiliação, comissões e licenciamento sigam padrões legais do Reino Unido.
@@ -212,7 +212,7 @@ const AffiliateAbout: React.FC = () => {
       <div className="mt-8 bg-gradient-to-br from-black to-[#1a1b2e] rounded-2xl p-8 text-center">
         <h3 className="text-2xl font-bold text-white mb-3">Pronto para começar?</h3>
         <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-          Adquira sua licença .com.rich, ative um plano pago (Prime ou Elite) e comece a receber comissões mensais recorrentes hoje mesmo.
+          Adquira sua licença .multicolecionismo.social, ative um plano pago (Prime ou Elite) e comece a receber comissões mensais recorrentes hoje mesmo.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

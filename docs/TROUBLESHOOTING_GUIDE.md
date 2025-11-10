@@ -66,7 +66,7 @@ supabase functions deploy domains
 -- No Supabase SQL Editor
 SELECT fqdn, customer_id, status
 FROM domains
-WHERE fqdn = 'teste.com.rich';
+WHERE fqdn = 'teste.multicolecionismo.social';
 
 -- Verificar se existe registro fantasma
 ```
@@ -81,12 +81,12 @@ WHERE fqdn = 'teste.com.rich';
 -- Se existir registro sem dono (customer_id NULL):
 DELETE FROM domains
 WHERE customer_id IS NULL
-AND fqdn = 'teste.com.rich';
+AND fqdn = 'teste.multicolecionismo.social';
 
 -- Ou atualizar status:
 UPDATE domains
 SET status = 'available', customer_id = NULL
-WHERE fqdn = 'teste.com.rich';
+WHERE fqdn = 'teste.multicolecionismo.social';
 ```
 
 ---
@@ -119,7 +119,7 @@ ON premium_domains(fqdn);
 
 -- 2. Analisar query performance
 EXPLAIN ANALYZE
-SELECT * FROM domains WHERE fqdn = 'teste.com.rich';
+SELECT * FROM domains WHERE fqdn = 'teste.multicolecionismo.social';
 ```
 
 ---
@@ -315,7 +315,7 @@ SELECT
   d.status
 FROM user_profiles up
 JOIN domains d ON up.domain_id = d.id
-WHERE d.fqdn = 'maria.com.rich';
+WHERE d.fqdn = 'maria.multicolecionismo.social';
 ```
 
 **Causas Comuns:**
@@ -328,11 +328,11 @@ WHERE d.fqdn = 'maria.com.rich';
 -- 1. Verificar status do domínio
 UPDATE domains
 SET status = 'active'
-WHERE fqdn = 'maria.com.rich';
+WHERE fqdn = 'maria.multicolecionismo.social';
 
 -- 2. Vincular profile ao domain se não estiver
 UPDATE user_profiles
-SET domain_id = (SELECT id FROM domains WHERE fqdn = 'maria.com.rich')
+SET domain_id = (SELECT id FROM domains WHERE fqdn = 'maria.multicolecionismo.social')
 WHERE user_id = 'UUID-DO-USER';
 
 -- 3. Verificar RLS permite leitura pública

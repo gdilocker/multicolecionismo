@@ -390,7 +390,7 @@ const UserDashboard: React.FC = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-2 text-white">Registre seu primeiro domínio</h3>
                 <p className="text-slate-200 mb-4">
-                  Comece sua jornada digital registrando um domínio .com.rich personalizado.
+                  Comece sua jornada digital registrando um domínio .multicolecionismo.social personalizado.
                 </p>
                 <button
                   onClick={() => navigate('/')}

@@ -24,7 +24,7 @@ TURNSTILE_SECRET_KEY=0x4AAA...        # From Cloudflare Turnstile
 PAYPAL_CLIENT_ID=AeB...               # From PayPal Developer Dashboard
 PAYPAL_CLIENT_SECRET=EF...            # From PayPal Developer Dashboard (SENSITIVE)
 PAYPAL_MODE=sandbox                   # Use 'sandbox' for testing, 'live' for production
-APP_URL=https://app.com.rich          # Your production URL
+APP_URL=https://app.multicolecionismo.social          # Your production URL
 ```
 
 **Verification:**

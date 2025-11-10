@@ -117,17 +117,17 @@ PAYPAL_MODE=sandbox
 - ✅ Código pronto
 - ✅ Netlify configurado
 - ✅ Rotas configuradas
-- ✅ Perfis funcionam: `usuario.com.rich`
+- ✅ Perfis funcionam: `usuario.multicolecionismo.social`
 
 **Não precisa fazer nada sobre domínio!**
 
 ### Sobre "Registrador"
-Isso se refere a **ONDE** os domínios `.com.rich` são fisicamente registrados.
+Isso se refere a **ONDE** os domínios `.multicolecionismo.social` são fisicamente registrados.
 
 **Status atual:**
 - Sistema aceita pagamentos ✅
 - Sistema cria registros no banco ✅
-- Sistema cria perfis `usuario.com.rich` ✅
+- Sistema cria perfis `usuario.multicolecionismo.social` ✅
 - Mas não registra domínios em registrador real (modo MOCK)
 
 **Para registrar domínios de verdade** (opcional, depois):

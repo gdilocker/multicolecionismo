@@ -1,6 +1,6 @@
 # 🚀 Guia Completo de Setup - TheRichClub
 
-**Sistema de Licenciamento de Subdomínios .com.rich**
+**Sistema de Licenciamento de Subdomínios .multicolecionismo.social**
 
 ---
 
@@ -22,7 +22,7 @@
 
 ## 🎯 VISÃO GERAL
 
-O TheRichClub é um sistema de **licenciamento de subdomínios .com.rich**.
+O TheRichClub é um sistema de **licenciamento de subdomínios .multicolecionismo.social**.
 
 **NÃO é:**
 - ❌ Venda de domínios .com externos
@@ -30,16 +30,16 @@ O TheRichClub é um sistema de **licenciamento de subdomínios .com.rich**.
 - ❌ Registro real de domínios
 
 **É:**
-- ✅ Licenciamento de subdomínios .com.rich
+- ✅ Licenciamento de subdomínios .multicolecionismo.social
 - ✅ Sistema 100% interno
 - ✅ Titular: Global Digital Identity LTD
 - ✅ Clientes: Licenciados exclusivos
 
 **Exemplos:**
-- `usa.com.rich`
-- `brasil.com.rich`
-- `apple.com.rich` (protegido)
-- `nome-usuario.com.rich`
+- `usa.multicolecionismo.social`
+- `brasil.multicolecionismo.social`
+- `apple.multicolecionismo.social` (protegido)
+- `nome-usuario.multicolecionismo.social`
 
 ---
 
@@ -270,7 +270,7 @@ Se não existirem, as migrations já criaram automaticamente.
 2. **Site URL:** `https://therichclub.com`
 3. **Redirect URLs:** Adicione:
    - `https://therichclub.com/**`
-   - `https://*.com.rich/**` (wildcard)
+   - `https://*.multicolecionismo.social/**` (wildcard)
 4. **Email Templates:** (Opcional) Customize em português
 
 ### Passo 4: Configurar CORS
@@ -278,7 +278,7 @@ Se não existirem, as migrations já criaram automaticamente.
 1. API Settings → CORS
 2. Adicione allowed origins:
    - `https://therichclub.com`
-   - `https://*.com.rich`
+   - `https://*.multicolecionismo.social`
 
 ---
 
@@ -336,18 +336,18 @@ Adicione todas as variáveis do `.env`
 
 ## 🌐 CONFIGURAÇÃO DNS
 
-**IMPORTANTE:** Subdomínios .com.rich são **simulados no frontend** via React Router.
+**IMPORTANTE:** Subdomínios .multicolecionismo.social são **simulados no frontend** via React Router.
 
 ### Como Funciona?
 
 **NÃO existe:**
-- ❌ DNS wildcard real (*.com.rich)
-- ❌ Domínio .com.rich registrado
+- ❌ DNS wildcard real (*.multicolecionismo.social)
+- ❌ Domínio .multicolecionismo.social registrado
 - ❌ Subdomínios reais no DNS
 
 **Existe:**
 - ✅ Rotas React: `/u/:username` → `/profile/:username`
-- ✅ **Display fake** nos perfis: `username.com.rich`
+- ✅ **Display fake** nos perfis: `username.multicolecionismo.social`
 - ✅ Tudo roda em `therichclub.com`
 
 ### Configuração DNS Real (Apenas Domínio Principal):
@@ -373,14 +373,14 @@ Value: seu-site.netlify.app
 ### Exemplos de URLs Reais:
 
 ```
-❌ NÃO EXISTE: https://usa.com.rich
+❌ NÃO EXISTE: https://usa.multicolecionismo.social
 ✅ URL REAL: https://therichclub.com/u/usa
 
-❌ NÃO EXISTE: https://brasil.com.rich
+❌ NÃO EXISTE: https://brasil.multicolecionismo.social
 ✅ URL REAL: https://therichclub.com/u/brasil
 ```
 
-**O perfil MOSTRA "usa.com.rich" mas roda em therichclub.com/u/usa**
+**O perfil MOSTRA "usa.multicolecionismo.social" mas roda em therichclub.com/u/usa**
 
 ### Se usar Vercel:
 
@@ -493,7 +493,7 @@ SELECT cron.unschedule('trial-expiration-check');
 
 ### 2. Teste de Subdomínio
 - [ ] Criar primeiro subdomínio
-- [ ] Acessar: `seu-subdomain.com.rich`
+- [ ] Acessar: `seu-subdomain.multicolecionismo.social`
 - [ ] Perfil público visível
 - [ ] Editar perfil funciona
 
@@ -542,7 +542,7 @@ SELECT cron.unschedule('trial-expiration-check');
 ### Deploy
 - [ ] Frontend deployado (Netlify/Vercel)
 - [ ] Environment variables adicionadas
-- [ ] DNS configurado (wildcard *.com.rich)
+- [ ] DNS configurado (wildcard *.multicolecionismo.social)
 - [ ] SSL ativo
 
 ### Banco de Dados
@@ -580,12 +580,12 @@ curl -X POST https://libzvdbgixckggmivspg.supabase.co/functions/v1/test-function
 
 4. **Verificar DNS:**
 ```bash
-dig usa.com.rich
-nslookup usa.com.rich
+dig usa.multicolecionismo.social
+nslookup usa.multicolecionismo.social
 ```
 
 ---
 
 **Documento criado:** 2025-11-09
 **Versão:** 1.0
-**Sistema:** TheRichClub - Licenciamento .com.rich
+**Sistema:** TheRichClub - Licenciamento .multicolecionismo.social

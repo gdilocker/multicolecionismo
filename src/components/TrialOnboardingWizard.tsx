@@ -25,7 +25,7 @@ const STEPS: Step[] = [
   {
     id: 'profile',
     title: 'Crie Seu Perfil',
-    description: 'Configure sua página pessoal com foto, bio e links. É o coração da sua identidade digital .com.rich',
+    description: 'Configure sua página pessoal com foto, bio e links. É o coração da sua identidade digital .multicolecionismo.social',
     icon: <Target className="w-8 h-8" />,
     action: {
       label: 'Configurar Perfil',
@@ -181,7 +181,7 @@ export function TrialOnboardingWizard() {
                   </li>
                   <li className="flex items-start gap-2 text-emerald-800">
                     <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span>Domínio .com.rich exclusivo e personalizável</span>
+                    <span>Domínio .multicolecionismo.social exclusivo e personalizável</span>
                   </li>
                   <li className="flex items-start gap-2 text-emerald-800">
                     <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />

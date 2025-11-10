@@ -1,4 +1,4 @@
-# 🔐 Modelo de Licenciamento .com.rich
+# 🔐 Modelo de Licenciamento .multicolecionismo.social
 
 **Data de Implementação:** 26 de outubro de 2025
 **Versão:** 1.0
@@ -7,7 +7,7 @@
 
 ## 📋 **SUMÁRIO EXECUTIVO**
 
-A partir desta data, **todos os domínios .com.rich** operam sob o **modelo de licenciamento exclusivo de uso**, e não mais sob venda direta de propriedade.
+A partir desta data, **todos os domínios .multicolecionismo.social** operam sob o **modelo de licenciamento exclusivo de uso**, e não mais sob venda direta de propriedade.
 
 ### **Controladora Global:**
 **Global Digital Identity LTD**
@@ -116,10 +116,10 @@ AGORA: Cliente recebe licença exclusiva de uso do domínio
 ### **Mensagens-Chave:**
 
 **Para Clientes Existentes:**
-> "Seu domínio .com.rich continua 100% funcional. A partir de agora, opera sob modelo de licenciamento exclusivo, garantindo seus direitos de uso enquanto a assinatura estiver ativa."
+> "Seu domínio .multicolecionismo.social continua 100% funcional. A partir de agora, opera sob modelo de licenciamento exclusivo, garantindo seus direitos de uso enquanto a assinatura estiver ativa."
 
 **Para Novos Clientes:**
-> "Ao adquirir um domínio .com.rich, você recebe uma licença exclusiva de uso. Isso significa que você tem direitos totais de uso e personalização, renovável mensalmente, mantendo sua identidade digital protegida."
+> "Ao adquirir um domínio .multicolecionismo.social, você recebe uma licença exclusiva de uso. Isso significa que você tem direitos totais de uso e personalização, renovável mensalmente, mantendo sua identidade digital protegida."
 
 ### **FAQ Essencial:**
 
@@ -198,6 +198,6 @@ A: Sua licença expira e o domínio volta ao pool da Global Digital Identity LTD
 
 ---
 
-**Documento criado por:** Sistema de Migração .com.rich
+**Documento criado por:** Sistema de Migração .multicolecionismo.social
 **Última atualização:** 26 de outubro de 2025
 **Versão:** 1.0

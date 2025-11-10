@@ -19,7 +19,7 @@ const DeletionPolicy: React.FC = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-black mb-4">
               Política de Exclusão de Conta e Dados
             </h1>
-            <p className="text-xl text-[#6B7280]/70 mb-4">.com.rich</p>
+            <p className="text-xl text-[#6B7280]/70 mb-4">.multicolecionismo.social</p>
             <div className="inline-flex items-center gap-2 text-[#6B7280]/80">
               <Calendar className="w-4 h-4" />
               <span className="text-sm">Última atualização: 26 de outubro de 2025</span>
@@ -297,7 +297,7 @@ const DeletionPolicy: React.FC = () => {
 
                     <h3 className="text-lg font-semibold text-black mt-6">6.4 Perfis Públicos</h3>
                     <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside">
-                      <li>Perfis públicos (ex: seunome.com.rich) são <strong className="text-[#EF4444]">permanentemente removidos</strong></li>
+                      <li>Perfis públicos (ex: seunome.multicolecionismo.social) são <strong className="text-[#EF4444]">permanentemente removidos</strong></li>
                       <li>URLs personalizados ficam indisponíveis</li>
                       <li>Visitantes encontrarão página de erro 404</li>
                       <li>Links externos para seu perfil deixarão de funcionar</li>

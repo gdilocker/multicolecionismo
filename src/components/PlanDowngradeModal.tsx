@@ -178,7 +178,7 @@ export const PlanDowngradeModal: React.FC<PlanDowngradeModalProps> = ({
                     <ul className="space-y-2 text-sm text-slate-700">
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-500 mt-0.5">•</span>
-                        <span>Domínio principal (.com.rich)</span>
+                        <span>Domínio principal (.multicolecionismo.social)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-500 mt-0.5">•</span>

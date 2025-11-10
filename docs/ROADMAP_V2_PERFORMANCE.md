@@ -1,6 +1,6 @@
 # Roadmap v2.0 - Performance & Escalabilidade
 
-**Objetivo:** Preparar .com.rich para 10.000+ usuários simultâneos e 100.000+ domínios ativos
+**Objetivo:** Preparar .multicolecionismo.social para 10.000+ usuários simultâneos e 100.000+ domínios ativos
 
 **Timeline:** 3-4 meses após launch v1.0
 
@@ -976,7 +976,7 @@ Conversion Rate:    2% → 3.5%      (75% increase)
 
 ## ✅ SUCESSO FINAL
 
-Após v2.0, .com.rich estará preparado para:
+Após v2.0, .multicolecionismo.social estará preparado para:
 - ✅ 10,000+ usuários simultâneos
 - ✅ 100,000+ domínios ativos
 - ✅ 99.95% uptime

@@ -100,10 +100,10 @@ TTL:    Auto
 **Verificação:**
 ```bash
 # Testar resolução
-nslookup vip.com.rich
+nslookup vip.multicolecionismo.social
 # Deve retornar IP do Cloudflare
 
-dig vip.com.rich
+dig vip.multicolecionismo.social
 # Deve mostrar CNAME → com.rich
 ```
 
@@ -134,7 +134,7 @@ Preserve query string: ON
 
 **Verificação:**
 ```bash
-curl -I https://vip.com.rich
+curl -I https://vip.multicolecionismo.social
 
 # Deve retornar:
 # HTTP/2 301
@@ -157,7 +157,7 @@ curl -I https://vip.com.rich
 
 ### 6. Teste Subdomínio
 
-**URL:** `https://vip.com.rich`
+**URL:** `https://vip.multicolecionismo.social`
 
 - [ ] Redireciona (301) para `https://com.rich/vip`
 - [ ] URL final no browser: `com.rich/vip`
@@ -205,7 +205,7 @@ curl -I https://vip.com.rich
 **Inspecionar `<head>`:**
 
 ```html
-<title>vip.com.rich - Domínio Premium | com.rich</title>
+<title>vip.multicolecionismo.social - Domínio Premium | com.rich</title>
 <link rel="canonical" href="https://com.rich/vip">
 ```
 
@@ -279,19 +279,19 @@ Agrupar por: domain
 ```sql
 -- Adicionar alguns premium para testes
 INSERT INTO premium_domains (fqdn, is_active) VALUES
-  ('vip.com.rich', true),
-  ('ceo.com.rich', true),
-  ('elite.com.rich', true),
-  ('pro.com.rich', true),
-  ('premium.com.rich', true);
+  ('vip.multicolecionismo.social', true),
+  ('ceo.multicolecionismo.social', true),
+  ('elite.multicolecionismo.social', true),
+  ('pro.multicolecionismo.social', true),
+  ('premium.multicolecionismo.social', true);
 
 -- Adicionar ao catálogo
 INSERT INTO domain_catalog (fqdn, is_available, is_premium) VALUES
-  ('vip.com.rich', true, true),
-  ('ceo.com.rich', true, true),
-  ('elite.com.rich', true, true),
-  ('pro.com.rich', true, true),
-  ('premium.com.rich', true, true)
+  ('vip.multicolecionismo.social', true, true),
+  ('ceo.multicolecionismo.social', true, true),
+  ('elite.multicolecionismo.social', true, true),
+  ('pro.multicolecionismo.social', true, true),
+  ('premium.multicolecionismo.social', true, true)
 ON CONFLICT (fqdn) DO UPDATE
 SET is_available = EXCLUDED.is_available,
     is_premium = EXCLUDED.is_premium;
@@ -406,12 +406,12 @@ npm run dev
 netlify deploy --prod
 
 # Test redirect
-curl -I https://vip.com.rich
+curl -I https://vip.multicolecionismo.social
 
 # Test API
 curl -X POST [SUPABASE_URL]/functions/v1/domains \
   -H "Authorization: Bearer [KEY]" \
-  -d '{"action":"check","fqdn":"vip.com.rich"}'
+  -d '{"action":"check","fqdn":"vip.multicolecionismo.social"}'
 ```
 
 ---

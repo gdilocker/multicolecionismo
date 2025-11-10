@@ -36,7 +36,7 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const username = domain.replace('.com.rich', '');
+    const username = domain.replace('.multicolecionismo.social', '');
 
     const { data: existingProfile } = await supabase
       .from('user_profiles')

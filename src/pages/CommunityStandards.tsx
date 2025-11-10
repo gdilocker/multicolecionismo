@@ -19,7 +19,7 @@ const CommunityStandards: React.FC = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-black mb-4">
               Política de Padrões da Comunidade
             </h1>
-            <p className="text-xl text-[#6B7280]/70 mb-4">.com.rich</p>
+            <p className="text-xl text-[#6B7280]/70 mb-4">.multicolecionismo.social</p>
             <div className="inline-flex items-center gap-2 text-[#6B7280]/80">
               <Calendar className="w-4 h-4" />
               <span className="text-sm">Última atualização: 10 de julho de 2025</span>

@@ -117,4 +117,4 @@ Depois clique em **"Add a variable"**:
 
 Após configurar e fazer redeploy, seu site estará funcionando em:
 - https://com.rich
-- https://www.com.rich (redirecionado)
+- https://www.multicolecionismo.social (redirecionado)

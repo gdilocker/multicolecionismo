@@ -2,7 +2,7 @@
 
 ## Cenários de Teste
 
-### ✅ Cenário 1: Domínio Premium Disponível (vip.com.rich)
+### ✅ Cenário 1: Domínio Premium Disponível (vip.multicolecionismo.social)
 
 **Pré-requisito**: Domínio "vip" deve estar marcado como premium e disponível no banco
 
@@ -16,7 +16,7 @@
 - Exibe Premium Landing com:
   - Fundo escuro (gradiente azul escuro)
   - Selo "Domínio Premium" com coroa dourada
-  - Texto "vip" em dourado + ".com.rich" em branco
+  - Texto "vip" em dourado + ".multicolecionismo.social" em branco
   - Botão "Falar com Especialista" (dourado)
   - Botão "Ver Plano Elite" (transparente)
   - 4 cards: Exclusividade, Memorabilidade, Autoridade, Raridade
@@ -33,9 +33,9 @@
 1. Na página Premium Landing, clique "Falar com Especialista"
 
 **Resultado Esperado:**
-- Navega para `/contact?domain=vip.com.rich&type=premium`
+- Navega para `/contact?domain=vip.multicolecionismo.social&type=premium`
 - Formulário de contato deve estar pré-preenchido:
-  - Campo "Assunto": menciona "vip.com.rich"
+  - Campo "Assunto": menciona "vip.multicolecionismo.social"
   - Tipo de contato identificado como "premium"
 
 **Teste 1.4 - CTA "Ver Plano Elite"**
@@ -92,7 +92,7 @@
 **Pré-requisito**: Cloudflare redirect rule configurada
 
 **Teste 4.1 - Redirect de Subdomínio**
-1. Digite na barra: `vip.com.rich`
+1. Digite na barra: `vip.multicolecionismo.social`
 
 **Resultado Esperado:**
 - Browser redireciona (301) para `https://com.rich/vip`
@@ -101,7 +101,7 @@
 
 **Teste no Terminal:**
 ```bash
-curl -I https://vip.com.rich
+curl -I https://vip.multicolecionismo.social
 
 # Deve retornar:
 # HTTP/2 301
@@ -165,12 +165,12 @@ curl -I https://vip.com.rich
 
 **Resultado Esperado:**
 ```html
-<title>vip.com.rich - Domínio Premium | com.rich</title>
+<title>vip.multicolecionismo.social - Domínio Premium | com.rich</title>
 <link rel="canonical" href="https://com.rich/vip">
 ```
 
 **Teste 7.2 - URL Canônica**
-1. Acesse via subdomínio: `vip.com.rich`
+1. Acesse via subdomínio: `vip.multicolecionismo.social`
 2. Após redirect, verificar URL no browser
 
 **Resultado Esperado:**
@@ -257,7 +257,7 @@ curl -I https://vip.com.rich
 curl -X POST https://[SUPABASE_URL]/functions/v1/domains \
   -H "Authorization: Bearer [ANON_KEY]" \
   -H "Content-Type: application/json" \
-  -d '{"action":"check","fqdn":"vip.com.rich"}'
+  -d '{"action":"check","fqdn":"vip.multicolecionismo.social"}'
 
 # Deve retornar:
 # {
@@ -270,7 +270,7 @@ curl -X POST https://[SUPABASE_URL]/functions/v1/domains \
 
 ### Verificar Redirect Cloudflare
 ```bash
-curl -I https://vip.com.rich
+curl -I https://vip.multicolecionismo.social
 
 # Deve mostrar:
 # HTTP/2 301

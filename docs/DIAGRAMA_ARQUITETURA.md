@@ -12,7 +12,7 @@
 │                           USUÁRIO FINAL                              │
 │                                                                      │
 │  1. Acessa: therichclub.com                                         │
-│  2. Vê: "Busque seu domínio .com.rich"                             │
+│  2. Vê: "Busque seu domínio .multicolecionismo.social"                             │
 │  3. Digita: "maria"                                                 │
 └──────────────────────────┬──────────────────────────────────────────┘
                            │
@@ -23,14 +23,14 @@
 │                                                                      │
 │  ┌─────────────────────────────────────────────────────────┐       │
 │  │  Home.tsx                                                │       │
-│  │  • Input: [maria    ] .com.rich                         │       │
-│  │  • Monta FQDN: "maria.com.rich"                         │       │
+│  │  • Input: [maria    ] .multicolecionismo.social                         │       │
+│  │  • Monta FQDN: "maria.multicolecionismo.social"                         │       │
 │  │  • Chama Edge Function                                  │       │
 │  └─────────────────────────────────────────────────────────┘       │
 └──────────────────────────┬──────────────────────────────────────────┘
                            │
                            │ POST /functions/v1/domains
-                           │ { action: 'check', fqdn: 'maria.com.rich' }
+                           │ { action: 'check', fqdn: 'maria.multicolecionismo.social' }
                            │
                            ▼
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -60,7 +60,7 @@
 │  │ • status         │  │ • is_available   │  │ • domain_id      │ │
 │  └──────────────────┘  └──────────────────┘  └──────────────────┘ │
 │                                                                      │
-│  Busca: SELECT * FROM domains WHERE fqdn = 'maria.com.rich'        │
+│  Busca: SELECT * FROM domains WHERE fqdn = 'maria.multicolecionismo.social'        │
 │                                                                      │
 │  Resultado: NULL (não existe) = AVAILABLE                          │
 │  Resultado: {customer_id: '...'} = UNAVAILABLE                     │
@@ -76,7 +76,7 @@
 │  ┌─────────────────────────────────────────────────────────┐       │
 │  │  ✅ AVAILABLE                                            │       │
 │  │                                                          │       │
-│  │  maria.com.rich                                         │       │
+│  │  maria.multicolecionismo.social                                         │       │
 │  │  Domínio disponível para registro!                     │       │
 │  │                                                          │       │
 │  │  [📋 Ver Planos]                                        │       │
@@ -131,7 +131,7 @@
 │  Bem-vindo, Maria! 👋                                               │
 │                                                                      │
 │  Seus domínios:                                                     │
-│  • maria.com.rich [ATIVO]                                          │
+│  • maria.multicolecionismo.social [ATIVO]                                          │
 │                                                                      │
 │  [✏️ Editar Perfil] [📊 Estatísticas] [⚙️ Configurações]          │
 └──────────────────────────┬──────────────────────────────────────────┘
@@ -163,7 +163,7 @@
 │                                                                      │
 │  ┌──────────────────────────────────────────────────────┐          │
 │  │           [Foto]                                     │          │
-│  │      maria.com.rich                                  │          │
+│  │      maria.multicolecionismo.social                                  │          │
 │  │      Identidade Digital Exclusiva                    │          │
 │  │                                                       │          │
 │  │      Bio: "Empreendedora digital..."                │          │
@@ -177,7 +177,7 @@
 │  │      📱 Posts Sociais (se habilitado)               │          │
 │  └──────────────────────────────────────────────────────┘          │
 │                                                                      │
-│  Header mostra: "maria.com.rich"                                   │
+│  Header mostra: "maria.multicolecionismo.social"                                   │
 │  Mas URL real é: therichclub.com/u/maria                           │
 └─────────────────────────────────────────────────────────────────────┘
 ```
@@ -245,7 +245,7 @@ Usuario    Frontend    PayPal API    Webhook    Database
    │          │            │            │           │
    │<─────────────────────────────────────────────────│
    │          │  Email confirmação                   │
-   │          │  "maria.com.rich criado!"            │
+   │          │  "maria.multicolecionismo.social criado!"            │
 ```
 
 ### **3. Acesso ao Perfil Público**
@@ -268,7 +268,7 @@ Visitante      Frontend         Database        Profile
    │              │                 │ }           │
    │              │                 │              │
    │<──────────────│ Renderiza      │              │
-   │  Perfil      │ maria.com.rich  │              │
+   │  Perfil      │ maria.multicolecionismo.social  │              │
    │  completo    │ (header visual) │              │
 ```
 
@@ -352,7 +352,7 @@ Visitante      Frontend         Database        Profile
 ┌──────────────────────────────────────────────────────────────┐
 │                        domains                                │
 │  • id (UUID)                                                  │
-│  • fqdn (TEXT UNIQUE) → "maria.com.rich"                     │
+│  • fqdn (TEXT UNIQUE) → "maria.multicolecionismo.social"                     │
 │  • customer_id (FK → customers)                              │
 │  • domain_type (regular | premium)                           │
 │  • status (active | suspended | cancelled)                   │
@@ -391,11 +391,11 @@ Visitante      Frontend         Database        Profile
 
 ```
 ❌ DNS Wildcard:
-   *.com.rich → NÃO CONFIGURADO
+   *.multicolecionismo.social → NÃO CONFIGURADO
 
 ❌ Subdomínios Reais:
-   maria.com.rich → NÃO É UM DNS REAL
-   vip.com.rich → NÃO É UM DNS REAL
+   maria.multicolecionismo.social → NÃO É UM DNS REAL
+   vip.multicolecionismo.social → NÃO É UM DNS REAL
 ```
 
 ### **O QUE EXISTE:**
@@ -410,7 +410,7 @@ Visitante      Frontend         Database        Profile
    /pricing          → Pricing.tsx
    /dashboard        → Dashboard.tsx
    /u/:username      → PublicProfile.tsx
-   /u/maria          → Busca "maria.com.rich" no banco
+   /u/maria          → Busca "maria.multicolecionismo.social" no banco
 ```
 
 ### **Fluxo de Acesso:**
@@ -431,11 +431,11 @@ Usuário digita: therichclub.com/u/maria
          PublicProfile.tsx recebe username="maria"
                        │
                        ▼
-      Busca no banco: domains.fqdn = "maria.com.rich"
+      Busca no banco: domains.fqdn = "maria.multicolecionismo.social"
                        │
                        ▼
               Renderiza perfil com header:
-           "maria.com.rich" (só visual!)
+           "maria.multicolecionismo.social" (só visual!)
 ```
 
 ---
@@ -575,10 +575,10 @@ Frontend → Edge Function → Database → Response → Frontend
 │  │  ☰  therichclub.com           [Login]      │        │
 │  ├────────────────────────────────────────────┤        │
 │  │                                             │        │
-│  │  [ username     ] .com.rich                │        │
+│  │  [ username     ] .multicolecionismo.social                │        │
 │  │        [🔍 Buscar]                         │        │
 │  │                                             │        │
-│  │  ✅ maria.com.rich                         │        │
+│  │  ✅ maria.multicolecionismo.social                         │        │
 │  │  Disponível!                               │        │
 │  │  [📋 Ver Planos]                           │        │
 │  │                                             │        │
@@ -592,11 +592,11 @@ Frontend → Edge Function → Database → Response → Frontend
 │  │  therichclub.com    [Home][Pricing][Login]         │ │
 │  ├────────────────────────────────────────────────────┤ │
 │  │                                                     │ │
-│  │     Seu domínio .com.rich                          │ │
+│  │     Seu domínio .multicolecionismo.social                          │ │
 │  │                                                     │ │
-│  │     [ username      ] .com.rich  [🔍 Buscar]      │ │
+│  │     [ username      ] .multicolecionismo.social  [🔍 Buscar]      │ │
 │  │                                                     │ │
-│  │     ✅ maria.com.rich está disponível!             │ │
+│  │     ✅ maria.multicolecionismo.social está disponível!             │ │
 │  │                                                     │ │
 │  │     [📋 Ver Planos]                                │ │
 │  │                                                     │ │
@@ -616,11 +616,11 @@ Frontend → Edge Function → Database → Response → Frontend
 │  • Registrador de .com         • Plataforma de perfis      │
 │  • DNS wildcard real           • Sistema de licenciamento  │
 │  • Subdomínios reais           • React Router + Banco      │
-│  • Múltiplos servidores        • Display ".com.rich" fake  │
+│  • Múltiplos servidores        • Display ".multicolecionismo.social" fake  │
 │                                 • URL real: /u/:username   │
 │                                                              │
 │  USUÁRIO VÊ:                   SISTEMA USA:                │
-│  maria.com.rich                therichclub.com/u/maria     │
+│  maria.multicolecionismo.social                therichclub.com/u/maria     │
 │  (só visual!)                  (URL real!)                 │
 └─────────────────────────────────────────────────────────────┘
 ```

@@ -191,7 +191,7 @@ export function PublicProfileView({
                 {profile.subdomain}
               </span>
               <span className="bg-gradient-to-r from-[#FFD700] via-white to-[#FFD700] bg-clip-text text-transparent animate-shine bg-[length:200%_auto]">
-                .com.rich
+                .multicolecionismo.social
               </span>
             </h1>
 
@@ -274,7 +274,7 @@ export function PublicProfileView({
             )}
 
             <div className="text-[#D4AF37] text-base mb-4 font-medium">
-              {profile.domain ? `${profile.domain}` : `${profile.subdomain}.com.rich`}
+              {profile.domain ? `${profile.domain}` : `${profile.subdomain}.multicolecionismo.social`}
             </div>
 
             {profile.bio ? (

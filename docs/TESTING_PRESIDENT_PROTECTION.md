@@ -21,15 +21,15 @@ president
 **Resultado Esperado:**
 ```
 ❌ Domínio Indisponível
-president.com.rich
+president.multicolecionismo.social
 
 Este domínio faz parte de uma reserva global de segurança
 e não está disponível para registro público.
 
 Sugestões:
-• president1.com.rich
-• presidentapp.com.rich
-• presidentonline.com.rich
+• president1.multicolecionismo.social
+• presidentapp.multicolecionismo.social
+• presidentonline.multicolecionismo.social
 ```
 
 ---
@@ -44,7 +44,7 @@ presidente
 **Resultado Esperado:**
 ```
 ❌ Domínio Indisponível
-presidente.com.rich
+presidente.multicolecionismo.social
 
 Este domínio faz parte de uma reserva global de segurança
 e não está disponível para registro público.
@@ -210,14 +210,14 @@ ORDER BY keyword;
 
 ```sql
 -- Teste com termo protegido
-SELECT * FROM check_global_protection('president.com.rich');
+SELECT * FROM check_global_protection('president.multicolecionismo.social');
 
 -- Resultado esperado:
 -- is_protected: true
 -- message: "Este domínio faz parte de uma reserva global..."
 
 -- Teste com termo não protegido
-SELECT * FROM check_global_protection('example.com.rich');
+SELECT * FROM check_global_protection('example.multicolecionismo.social');
 
 -- Resultado esperado:
 -- is_protected: false
@@ -237,11 +237,11 @@ SELECT
   c.role
 FROM domains d
 JOIN customers c ON d.customer_id = c.id
-WHERE d.fqdn = 'president.com.rich';
+WHERE d.fqdn = 'president.multicolecionismo.social';
 ```
 
 **Resultado Esperado:**
-- fqdn: `president.com.rich`
+- fqdn: `president.multicolecionismo.social`
 - status: `active`
 - expires_at: ~100 anos no futuro
 - role: `admin`
@@ -259,7 +259,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "action": "check",
-    "fqdn": "president.com.rich"
+    "fqdn": "president.multicolecionismo.social"
   }'
 ```
 
@@ -267,18 +267,18 @@ curl -X POST \
 ```json
 {
   "status": "UNAVAILABLE",
-  "fqdn": "president.com.rich",
+  "fqdn": "president.multicolecionismo.social",
   "isAvailable": false,
   "isPremium": false,
   "planRequired": null,
   "price": null,
   "message": "Este domínio faz parte de uma reserva global de segurança e não está disponível para registro público.",
   "suggestions": [
-    "president1.com.rich",
-    "presidentapp.com.rich",
-    "presidentonline.com.rich",
-    "presidentpro.com.rich",
-    "mypresident.com.rich"
+    "president1.multicolecionismo.social",
+    "presidentapp.multicolecionismo.social",
+    "presidentonline.multicolecionismo.social",
+    "presidentpro.multicolecionismo.social",
+    "mypresident.multicolecionismo.social"
   ]
 }
 ```
@@ -302,7 +302,7 @@ Marque ✅ após testar cada item:
 - [ ] Domínios similares permitidos
 - [ ] Mensagem personalizada exibida
 - [ ] Sugestões alternativas oferecidas
-- [ ] Admin possui president.com.rich
+- [ ] Admin possui president.multicolecionismo.social
 - [ ] Função SQL retorna corretamente
 - [ ] Edge Function integrada
 - [ ] Build sem erros
@@ -338,12 +338,12 @@ Marque ✅ após testar cada item:
 
 ---
 
-### Problema: Admin não consegue acessar president.com.rich
+### Problema: Admin não consegue acessar president.multicolecionismo.social
 
 **Solução:**
 1. Verificar se domínio foi criado:
    ```sql
-   SELECT * FROM domains WHERE fqdn = 'president.com.rich';
+   SELECT * FROM domains WHERE fqdn = 'president.multicolecionismo.social';
    ```
 
 2. Se não existe, executar:
@@ -367,7 +367,7 @@ Marque ✅ após testar cada item:
 2. Analisar query plan:
    ```sql
    EXPLAIN ANALYZE
-   SELECT * FROM check_global_protection('president.com.rich');
+   SELECT * FROM check_global_protection('president.multicolecionismo.social');
    ```
 
 ---

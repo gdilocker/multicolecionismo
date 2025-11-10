@@ -481,8 +481,8 @@ Deno.serve(async (req) => {
   const origin = req.headers.get('origin');
   const allowedOrigins = [
     'https://com.rich',
-    'https://www.com.rich',
-    'https://app.com.rich'
+    'https://www.multicolecionismo.social',
+    'https://app.multicolecionismo.social'
   ];
 
   if (origin && !allowedOrigins.includes(origin)) {

@@ -94,7 +94,7 @@ console.log(import.meta.env.VITE_SUPABASE_URL);
 
 ### **2.2 Busca de Domínios - Disponível**
 - [ ] Input de busca aparece
-- [ ] Placeholder correto: "[username] .com.rich"
+- [ ] Placeholder correto: "[username] .multicolecionismo.social"
 - [ ] Consegue digitar no input
 - [ ] Botão "Buscar" aparece
 
@@ -387,7 +387,7 @@ console.log(import.meta.env.VITE_SUPABASE_URL);
 ---
 
 ### **6.2 Header do Perfil**
-- [ ] Mostra `username.com.rich` no topo
+- [ ] Mostra `username.multicolecionismo.social` no topo
 - [ ] Foto de perfil aparece
 - [ ] Nome de exibição aparece
 - [ ] Bio aparece (se preenchida)

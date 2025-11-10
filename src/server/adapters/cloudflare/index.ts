@@ -40,8 +40,8 @@ export function createCloudflare(): CloudflareDNS {
     async checkDNS(fqdn: string): Promise<DNSCheckResult> {
       console.log(`[MOCK] Checking DNS for: ${fqdn}`);
       return {
-        MX: { ok: true, value: 'mail..com.rich' },
-        SPF: { ok: true, value: 'v=spf1 include:_spf..com.rich ~all' },
+        MX: { ok: true, value: 'mail..multicolecionismo.social' },
+        SPF: { ok: true, value: 'v=spf1 include:_spf..multicolecionismo.social ~all' },
         DKIM: { ok: true, value: 'v=DKIM1; k=rsa; p=MOCK_PUBLIC_KEY' },
         DMARC: { ok: true, value: 'v=DMARC1; p=none; pct=100' }
       };

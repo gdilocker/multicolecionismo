@@ -4,7 +4,7 @@ Este documento explica como configurar redirecionamentos 301 de subdomínios par
 
 ## Objetivo
 
-Redirecionar qualquer acesso via subdomínio (ex: `vip.com.rich`) para a URL canônica (ex: `https://com.rich/vip`).
+Redirecionar qualquer acesso via subdomínio (ex: `vip.multicolecionismo.social`) para a URL canônica (ex: `https://com.rich/vip`).
 
 ## Configuração no Cloudflare
 
@@ -19,7 +19,7 @@ Redirecionar qualquer acesso via subdomínio (ex: `vip.com.rich`) para a URL can
    - **Proxy status**: ✅ Proxied (laranja)
    - **TTL**: Auto
 
-Isso permite que todos os subdomínios (*.com.rich) sejam resolvidos.
+Isso permite que todos os subdomínios (*.multicolecionismo.social) sejam resolvidos.
 
 ### Passo 2: Criar Redirect Rule
 
@@ -51,17 +51,17 @@ Value: ^([a-z0-9-]+)\.com\.rich$
 
 1. Clique em **Deploy**
 2. Aguarde alguns segundos para propagação
-3. Teste acessando: `https://vip.com.rich`
+3. Teste acessando: `https://vip.multicolecionismo.social`
 4. Deve redirecionar para: `https://com.rich/vip`
 
 ## Exemplo de Fluxo Completo
 
-### Domínio Premium (vip.com.rich)
+### Domínio Premium (vip.multicolecionismo.social)
 
-1. **Usuário acessa**: `https://vip.com.rich`
+1. **Usuário acessa**: `https://vip.multicolecionismo.social`
 2. **Cloudflare redireciona (301)**: `https://com.rich/vip`
 3. **React Router captura**: `/:slug` → `DomainSlugPage`
-4. **API consulta**: `/functions/v1/domains` com `fqdn=vip.com.rich`
+4. **API consulta**: `/functions/v1/domains` com `fqdn=vip.multicolecionismo.social`
 5. **Resposta**:
    ```json
    {
@@ -73,12 +73,12 @@ Value: ^([a-z0-9-]+)\.com\.rich$
    ```
 6. **Renderiza**: `PremiumLanding` component
 
-### Domínio Já Registrado (maria.com.rich)
+### Domínio Já Registrado (maria.multicolecionismo.social)
 
-1. **Usuário acessa**: `https://maria.com.rich`
+1. **Usuário acessa**: `https://maria.multicolecionismo.social`
 2. **Cloudflare redireciona (301)**: `https://com.rich/maria`
 3. **React Router captura**: `/:slug` → `DomainSlugPage`
-4. **API consulta**: `/functions/v1/domains` com `fqdn=maria.com.rich`
+4. **API consulta**: `/functions/v1/domains` com `fqdn=maria.multicolecionismo.social`
 5. **Resposta**:
    ```json
    {
@@ -88,12 +88,12 @@ Value: ^([a-z0-9-]+)\.com\.rich$
    ```
 6. **Renderiza**: `PublicProfile` component (se existir) ou página "já registrado"
 
-### Domínio Standard (ola.com.rich)
+### Domínio Standard (ola.multicolecionismo.social)
 
-1. **Usuário acessa**: `https://ola.com.rich`
+1. **Usuário acessa**: `https://ola.multicolecionismo.social`
 2. **Cloudflare redireciona (301)**: `https://com.rich/ola`
 3. **React Router captura**: `/:slug` → `DomainSlugPage`
-4. **API consulta**: `/functions/v1/domains` com `fqdn=ola.com.rich`
+4. **API consulta**: `/functions/v1/domains` com `fqdn=ola.multicolecionismo.social`
 5. **Resposta**:
    ```json
    {
@@ -112,7 +112,7 @@ Value: ^([a-z0-9-]+)\.com\.rich$
 
 ```bash
 # Verificar redirecionamento
-curl -I https://vip.com.rich
+curl -I https://vip.multicolecionismo.social
 
 # Deve retornar:
 # HTTP/2 301
@@ -121,7 +121,7 @@ curl -I https://vip.com.rich
 
 ### Teste no Navegador
 
-1. Digite `vip.com.rich` na barra de endereços
+1. Digite `vip.multicolecionismo.social` na barra de endereços
 2. Deve redirecionar para `com.rich/vip`
 3. URL no navegador deve mostrar `com.rich/vip`
 4. Página deve exibir Premium Landing

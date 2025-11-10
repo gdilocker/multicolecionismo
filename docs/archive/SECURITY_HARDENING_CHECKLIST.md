@@ -137,7 +137,7 @@ curl -H "Origin: https://malicious.example" -X POST /api/auth/login
 
 **Verify Headers:**
 ```bash
-curl -I https://app.com.rich | grep "Content-Security-Policy"
+curl -I https://app.multicolecionismo.social | grep "Content-Security-Policy"
 # Should see CSP header with nonce
 ```
 
@@ -171,7 +171,7 @@ curl -X POST /functions/v1/csp-report \
 
 **Verify:**
 ```bash
-curl -I https://app.com.rich | grep -E "Strict-Transport-Security|X-Frame-Options|X-Content-Type-Options"
+curl -I https://app.multicolecionismo.social | grep -E "Strict-Transport-Security|X-Frame-Options|X-Content-Type-Options"
 ```
 
 ### 4.2 HSTS Preload

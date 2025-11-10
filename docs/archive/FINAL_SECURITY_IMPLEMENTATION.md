@@ -67,8 +67,8 @@
 ```typescript
 const ALLOWED_ORIGINS = [
   'https://com.rich',
-  'https://www.com.rich',
-  'https://app.com.rich',
+  'https://www.multicolecionismo.social',
+  'https://app.multicolecionismo.social',
   'http://localhost:5173',  // Dev apenas
   'http://localhost:4173'   // Vite preview apenas
 ];

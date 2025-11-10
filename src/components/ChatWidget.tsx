@@ -349,8 +349,8 @@ export default function ChatWidget() {
 
     if (messages.length === 0) {
       const welcomeMessage = language === 'pt'
-        ? 'Olá! 👋 Sou o assistente virtual da .com.rich. Como posso ajudar você hoje?'
-        : 'Hello! 👋 I am the .com.rich virtual assistant. How can I help you today?';
+        ? 'Olá! 👋 Sou o assistente virtual da .multicolecionismo.social. Como posso ajudar você hoje?'
+        : 'Hello! 👋 I am the .multicolecionismo.social virtual assistant. How can I help you today?';
 
       const botMessage: Message = {
         id: Date.now().toString(),
@@ -409,7 +409,7 @@ export default function ChatWidget() {
               </div>
               <div>
                 <h3 className="font-semibold text-slate-900 text-sm">
-                  Assistente .com.rich
+                  Assistente .multicolecionismo.social
                 </h3>
                 <p className="text-xs text-slate-500">Online</p>
               </div>
@@ -527,7 +527,7 @@ export default function ChatWidget() {
               </button>
             </div>
             <p className="text-[10px] text-slate-400 mt-2 text-center">
-              {language === 'pt' ? 'Powered by .com.rich AI' : 'Powered by .com.rich AI'}
+              {language === 'pt' ? 'Powered by .multicolecionismo.social AI' : 'Powered by .multicolecionismo.social AI'}
             </p>
           </div>
         </div>

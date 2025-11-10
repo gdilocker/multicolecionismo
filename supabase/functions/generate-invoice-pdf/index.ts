@@ -239,7 +239,7 @@ function generateInvoiceHTML(order: Order, userEmail: string): string {
 </head>
 <body>
   <div class="header">
-    <div class="logo">.com.rich</div>
+    <div class="logo">.multicolecionismo.social</div>
     <div class="invoice-info">
       <div class="invoice-title">FATURA</div>
       <div class="invoice-number">#${order.id.substring(0, 8).toUpperCase()}</div>
@@ -302,7 +302,7 @@ function generateInvoiceHTML(order: Order, userEmail: string): string {
 
   <div class="footer">
     <p>Obrigado pelo seu pagamento!</p>
-    <p>Para dúvidas, entre em contato: suporte@.com.rich</p>
+    <p>Para dúvidas, entre em contato: suporte@.multicolecionismo.social</p>
   </div>
 </body>
 </html>

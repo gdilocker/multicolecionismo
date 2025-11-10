@@ -1,4 +1,4 @@
-# Análise do Sistema .com.rich - Sumário Executivo
+# Análise do Sistema .multicolecionismo.social - Sumário Executivo
 
 **Data:** 13 de Novembro de 2025
 **Status Geral:** ✅ **VIÁVEL** com correções críticas necessárias
@@ -7,7 +7,7 @@
 
 ## 🎯 Veredicto Final
 
-O sistema .com.rich está **80% pronto para produção**, mas tem **4 riscos críticos** que podem causar perda de receita e problemas de segurança.
+O sistema .multicolecionismo.social está **80% pronto para produção**, mas tem **4 riscos críticos** que podem causar perda de receita e problemas de segurança.
 
 ### ✅ O Que Está BOM
 - Arquitetura sólida (Supabase + React)

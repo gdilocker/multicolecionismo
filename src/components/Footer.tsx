@@ -23,9 +23,9 @@ export default function Footer() {
               <Logo size={56} />
             </div>
             <p className="text-[#6B7280] text-sm leading-relaxed max-w-md mb-4">
-              A Global Digital Identity é detentora da mais prestigiada extensão digital do mundo, o domínio .com.rich.
+              A Global Digital Identity é detentora da mais prestigiada extensão digital do mundo, o domínio .multicolecionismo.social.
               Oferecemos registro, proteção e gestão profissional com infraestrutura de alta performance, suporte internacional 24/7 e tecnologia de ponta.
-              Eleve sua presença online com um domínio .com.rich que reflete sucesso, credibilidade e sofisticação.
+              Eleve sua presença online com um domínio .multicolecionismo.social que reflete sucesso, credibilidade e sofisticação.
             </p>
           </div>
 

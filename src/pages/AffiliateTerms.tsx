@@ -13,7 +13,7 @@ const AffiliateTerms: React.FC = () => {
         <div className="text-[#6B7280]/80 space-y-4">
           <div>
             <h3 className="text-lg font-semibold text-black mb-2">1.1 Afiliado</h3>
-            <p>Participante aceito no Programa de Afiliados .com.rich.</p>
+            <p>Participante aceito no Programa de Afiliados .multicolecionismo.social.</p>
           </div>
 
           <div>
@@ -30,7 +30,7 @@ const AffiliateTerms: React.FC = () => {
 
           <div>
             <h3 className="text-lg font-semibold text-black mb-2">1.3 Plataforma</h3>
-            <p>Os serviços e sites digitais operados sob o domínio .com.rich, gerenciados pela empresa Global Digital Identity LTD.</p>
+            <p>Os serviços e sites digitais operados sob o domínio .multicolecionismo.social, gerenciados pela empresa Global Digital Identity LTD.</p>
           </div>
         </div>
       )
@@ -40,7 +40,7 @@ const AffiliateTerms: React.FC = () => {
       content: (
         <div className="text-[#6B7280]/80 space-y-4">
           <p>
-            A presente política foi registrada publicamente no órgão britânico <strong className="text-black">Companies House</strong> sob o título <strong className="text-black">"Affiliate Program Governance Policy – .com.rich"</strong>, como documento oficial de governança vinculado à empresa <strong className="text-black">Global Digital Identity LTD</strong>.
+            A presente política foi registrada publicamente no órgão britânico <strong className="text-black">Companies House</strong> sob o título <strong className="text-black">"Affiliate Program Governance Policy – .multicolecionismo.social"</strong>, como documento oficial de governança vinculado à empresa <strong className="text-black">Global Digital Identity LTD</strong>.
           </p>
         </div>
       )
@@ -50,7 +50,7 @@ const AffiliateTerms: React.FC = () => {
       content: (
         <div className="text-[#6B7280]/80 space-y-4">
           <p>
-            O Programa de Afiliados .com.rich é uma iniciativa comercial legítima, criada para permitir que afiliados promovam os serviços digitais da plataforma e recebam comissões com base em vendas reais e confirmadas, sempre em conformidade com as leis aplicáveis e os princípios de transparência, responsabilidade e legalidade.
+            O Programa de Afiliados .multicolecionismo.social é uma iniciativa comercial legítima, criada para permitir que afiliados promovam os serviços digitais da plataforma e recebam comissões com base em vendas reais e confirmadas, sempre em conformidade com as leis aplicáveis e os princípios de transparência, responsabilidade e legalidade.
           </p>
         </div>
       )
@@ -61,7 +61,7 @@ const AffiliateTerms: React.FC = () => {
         <div className="text-[#6B7280]/80 space-y-4">
           <ul className="space-y-2 text-[#6B7280]/70 list-disc list-inside ml-4">
             <li><strong className="text-black">4.1</strong> Pessoas físicas maiores de 18 anos e plenamente capazes;</li>
-            <li><strong className="text-black">4.2</strong> Usuários com domínio ativo registrado na plataforma .com.rich;</li>
+            <li><strong className="text-black">4.2</strong> Usuários com domínio ativo registrado na plataforma .multicolecionismo.social;</li>
             <li><strong className="text-black">4.3</strong> Indivíduos que aceitem integralmente estes Termos e Condições;</li>
             <li><strong className="text-black">4.4</strong> AO SOLICITAR PARTICIPAÇÃO E/OU UTILIZAR LINKS DE AFILIADO, O PARTICIPANTE DECLARA QUE LEU, ENTENDEU E ACEITOU PLENAMENTE ESTA POLÍTICA, INCLUSIVE SUAS ATUALIZAÇÕES FUTURAS.</li>
           </ul>
@@ -317,7 +317,7 @@ const AffiliateTerms: React.FC = () => {
       content: (
         <div className="text-[#6B7280]/80 space-y-4">
           <p>
-            O Programa de Afiliados .com.rich é <strong className="text-black">transparente, legítimo e baseado em valor real</strong>.
+            O Programa de Afiliados .multicolecionismo.social é <strong className="text-black">transparente, legítimo e baseado em valor real</strong>.
           </p>
           <p>
             Não se trata de investimento nem de promessa de lucros.
@@ -404,7 +404,7 @@ const AffiliateTerms: React.FC = () => {
                 <div>
                   <h2 className="text-lg font-bold text-blue-900 mb-3">Documento Oficial Registrado</h2>
                   <p className="text-[#6B7280]/90 leading-relaxed mb-3">
-                    Os <strong className="text-black">Termos de Afiliados do .com.rich</strong> são documentos oficiais registrados na <strong className="text-black">Companies House</strong>, órgão do governo do Reino Unido responsável pelo registro e supervisão de empresas.
+                    Os <strong className="text-black">Termos de Afiliados do .multicolecionismo.social</strong> são documentos oficiais registrados na <strong className="text-black">Companies House</strong>, órgão do governo do Reino Unido responsável pelo registro e supervisão de empresas.
                   </p>
                   <p className="text-[#6B7280]/90 leading-relaxed mb-3">
                     Essa formalização garante <strong className="text-black">transparência jurídica e autenticidade internacional</strong>, assegurando que todas as regras de afiliação, comissões e licenciamento sigam padrões legais do Reino Unido.

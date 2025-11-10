@@ -1,6 +1,6 @@
 # 🚀 Plano de Implementação Completo - Modelo de Licenciamento
 
-**Projeto:** .com.rich
+**Projeto:** .multicolecionismo.social
 **Data:** 26 de outubro de 2025
 **Status:** ✅ Fase 1 Concluída | 🔄 Aguardando Aprovação para Fase 2
 
@@ -56,7 +56,7 @@ ANTES:
 
 DEPOIS:
 "5.1 Modelo de Licenciamento"
-"O usuário recebe uma LICENÇA EXCLUSIVA DE USO do domínio .com.rich. A titularidade
+"O usuário recebe uma LICENÇA EXCLUSIVA DE USO do domínio .multicolecionismo.social. A titularidade
 permanece com Global Digital Identity LTD. O licenciado tem direitos exclusivos de uso,
 configuração e personalização durante a vigência da licença."
 
@@ -104,8 +104,8 @@ DEPOIS: "Reembolso de licenças contratadas"
 
 ```tsx
 // Hero Section
-ANTES: "Registre seu domínio premium .com.rich"
-DEPOIS: "Adquira sua licença exclusiva .com.rich"
+ANTES: "Registre seu domínio premium .multicolecionismo.social"
+DEPOIS: "Adquira sua licença exclusiva .multicolecionismo.social"
 
 ANTES: "Domínios exclusivos para..."
 DEPOIS: "Licenças exclusivas para..."
@@ -123,7 +123,7 @@ DEPOIS: "Adquira Licença"
 <section className="bg-blue-50 border border-blue-200 rounded-xl p-6">
   <h3>🔐 Modelo de Licenciamento Exclusivo</h3>
   <p>
-    Ao adquirir um domínio .com.rich, você recebe uma <strong>licença exclusiva de uso</strong>.
+    Ao adquirir um domínio .multicolecionismo.social, você recebe uma <strong>licença exclusiva de uso</strong>.
     Isso garante seus direitos totais de personalização e controle, com renovação simples
     e proteção contratual.
   </p>
@@ -136,11 +136,11 @@ DEPOIS: "Adquira Licença"
 
 ```tsx
 ANTES:
-<h1>Compre seu domínio .com.rich</h1>
+<h1>Compre seu domínio .multicolecionismo.social</h1>
 <button>Comprar Agora</button>
 
 DEPOIS:
-<h1>Adquira sua licença exclusiva .com.rich</h1>
+<h1>Adquira sua licença exclusiva .multicolecionismo.social</h1>
 <button>Adquirir Licença</button>
 
 // Adicionar badge explicativo
@@ -333,7 +333,7 @@ DEPOIS:
   questions: [
     {
       q: 'O que é o modelo de licenciamento exclusivo?',
-      a: 'Ao adquirir um domínio .com.rich, você recebe uma licença exclusiva de uso. Isso significa que você tem direitos totais de personalização, configuração e uso do domínio, mas a titularidade permanece com Global Digital Identity LTD. É similar a alugar um imóvel premium: você tem uso exclusivo e total controle, mas não é o proprietário legal do registro.'
+      a: 'Ao adquirir um domínio .multicolecionismo.social, você recebe uma licença exclusiva de uso. Isso significa que você tem direitos totais de personalização, configuração e uso do domínio, mas a titularidade permanece com Global Digital Identity LTD. É similar a alugar um imóvel premium: você tem uso exclusivo e total controle, mas não é o proprietário legal do registro.'
     },
     {
       q: 'Ainda tenho controle total sobre meu domínio?',
@@ -353,7 +353,7 @@ DEPOIS:
     },
     {
       q: 'Por que vocês usam modelo de licenciamento?',
-      a: 'O modelo de licenciamento nos permite manter controle central sobre a rede .com.rich, garantir qualidade do ecossistema, prevenir abuso e oferecer melhor suporte. Além disso, facilita resolução de disputas e proteção de marca.'
+      a: 'O modelo de licenciamento nos permite manter controle central sobre a rede .multicolecionismo.social, garantir qualidade do ecossistema, prevenir abuso e oferecer melhor suporte. Além disso, facilita resolução de disputas e proteção de marca.'
     },
     {
       q: 'Isso afeta meus domínios atuais?',
@@ -458,7 +458,7 @@ export function LicenseInfoCard() {
           </h3>
           <p className="text-sm text-blue-800">
             Você recebe uma licença exclusiva de uso com direitos totais de
-            personalização e controle. A titularidade permanece com .com.rich
+            personalização e controle. A titularidade permanece com .multicolecionismo.social
             Global Digital Identity LTD, garantindo qualidade e segurança do ecossistema.
           </p>
           <a href="/faq#licenciamento" className="text-sm text-blue-600 hover:underline mt-2 inline-block">
@@ -502,7 +502,7 @@ export function LicenseInfoCard() {
 
 Prezado(a) cliente,
 
-A partir de hoje, todos os domínios .com.rich operam sob modelo de
+A partir de hoje, todos os domínios .multicolecionismo.social operam sob modelo de
 licenciamento exclusivo de uso.
 
 ✅ O QUE MUDA PARA VOCÊ: Nada!
@@ -513,7 +513,7 @@ Você é agora "licenciado exclusivo" (não "proprietário"), mas mantém
 todos os direitos de uso, configuração e personalização.
 
 ✅ POR QUE ESSA MUDANÇA:
-- Maior controle de qualidade da rede .com.rich
+- Maior controle de qualidade da rede .multicolecionismo.social
 - Melhor proteção contra abuso e fraude
 - Facilita resolução de disputas
 - Conformidade jurídica internacional

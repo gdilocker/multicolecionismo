@@ -6,16 +6,16 @@
 
 ## ⚠️ IMPORTANTE: É TUDO SIMULADO!
 
-O sistema .com.rich **NÃO usa domínios reais**.
+O sistema .multicolecionismo.social **NÃO usa domínios reais**.
 
 ---
 
 ## 🌐 ARQUITETURA REAL
 
 ### **O Que NÃO Existe:**
-- ❌ Domínio .com.rich registrado
-- ❌ DNS wildcard (*.com.rich)
-- ❌ Subdomínios reais: usa.com.rich, brasil.com.rich
+- ❌ Domínio .multicolecionismo.social registrado
+- ❌ DNS wildcard (*.multicolecionismo.social)
+- ❌ Subdomínios reais: usa.multicolecionismo.social, brasil.multicolecionismo.social
 - ❌ Integração com registradores (Dynadot, Namecheap, etc)
 - ❌ SSL para subdomínios
 - ❌ Servidores separados por subdomínio
@@ -23,9 +23,9 @@ O sistema .com.rich **NÃO usa domínios reais**.
 ### **O Que Existe:**
 - ✅ Um único domínio: `therichclub.com`
 - ✅ React Router: rotas `/u/:username`
-- ✅ Display fake nos perfis: `username.com.rich`
+- ✅ Display fake nos perfis: `username.multicolecionismo.social`
 - ✅ Banco de dados: armazena usernames como "subdomínios"
-- ✅ Frontend: mostra "username.com.rich" visualmente
+- ✅ Frontend: mostra "username.multicolecionismo.social" visualmente
 
 ---
 
@@ -35,12 +35,12 @@ O sistema .com.rich **NÃO usa domínios reais**.
 
 **Interface mostra:**
 ```
-Digite seu subdomínio: [usa].com.rich
+Digite seu subdomínio: [usa].multicolecionismo.social
 ```
 
 **O que acontece:**
 1. Sistema verifica se "usa" está disponível
-2. Salva no banco: `fqdn = 'usa.com.rich'`
+2. Salva no banco: `fqdn = 'usa.multicolecionismo.social'`
 3. Cria rota React: `/u/usa`
 
 **Nada acontece no DNS!**
@@ -49,7 +49,7 @@ Digite seu subdomínio: [usa].com.rich
 
 **Interface mostra:**
 ```
-Seu perfil: usa.com.rich
+Seu perfil: usa.multicolecionismo.social
 ```
 
 **URL REAL no navegador:**
@@ -65,20 +65,20 @@ https://therichclub.com/u/usa
 **Componente:**
 ```tsx
 const { username } = useParams(); // "usa"
-// Busca perfil no banco onde fqdn = 'usa.com.rich'
-// Mostra "usa.com.rich" no header do perfil
+// Busca perfil no banco onde fqdn = 'usa.multicolecionismo.social'
+// Mostra "usa.multicolecionismo.social" no header do perfil
 ```
 
 ### **3. Compartilhamento**
 
 **Usuário compartilha:**
 ```
-"Visite meu perfil: usa.com.rich"
+"Visite meu perfil: usa.multicolecionismo.social"
 ```
 
 **Pessoa clica:**
 ```
-❌ https://usa.com.rich (não existe!)
+❌ https://usa.multicolecionismo.social (não existe!)
 ```
 
 **O que fazer?**
@@ -95,7 +95,7 @@ const { username } = useParams(); // "usa"
 
 **Educar usuários:**
 - Link real é `therichclub.com/u/username`
-- Display fake `username.com.rich` é só marketing
+- Display fake `username.multicolecionismo.social` é só marketing
 - Compartilhar sempre `therichclub.com/u/username`
 
 **Prós:**
@@ -109,7 +109,7 @@ const { username } = useParams(); // "usa"
 
 ### **Opção 2: Comprar Domínio .club ou Similar**
 
-**Em vez de .com.rich (inexistente):**
+**Em vez de .multicolecionismo.social (inexistente):**
 - Usar `.club` (existe e é barato ~$15/ano)
 - Configurar wildcard DNS real
 - Subdomínios reais: `usa.richclub.club`
@@ -128,7 +128,7 @@ Value: [IP Netlify]
 
 **Contras:**
 - ❌ Custo: $15/ano + Netlify Pro ($19/mês)
-- ❌ Migrar banco de dados (.com.rich → .club)
+- ❌ Migrar banco de dados (.multicolecionismo.social → .club)
 - ❌ Usuários precisam recompartilhar links
 
 ### **Opção 3: Serviço de Short Links + Redirecionamento**
@@ -150,7 +150,7 @@ Value: [IP Netlify]
 ### **Opção 4: Proxy Cloudflare Workers**
 
 **Criar Workers que:**
-- Escutam em `*.com.rich` (se você REALMENTE registrar .com.rich)
+- Escutam em `*.multicolecionismo.social` (se você REALMENTE registrar .multicolecionismo.social)
 - Fazem proxy para `therichclub.com/u/:username`
 
 **Prós:**
@@ -158,7 +158,7 @@ Value: [IP Netlify]
 - ✅ URLs bonitas
 
 **Contras:**
-- ❌ .com.rich não existe como TLD
+- ❌ .multicolecionismo.social não existe como TLD
 - ❌ Precisa registrar domínio real
 - ❌ Complexidade técnica
 
@@ -170,14 +170,14 @@ Value: [IP Netlify]
 
 **Aceitar Opção 1:**
 - URLs reais: `therichclub.com/u/username`
-- Display marketing: `username.com.rich`
+- Display marketing: `username.multicolecionismo.social`
 - Documentar claramente para usuários
 
 **Comunicação:**
 ```
 "Seu perfil TheRichClub:
 🔗 Link: therichclub.com/u/username
-✨ Marca: username.com.rich"
+✨ Marca: username.multicolecionismo.social"
 ```
 
 ### **Para o Futuro (se tiver orçamento):**
@@ -197,8 +197,8 @@ Value: [IP Netlify]
 
 ### **FAQ a Adicionar:**
 
-**Q: Por que meu perfil não abre em username.com.rich?**
-A: O link correto é `therichclub.com/u/username`. O display "username.com.rich" é sua marca exclusiva, mas o acesso é via nosso domínio principal.
+**Q: Por que meu perfil não abre em username.multicolecionismo.social?**
+A: O link correto é `therichclub.com/u/username`. O display "username.multicolecionismo.social" é sua marca exclusiva, mas o acesso é via nosso domínio principal.
 
 **Q: Posso ter um subdomínio real?**
 A: Estamos trabalhando nisso! Por enquanto, use o link `therichclub.com/u/username` que funciona perfeitamente.
@@ -213,7 +213,7 @@ A: Use este link: `therichclub.com/u/seuusername`
 **O código já está preparado para:**
 - ✅ Rotas `/u/:username` funcionando
 - ✅ Buscar perfil no banco por FQDN
-- ✅ Mostrar "username.com.rich" no perfil
+- ✅ Mostrar "username.multicolecionismo.social" no perfil
 - ✅ Compartilhamento via link real
 
 **Nada precisa mudar no código!**

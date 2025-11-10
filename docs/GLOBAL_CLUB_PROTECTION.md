@@ -82,8 +82,8 @@ Garantir que nenhum terceiro possa registrar qualquer variante linguística de "
 Verifica se um domínio é uma variante protegida de club.
 
 ```sql
-SELECT is_club_variant('klub.com.rich'); -- Returns: true
-SELECT is_club_variant('mystore.com.rich'); -- Returns: false
+SELECT is_club_variant('klub.multicolecionismo.social'); -- Returns: true
+SELECT is_club_variant('mystore.multicolecionismo.social'); -- Returns: false
 ```
 
 #### 2. `validate_club_domain_registration(p_domain_name, p_password)`
@@ -118,7 +118,7 @@ if (!clubValidation.allowed && clubValidation.protected) {
 ## Fluxo de Proteção
 
 ```
-User Input: "klub.com.rich"
+User Input: "klub.multicolecionismo.social"
     ↓
 Domain Check Function
     ↓
@@ -141,7 +141,7 @@ Apenas administradores com senha master podem registrar domínios protegidos:
 
 ```typescript
 const validation = await supabase.rpc('validate_club_domain_registration', {
-  p_domain_name: 'club.com.rich',
+  p_domain_name: 'club.multicolecionismo.social',
   p_password: 'Leif1975..'
 });
 
@@ -153,27 +153,27 @@ const validation = await supabase.rpc('validate_club_domain_registration', {
 ### Domínios que DEVEM ser bloqueados:
 
 ```
-✗ club.com.rich          (Inglês)
-✗ clube.com.rich         (Português)
-✗ klubb.com.rich         (Sueco)
-✗ klubi.com.rich         (Finlandês)
-✗ nadi.com.rich          (Árabe)
-✗ kurabu.com.rich        (Japonês)
-✗ keulleop.com.rich      (Coreano)
-✗ julebu.com.rich        (Chinês)
-✗ modon.com.rich         (Hebraico)
-✗ kelab.com.rich         (Malaio)
-✗ klabu.com.rich         (Suaíle)
-✗ clb.com.rich           (Vietnamita)
+✗ club.multicolecionismo.social          (Inglês)
+✗ clube.multicolecionismo.social         (Português)
+✗ klubb.multicolecionismo.social         (Sueco)
+✗ klubi.multicolecionismo.social         (Finlandês)
+✗ nadi.multicolecionismo.social          (Árabe)
+✗ kurabu.multicolecionismo.social        (Japonês)
+✗ keulleop.multicolecionismo.social      (Coreano)
+✗ julebu.multicolecionismo.social        (Chinês)
+✗ modon.multicolecionismo.social         (Hebraico)
+✗ kelab.multicolecionismo.social         (Malaio)
+✗ klabu.multicolecionismo.social         (Suaíle)
+✗ clb.multicolecionismo.social           (Vietnamita)
 ```
 
 ### Domínios que DEVEM ser permitidos:
 
 ```
-✓ myclub.com.rich        (Contém "club" mas não é exatamente "club")
-✓ clubhouse2.com.rich    (Variação não exata)
-✓ greatclub.com.rich     (Prefixo adicional)
-✓ store.com.rich         (Sem relação com club)
+✓ myclub.multicolecionismo.social        (Contém "club" mas não é exatamente "club")
+✓ clubhouse2.multicolecionismo.social    (Variação não exata)
+✓ greatclub.multicolecionismo.social     (Prefixo adicional)
+✓ store.multicolecionismo.social         (Sem relação com club)
 ```
 
 ## SQL para Testes Manuais
@@ -187,12 +187,12 @@ AND description LIKE '%Rich Club%'
 ORDER BY domain_name;
 
 -- Testar validação
-SELECT validate_club_domain_registration('club.com.rich', NULL);
-SELECT validate_club_domain_registration('klubb.com.rich', NULL);
-SELECT validate_club_domain_registration('nadi.com.rich', NULL);
+SELECT validate_club_domain_registration('club.multicolecionismo.social', NULL);
+SELECT validate_club_domain_registration('klubb.multicolecionismo.social', NULL);
+SELECT validate_club_domain_registration('nadi.multicolecionismo.social', NULL);
 
 -- Testar com senha (admin)
-SELECT validate_club_domain_registration('club.com.rich', 'Leif1975..');
+SELECT validate_club_domain_registration('club.multicolecionismo.social', 'Leif1975..');
 ```
 
 ## Manutenção e Expansão

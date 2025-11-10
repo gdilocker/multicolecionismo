@@ -6,7 +6,7 @@ Sistema completo para proteger marcas de alto valor (Tesla, Ferrari, etc.) com a
 
 ## Como Funciona
 
-### 1. Quando alguém acessa uma marca protegida (ex: `tesla.com.rich`):
+### 1. Quando alguém acessa uma marca protegida (ex: `tesla.multicolecionismo.social`):
 
 1. O sistema verifica PRIMEIRO se é uma marca protegida
 2. Se for, exibe tela luxuosa solicitando senha
@@ -64,16 +64,16 @@ Esta senha pode ser alterada individualmente para cada marca no painel admin.
 
 ## Marcas Atualmente Protegidas
 
-1. **Tesla** - `tesla.com.rich`
+1. **Tesla** - `tesla.multicolecionismo.social`
    - Tesla, Inc. - Electric vehicles and clean energy
 
-2. **Ferrari** - `ferrari.com.rich`
+2. **Ferrari** - `ferrari.multicolecionismo.social`
    - Ferrari S.p.A. - Luxury sports cars
 
 ## Fluxo de Acesso
 
 ```
-Usuário acessa tesla.com.rich
+Usuário acessa tesla.multicolecionismo.social
          ↓
 Sistema verifica: É marca protegida?
          ↓

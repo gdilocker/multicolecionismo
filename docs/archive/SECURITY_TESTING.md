@@ -4,7 +4,7 @@
 
 ### Prerequisites
 ```bash
-export API_URL="https://app.com.rich"
+export API_URL="https://app.multicolecionismo.social"
 export WEBHOOK_SECRET_PAYPAL="your_secret_here"
 ```
 
@@ -167,7 +167,7 @@ curl -X POST $API_URL/functions/v1/csp-report \
 #!/bin/bash
 # security-tests.sh
 
-API_URL="${API_URL:-https://app.com.rich}"
+API_URL="${API_URL:-https://app.multicolecionismo.social}"
 
 echo "COM.RICH Security Tests"
 echo "======================="

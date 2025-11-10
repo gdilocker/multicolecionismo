@@ -4,7 +4,7 @@ import { CheckCircle, ArrowRight, Mail, Calendar, Shield } from 'lucide-react';
 
 export default function Success() {
   const urlParams = new URLSearchParams(window.location.search);
-  const domain = urlParams.get('domain') || 'seu-dominio.com.rich';
+  const domain = urlParams.get('domain') || 'seu-dominio.multicolecionismo.social';
   const orderId = urlParams.get('order_id') || 'N/A';
   const provider = urlParams.get('provider') || 'paypal';
 

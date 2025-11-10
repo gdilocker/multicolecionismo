@@ -119,8 +119,8 @@ const WizardPage = () => {
       const cf = createCloudflare();
       await cf.applyDefaults({
         fqdn: domain,
-        mxHost: 'mail..com.rich',
-        spfInclude: '_spf..com.rich',
+        mxHost: 'mail..multicolecionismo.social',
+        spfInclude: '_spf..multicolecionismo.social',
         dkimTxt: emailDom.dkim,
         dmarcPolicy: 'v=DMARC1; p=none; pct=100'
       });

@@ -2,7 +2,7 @@
 
 ## 📋 Resumo Executivo
 
-Implementado sistema de proteção global que reserva e bloqueia automaticamente o domínio `president.com.rich` e todas as suas variações linguísticas em idiomas oficiais de países reconhecidos pela ONU.
+Implementado sistema de proteção global que reserva e bloqueia automaticamente o domínio `president.multicolecionismo.social` e todas as suas variações linguísticas em idiomas oficiais de países reconhecidos pela ONU.
 
 ---
 
@@ -90,7 +90,7 @@ RETURNS TABLE (is_protected BOOLEAN, message TEXT)
 ```
 
 **Processo:**
-1. Extrai a parte antes do `.com.rich`
+1. Extrai a parte antes do `.multicolecionismo.social`
 2. Normaliza para lowercase
 3. Compara com lista de palavras protegidas
 4. Retorna status e mensagem personalizada
@@ -135,16 +135,16 @@ Este domínio faz parte de uma reserva global de segurança
 e não está disponível para registro público.
 
 Sugestões alternativas:
-• president1.com.rich
-• presidentapp.com.rich
-• presidentonline.com.rich
-• presidentpro.com.rich
-• mypresident.com.rich
+• president1.multicolecionismo.social
+• presidentapp.multicolecionismo.social
+• presidentonline.multicolecionismo.social
+• presidentpro.multicolecionismo.social
+• mypresident.multicolecionismo.social
 ```
 
 ### Exceção: Administrador
 
-O domínio `president.com.rich` permanece vinculado permanentemente ao usuário administrador com:
+O domínio `president.multicolecionismo.social` permanece vinculado permanentemente ao usuário administrador com:
 - Status: `active`
 - Tipo: `personal`
 - Expiração: 100 anos (vitalício)
@@ -157,14 +157,14 @@ O domínio `president.com.rich` permanece vinculado permanentemente ao usuário 
 
 ```bash
 # Tentativas que DEVEM SER BLOQUEADAS:
-✗ president.com.rich
-✗ presidente.com.rich
-✗ président.com.rich
-✗ präsident.com.rich
-✗ президент.com.rich
-✗ 总统.com.rich
-✗ 大統領.com.rich
-✗ رئيس.com.rich
+✗ president.multicolecionismo.social
+✗ presidente.multicolecionismo.social
+✗ président.multicolecionismo.social
+✗ präsident.multicolecionismo.social
+✗ президент.multicolecionismo.social
+✗ 总统.multicolecionismo.social
+✗ 大統領.multicolecionismo.social
+✗ رئيس.multicolecionismo.social
 ```
 
 **Resultado Esperado:**
@@ -176,27 +176,27 @@ O domínio `president.com.rich` permanece vinculado permanentemente ao usuário 
 
 ```bash
 # Tentativas que PODEM SER REGISTRADAS:
-✓ president1.com.rich
-✓ presidentapp.com.rich
-✓ mypresident.com.rich
-✓ vicepresidente.com.rich
-✓ expresident.com.rich
+✓ president1.multicolecionismo.social
+✓ presidentapp.multicolecionismo.social
+✓ mypresident.multicolecionismo.social
+✓ vicepresidente.multicolecionismo.social
+✓ expresident.multicolecionismo.social
 ```
 
 ### Teste 3: Variações de Case ✅
 
 ```bash
 # Todas normalizadas para lowercase antes da verificação:
-✗ PRESIDENT.com.rich → president.com.rich → BLOQUEADO
-✗ President.com.rich → president.com.rich → BLOQUEADO
-✗ PrEsIdEnT.com.rich → president.com.rich → BLOQUEADO
+✗ PRESIDENT.multicolecionismo.social → president.multicolecionismo.social → BLOQUEADO
+✗ President.multicolecionismo.social → president.multicolecionismo.social → BLOQUEADO
+✗ PrEsIdEnT.multicolecionismo.social → president.multicolecionismo.social → BLOQUEADO
 ```
 
 ### Teste 4: Acesso Administrativo ✅
 
 ```bash
 # Admin já possui:
-✓ president.com.rich (registrado permanentemente)
+✓ president.multicolecionismo.social (registrado permanentemente)
   - Expiração: 2124-11-05 (100 anos)
   - Status: active
   - Renovação: não necessária
@@ -241,10 +241,10 @@ O domínio `president.com.rich` permanece vinculado permanentemente ao usuário 
 - Variações de case (PRESIDENT, President, etc.)
 - Caracteres Unicode similares
 - Espaços ou caracteres especiais
-- Subdomínios (ex: admin.president.com.rich → diferente)
+- Subdomínios (ex: admin.president.multicolecionismo.social → diferente)
 
 ✅ **Única exceção:**
-- Domínio `president.com.rich` já registrado pelo admin
+- Domínio `president.multicolecionismo.social` já registrado pelo admin
 
 ---
 

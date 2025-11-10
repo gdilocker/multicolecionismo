@@ -215,7 +215,7 @@ Galeria Premium
 ```bash
 # Acessar /galeria-premium sem login de admin
 # Resultado esperado:
-✅ Domínios normais aparecem (usa.com.rich, london.com.rich, etc.)
+✅ Domínios normais aparecem (usa.multicolecionismo.social, london.multicolecionismo.social, etc.)
 ❌ Tesla, Ferrari, Apple NÃO aparecem
 ❌ Categoria "Marcas Protegidas" NÃO aparece no filtro
 ```
@@ -231,7 +231,7 @@ Galeria Premium
 
 ### Teste 3: Busca Direta
 ```bash
-# Tentar acessar tesla.com.rich diretamente (não-admin)
+# Tentar acessar tesla.multicolecionismo.social diretamente (não-admin)
 # Resultado esperado:
 ✅ Exibe tela de proteção com senha
 ✅ Requer senha: "Leif1975.."
@@ -275,7 +275,7 @@ graph TD
 ```sql
 -- Via SQL
 INSERT INTO premium_domains (fqdn, category, price_usd, status, description, is_featured, show_price, plan_required, requires_approval, is_protected_brand)
-VALUES ('novaomarca.com.rich', 'protected_brand', NULL, 'available', 'Descrição da marca', true, false, 'supreme', true, true);
+VALUES ('novaomarca.multicolecionismo.social', 'protected_brand', NULL, 'available', 'Descrição da marca', true, false, 'supreme', true, true);
 
 INSERT INTO protected_brands (domain_name, brand_display_name, description, access_password, is_active)
 VALUES ('novamarca', 'Nova Marca', 'Descrição completa', 'Leif1975..', true);
@@ -289,7 +289,7 @@ UPDATE premium_domains
 SET
   category = 'lifestyle',  -- ou outra categoria apropriada
   is_protected_brand = false
-WHERE fqdn = 'marca.com.rich';
+WHERE fqdn = 'marca.multicolecionismo.social';
 ```
 
 ## 📚 Arquivos Modificados
