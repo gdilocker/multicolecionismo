@@ -39,8 +39,8 @@ export default function RichClub() {
             </div>
 
             <h1 className="font-bold text-white mb-8 tracking-tight break-keep text-fluid-hero">
-              <span className="block">Bem-vindo ao Clube do</span>
-              <span className="block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent inline-block whitespace-nowrap">
+              <span className="inline-block">Bem-vindo a Rede Social do</span>{' '}
+              <span className="inline-block bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent whitespace-nowrap">
                 Multicolecionismo
               </span>
             </h1>
@@ -269,7 +269,7 @@ export default function RichClub() {
             </div>
 
             <h2 className="font-bold text-white mb-6 tracking-tight break-keep text-fluid-section">
-              <span className="inline-block">Reconhecimento como</span>{' '}
+              <span className="inline-block whitespace-nowrap">Reconhecimento como</span>{' '}
               <span className="inline-block whitespace-nowrap">Colecionador Verificado</span>
             </h2>
 
