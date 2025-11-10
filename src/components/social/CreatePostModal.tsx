@@ -113,18 +113,16 @@ export const CreatePostModal: React.FC<CreatePostModalProps> = ({
         mediaUrls.push(publicUrl);
       }
 
-      const hashtags = (caption.match(/#\w+/g) || []).map(tag => tag.toLowerCase());
-
       const { error: insertError } = await supabase
         .from('social_posts')
         .insert({
           user_id: user.id,
-          caption: caption.trim(),
-          media_urls: mediaUrls,
-          content_type: mediaFiles.length > 0 ? 'media' : 'text',
-          privacy: 'public',
-          hashtags,
-          is_active: true
+          content: caption.trim(),
+          media_url: mediaUrls.length > 0 ? mediaUrls[0] : null,
+          media_type: mediaFiles.length > 0 ? (mediaFiles[0].type.startsWith('video/') ? 'video' : 'image') : null,
+          is_public: true,
+          likes_count: 0,
+          comments_count: 0
         });
 
       if (insertError) throw insertError;
