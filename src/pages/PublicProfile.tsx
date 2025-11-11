@@ -700,6 +700,25 @@ export default function PublicProfile({ subdomain: subdomainProp }: PublicProfil
       {/* Community Full Screen Mode */}
       {activeTab === 'community' ? (
         <div className="fixed inset-0 bg-black z-50 flex flex-col">
+          {/* Floating Top Right Buttons */}
+          <div className="absolute top-[env(safe-area-inset-top,0px)] right-4 z-[60] flex flex-col gap-2 pt-3">
+            {/* Three Dots Menu - Top */}
+            <div className="relative">
+              <ProfileOwnerMenu
+                isOwner={isProfileOwner}
+                onBack={() => setActiveTab('links')}
+              />
+            </div>
+
+            {/* Hamburger Menu - Below */}
+            <button
+              onClick={() => setShowDashboard(true)}
+              className="p-2.5 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors shadow-lg"
+            >
+              <Menu className="w-6 h-6 text-white" />
+            </button>
+          </div>
+
           {/* Feed */}
           <div className="flex-1 overflow-hidden">
             <VerticalFeed

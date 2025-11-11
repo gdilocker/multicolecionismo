@@ -509,57 +509,59 @@ export const PostCard: React.FC<PostCardProps> = ({
         </div>
       )}
 
-      {/* Top Section - User Info */}
-      <div className="absolute left-0 right-0 px-4 py-3 flex items-center justify-between z-30 top-[env(safe-area-inset-top)] md:!top-0">
-        <div className="flex items-center gap-3">
-          {userProfile?.avatar_url ? (
-            <img
-              src={userProfile.avatar_url}
-              alt={userProfile.display_name}
-              className="w-10 h-10 rounded-full object-cover ring-2 ring-white/30 shadow-lg"
-            />
-          ) : (
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center text-white font-semibold ring-2 ring-white/30 shadow-lg">
-              {userProfile?.display_name?.[0]?.toUpperCase() || 'U'}
-            </div>
-          )}
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-white drop-shadow-lg">
-                {userProfile?.display_name || 'Usuário'}
-              </span>
-              {!isOwner && user && (
-                <button
-                  onClick={handleFollowToggle}
-                  className={`px-3 py-1 rounded-full text-xs font-semibold transition-all backdrop-blur-sm ${
-                    isFollowing
-                      ? 'bg-white/20 text-white hover:bg-white/30'
-                      : 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600'
-                  }`}
-                >
-                  {isFollowing ? (
-                    <span className="flex items-center gap-1">
-                      <UserMinus className="w-3 h-3" />
-                      Seguindo
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-1">
-                      <UserPlus className="w-3 h-3" />
-                      Seguir
-                    </span>
-                  )}
-                </button>
-              )}
-            </div>
-            <div className="text-xs text-white/80 drop-shadow-lg">
-              @{userProfile?.subdomain || 'user'} · {formatDistanceToNow(new Date(post.created_at), { addSuffix: true, locale: ptBR })}
-            </div>
+      {/* Top Section - User Avatar and Info (Left Side Only) */}
+      <div className="absolute left-4 px-0 py-3 flex items-center gap-3 z-30 top-[env(safe-area-inset-top)] md:!top-0">
+        {userProfile?.avatar_url ? (
+          <img
+            src={userProfile.avatar_url}
+            alt={userProfile.display_name}
+            className="w-10 h-10 rounded-full object-cover ring-2 ring-white/30 shadow-lg"
+          />
+        ) : (
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center text-white font-semibold ring-2 ring-white/30 shadow-lg">
+            {userProfile?.display_name?.[0]?.toUpperCase() || 'U'}
+          </div>
+        )}
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="font-semibold text-white drop-shadow-lg">
+              {userProfile?.display_name || 'Usuário'}
+            </span>
+            {!isOwner && user && (
+              <button
+                onClick={handleFollowToggle}
+                className={`px-3 py-1 rounded-full text-xs font-semibold transition-all backdrop-blur-sm ${
+                  isFollowing
+                    ? 'bg-white/20 text-white hover:bg-white/30'
+                    : 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600'
+                }`}
+              >
+                {isFollowing ? (
+                  <span className="flex items-center gap-1">
+                    <UserMinus className="w-3 h-3" />
+                    Seguindo
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1">
+                    <UserPlus className="w-3 h-3" />
+                    Seguir
+                  </span>
+                )}
+              </button>
+            )}
+          </div>
+          <div className="text-xs text-white/80 drop-shadow-lg">
+            @{userProfile?.subdomain || 'user'} · {formatDistanceToNow(new Date(post.created_at), { addSuffix: true, locale: ptBR })}
           </div>
         </div>
+      </div>
+
+      {/* Three Dots Menu - Floating Top Right (Separate from avatar) */}
+      <div className="absolute right-4 top-[env(safe-area-inset-top)] md:!top-0 z-30 pt-3">
         <div className="relative">
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className="p-2 hover:bg-white/20 rounded-full transition-colors backdrop-blur-sm"
+            className="p-2.5 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors shadow-lg"
           >
             <MoreVertical className="w-5 h-5 text-white drop-shadow-lg" />
           </button>
