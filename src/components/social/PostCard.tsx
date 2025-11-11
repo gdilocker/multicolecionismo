@@ -18,12 +18,15 @@ interface MediaItem {
 interface Post {
   id: string;
   user_id: string;
-  content_type: string;
-  caption: string;
-  media_urls: (string | MediaItem)[];
-  privacy: string;
-  hashtags: string[];
+  profile_id?: string;
+  content: string;
+  media_url?: string;
+  media_type?: string;
+  is_public: boolean;
+  likes_count: number;
+  comments_count: number;
   created_at: string;
+  updated_at?: string;
 }
 
 // Helper function to normalize media URLs
@@ -447,11 +450,11 @@ export const PostCard: React.FC<PostCardProps> = ({
 
   const handleTogglePrivacy = async () => {
     try {
-      const newPrivacy = post.privacy === 'public' ? 'private' : 'public';
+      const newIsPublic = !post.is_public;
 
       const { error } = await supabase
         .from('social_posts')
-        .update({ privacy: newPrivacy })
+        .update({ is_public: newIsPublic })
         .eq('id', post.id);
 
       if (error) throw error;
@@ -460,7 +463,7 @@ export const PostCard: React.FC<PostCardProps> = ({
       window.location.reload();
     } catch (err) {
       console.error('Error toggling privacy:', err);
-      alert('Erro ao alterar privacidade');
+      alert('Erro ao alterar visibilidade');
     }
   };
 
@@ -578,7 +581,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                     onClick={handleTogglePrivacy}
                     className="w-full px-4 py-2 text-left hover:bg-white/5 flex items-center gap-2 text-blue-400"
                   >
-                    {post.privacy === 'public' ? (
+                    {post.is_public ? (
                       <>
                         <EyeOff className="w-4 h-4" />
                         Tornar Privado

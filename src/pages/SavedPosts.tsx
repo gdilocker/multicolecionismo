@@ -15,12 +15,15 @@ interface MediaItem {
 interface Post {
   id: string;
   user_id: string;
-  content_type: string;
-  caption: string;
-  media_urls: (string | MediaItem)[];
-  privacy: string;
-  hashtags: string[];
+  profile_id?: string;
+  content: string;
+  media_url?: string;
+  media_type?: string;
+  is_public: boolean;
+  likes_count: number;
+  comments_count: number;
   created_at: string;
+  updated_at?: string;
 }
 
 // Helper function to normalize media URLs

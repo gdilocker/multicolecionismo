@@ -12,13 +12,15 @@ interface MediaItem {
 interface Post {
   id: string;
   user_id: string;
-  content_type: string;
-  caption: string;
-  media_urls: (string | MediaItem)[];
-  privacy: string;
-  hashtags: string[];
-  is_active: boolean;
+  profile_id?: string;
+  content: string;
+  media_url?: string;
+  media_type?: string;
+  is_public: boolean;
+  likes_count: number;
+  comments_count: number;
   created_at: string;
+  updated_at?: string;
 }
 
 type FeedMode = 'all' | 'following' | 'my_posts';
@@ -62,7 +64,7 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
 
       // For logged out users, only show public posts
       if (!user && mode !== 'my_posts') {
-        query = query.eq('privacy', 'public');
+        query = query.eq('is_public', true);
       }
 
       if (mode === 'my_posts' && userId) {
@@ -94,21 +96,21 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
       console.log('[FEED] First post sample:', data?.[0]);
 
       const transformedPosts = (data || []).map(post => {
-        const mediaUrls = post.media_urls || [];
-
-        const media = Array.isArray(mediaUrls)
-          ? mediaUrls.map((url: string) => {
-              const isVideo = url.includes('.webm') || url.includes('.mp4') || url.includes('.mov');
-              return {
-                type: isVideo ? 'video' : 'image',
-                url
-              };
-            })
-          : [];
+        // Convert single media_url to array format for compatibility
+        const media: MediaItem[] = [];
+        if (post.media_url) {
+          const isVideo = post.media_type === 'video' ||
+                         post.media_url.includes('.webm') ||
+                         post.media_url.includes('.mp4') ||
+                         post.media_url.includes('.mov');
+          media.push({
+            type: isVideo ? 'video' : 'image',
+            url: post.media_url
+          });
+        }
 
         return {
           ...post,
-          media_urls: media,
           media
         };
       });
