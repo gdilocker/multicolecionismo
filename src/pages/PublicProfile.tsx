@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Logo from '../components/Logo';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { ExternalLink, Mail, Twitter, Instagram, Linkedin, Github, Youtube, Facebook, Globe, Palette, BarChart3, Lock, Sparkles, MessageCircle, Link2, Menu, Plus, Users, Home, User, Settings, Eye, Heart, UserPlus, LogOut, ShoppingBag } from 'lucide-react';
+import { ExternalLink, Mail, Twitter, Instagram, Linkedin, Github, Youtube, Facebook, Globe, Palette, BarChart3, Lock, Sparkles, MessageCircle, Link2, Menu, Plus, Users, Home, User, Settings, Eye, Heart, UserPlus, LogOut, ShoppingBag, Bookmark } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { EliteBadge } from '../components/EliteBadge';
 import PasswordProtectionModal from '../components/PasswordProtectionModal';
@@ -758,13 +758,11 @@ export default function PublicProfile({ subdomain: subdomainProp }: PublicProfil
                 </div>
               </button>
               <button
-                onClick={() => handleFeedModeChange('my_posts')}
-                className={`flex flex-col items-center gap-1 py-2 transition-colors ${
-                  feedMode === 'my_posts' ? 'text-[#D4AF37]' : 'text-gray-400'
-                }`}
+                onClick={() => navigate('/salvos')}
+                className="flex flex-col items-center gap-1 py-2 transition-colors text-gray-400 hover:text-[#D4AF37]"
               >
-                <User className="w-6 h-6" />
-                <span className="text-xs font-medium">{user && isProfileOwner ? 'Meu Feed' : 'Feed'}</span>
+                <Bookmark className="w-6 h-6" />
+                <span className="text-xs font-medium">Salvos</span>
               </button>
               <button
                 onClick={handleMyPageClick}
