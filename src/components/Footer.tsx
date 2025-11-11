@@ -41,7 +41,7 @@ export default function Footer() {
                   onClick={() => handleNavigation('/club')}
                   className="text-[#6B7280] hover:text-black transition-colors text-sm"
                 >
-                  Sobre o Multicolecionismo
+                  Sobre
                 </button>
               </li>
               <li>
