@@ -729,8 +729,8 @@ export default function PublicProfile({ subdomain: subdomainProp }: PublicProfil
           </div>
 
           {/* Bottom Navigation */}
-          <div className="absolute bottom-0 left-0 right-0 z-50 bg-black border-t border-white/10 pb-safe">
-            <div className="grid grid-cols-5 items-end px-2 py-2">
+          <div className="fixed bottom-0 left-0 right-0 z-[100] bg-black/95 backdrop-blur-lg border-t border-white/10 safe-area-bottom">
+            <div className="grid grid-cols-5 items-end px-2 py-3">
               <button
                 onClick={() => handleFeedModeChange('all')}
                 className={`flex flex-col items-center gap-1 py-2 transition-colors ${
@@ -751,10 +751,10 @@ export default function PublicProfile({ subdomain: subdomainProp }: PublicProfil
               </button>
               <button
                 onClick={handleCreatePost}
-                className="flex justify-center -mt-4"
+                className="flex justify-center items-center -mt-6 relative z-10"
               >
-                <div className="w-14 h-14 bg-gradient-to-r from-[#F4D03F] via-[#D4AF37] to-[#C6941E] rounded-2xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
-                  <Plus className="w-7 h-7 text-black" />
+                <div className="w-16 h-16 bg-gradient-to-r from-[#F4D03F] via-[#D4AF37] to-[#C6941E] rounded-2xl flex items-center justify-center shadow-2xl hover:scale-110 transition-transform ring-4 ring-black/50">
+                  <Plus className="w-8 h-8 text-black font-bold stroke-[3]" />
                 </div>
               </button>
               <button
