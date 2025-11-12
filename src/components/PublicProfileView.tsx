@@ -287,22 +287,20 @@ export function PublicProfileView({
 
             {showControls && activeTab === 'links' && (
               <div className="flex gap-3 max-w-lg mx-auto mb-6">
-                {isStoreActive() && (
-                  <button
-                    onClick={() => navigate(`/${profile.subdomain}/loja`)}
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold transition-all bg-white/10 backdrop-blur-sm text-white hover:bg-white/20"
-                  >
-                    <ShoppingBag className="w-5 h-5" />
-                    <span>Loja</span>
-                  </button>
-                )}
+                <button
+                  onClick={() => onTabChange('links')}
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold transition-all bg-gradient-to-r from-[#F4D03F] via-[#D4AF37] to-[#C6941E] text-black shadow-lg"
+                >
+                  <Link2 className="w-5 h-5" />
+                  <span>Inicial</span>
+                </button>
                 {isSocialActive() && (
                   <button
                     onClick={() => onTabChange('community')}
                     className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold transition-all bg-white/10 backdrop-blur-sm text-white hover:bg-white/20"
                   >
                     <MessageCircle className="w-5 h-5" />
-                    <span>Social</span>
+                    <span>Comunidade</span>
                   </button>
                 )}
               </div>
@@ -312,35 +310,18 @@ export function PublicProfileView({
               <div className="flex gap-3 max-w-lg mx-auto mb-6">
                 <button
                   onClick={() => onTabChange('links')}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold transition-all bg-white/15 backdrop-blur-sm text-white hover:bg-white/25"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold transition-all bg-white/10 backdrop-blur-sm text-white hover:bg-white/20"
                 >
                   <Link2 className="w-5 h-5" />
                   <span>Inicial</span>
                 </button>
-                {isStoreActive() && (
-                  <button
-                    onClick={() => navigate(`/${profile.subdomain}/loja`)}
-                    className={`flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold transition-all ${
-                      activeTab === 'store'
-                        ? 'bg-gradient-to-r from-[#F4D03F] via-[#D4AF37] to-[#C6941E] text-black shadow-lg'
-                        : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20'
-                    }`}
-                  >
-                    <ShoppingBag className="w-5 h-5" />
-                    <span>Loja</span>
-                  </button>
-                )}
                 {isSocialActive() && (
                   <button
                     onClick={() => onTabChange('community')}
-                    className={`flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold transition-all ${
-                      activeTab === 'community'
-                        ? 'bg-gradient-to-r from-[#F4D03F] via-[#D4AF37] to-[#C6941E] text-black shadow-lg'
-                        : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20'
-                    }`}
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold transition-all bg-gradient-to-r from-[#F4D03F] via-[#D4AF37] to-[#C6941E] text-black shadow-lg"
                   >
                     <MessageCircle className="w-5 h-5" />
-                    <span>Social</span>
+                    <span>Comunidade</span>
                   </button>
                 )}
               </div>
