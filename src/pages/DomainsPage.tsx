@@ -657,16 +657,6 @@ const DomainsPage: React.FC = () => {
                           />
                         </motion.button>
                       </div>
-
-                      <motion.button
-                        whileHover={{ scale: 1.01 }}
-                        whileTap={{ scale: 0.99 }}
-                        onClick={() => navigate(`/panel/profile/${domain.id}`)}
-                        className="w-full flex items-center justify-center gap-2 px-5 py-3.5 bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 text-white rounded-xl font-semibold shadow-lg shadow-slate-500/30 hover:shadow-xl hover:shadow-slate-500/40 transition-all"
-                      >
-                        Gerenciar Página
-                        <ArrowRight className="w-4 h-4" />
-                      </motion.button>
                     </div>
                   </div>
                 </motion.div>
