@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Store, MessageSquare, Lock, Phone } from 'lucide-react';
+import { Store, MessageSquare, Lock, Phone, ChevronDown, ChevronUp } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import PhoneInput from './PhoneInput';
 
 interface FeatureControlsProps {
   profileId: string;
@@ -13,6 +14,7 @@ interface FeatureStatus {
   store_allowed_by_admin: boolean;
   social_allowed_by_admin: boolean;
   show_whatsapp_on_posts: boolean;
+  whatsapp_number?: string;
 }
 
 const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }) => {
@@ -21,10 +23,14 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
     social_enabled: true,
     store_allowed_by_admin: true,
     social_allowed_by_admin: true,
-    show_whatsapp_on_posts: false
+    show_whatsapp_on_posts: false,
+    whatsapp_number: ''
   });
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState<string | null>(null);
+  const [isWhatsAppExpanded, setIsWhatsAppExpanded] = useState(false);
+  const [whatsappCountryCode, setWhatsappCountryCode] = useState('BR');
+  const [savingWhatsApp, setSavingWhatsApp] = useState(false);
 
   useEffect(() => {
     loadFeatureStatus();
@@ -34,7 +40,7 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
     try {
       const { data, error } = await supabase
         .from('user_profiles')
-        .select('store_enabled, social_enabled, store_allowed_by_admin, social_allowed_by_admin, show_whatsapp_on_posts')
+        .select('store_enabled, social_enabled, store_allowed_by_admin, social_allowed_by_admin, show_whatsapp_on_posts, whatsapp_number')
         .eq('id', profileId)
         .maybeSingle();
 
@@ -49,7 +55,8 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
           social_enabled: data.social_enabled ?? true,
           store_allowed_by_admin: data.store_allowed_by_admin ?? true,
           social_allowed_by_admin: data.social_allowed_by_admin ?? true,
-          show_whatsapp_on_posts: data.show_whatsapp_on_posts ?? false
+          show_whatsapp_on_posts: data.show_whatsapp_on_posts ?? false,
+          whatsapp_number: data.whatsapp_number || ''
         });
       }
     } catch (error) {
@@ -60,7 +67,8 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
         social_enabled: true,
         store_allowed_by_admin: true,
         social_allowed_by_admin: true,
-        show_whatsapp_on_posts: false
+        show_whatsapp_on_posts: false,
+        whatsapp_number: ''
       });
     } finally {
       setLoading(false);
@@ -296,9 +304,22 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
                 <p className="text-sm text-[#6B7280] mb-3">
                   Quando ativado, um botão do WhatsApp aparecerá em todos os seus posts para contato direto.
                 </p>
-                <p className="text-xs text-blue-600">
-                  Configure seu número do WhatsApp na aba "Perfil" para ativar esta funcionalidade.
-                </p>
+                <button
+                  onClick={() => setIsWhatsAppExpanded(!isWhatsAppExpanded)}
+                  className="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                >
+                  {isWhatsAppExpanded ? (
+                    <>
+                      <ChevronUp className="w-4 h-4" />
+                      Ocultar Configurações
+                    </>
+                  ) : (
+                    <>
+                      <ChevronDown className="w-4 h-4" />
+                      Configurar Número do WhatsApp
+                    </>
+                  )}
+                </button>
               </div>
             </div>
             <button
@@ -317,6 +338,52 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
               />
             </button>
           </div>
+
+          {/* WhatsApp Configuration Accordion */}
+          {isWhatsAppExpanded && (
+            <div className="mt-4 pt-4 border-t border-gray-200 animate-fade-in">
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Número do WhatsApp
+                  </label>
+                  <PhoneInput
+                    value={features.whatsapp_number || ''}
+                    countryCode={whatsappCountryCode}
+                    onChange={async (phone, countryCode) => {
+                      setWhatsappCountryCode(countryCode);
+                      setFeatures(prev => ({ ...prev, whatsapp_number: phone }));
+
+                      // Auto-save WhatsApp number
+                      setSavingWhatsApp(true);
+                      try {
+                        await supabase
+                          .from('user_profiles')
+                          .update({ whatsapp_number: phone })
+                          .eq('id', profileId);
+
+                        // Toast notification
+                        const toast = document.createElement('div');
+                        toast.className = 'fixed top-4 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in';
+                        toast.textContent = 'Número do WhatsApp salvo com sucesso';
+                        document.body.appendChild(toast);
+                        setTimeout(() => toast.remove(), 3000);
+                      } catch (error) {
+                        console.error('Error saving WhatsApp number:', error);
+                        alert('Erro ao salvar número do WhatsApp. Tente novamente.');
+                      } finally {
+                        setSavingWhatsApp(false);
+                      }
+                    }}
+                    disabled={savingWhatsApp}
+                  />
+                  <p className="text-xs text-gray-500 mt-2">
+                    Seu telefone completo +55. Para ativar o botão nos posts, ative a função acima.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

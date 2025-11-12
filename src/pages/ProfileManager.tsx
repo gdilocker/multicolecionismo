@@ -7,8 +7,7 @@ import { PageHeader } from '../components/PageHeader';
 import SocialButtonsEditor from '../components/SocialButtonsEditor';
 import AnalyticsDashboard from '../components/AnalyticsDashboard';
 import BackgroundEditor from '../components/BackgroundEditor';
-import { Upload, Camera, X, Check, Settings, Palette, Share2, BarChart3, Crown, Monitor, Tablet, Smartphone, Type, MessageCircle, Eye, Save, Image as ImageIcon, Trash2, Phone, Link as LinkIcon, Store } from 'lucide-react';
-import PhoneInput from '../components/PhoneInput';
+import { Upload, Camera, X, Check, Settings, Palette, Share2, BarChart3, Crown, Monitor, Tablet, Smartphone, Type, MessageCircle, Eye, Save, Image as ImageIcon, Trash2, Link as LinkIcon, Store } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { EliteBadge } from '../components/EliteBadge';
 import Toast from '../components/Toast';
@@ -71,7 +70,6 @@ export default function ProfileManager() {
   const [showThemeSelector, setShowThemeSelector] = useState(false);
   const [profileLinks, setProfileLinks] = useState<ProfileLink[]>([]);
   const [linksRefresh, setLinksRefresh] = useState(0);
-  const [whatsappCountryCode, setWhatsappCountryCode] = useState('BR');
   const [previewRefreshKey, setPreviewRefreshKey] = useState(0);
 
   useEffect(() => {
@@ -1071,26 +1069,6 @@ export default function ProfileManager() {
                 />
                 <p className={`text-xs mt-1 ${(profile.bio?.length || 0) >= 180 ? 'text-orange-600 font-medium' : 'text-slate-500'}`}>
                   {profile.bio?.length || 0}/{CONTENT_LIMITS.BIO.MAX_LENGTH} caracteres
-                </p>
-              </div>
-
-              <div className="border-t border-slate-200 pt-6">
-                <h3 className="text-base font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                  <Phone className="w-5 h-5 text-green-600" />
-                  Telefone do WhatsApp
-                </h3>
-
-                <PhoneInput
-                  value={(profile as any).whatsapp_number || ''}
-                  countryCode={whatsappCountryCode}
-                  onChange={(phone, countryCode, prefix) => {
-                    setWhatsappCountryCode(countryCode);
-                    setProfile({ ...profile, whatsapp_number: phone } as any);
-                  }}
-                />
-
-                <p className="text-xs text-slate-500 mt-2">
-                  Configure seu número do WhatsApp. Para exibir o botão nos posts, ative a função na aba "Funcionalidades".
                 </p>
               </div>
 
