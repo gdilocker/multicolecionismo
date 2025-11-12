@@ -54,11 +54,18 @@ const getCachedUser = (): User | null => {
     const sessionValid = localStorage.getItem(SESSION_CHECK_KEY);
 
     if (cached && sessionValid === 'true') {
-      return JSON.parse(cached);
+      const parsedUser = JSON.parse(cached);
+      console.log('[AuthContext] Using cached user:', {
+        email: parsedUser.email,
+        role: parsedUser.role,
+        hasCache: true
+      });
+      return parsedUser;
     }
   } catch (e) {
     console.warn('Failed to read user cache:', e);
   }
+  console.log('[AuthContext] No valid cache found');
   return null;
 };
 
@@ -111,6 +118,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           hasActiveSubscription: isAdmin ? true : (info.has_active_subscription || false),
           subscriptionPlan: isAdmin ? 'supreme' : info.subscription_plan
         };
+        console.log('[AuthContext] User data loaded from RPC:', {
+          email: userData.email,
+          role: userData.role,
+          isAdmin,
+          hasActiveSubscription: userData.hasActiveSubscription
+        });
         // Cache the user data
         cacheUser(userData);
         return userData;

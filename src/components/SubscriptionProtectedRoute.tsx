@@ -20,13 +20,21 @@ export const SubscriptionProtectedRoute: React.FC<SubscriptionProtectedRouteProp
     return <Navigate to="/login" replace />;
   }
 
+  console.log('[SubscriptionProtectedRoute] User data:', {
+    email: user.email,
+    role: user.role,
+    hasActiveSubscription: user.hasActiveSubscription
+  });
+
   // Allow admin access regardless of subscription
   if (user.role === 'admin') {
+    console.log('[SubscriptionProtectedRoute] Admin detected - allowing access');
     return <>{children}</>;
   }
 
   // Check if user has active subscription
   if (!user.hasActiveSubscription) {
+    console.log('[SubscriptionProtectedRoute] No active subscription - redirecting to /valores');
     return <Navigate to="/valores" replace />;
   }
 
