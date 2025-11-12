@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Globe, Plus, CheckCircle, AlertCircle, Clock, Settings, ArrowRight, MoreVertical, CreditCard as Edit, Trash2, RefreshCw, ChevronUp, ChevronDown, XCircle } from 'lucide-react';
+import { Globe, Plus, CheckCircle, AlertCircle, Clock, Settings, ArrowRight, MoreVertical, Trash2, RefreshCw, ChevronUp, ChevronDown, XCircle } from 'lucide-react';
 import { PanelLayout } from '../components/PanelLayout';
 import { PageHeader } from '../components/PageHeader';
 import { useAuth } from '../contexts/AuthContext';
@@ -187,11 +187,6 @@ const DomainsPage: React.FC = () => {
 
   const toggleMenu = (domainId: string) => {
     setOpenMenuId(openMenuId === domainId ? null : domainId);
-  };
-
-  const handleEditDomain = (domainId: string) => {
-    navigate(`/panel/domains/${domainId}/settings`);
-    setOpenMenuId(null);
   };
 
   const handleRenewDomain = (domainId: string, fqdn: string) => {
@@ -585,13 +580,6 @@ const DomainsPage: React.FC = () => {
                               transition={{ duration: 0.15 }}
                               className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50"
                             >
-                              <button
-                                onClick={() => handleEditDomain(domain.id)}
-                                className="w-full px-4 py-3 text-left flex items-center gap-3 hover:bg-slate-50 transition-colors"
-                              >
-                                <Edit className="w-4 h-4 text-slate-500" />
-                                <span className="text-sm font-medium text-slate-700">Configurações</span>
-                              </button>
                               <button
                                 onClick={() => handleRenewDomain(domain.id, domain.fqdn)}
                                 className="w-full px-4 py-3 text-left flex items-center gap-3 hover:bg-slate-50 transition-colors"
