@@ -43,6 +43,7 @@ interface UserProfile {
   background_overlay_color?: string;
   custom_font?: string;
   custom_css?: string;
+  show_whatsapp_on_posts?: boolean;
 }
 
 export default function ProfileManager() {
@@ -484,7 +485,7 @@ export default function ProfileManager() {
           background_overlay_opacity: profile.background_overlay_opacity,
           background_overlay_color: profile.background_overlay_color,
           custom_font: profile.custom_font,
-          show_whatsapp_on_posts: (profile as any).show_whatsapp_on_posts || false,
+          show_whatsapp_on_posts: profile.show_whatsapp_on_posts || false,
         })
         .eq('id', profile.id)
         .select();
@@ -1094,8 +1095,8 @@ export default function ProfileManager() {
                   <input
                     type="checkbox"
                     id="show_whatsapp"
-                    checked={(profile as any).show_whatsapp_on_posts || false}
-                    onChange={(e) => setProfile({ ...profile, show_whatsapp_on_posts: e.target.checked } as any)}
+                    checked={profile.show_whatsapp_on_posts || false}
+                    onChange={(e) => setProfile({ ...profile, show_whatsapp_on_posts: e.target.checked })}
                     className="w-5 h-5 text-green-600 border-green-300 rounded focus:ring-green-500"
                   />
                   <label htmlFor="show_whatsapp" className="text-sm text-slate-700 cursor-pointer flex-1">
