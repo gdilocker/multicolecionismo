@@ -90,6 +90,43 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
 
       if (fetchError) {
         console.error('[FEED] Error:', fetchError);
+
+        // If column doesn't exist error, try without explicit select
+        if (fetchError.message?.includes('does not exist')) {
+          console.log('[FEED] Retrying with wildcard select...');
+          const { data: retryData, error: retryError } = await supabase
+            .from('social_posts')
+            .select('*')
+            .order('created_at', { ascending: false })
+            .limit(20);
+
+          if (retryError) {
+            console.error('[FEED] Retry also failed:', retryError);
+            throw retryError;
+          }
+
+          // Use retry data
+          console.log('[FEED] Retry successful, got', retryData?.length || 0, 'posts');
+          const transformedPosts = (retryData || []).map(post => {
+            const media: MediaItem[] = [];
+            if (post.media_url) {
+              const isVideo = post.media_type === 'video' ||
+                             post.media_url.includes('.webm') ||
+                             post.media_url.includes('.mp4') ||
+                             post.media_url.includes('.mov');
+              media.push({
+                type: isVideo ? 'video' : 'image',
+                url: post.media_url
+              });
+            }
+            return { ...post, media };
+          });
+          setPosts(transformedPosts as any);
+          setHasMore((retryData?.length || 0) >= 20);
+          setLoading(false);
+          return;
+        }
+
         throw fetchError;
       }
 
