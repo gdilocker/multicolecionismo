@@ -67,7 +67,7 @@ const AdminFeatureControl: React.FC<AdminFeatureControlProps> = ({
         [columnName]: !currentValue
       }));
 
-      const featureName = feature === 'store' ? 'Loja' : 'Rede Social';
+      const featureName = feature === 'store' ? 'Loja' : 'Feed';
       const status = !currentValue ? 'permitida' : 'bloqueada';
 
       if (onUpdate) onUpdate();
@@ -176,7 +176,7 @@ const AdminFeatureControl: React.FC<AdminFeatureControlProps> = ({
             </div>
             <div className="flex-1">
               <div className="text-sm font-medium text-black flex items-center gap-2">
-                Rede Social
+                Feed
                 {features.social_allowed_by_admin && features.social_enabled && (
                   <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full flex items-center gap-1">
                     <Check className="w-3 h-3" /> Ativa

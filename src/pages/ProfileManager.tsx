@@ -1079,7 +1079,7 @@ export default function ProfileManager() {
               <div className="border-t border-slate-200 pt-6">
                 <h3 className="text-base font-semibold text-slate-800 mb-4 flex items-center gap-2">
                   <Phone className="w-5 h-5 text-green-600" />
-                  WhatsApp para Contato nos Posts
+                  Telefone do WhatsApp
                 </h3>
 
                 <PhoneInput
@@ -1091,21 +1091,9 @@ export default function ProfileManager() {
                   }}
                 />
 
-                <div className="flex items-center gap-3 mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
-                  <input
-                    type="checkbox"
-                    id="show_whatsapp"
-                    checked={profile.show_whatsapp_on_posts || false}
-                    onChange={(e) => setProfile({ ...profile, show_whatsapp_on_posts: e.target.checked })}
-                    className="w-5 h-5 text-green-600 border-green-300 rounded focus:ring-green-500"
-                  />
-                  <label htmlFor="show_whatsapp" className="text-sm text-slate-700 cursor-pointer flex-1">
-                    <span className="font-medium">Mostrar botão WhatsApp nos meus posts</span>
-                    <p className="text-xs text-slate-500 mt-1">
-                      Quando ativado, um botão do WhatsApp aparecerá em todos os seus posts para contato direto
-                    </p>
-                  </label>
-                </div>
+                <p className="text-xs text-slate-500 mt-2">
+                  Configure seu número do WhatsApp. Para exibir o botão nos posts, ative a função na aba "Funcionalidades".
+                </p>
               </div>
 
               <div className="border-t border-slate-200 pt-6">

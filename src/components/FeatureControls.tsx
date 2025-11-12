@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Store, MessageSquare, Lock } from 'lucide-react';
+import { Store, MessageSquare, Lock, Phone } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 interface FeatureControlsProps {
@@ -12,6 +12,7 @@ interface FeatureStatus {
   social_enabled: boolean;
   store_allowed_by_admin: boolean;
   social_allowed_by_admin: boolean;
+  show_whatsapp_on_posts: boolean;
 }
 
 const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }) => {
@@ -19,7 +20,8 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
     store_enabled: true,
     social_enabled: true,
     store_allowed_by_admin: true,
-    social_allowed_by_admin: true
+    social_allowed_by_admin: true,
+    show_whatsapp_on_posts: false
   });
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState<string | null>(null);
@@ -32,7 +34,7 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
     try {
       const { data, error } = await supabase
         .from('user_profiles')
-        .select('store_enabled, social_enabled, store_allowed_by_admin, social_allowed_by_admin')
+        .select('store_enabled, social_enabled, store_allowed_by_admin, social_allowed_by_admin, show_whatsapp_on_posts')
         .eq('id', profileId)
         .maybeSingle();
 
@@ -46,7 +48,8 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
           store_enabled: data.store_enabled ?? true,
           social_enabled: data.social_enabled ?? true,
           store_allowed_by_admin: data.store_allowed_by_admin ?? true,
-          social_allowed_by_admin: data.social_allowed_by_admin ?? true
+          social_allowed_by_admin: data.social_allowed_by_admin ?? true,
+          show_whatsapp_on_posts: data.show_whatsapp_on_posts ?? false
         });
       }
     } catch (error) {
@@ -56,19 +59,20 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
         store_enabled: true,
         social_enabled: true,
         store_allowed_by_admin: true,
-        social_allowed_by_admin: true
+        social_allowed_by_admin: true,
+        show_whatsapp_on_posts: false
       });
     } finally {
       setLoading(false);
     }
   };
 
-  const toggleFeature = async (feature: 'store' | 'social', currentValue: boolean) => {
-    const columnName = `${feature}_enabled`;
-    const allowedByAdmin = feature === 'store' ? features.store_allowed_by_admin : features.social_allowed_by_admin;
+  const toggleFeature = async (feature: 'store' | 'social' | 'whatsapp', currentValue: boolean) => {
+    const columnName = feature === 'whatsapp' ? 'show_whatsapp_on_posts' : `${feature}_enabled`;
+    const allowedByAdmin = feature === 'store' ? features.store_allowed_by_admin : feature === 'social' ? features.social_allowed_by_admin : true;
 
     if (!allowedByAdmin) {
-      alert(`A funcionalidade ${feature === 'store' ? 'Loja' : 'Rede Social'} foi bloqueada pelo administrador.`);
+      alert(`A funcionalidade ${feature === 'store' ? 'Loja' : 'Feed'} foi bloqueada pelo administrador.`);
       return;
     }
 
@@ -96,8 +100,8 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
         [columnName]: newValue
       }));
 
-      const featureName = feature === 'store' ? 'Loja' : 'Rede Social';
-      const status = newValue ? 'ativada' : 'desativada';
+      const featureName = feature === 'store' ? 'Loja' : feature === 'social' ? 'Feed' : 'WhatsApp nos Posts';
+      const status = newValue ? 'ativado' : 'desativado';
 
       if (onUpdate) {
         setTimeout(() => onUpdate(), 500);
@@ -222,7 +226,7 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
-                  <h4 className="font-bold text-black">Rede Social</h4>
+                  <h4 className="font-bold text-black">Feed</h4>
                   {!features.social_allowed_by_admin && (
                     <span className="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full">
                       Bloqueado pelo admin
@@ -258,6 +262,57 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
               <span
                 className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
                   isSocialActive ? 'translate-x-6' : 'translate-x-1'
+                }`}
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* WhatsApp on Posts Control */}
+      <div className="relative group transition-all duration-300">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-500" />
+        <div className="relative bg-white border border-gray-200 rounded-xl p-6">
+          <div className="flex items-start justify-between">
+            <div className="flex items-start gap-4 flex-1">
+              <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
+                features.show_whatsapp_on_posts
+                  ? 'bg-gradient-to-br from-green-500 to-emerald-600'
+                  : 'bg-gray-200'
+              }`}>
+                <Phone className={`w-6 h-6 ${
+                  features.show_whatsapp_on_posts ? 'text-white' : 'text-gray-400'
+                }`} />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <h4 className="font-bold text-black">WhatsApp nos Posts</h4>
+                  {features.show_whatsapp_on_posts && (
+                    <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
+                      Ativo
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-[#6B7280] mb-3">
+                  Quando ativado, um botão do WhatsApp aparecerá em todos os seus posts para contato direto.
+                </p>
+                <p className="text-xs text-blue-600">
+                  Configure seu número do WhatsApp na aba "Perfil" para ativar esta funcionalidade.
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => toggleFeature('whatsapp', features.show_whatsapp_on_posts)}
+              disabled={updating === 'whatsapp'}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                features.show_whatsapp_on_posts
+                  ? 'bg-green-600'
+                  : 'bg-gray-300'
+              } ${updating === 'whatsapp' ? 'opacity-50' : ''}`}
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                  features.show_whatsapp_on_posts ? 'translate-x-6' : 'translate-x-1'
                 }`}
               />
             </button>
