@@ -641,20 +641,10 @@ const DomainsPage: React.FC = () => {
 
                         <motion.button
                           whileTap={{ scale: 0.95 }}
-                          onClick={() => domain.id === activeDomainId ? handleDeactivateDomain() : handleActivateDomain(domain.id)}
-                          className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                            domain.id === activeDomainId
-                              ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 focus:ring-emerald-500'
-                              : 'bg-slate-300 focus:ring-slate-400'
-                          }`}
+                          onClick={() => navigate(`/perfil/${domain.id}`)}
+                          className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-md hover:shadow-lg"
                         >
-                          <motion.span
-                            layout
-                            transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                            className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-lg transition-transform ${
-                              domain.id === activeDomainId ? 'translate-x-7' : 'translate-x-1'
-                            }`}
-                          />
+                          Gerenciar Página
                         </motion.button>
                       </div>
                     </div>
