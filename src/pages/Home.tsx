@@ -9,9 +9,10 @@ import Logo from '../components/Logo';
 interface Post {
   id: string;
   user_id: string;
-  content_type: string;
-  caption: string;
-  media_urls: string[];
+  content: string;
+  media_url?: string;
+  media_type?: string;
+  is_public: boolean;
   created_at: string;
   likes_count?: number;
   comments_count?: number;
@@ -43,7 +44,7 @@ export default function Home() {
           *,
           user_profiles!social_posts_user_id_fkey(subdomain, display_name, avatar_url)
         `)
-        .eq('privacy', 'public')
+        .eq('is_public', true)
         .order('created_at', { ascending: false })
         .limit(20);
 
@@ -204,13 +205,21 @@ export default function Home() {
                 </div>
 
                 {/* Post Media */}
-                {post.media_urls && post.media_urls.length > 0 && (
+                {post.media_url && (
                   <div className="relative bg-black">
-                    <img
-                      src={post.media_urls[0]}
-                      alt="Post"
-                      className="w-full h-auto max-h-[600px] object-contain"
-                    />
+                    {post.media_type === 'video' ? (
+                      <video
+                        src={post.media_url}
+                        controls
+                        className="w-full h-auto max-h-[600px] object-contain"
+                      />
+                    ) : (
+                      <img
+                        src={post.media_url}
+                        alt="Post"
+                        className="w-full h-auto max-h-[600px] object-contain"
+                      />
+                    )}
                   </div>
                 )}
 
@@ -243,12 +252,12 @@ export default function Home() {
                   </div>
 
                   {/* Caption */}
-                  {post.caption && (
+                  {post.content && (
                     <p className="text-gray-900">
                       <span className="font-semibold mr-2">
                         {post.user_profiles?.display_name || 'Usuário'}
                       </span>
-                      {post.caption}
+                      {post.content}
                     </p>
                   )}
                 </div>
