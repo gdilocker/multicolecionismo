@@ -12,6 +12,7 @@ export default function Header() {
   const [isPoliciesMenuOpen, setIsPoliciesMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [userType, setUserType] = useState<'social' | 'member' | null>(null);
+  const [isActive, setIsActive] = useState(false);
   const [storeEnabled, setStoreEnabled] = useState(false);
   const [socialEnabled, setSocialEnabled] = useState(false);
   const { user, logout, loading } = useAuth();
@@ -38,6 +39,7 @@ export default function Header() {
     const fetchUserData = async () => {
       if (!user?.id) {
         setUserType(null);
+        setIsActive(false);
         setStoreEnabled(false);
         setSocialEnabled(false);
         return;
@@ -58,15 +60,17 @@ export default function Header() {
         // Fetch feature flags
         const { data: profileData } = await supabase
           .from('user_profiles')
-          .select('store_enabled, social_enabled')
+          .select('is_active, store_enabled, social_enabled')
           .eq('user_id', user.id)
           .maybeSingle();
 
+        setIsActive(profileData?.is_active || false);
         setStoreEnabled(profileData?.store_enabled || false);
         setSocialEnabled(profileData?.social_enabled || false);
       } catch (error) {
         console.error('Error fetching user data:', error);
         setUserType('member');
+        setIsActive(false);
         setStoreEnabled(false);
         setSocialEnabled(false);
       }
@@ -361,14 +365,16 @@ export default function Header() {
                               Meu Feed
                             </Link>
                           )}
-                          <Link
-                            to="/profile"
-                            onClick={() => setIsUserMenuOpen(false)}
-                            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
-                          >
-                            <UserCircle className="w-4 h-4" />
-                            Minha Página
-                          </Link>
+                          {isActive && (
+                            <Link
+                              to="/profile"
+                              onClick={() => setIsUserMenuOpen(false)}
+                              className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                            >
+                              <UserCircle className="w-4 h-4" />
+                              Minha Página
+                            </Link>
+                          )}
                           {(userType === 'member' || user?.role === 'admin') && (
                             <>
                               <div className="border-t border-gray-100 my-2"></div>
@@ -537,17 +543,21 @@ export default function Header() {
                           <span className="text-sm font-medium">Meu Feed</span>
                         </button>
                       )}
-                      <button
-                        onClick={() => {
-                          setIsMenuOpen(false);
-                          navigate('/profile');
-                        }}
-                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
-                      >
-                        <UserCircle className="w-5 h-5" />
-                        <span className="text-sm font-medium">Minha Página</span>
-                      </button>
-                      <div className="border-t border-gray-800 my-2"></div>
+                      {isActive && (
+                        <>
+                          <button
+                            onClick={() => {
+                              setIsMenuOpen(false);
+                              navigate('/profile');
+                            }}
+                            className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                          >
+                            <UserCircle className="w-5 h-5" />
+                            <span className="text-sm font-medium">Minha Página</span>
+                          </button>
+                          <div className="border-t border-gray-800 my-2"></div>
+                        </>
+                      )}
                       {(userType === 'member' || user?.role === 'admin') && (
                         <>
                           <button
