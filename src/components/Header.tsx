@@ -333,8 +333,25 @@ export default function Header() {
                           )}
                         </div>
                         <div className="p-2">
+                          <Link
+                            to="/social"
+                            onClick={() => setIsUserMenuOpen(false)}
+                            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                          >
+                            <Radio className="w-4 h-4" />
+                            Meu Feed
+                          </Link>
+                          <Link
+                            to="/profile"
+                            onClick={() => setIsUserMenuOpen(false)}
+                            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                          >
+                            <UserCircle className="w-4 h-4" />
+                            Minha Página
+                          </Link>
                           {(userType === 'member' || user?.role === 'admin') && (
                             <>
+                              <div className="border-t border-gray-100 my-2"></div>
                               <Link
                                 to="/panel/dashboard"
                                 onClick={() => setIsUserMenuOpen(false)}
@@ -484,6 +501,27 @@ export default function Header() {
                       >
                         <Globe className="w-5 h-5" />
                         <span className="text-sm font-medium">Registrar Domínio</span>
+                      </button>
+                      <div className="border-t border-gray-800 my-2"></div>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/social');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <Radio className="w-5 h-5" />
+                        <span className="text-sm font-medium">Meu Feed</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/profile');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <UserCircle className="w-5 h-5" />
+                        <span className="text-sm font-medium">Minha Página</span>
                       </button>
                       <div className="border-t border-gray-800 my-2"></div>
                       {(userType === 'member' || user?.role === 'admin') && (
