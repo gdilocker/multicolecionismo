@@ -169,11 +169,11 @@ function AppRoutes() {
               ======================================== */}
 
           {/* Home / Feed Routes - Multiple Aliases */}
-          <Route path="/" element={<SocialFeed />} />
-          <Route path="/pt" element={<SocialFeed />} />
-          <Route path="/en" element={<SocialFeed />} />
-          <Route path="/es" element={<SocialFeed />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/pt" element={<Home />} />
+          <Route path="/en" element={<Home />} />
+          <Route path="/es" element={<Home />} />
+          <Route path="/feed" element={<SocialFeed />} />
           <Route path="/valores" element={<Pricing />} />
           <Route path="/registrar-dominio" element={<RegisterDomain />} />
           <Route path="/marketplace" element={<MarketplaceNew />} />
@@ -234,7 +234,6 @@ function AppRoutes() {
           {/* Social Network Routes */}
           {/* FEED ROUTES: Multiple aliases point to SocialFeed */}
           <Route path="/social" element={<SocialFeed />} />
-          <Route path="/feed" element={<SocialFeed />} />
           <Route path="/salvos" element={<SavedPosts />} />
           <Route path="/social/:subdomain" element={<SocialFeed />} />
           <Route path="/meu-perfil" element={
