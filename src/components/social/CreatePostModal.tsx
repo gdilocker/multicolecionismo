@@ -113,10 +113,18 @@ export const CreatePostModal: React.FC<CreatePostModalProps> = ({
         mediaUrls.push(publicUrl);
       }
 
+      // Get user's profile_id
+      const { data: profileData } = await supabase
+        .from('user_profiles')
+        .select('id')
+        .eq('user_id', user.id)
+        .single();
+
       const { error: insertError } = await supabase
         .from('social_posts')
         .insert({
           user_id: user.id,
+          profile_id: profileData?.id || null,
           content: caption.trim(),
           media_url: mediaUrls.length > 0 ? mediaUrls[0] : null,
           media_type: mediaFiles.length > 0 ? (mediaFiles[0].type.startsWith('video/') ? 'video' : 'image') : null,
@@ -125,7 +133,10 @@ export const CreatePostModal: React.FC<CreatePostModalProps> = ({
           comments_count: 0
         });
 
-      if (insertError) throw insertError;
+      if (insertError) {
+        console.error('Insert error:', insertError);
+        throw insertError;
+      }
 
       localStorage.setItem(lastPostKey, Date.now().toString());
 
