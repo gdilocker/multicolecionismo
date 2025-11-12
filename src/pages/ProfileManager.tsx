@@ -7,7 +7,7 @@ import { PageHeader } from '../components/PageHeader';
 import SocialButtonsEditor from '../components/SocialButtonsEditor';
 import AnalyticsDashboard from '../components/AnalyticsDashboard';
 import BackgroundEditor from '../components/BackgroundEditor';
-import { Upload, Camera, X, Check, Settings, Palette, Share2, BarChart3, Crown, Monitor, Tablet, Smartphone, Type, MessageCircle, Eye, Save, Image as ImageIcon, Trash2, Phone, Link as LinkIcon, ToggleLeft, Store } from 'lucide-react';
+import { Upload, Camera, X, Check, Settings, Palette, Share2, BarChart3, Crown, Monitor, Tablet, Smartphone, Type, MessageCircle, Eye, Save, Image as ImageIcon, Trash2, Phone, Link as LinkIcon, Store } from 'lucide-react';
 import PhoneInput from '../components/PhoneInput';
 import { motion, AnimatePresence } from 'framer-motion';
 import { EliteBadge } from '../components/EliteBadge';
@@ -21,7 +21,6 @@ import { PublicProfileView } from '../components/PublicProfileView';
 import { CONTENT_LIMITS, validateBio, validateDisplayName, validateUsername } from '../lib/contentLimits';
 import LinkEditor from '../components/LinkEditor';
 import { profileLinksService, ProfileLink } from '../lib/services/profileLinks';
-import FeatureControls from '../components/FeatureControls';
 import { optimizeImage, formatFileSize } from '../lib/imageOptimizer';
 
 interface UserProfile {
@@ -56,7 +55,7 @@ export default function ProfileManager() {
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState<'success' | 'error' | 'warning' | 'info'>('success');
   const [uploadingImage, setUploadingImage] = useState(false);
-  const [activeTab, setActiveTab] = useState<'profile' | 'background' | 'social' | 'links' | 'community' | 'analytics' | 'features' | 'store'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'background' | 'social' | 'links' | 'community' | 'analytics' | 'store'>('profile');
   const [storeEnabled, setStoreEnabled] = useState(false);
   const [socialEnabled, setSocialEnabled] = useState(false);
   const [isEliteMember, setIsEliteMember] = useState(false);
@@ -799,7 +798,6 @@ export default function ProfileManager() {
               { id: 'background', label: 'Background', icon: Palette, dataTour: 'background-tab' },
               { id: 'links', label: 'Links', icon: LinkIcon },
               { id: 'social', label: 'Redes Sociais', icon: Share2 },
-              { id: 'features', label: 'Funcionalidades', icon: ToggleLeft },
               ...(storeEnabled ? [{ id: 'store', label: 'Loja', icon: Store, active: true }] : []),
               ...(socialEnabled ? [{ id: 'community', label: 'Meu Feed Social', icon: MessageCircle, active: true }] : []),
               { id: 'analytics', label: 'Analytics', icon: BarChart3, dataTour: 'analytics-tab' },
@@ -1195,23 +1193,6 @@ export default function ProfileManager() {
             </motion.div>
           )}
 
-          {/* Features Tab */}
-          {activeTab === 'features' && profile && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"
-            >
-              <FeatureControls
-                profileId={profile.id}
-                onUpdate={() => {
-                  loadProfile();
-                  loadFeatureStatus();
-                  setPreviewRefreshKey(prev => prev + 1);
-                }}
-              />
-            </motion.div>
-          )}
 
           {/* Store Tab */}
           {activeTab === 'store' && profile && storeEnabled && (

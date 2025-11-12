@@ -70,6 +70,7 @@ const AdminLinkModeration = lazy(() => import('./pages/AdminLinkModeration'));
 const DiagnosticTest = lazy(() => import('./pages/DiagnosticTest'));
 const PublicProfile = lazy(() => import('./pages/PublicProfile'));
 const ProfileManager = lazy(() => import('./pages/ProfileManager'));
+const FeaturesPage = lazy(() => import('./pages/FeaturesPage'));
 const AdminProfiles = lazy(() => import('./pages/AdminProfiles'));
 const AffiliateTerms = lazy(() => import('./pages/AffiliateTerms'));
 const AffiliateAbout = lazy(() => import('./pages/AffiliateAbout'));
@@ -419,6 +420,11 @@ function AppRoutes() {
           <Route path="/panel/profile/:domainId" element={
             <ProtectedRoute>
               <ProfileManager />
+            </ProtectedRoute>
+          } />
+          <Route path="/panel/funcionalidades" element={
+            <ProtectedRoute>
+              <FeaturesPage />
             </ProtectedRoute>
           } />
 
