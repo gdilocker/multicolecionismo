@@ -12,6 +12,8 @@ export default function Header() {
   const [isPoliciesMenuOpen, setIsPoliciesMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [userType, setUserType] = useState<'social' | 'member' | null>(null);
+  const [storeEnabled, setStoreEnabled] = useState(false);
+  const [socialEnabled, setSocialEnabled] = useState(false);
   const { user, logout, loading } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
@@ -33,28 +35,44 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const fetchUserType = async () => {
+    const fetchUserData = async () => {
       if (!user?.id) {
         setUserType(null);
+        setStoreEnabled(false);
+        setSocialEnabled(false);
         return;
       }
 
       try {
-        const { data } = await import('../lib/supabase').then(m => m.supabase
+        const { supabase } = await import('../lib/supabase');
+
+        // Fetch user type
+        const { data: customerData } = await supabase
           .from('customers')
           .select('user_type')
           .eq('user_id', user.id)
-          .maybeSingle()
-        );
+          .maybeSingle();
 
-        setUserType(data?.user_type || 'member');
+        setUserType(customerData?.user_type || 'member');
+
+        // Fetch feature flags
+        const { data: profileData } = await supabase
+          .from('user_profiles')
+          .select('store_enabled, social_enabled')
+          .eq('user_id', user.id)
+          .maybeSingle();
+
+        setStoreEnabled(profileData?.store_enabled || false);
+        setSocialEnabled(profileData?.social_enabled || false);
       } catch (error) {
-        console.error('Error fetching user type:', error);
+        console.error('Error fetching user data:', error);
         setUserType('member');
+        setStoreEnabled(false);
+        setSocialEnabled(false);
       }
     };
 
-    fetchUserType();
+    fetchUserData();
   }, [user]);
 
   useEffect(() => {
@@ -333,14 +351,16 @@ export default function Header() {
                           )}
                         </div>
                         <div className="p-2">
-                          <Link
-                            to="/social"
-                            onClick={() => setIsUserMenuOpen(false)}
-                            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
-                          >
-                            <Radio className="w-4 h-4" />
-                            Meu Feed
-                          </Link>
+                          {socialEnabled && (
+                            <Link
+                              to="/social"
+                              onClick={() => setIsUserMenuOpen(false)}
+                              className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                            >
+                              <Radio className="w-4 h-4" />
+                              Meu Feed
+                            </Link>
+                          )}
                           <Link
                             to="/profile"
                             onClick={() => setIsUserMenuOpen(false)}
@@ -360,14 +380,16 @@ export default function Header() {
                                 <LayoutDashboard className="w-4 h-4" />
                                 Dashboard
                               </Link>
-                              <Link
-                                to="/panel/store"
-                                onClick={() => setIsUserMenuOpen(false)}
-                                className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
-                              >
-                                <Store className="w-4 h-4" />
-                                Minha Loja
-                              </Link>
+                              {storeEnabled && (
+                                <Link
+                                  to="/panel/store"
+                                  onClick={() => setIsUserMenuOpen(false)}
+                                  className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                                >
+                                  <Store className="w-4 h-4" />
+                                  Minha Loja
+                                </Link>
+                              )}
                             </>
                           )}
                           {user?.role === 'admin' && (
@@ -503,16 +525,18 @@ export default function Header() {
                         <span className="text-sm font-medium">Registrar Domínio</span>
                       </button>
                       <div className="border-t border-gray-800 my-2"></div>
-                      <button
-                        onClick={() => {
-                          setIsMenuOpen(false);
-                          navigate('/social');
-                        }}
-                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
-                      >
-                        <Radio className="w-5 h-5" />
-                        <span className="text-sm font-medium">Meu Feed</span>
-                      </button>
+                      {socialEnabled && (
+                        <button
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            navigate('/social');
+                          }}
+                          className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                        >
+                          <Radio className="w-5 h-5" />
+                          <span className="text-sm font-medium">Meu Feed</span>
+                        </button>
+                      )}
                       <button
                         onClick={() => {
                           setIsMenuOpen(false);
@@ -536,16 +560,18 @@ export default function Header() {
                             <LayoutDashboard className="w-5 h-5" />
                             <span className="text-sm font-medium">Dashboard</span>
                           </button>
-                          <button
-                            onClick={() => {
-                              setIsMenuOpen(false);
-                              navigate('/panel/store');
-                            }}
-                            className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
-                          >
-                            <Store className="w-5 h-5" />
-                            <span className="text-sm font-medium">Minha Loja</span>
-                          </button>
+                          {storeEnabled && (
+                            <button
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                navigate('/panel/store');
+                              }}
+                              className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                            >
+                              <Store className="w-5 h-5" />
+                              <span className="text-sm font-medium">Minha Loja</span>
+                            </button>
+                          )}
                         </>
                       )}
                       {user?.role === 'admin' && (
