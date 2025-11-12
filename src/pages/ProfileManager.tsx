@@ -793,7 +793,7 @@ export default function ProfileManager() {
 
           {/* Tabs Navigation */}
           <div className="bg-white border border-slate-200 rounded-xl p-2 shadow-sm mb-6" >
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
+          <div className="flex gap-2 overflow-x-auto pb-2 scroll-smooth" style={{ scrollbarWidth: 'thin', scrollbarColor: '#cbd5e1 #f1f5f9' }}>
             {[
               { id: 'profile', label: 'Perfil', icon: Settings },
               { id: 'background', label: 'Background', icon: Palette, dataTour: 'background-tab' },
