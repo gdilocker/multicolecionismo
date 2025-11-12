@@ -664,7 +664,7 @@ const DomainsPage: React.FC = () => {
                         onClick={() => navigate(`/panel/profile/${domain.id}`)}
                         className="w-full flex items-center justify-center gap-2 px-5 py-3.5 bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 text-white rounded-xl font-semibold shadow-lg shadow-slate-500/30 hover:shadow-xl hover:shadow-slate-500/40 transition-all"
                       >
-                        Gerenciar Página
+                        Gerenciar Página / Loja / Feed
                         <ArrowRight className="w-4 h-4" />
                       </motion.button>
                     </div>
