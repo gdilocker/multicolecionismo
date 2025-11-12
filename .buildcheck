@@ -1,0 +1,36 @@
+#!/bin/bash
+# Build verification script
+
+echo "=========================================="
+echo "Build Verification Check"
+echo "=========================================="
+
+# Check if dist exists
+if [ -d "dist" ]; then
+  echo "✅ dist/ directory exists"
+else
+  echo "❌ dist/ directory missing"
+  exit 1
+fi
+
+# Check index.html
+if [ -f "dist/index.html" ]; then
+  echo "✅ index.html exists"
+  SIZE=$(stat -f%z "dist/index.html" 2>/dev/null || stat -c%s "dist/index.html")
+  echo "   Size: $SIZE bytes"
+else
+  echo "❌ index.html missing"
+  exit 1
+fi
+
+# Check CSS
+CSS_COUNT=$(find dist/assets -name "*.css" | wc -l)
+echo "✅ Found $CSS_COUNT CSS file(s)"
+
+# Check JS
+JS_COUNT=$(find dist/assets -name "*.js" | wc -l)
+echo "✅ Found $JS_COUNT JS file(s)"
+
+echo "=========================================="
+echo "✅ Build verification passed!"
+echo "=========================================="

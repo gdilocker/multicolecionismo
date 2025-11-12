@@ -2,10 +2,6 @@
   command = "npm run build"
   publish = "dist"
 
-# Plugin to clear cache on deploy
-[[plugins]]
-  package = "@netlify/plugin-cache-control"
-
 [context.production.environment]
   NODE_VERSION = "18"
   VITE_SUPABASE_URL = "https://libzvdbgixckggmivspg.supabase.co"
