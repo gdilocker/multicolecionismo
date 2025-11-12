@@ -27,6 +27,15 @@ interface Post {
   comments_count: number;
   created_at: string;
   updated_at?: string;
+  profile?: {
+    id: string;
+    subdomain: string;
+    display_name: string;
+    avatar_url?: string;
+    bio?: string;
+    whatsapp?: string;
+    show_whatsapp_on_posts?: boolean;
+  }[];
 }
 
 // Helper function to normalize media URLs
@@ -188,10 +197,26 @@ export const PostCard: React.FC<PostCardProps> = ({
 
   const loadUserProfile = async () => {
     try {
-      // Get all profiles for this user, ordered by creation date
+      // Try to use profile data from JOIN first
+      if (post.profile && post.profile.length > 0) {
+        const profileData = post.profile[0];
+        console.log('[PostCard] Using profile from JOIN:', profileData);
+
+        // Map the joined profile data
+        setUserProfile({
+          subdomain: profileData.subdomain,
+          display_name: profileData.display_name,
+          avatar_url: profileData.avatar_url,
+          whatsapp_number: profileData.whatsapp,
+          show_whatsapp_on_posts: profileData.show_whatsapp_on_posts
+        });
+        return;
+      }
+
+      // Fallback: fetch profile if not included in JOIN
       const { data: profilesData, error } = await supabase
         .from('user_profiles')
-        .select('id, subdomain, display_name, avatar_url, whatsapp_number, show_whatsapp_on_posts, show_store_icon_on_posts, created_at')
+        .select('id, subdomain, display_name, avatar_url, whatsapp, show_whatsapp_on_posts, show_store_icon_on_posts, created_at')
         .eq('user_id', post.user_id)
         .order('created_at', { ascending: false });
 
@@ -217,7 +242,7 @@ export const PostCard: React.FC<PostCardProps> = ({
           subdomain: profileData.subdomain,
           display_name: profileData.display_name,
           avatar_url: profileData.avatar_url,
-          whatsapp_number: profileData.whatsapp_number,
+          whatsapp_number: profileData.whatsapp,
           show_whatsapp_on_posts: profileData.show_whatsapp_on_posts,
           show_store_icon_on_posts: profileData.show_store_icon_on_posts,
           has_store: (linksData && linksData.length > 0) || false

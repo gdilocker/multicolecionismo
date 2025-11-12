@@ -21,6 +21,15 @@ interface Post {
   comments_count: number;
   created_at: string;
   updated_at?: string;
+  profile?: {
+    id: string;
+    subdomain: string;
+    display_name: string;
+    avatar_url?: string;
+    bio?: string;
+    whatsapp?: string;
+    show_whatsapp_on_posts?: boolean;
+  }[];
 }
 
 type FeedMode = 'all' | 'following' | 'my_posts';
@@ -58,7 +67,18 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
 
       let query = supabase
         .from('social_posts')
-        .select('id, user_id, profile_id, content, media_url, media_type, is_public, likes_count, comments_count, created_at, updated_at')
+        .select(`
+          *,
+          profile:user_profiles!user_id (
+            id,
+            subdomain,
+            display_name,
+            avatar_url,
+            bio,
+            whatsapp,
+            show_whatsapp_on_posts
+          )
+        `)
         .order('created_at', { ascending: false })
         .limit(20);
 
@@ -132,6 +152,11 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
 
       console.log('[FEED] Loaded', data?.length || 0, 'posts');
       console.log('[FEED] First post sample:', data?.[0]);
+      if (data?.[0]?.profile) {
+        console.log('[FEED] Profile data loaded:', data[0].profile);
+      } else {
+        console.warn('[FEED] No profile data in response! May need to fetch separately.');
+      }
 
       const transformedPosts = (data || []).map(post => {
         // Convert single media_url to array format for compatibility
