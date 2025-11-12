@@ -281,14 +281,6 @@ export default function Header() {
                           {userType === 'member' && (
                             <>
                               <Link
-                                to="/panel/domains"
-                                onClick={() => setIsUserMenuOpen(false)}
-                                className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
-                              >
-                                <Globe className="w-4 h-4" />
-                                Meus Domínios
-                              </Link>
-                              <Link
                                 to="/panel/store"
                                 onClick={() => setIsUserMenuOpen(false)}
                                 className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
@@ -296,24 +288,8 @@ export default function Header() {
                                 <Store className="w-4 h-4" />
                                 Minha Loja
                               </Link>
-                              <Link
-                                to="/panel/billing"
-                                onClick={() => setIsUserMenuOpen(false)}
-                                className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
-                              >
-                                <CreditCard className="w-4 h-4" />
-                                Cobrança
-                              </Link>
                             </>
                           )}
-                          <Link
-                            to="/configuracoes"
-                            onClick={() => setIsUserMenuOpen(false)}
-                            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
-                          >
-                            <Settings className="w-4 h-4" />
-                            Configurações
-                          </Link>
                           <div className="border-t border-gray-100 mt-2 pt-2">
                             <button
                               onClick={handleSair}
@@ -382,16 +358,6 @@ export default function Header() {
                           >
                             <UserCircle className="w-5 h-5" />
                             <span className="text-sm font-medium">Dashboard</span>
-                          </button>
-                          <button
-                            onClick={() => {
-                              setIsMenuOpen(false);
-                              navigate('/panel/domains');
-                            }}
-                            className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
-                          >
-                            <Globe className="w-5 h-5" />
-                            <span className="text-sm font-medium">Meus Domínios</span>
                           </button>
                           <button
                             onClick={() => {
