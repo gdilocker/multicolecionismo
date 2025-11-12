@@ -65,6 +65,30 @@ export default function Header() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location]);
 
+  // Close menus when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+
+      // Check if click is outside any dropdown menu
+      if (!target.closest('.user-menu-container') &&
+          !target.closest('.programs-menu-container') &&
+          !target.closest('.policies-menu-container')) {
+        setIsUserMenuOpen(false);
+        setIsProgramsMenuOpen(false);
+        setIsPoliciesMenuOpen(false);
+      }
+    };
+
+    // Only add listener if any menu is open
+    if (isUserMenuOpen || isProgramsMenuOpen || isPoliciesMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }
+  }, [isUserMenuOpen, isProgramsMenuOpen, isPoliciesMenuOpen]);
+
   const handleSair = async () => {
     await logout();
   };
@@ -269,7 +293,7 @@ export default function Header() {
                   <span>Salvos</span>
                 </Link>
 
-                <div className="relative">
+                <div className="relative user-menu-container">
                   <button
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                     className="flex items-center space-x-2 px-4 py-2 hover:bg-gray-900 rounded-lg transition-colors border border-gray-700"
