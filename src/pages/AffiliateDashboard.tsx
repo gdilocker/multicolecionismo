@@ -4,7 +4,9 @@ import { Users, DollarSign, TrendingUp, Copy, Check, ExternalLink, AlertCircle, 
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../lib/supabase';
 import { AffiliateTermsModal } from '../components/AffiliateTermsModal';
+import { AffiliateROICalculator } from '../components/AffiliateROICalculator';
 import PageLayout from '../components/PageLayout';
+import Logo from '../components/Logo';
 
 interface AffiliateData {
   affiliate_code: string;
@@ -13,6 +15,12 @@ interface AffiliateData {
   total_earnings: number;
   available_balance: number;
   commission_rate: number;
+}
+
+interface CommissionInfo {
+  plan: string;
+  rate: number;
+  price: number;
 }
 
 export default function AffiliateDashboard() {
@@ -24,6 +32,7 @@ export default function AffiliateDashboard() {
   const [hasAcceptedTerms, setHasAcceptedTerms] = useState(false);
   const [copied, setCopied] = useState(false);
   const [acceptingTerms, setAcceptingTerms] = useState(false);
+  const [commissionRates, setCommissionRates] = useState<CommissionInfo[]>([]);
 
   useEffect(() => {
     if (!user) {
@@ -47,10 +56,11 @@ export default function AffiliateDashboard() {
 
       if (profile?.is_affiliate && profile?.affiliate_terms_accepted_at) {
         setHasAcceptedTerms(true);
-        await loadAffiliateData();
+        await Promise.all([loadAffiliateData(), loadCommissionRates()]);
       } else {
         // Show terms modal on first access
         setShowTermsModal(true);
+        await loadCommissionRates();
       }
     } catch (error) {
       console.error('Error checking affiliate status:', error);
@@ -72,6 +82,29 @@ export default function AffiliateDashboard() {
       setAffiliateData(data);
     } catch (error) {
       console.error('Error loading affiliate data:', error);
+    }
+  };
+
+  const loadCommissionRates = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('subscription_plans')
+        .select('name, commission_rate, price_monthly_cents')
+        .eq('is_active', true)
+        .order('display_order');
+
+      if (error) throw error;
+
+      if (data) {
+        const rates = data.map(plan => ({
+          plan: plan.name,
+          rate: parseFloat(plan.commission_rate || '0'),
+          price: plan.price_monthly_cents / 100
+        }));
+        setCommissionRates(rates);
+      }
+    } catch (error) {
+      console.error('Error loading commission rates:', error);
     }
   };
 
@@ -147,9 +180,12 @@ export default function AffiliateDashboard() {
             <div className="w-20 h-20 bg-gradient-to-br from-[#D4AF37] to-[#C6941E] rounded-full flex items-center justify-center mx-auto mb-6">
               <Users className="w-10 h-10 text-black" />
             </div>
-            <h1 className="text-4xl font-bold text-white mb-4">Programa de Afiliados</h1>
+            <div className="flex justify-center mb-6">
+              <Logo size={80} />
+            </div>
+            <h1 className="text-4xl font-bold text-white mb-4">Programa de Afiliados Multicolecionismo</h1>
             <p className="text-gray-400 text-lg mb-8">
-              Ganhe comissões recorrentes divulgando .multicolecionismo.social
+              Ganhe comissões recorrentes promovendo identidades digitais premium em multicolecionismo.social
             </p>
             <div className="bg-gradient-to-br from-[#1F1F1F] to-[#252525] border border-[#D4AF37]/20 rounded-2xl p-8 text-left">
               <h2 className="text-2xl font-bold text-white mb-4">Antes de começar</h2>
@@ -178,9 +214,12 @@ export default function AffiliateDashboard() {
   return (
     <PageLayout>
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white mb-2">Dashboard de Afiliados</h1>
-          <p className="text-gray-400">Acompanhe suas comissões e referências</p>
+        <div className="mb-8 flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-white mb-2">Dashboard de Afiliados</h1>
+            <p className="text-gray-400">Acompanhe suas comissões e referências no Multicolecionismo</p>
+          </div>
+          <Logo size={48} />
         </div>
 
         {/* Stats Cards */}
@@ -200,9 +239,9 @@ export default function AffiliateDashboard() {
               <span className="text-sm text-gray-400">Total</span>
             </div>
             <div className="text-3xl font-bold text-white mb-1">
-              ${(affiliateData?.total_earnings || 0).toFixed(2)}
+              R$ {(affiliateData?.total_earnings || 0).toFixed(2)}
             </div>
-            <div className="text-sm text-gray-400">Ganhos Totais</div>
+            <div className="text-sm text-gray-400">Ganhos Totais (BRL)</div>
           </div>
 
           <div className="bg-gradient-to-br from-[#1F1F1F] to-[#252525] border border-white/10 rounded-2xl p-6">
@@ -211,9 +250,9 @@ export default function AffiliateDashboard() {
               <span className="text-sm text-gray-400">Disponível</span>
             </div>
             <div className="text-3xl font-bold text-white mb-1">
-              ${(affiliateData?.available_balance || 0).toFixed(2)}
+              R$ {(affiliateData?.available_balance || 0).toFixed(2)}
             </div>
-            <div className="text-sm text-gray-400">Para Saque</div>
+            <div className="text-sm text-gray-400">Disponível para Saque</div>
           </div>
         </div>
 
@@ -249,14 +288,40 @@ export default function AffiliateDashboard() {
             </button>
           </div>
 
-          <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-4">
-            <p className="text-blue-400 text-sm flex items-start gap-2">
+          <div className="bg-gradient-to-r from-brand-gold/10 to-brand-gold-dark/10 border border-brand-gold/30 rounded-xl p-4">
+            <p className="text-brand-gold text-sm flex items-start gap-2">
               <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
               <span>
-                Compartilhe este link para ganhar comissões recorrentes de <strong>{(affiliateData?.commission_rate || 0.25) * 100}%</strong> sobre as assinaturas dos usuários que você indicar.
+                Compartilhe este link e ganhe <strong>comissões recorrentes</strong> sobre todas as assinaturas dos usuários que você indicar para o Multicolecionismo.
               </span>
             </p>
           </div>
+        </div>
+
+        {/* Commission Rates */}
+        <div className="bg-gradient-to-br from-[#1F1F1F] to-[#252525] border border-white/10 rounded-2xl p-6 mb-8">
+          <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <TrendingUp className="w-5 h-5 text-brand-gold" />
+            Taxas de Comissão por Plano
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {commissionRates.map((info) => (
+              <div key={info.plan} className="bg-black/40 border border-white/10 rounded-xl p-4">
+                <div className="text-sm text-gray-400 mb-1">{info.plan}</div>
+                <div className="text-2xl font-bold text-brand-gold mb-1">{(info.rate * 100).toFixed(0)}%</div>
+                <div className="text-xs text-gray-500">R$ {info.price.toFixed(2)}/mês</div>
+                <div className="text-xs text-brand-gold-light mt-2">Você ganha: R$ {(info.price * info.rate).toFixed(2)}/mês</div>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-gray-400 mt-4">
+            💰 Quanto mais alto o plano que seus referidos assinarem, maior será sua comissão mensal recorrente!
+          </p>
+        </div>
+
+        {/* ROI Calculator */}
+        <div className="mb-8">
+          <AffiliateROICalculator commissionRates={commissionRates} />
         </div>
 
         {/* Status */}

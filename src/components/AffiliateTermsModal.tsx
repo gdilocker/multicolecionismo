@@ -71,8 +71,8 @@ export function AffiliateTermsModal({ isOpen, onClose, onAccept }: AffiliateTerm
                     <AlertCircle className="w-6 h-6 text-black" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-white">Termos do Programa de Afiliados</h2>
-                    <p className="text-gray-400 text-sm">Leia atentamente antes de aceitar</p>
+                    <h2 className="text-2xl font-bold text-white">Programa de Afiliados Multicolecionismo</h2>
+                    <p className="text-gray-400 text-sm">multicolecionismo.social - Leia atentamente antes de aceitar</p>
                   </div>
                 </div>
               </div>
@@ -90,10 +90,16 @@ export function AffiliateTermsModal({ isOpen, onClose, onAccept }: AffiliateTerm
                   </h3>
                   <div className="space-y-3 pl-10">
                     <p className="leading-relaxed">
-                      • <strong className="text-white">Plano Prime:</strong> Comissão de 25% sobre o valor da assinatura mensal
+                      • <strong className="text-white">Plano Starter:</strong> Comissão de 10% sobre o valor (gratuito - trial)
                     </p>
                     <p className="leading-relaxed">
-                      • <strong className="text-white">Plano Elite:</strong> Comissão de 50% sobre o valor da assinatura mensal
+                      • <strong className="text-white">Plano Prime:</strong> Comissão de 10% sobre o valor da assinatura mensal (R$ 70/mês)
+                    </p>
+                    <p className="leading-relaxed">
+                      • <strong className="text-white">Plano Elite:</strong> Comissão de 25% sobre o valor da assinatura mensal (R$ 99/mês)
+                    </p>
+                    <p className="leading-relaxed">
+                      • <strong className="text-white">Plano Supreme:</strong> Comissão de 35% sobre o valor da assinatura mensal (R$ 150/mês)
                     </p>
                     <p className="leading-relaxed">
                       • As comissões são <strong className="text-white">recorrentes mensais</strong> enquanto o cliente mantiver a assinatura ativa
@@ -102,7 +108,10 @@ export function AffiliateTermsModal({ isOpen, onClose, onAccept }: AffiliateTerm
                       • Os valores ficam disponíveis para saque <strong className="text-white">30 dias após cada recebimento confirmado</strong>
                     </p>
                     <p className="leading-relaxed">
-                      • Saque mínimo de <strong className="text-white">US$ 200 (duzentos dólares americanos)</strong>
+                      • Saque mínimo de <strong className="text-white">R$ 100 (cem reais)</strong>
+                    </p>
+                    <p className="leading-relaxed">
+                      • Pagamentos são realizados em <strong className="text-white">Reais Brasileiros (BRL)</strong>
                     </p>
                   </div>
                 </section>
@@ -123,7 +132,10 @@ export function AffiliateTermsModal({ isOpen, onClose, onAccept }: AffiliateTerm
                       • É proibido usar <strong className="text-white">spam, técnicas enganosas</strong> ou violar políticas de terceiros
                     </p>
                     <p className="leading-relaxed">
-                      • Você deve ter um <strong className="text-white">plano ativo pago</strong> (Prime ou Elite) para participar
+                      • Você deve ter um <strong className="text-white">plano ativo pago</strong> (Prime, Elite ou Supreme) para receber comissões
+                    </p>
+                    <p className="leading-relaxed">
+                      • Você se compromete a promover o <strong className="text-white">Multicolecionismo (multicolecionismo.social)</strong> de forma profissional
                     </p>
                   </div>
                 </section>
@@ -213,7 +225,7 @@ export function AffiliateTermsModal({ isOpen, onClose, onAccept }: AffiliateTerm
                   <p className="text-yellow-500 text-sm font-medium flex items-start gap-2">
                     <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                     <span>
-                      Ao aceitar estes termos, você confirma que leu, entendeu e concorda em cumprir todas as condições do Programa de Afiliados .multicolecionismo.social
+                      Ao aceitar estes termos, você confirma que leu, entendeu e concorda em cumprir todas as condições do Programa de Afiliados do <strong>Multicolecionismo</strong> (multicolecionismo.social)
                     </span>
                   </p>
                 </div>
