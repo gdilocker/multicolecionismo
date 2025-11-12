@@ -1017,6 +1017,37 @@ export default function ProfileManager() {
               animate={{ opacity: 1, y: 0 }}
               className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-4 sm:space-y-5"
             >
+              <div className="flex items-center justify-between pb-6 border-b border-slate-200">
+                <div className="flex items-center gap-3">
+                  <div className={`w-3 h-3 rounded-full ${profile.is_active ? 'bg-emerald-500 animate-pulse' : 'bg-slate-300'}`} />
+                  <div>
+                    <h3 className="text-base font-semibold text-slate-800 flex items-center gap-2">
+                      <Eye className="w-5 h-5 text-slate-700" />
+                      Página Ativa
+                    </h3>
+                    <p className="text-sm text-slate-600 mt-1">
+                      {profile.is_active ? 'Sua página está visível publicamente' : 'Sua página está oculta'}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setProfile({ ...profile, is_active: !profile.is_active })}
+                  className={`relative inline-flex h-9 w-16 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+                    profile.is_active
+                      ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 focus:ring-emerald-500'
+                      : 'bg-slate-300 focus:ring-slate-400'
+                  }`}
+                >
+                  <span
+                    className={`inline-block h-7 w-7 transform rounded-full bg-white shadow-lg transition-transform duration-200 ${
+                      profile.is_active ? 'translate-x-8' : 'translate-x-1'
+                    }`}
+                  />
+                </button>
+              </div>
+
               <h2 className="text-lg sm:text-xl font-semibold text-slate-800">Informações Básicas</h2>
 
               <div>
@@ -1072,41 +1103,6 @@ export default function ProfileManager() {
                 <p className={`text-xs mt-1 ${(profile.bio?.length || 0) >= 180 ? 'text-orange-600 font-medium' : 'text-slate-500'}`}>
                   {profile.bio?.length || 0}/{CONTENT_LIMITS.BIO.MAX_LENGTH} caracteres
                 </p>
-              </div>
-
-              <div className="border-t border-slate-200 pt-6">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className={`w-3 h-3 rounded-full ${profile.is_active ? 'bg-emerald-500 animate-pulse' : 'bg-slate-300'}`} />
-                    <div>
-                      <h3 className="text-base font-semibold text-slate-800 flex items-center gap-2">
-                        <Eye className="w-5 h-5 text-slate-700" />
-                        Página Ativa
-                      </h3>
-                      <p className="text-sm text-slate-600 mt-1">
-                        {profile.is_active ? 'Sua página está visível publicamente' : 'Sua página está oculta'}
-                      </p>
-                    </div>
-                  </div>
-
-                  <motion.button
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setProfile({ ...profile, is_active: !profile.is_active })}
-                    className={`relative inline-flex h-9 w-16 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                      profile.is_active
-                        ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 focus:ring-emerald-500'
-                        : 'bg-slate-300 focus:ring-slate-400'
-                    }`}
-                  >
-                    <motion.span
-                      layout
-                      transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                      className={`inline-block h-7 w-7 transform rounded-full bg-white shadow-lg transition-transform ${
-                        profile.is_active ? 'translate-x-8' : 'translate-x-1'
-                      }`}
-                    />
-                  </motion.button>
-                </div>
               </div>
 
               <div className="border-t border-slate-200 pt-6">
