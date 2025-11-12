@@ -149,7 +149,7 @@ export default function SocialFeed() {
       {/* Mobile Bottom Navigation - Fixed */}
       {!subdomain && isLoggedIn && (
         <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-black border-t border-gray-800 z-50 pb-[env(safe-area-inset-bottom)] safe-area-bottom">
-          <div className="grid grid-cols-5 items-end px-2 py-2">
+          <div className="flex items-center justify-evenly px-4 py-2">
             <button
               onClick={() => {
                 setFeedMode('all');
@@ -169,16 +169,16 @@ export default function SocialFeed() {
             </button>
             <button
               onClick={handleCreatePost}
-              className="relative -mt-6 flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#F4D03F] via-[#D4AF37] to-[#C6941E] rounded-full shadow-xl hover:scale-105 transition-transform"
+              className="relative -mt-6 flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#F4D03F] via-[#D4AF37] to-[#C6941E] rounded-2xl shadow-2xl hover:scale-105 transition-transform"
             >
-              <Plus className="w-7 h-7 text-black" />
+              <Plus className="w-8 h-8 text-black font-bold" strokeWidth={3} />
             </button>
             <button
               onClick={handlePerfilClick}
               className="flex flex-col items-center gap-1 py-2 text-gray-400"
             >
               <User className="w-6 h-6" />
-              <span className="text-xs font-medium">Perfil</span>
+              <span className="text-xs font-medium">Minha Página</span>
             </button>
             <button
               onClick={() => navigate('/salvos')}
