@@ -135,7 +135,7 @@ function AppRoutes() {
     '/politica-conteudo-usuario', '/aviso-direitos-autorais',
     '/conformidade-legal', '/adendo-processamento-dados',
     '/politica-acessibilidade', '/politica-exclusao', '/politica-solicitacao-dados',
-    '/registrar-dominio'
+    '/registrar-dominio', '/sobre', '/planos', '/registrar', '/marketplace', '/lojas'
   ];
 
   // Check if path starts with known public route prefixes
@@ -156,6 +156,7 @@ function AppRoutes() {
                      pathname === '/salvos' ||
                      pathname.startsWith('/social') ||
                      pathname === '/feed' ||
+                     pathname === '/rede' ||
                      pathname.includes('/loja') ||
                      isDynamicRoute;
 
@@ -169,12 +170,22 @@ function AppRoutes() {
               ======================================== */}
 
           {/* Home / Feed Routes - Multiple Aliases */}
-          <Route path="/" element={<Home />} />
-          <Route path="/pt" element={<Home />} />
-          <Route path="/en" element={<Home />} />
-          <Route path="/es" element={<Home />} />
+          {/* Página inicial redireciona para /rede (Rede Social) */}
+          <Route path="/" element={<Navigate to="/rede" replace />} />
+          <Route path="/pt" element={<Navigate to="/rede" replace />} />
+          <Route path="/en" element={<Navigate to="/rede" replace />} />
+          <Route path="/es" element={<Navigate to="/rede" replace />} />
+          <Route path="/home" element={<Home />} />
+
+          {/* Rede Social Routes */}
+          <Route path="/rede" element={<SocialFeed />} />
           <Route path="/feed" element={<SocialFeed />} />
+
+          {/* Sobre, Planos e Registro */}
+          <Route path="/sobre" element={<Home />} />
+          <Route path="/planos" element={<Pricing />} />
           <Route path="/valores" element={<Pricing />} />
+          <Route path="/registrar" element={<RegisterDomain />} />
           <Route path="/registrar-dominio" element={<RegisterDomain />} />
           <Route path="/marketplace" element={<MarketplaceNew />} />
           <Route path="/lojas" element={<StoresDirectory />} />

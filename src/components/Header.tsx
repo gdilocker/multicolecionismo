@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, ChevronDown, Home, Store, Bookmark, Radio, DollarSign, Users, LogIn, UserPlus, UserCircle, Crown, Globe, CreditCard, Settings, LayoutDashboard, Shield } from 'lucide-react';
+import { Menu, X, User, LogOut, ChevronDown, Home, Store, Bookmark, Radio, DollarSign, Users, LogIn, UserPlus, UserCircle, Crown, Globe, CreditCard, Settings, LayoutDashboard, Shield, HelpCircle, MessageCircle, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import Logo from './Logo';
@@ -116,14 +116,14 @@ export default function Header() {
             ) : !user ? (
               <>
                 <Link
-                  to="/"
+                  to="/rede"
                   className={`px-3 py-2 font-medium transition-colors ${
-                    location.pathname === '/'
+                    location.pathname === '/rede' || location.pathname === '/social' || location.pathname === '/feed'
                       ? 'text-white'
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  Feed
+                  Rede Social
                 </Link>
                 <Link
                   to="/marketplace"
@@ -146,14 +146,34 @@ export default function Header() {
                   Lojas
                 </Link>
                 <Link
-                  to="/valores"
+                  to="/sobre"
                   className={`px-3 py-2 font-medium transition-colors ${
-                    location.pathname === '/valores'
+                    location.pathname === '/sobre'
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  Sobre
+                </Link>
+                <Link
+                  to="/planos"
+                  className={`px-3 py-2 font-medium transition-colors ${
+                    location.pathname === '/planos'
                       ? 'text-white'
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   Planos
+                </Link>
+                <Link
+                  to="/registrar"
+                  className={`px-3 py-2 font-medium transition-colors ${
+                    location.pathname === '/registrar'
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  Registrar Domínio
                 </Link>
 
                 {/* Subtle divider */}
@@ -175,14 +195,14 @@ export default function Header() {
             ) : (
               <>
                 <Link
-                  to="/"
+                  to="/rede"
                   className={`px-3 py-2 font-medium transition-colors ${
-                    location.pathname === '/' || location.pathname === '/social'
+                    location.pathname === '/rede' || location.pathname === '/social' || location.pathname === '/feed'
                       ? 'text-white'
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  Feed
+                  Rede Social
                 </Link>
                 <Link
                   to="/marketplace"
@@ -203,6 +223,36 @@ export default function Header() {
                   }`}
                 >
                   Lojas
+                </Link>
+                <Link
+                  to="/sobre"
+                  className={`px-3 py-2 font-medium transition-colors ${
+                    location.pathname === '/sobre'
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  Sobre
+                </Link>
+                <Link
+                  to="/planos"
+                  className={`px-3 py-2 font-medium transition-colors ${
+                    location.pathname === '/planos'
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  Planos
+                </Link>
+                <Link
+                  to="/registrar"
+                  className={`px-3 py-2 font-medium transition-colors ${
+                    location.pathname === '/registrar'
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  Registrar Domínio
                 </Link>
                 <div className="relative">
                   <button
@@ -244,16 +294,6 @@ export default function Header() {
                           )}
                         </div>
                         <div className="p-2">
-                          {userType === 'social' && (
-                            <Link
-                              to="/valores"
-                              onClick={() => setIsUserMenuOpen(false)}
-                              className="w-full text-left px-3 py-2 text-sm text-purple-600 hover:bg-purple-50 rounded transition-colors flex items-center gap-2 font-medium"
-                            >
-                              <Crown className="w-4 h-4" />
-                              Upgrade Premium
-                            </Link>
-                          )}
                           {(userType === 'member' || user?.role === 'admin') && (
                             <>
                               <Link
@@ -284,6 +324,31 @@ export default function Header() {
                               Admin
                             </Link>
                           )}
+                          <div className="border-t border-gray-100 my-2"></div>
+                          <Link
+                            to="/faq"
+                            onClick={() => setIsUserMenuOpen(false)}
+                            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                          >
+                            <HelpCircle className="w-4 h-4" />
+                            FAQ
+                          </Link>
+                          <Link
+                            to="/suporte"
+                            onClick={() => setIsUserMenuOpen(false)}
+                            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                          >
+                            <MessageCircle className="w-4 h-4" />
+                            Suporte
+                          </Link>
+                          <Link
+                            to="/contato"
+                            onClick={() => setIsUserMenuOpen(false)}
+                            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                          >
+                            <Mail className="w-4 h-4" />
+                            Contato
+                          </Link>
                           <div className="border-t border-gray-100 mt-2 pt-2">
                             <button
                               onClick={handleSair}
@@ -324,24 +389,65 @@ export default function Header() {
                       <button
                         onClick={() => {
                           setIsMenuOpen(false);
-                          navigate('/');
-                        }}
-                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
-                      >
-                        <Home className="w-5 h-5" />
-                        <span className="text-sm font-medium">Inicial</span>
-                      </button>
-                      <button
-                        onClick={() => {
-                          setIsMenuOpen(false);
-                          navigate('/social');
+                          navigate('/rede');
                         }}
                         className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                       >
                         <Radio className="w-5 h-5" />
                         <span className="text-sm font-medium">Rede Social</span>
                       </button>
-                      {userType === 'member' && (
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/marketplace');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <Store className="w-5 h-5" />
+                        <span className="text-sm font-medium">Marketplace</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/lojas');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <Store className="w-5 h-5" />
+                        <span className="text-sm font-medium">Lojas</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/sobre');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <Users className="w-5 h-5" />
+                        <span className="text-sm font-medium">Sobre</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/planos');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <DollarSign className="w-5 h-5" />
+                        <span className="text-sm font-medium">Planos</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/registrar');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <Globe className="w-5 h-5" />
+                        <span className="text-sm font-medium">Registrar Domínio</span>
+                      </button>
+                      <div className="border-t border-gray-800 my-2"></div>
+                      {(userType === 'member' || user?.role === 'admin') && (
                         <>
                           <button
                             onClick={() => {
@@ -350,7 +456,7 @@ export default function Header() {
                             }}
                             className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                           >
-                            <UserCircle className="w-5 h-5" />
+                            <LayoutDashboard className="w-5 h-5" />
                             <span className="text-sm font-medium">Dashboard</span>
                           </button>
                           <button
@@ -365,24 +471,56 @@ export default function Header() {
                           </button>
                         </>
                       )}
-                      {userType === 'social' && (
+                      {user?.role === 'admin' && (
                         <button
                           onClick={() => {
                             setIsMenuOpen(false);
-                            navigate('/valores');
+                            navigate('/admin/dashboard');
                           }}
-                          className="w-full flex items-center gap-3 px-4 py-3 text-purple-400 hover:text-purple-300 hover:bg-gray-800 transition-colors font-semibold"
+                          className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                         >
-                          <Crown className="w-5 h-5" />
-                          <span className="text-sm">Upgrade Premium</span>
+                          <Shield className="w-5 h-5" />
+                          <span className="text-sm font-medium">Admin</span>
                         </button>
                       )}
+                      <div className="border-t border-gray-800 my-2"></div>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/faq');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <HelpCircle className="w-5 h-5" />
+                        <span className="text-sm font-medium">FAQ</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/suporte');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <MessageCircle className="w-5 h-5" />
+                        <span className="text-sm font-medium">Suporte</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/contato');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <Mail className="w-5 h-5" />
+                        <span className="text-sm font-medium">Contato</span>
+                      </button>
+                      <div className="border-t border-gray-800 mt-2"></div>
                       <button
                         onClick={async () => {
                           setIsMenuOpen(false);
                           await logout();
                         }}
-                        className="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:text-red-300 hover:bg-gray-800 transition-colors border-t border-gray-800"
+                        className="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:text-red-300 hover:bg-gray-800 transition-colors"
                       >
                         <LogOut className="w-5 h-5" />
                         <span className="text-sm font-medium">Sair</span>
@@ -393,17 +531,47 @@ export default function Header() {
                       <button
                         onClick={() => {
                           setIsMenuOpen(false);
-                          navigate('/');
+                          navigate('/rede');
                         }}
                         className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                       >
-                        <Home className="w-5 h-5" />
-                        <span className="text-sm font-medium">Inicial</span>
+                        <Radio className="w-5 h-5" />
+                        <span className="text-sm font-medium">Rede Social</span>
                       </button>
                       <button
                         onClick={() => {
                           setIsMenuOpen(false);
-                          navigate('/valores');
+                          navigate('/marketplace');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <Store className="w-5 h-5" />
+                        <span className="text-sm font-medium">Marketplace</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/lojas');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <Store className="w-5 h-5" />
+                        <span className="text-sm font-medium">Lojas</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/sobre');
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
+                      >
+                        <Users className="w-5 h-5" />
+                        <span className="text-sm font-medium">Sobre</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          navigate('/planos');
                         }}
                         className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                       >
@@ -413,12 +581,12 @@ export default function Header() {
                       <button
                         onClick={() => {
                           setIsMenuOpen(false);
-                          navigate('/afiliados/sobre');
+                          navigate('/registrar');
                         }}
                         className="w-full flex items-center gap-3 px-4 py-3 text-white hover:bg-gray-800 transition-colors"
                       >
-                        <Users className="w-5 h-5" />
-                        <span className="text-sm font-medium">Afiliados</span>
+                        <Globe className="w-5 h-5" />
+                        <span className="text-sm font-medium">Registrar Domínio</span>
                       </button>
 
                       {/* Auth buttons for logged out users */}
