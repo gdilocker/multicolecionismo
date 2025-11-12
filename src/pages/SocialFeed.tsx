@@ -135,6 +135,17 @@ export default function SocialFeed() {
         </div>
       </div>
 
+      {/* Desktop/Tablet Floating Action Button */}
+      {!subdomain && isLoggedIn && (
+        <button
+          onClick={handleCreatePost}
+          className="hidden md:flex fixed bottom-8 right-8 items-center justify-center w-16 h-16 bg-gradient-to-br from-[#F4D03F] via-[#D4AF37] to-[#C6941E] rounded-full shadow-2xl hover:scale-110 transition-all z-50 group"
+          title="Criar Post"
+        >
+          <Plus className="w-8 h-8 text-black group-hover:rotate-90 transition-transform duration-300" />
+        </button>
+      )}
+
       {/* Mobile Bottom Navigation - Fixed */}
       {!subdomain && isLoggedIn && (
         <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-black border-t border-gray-800 z-50 pb-[env(safe-area-inset-bottom)] safe-area-bottom">
