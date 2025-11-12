@@ -23,7 +23,8 @@ export default function SocialFeed() {
   const [refreshKey, setRefreshKey] = useState(0);
 
   const isLoggedIn = !!user;
-  const canPost = user?.subscriptionPlan && ['prime', 'elite', 'supreme'].includes(user.subscriptionPlan);
+  // Admin has UNLIMITED access, no plan required
+  const canPost = user?.role === 'admin' || (user?.subscriptionPlan && ['prime', 'elite', 'supreme'].includes(user.subscriptionPlan));
 
   useEffect(() => {
     if (subdomain) {
@@ -52,16 +53,27 @@ export default function SocialFeed() {
   };
 
   const handleCreatePost = () => {
+    console.log('[SocialFeed] handleCreatePost called:', {
+      isLoggedIn,
+      userRole: user?.role,
+      isAdmin: user?.role === 'admin',
+      canPost,
+      subscriptionPlan: user?.subscriptionPlan
+    });
+
     if (!isLoggedIn) {
+      console.log('[SocialFeed] Not logged in - showing login modal');
       setShowLoginModal(true);
       return;
     }
 
     if (!canPost) {
+      console.error('[SocialFeed] ❌ Cannot post - showing upgrade modal. This should NOT happen for admin!');
       setShowUpgradeModal(true);
       return;
     }
 
+    console.log('[SocialFeed] ✅ Opening create post modal');
     setShowCreateModal(true);
   };
 
