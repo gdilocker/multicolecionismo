@@ -65,20 +65,10 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
 
       console.log('[FEED] Loading posts, mode:', mode);
 
+      // Fetch posts without JOIN to avoid PostgREST schema cache issues
       let query = supabase
         .from('social_posts')
-        .select(`
-          *,
-          profile:user_profiles!user_id (
-            id,
-            subdomain,
-            display_name,
-            avatar_url,
-            bio,
-            whatsapp,
-            show_whatsapp_on_posts
-          )
-        `)
+        .select('*')
         .order('created_at', { ascending: false })
         .limit(20);
 
@@ -152,10 +142,34 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
 
       console.log('[FEED] Loaded', data?.length || 0, 'posts');
       console.log('[FEED] First post sample:', data?.[0]);
-      if (data?.[0]?.profile) {
-        console.log('[FEED] Profile data loaded:', data[0].profile);
-      } else {
-        console.warn('[FEED] No profile data in response! May need to fetch separately.');
+
+      // Fetch user profiles for all posts manually
+      if (data && data.length > 0) {
+        const userIds = [...new Set(data.map(p => p.user_id))];
+        console.log('[FEED] Fetching profiles for', userIds.length, 'unique users');
+
+        const { data: profiles, error: profilesError } = await supabase
+          .from('user_profiles')
+          .select('id, user_id, subdomain, display_name, avatar_url, bio, whatsapp, show_whatsapp_on_posts')
+          .in('user_id', userIds);
+
+        if (profilesError) {
+          console.error('[FEED] Error fetching profiles:', profilesError);
+        } else {
+          console.log('[FEED] Loaded', profiles?.length || 0, 'profiles');
+
+          // Map profiles to posts
+          const profileMap = new Map();
+          profiles?.forEach(p => {
+            profileMap.set(p.user_id, [p]);
+          });
+
+          data.forEach(post => {
+            post.profile = profileMap.get(post.user_id) || [];
+          });
+
+          console.log('[FEED] First post with profile:', data[0]);
+        }
       }
 
       const transformedPosts = (data || []).map(post => {
