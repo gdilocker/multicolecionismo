@@ -4,8 +4,8 @@ import App from './App.tsx';
 import './index.css';
 
 // Build info for debugging production issues
-const BUILD_TIMESTAMP = new Date().toISOString();
-const BUILD_VERSION = `${import.meta.env.MODE}-${Date.now()}`;
+const BUILD_TIMESTAMP = import.meta.env.VITE_BUILD_TIMESTAMP || new Date().toISOString();
+const BUILD_VERSION = import.meta.env.VITE_BUILD_VERSION || `${import.meta.env.MODE}-${Date.now()}`;
 
 console.log('============================================================');
 console.log('🚀 Multi Colecionismo - Build Info');
@@ -13,7 +13,16 @@ console.log('============================================================');
 console.log('📦 Build Version:', BUILD_VERSION);
 console.log('⏰ Build Time:', BUILD_TIMESTAMP);
 console.log('🌍 Environment:', import.meta.env.MODE);
+console.log('🔄 Force Reload: Add ?v=' + Date.now() + ' to URL if issues persist');
 console.log('============================================================');
+
+// Detect if user is on old cached version
+const expectedMinTimestamp = '2025-11-12T15:00:00.000Z';
+if (BUILD_TIMESTAMP < expectedMinTimestamp) {
+  console.warn('⚠️ OLD VERSION DETECTED! This build is outdated.');
+  console.warn('⚠️ Please hard reload: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)');
+  console.warn('⚠️ Or clear browser cache and reload');
+}
 
 const rootElement = document.getElementById('root');
 

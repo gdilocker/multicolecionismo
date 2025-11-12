@@ -15,6 +15,10 @@ export default defineConfig(({ mode }) => {
       // Code splitting configuration
       rollupOptions: {
         output: {
+          // Force new file names on every build to bypass CDN cache
+          entryFileNames: `assets/[name]-[hash]-${Date.now()}.js`,
+          chunkFileNames: `assets/[name]-[hash]-${Date.now()}.js`,
+          assetFileNames: `assets/[name]-[hash]-${Date.now()}.[ext]`,
           manualChunks: {
             // Vendor chunks
             'react-vendor': ['react', 'react-dom', 'react-router-dom'],
@@ -44,6 +48,8 @@ export default defineConfig(({ mode }) => {
       'import.meta.env.VITE_SUPABASE_URL': JSON.stringify(env.VITE_SUPABASE_URL),
       'import.meta.env.VITE_SUPABASE_ANON_KEY': JSON.stringify(env.VITE_SUPABASE_ANON_KEY),
       'import.meta.env.VITE_DEV_MODE': JSON.stringify(env.VITE_DEV_MODE || 'false'),
+      'import.meta.env.VITE_BUILD_TIMESTAMP': JSON.stringify(new Date().toISOString()),
+      'import.meta.env.VITE_BUILD_VERSION': JSON.stringify(`${mode}-${Date.now()}`),
     }
   };
 });
