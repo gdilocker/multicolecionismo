@@ -416,7 +416,10 @@ export const PostCard: React.FC<PostCardProps> = ({
     }
   };
 
-  const handleDelete = async () => {
+  const handleDelete = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     console.log('[PostCard] Delete button clicked for post:', post.id);
     setShowMenu(false);
 
@@ -560,13 +563,22 @@ export const PostCard: React.FC<PostCardProps> = ({
       <div className="absolute right-4 top-[env(safe-area-inset-top)] md:!top-0 z-30 pt-3">
         <div className="relative">
           <button
-            onClick={() => setShowMenu(!showMenu)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowMenu(!showMenu);
+            }}
             className="p-2.5 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors shadow-lg"
           >
             <MoreVertical className="w-5 h-5 text-white drop-shadow-lg" />
           </button>
           {showMenu && (
-            <div className="absolute right-0 mt-2 w-56 bg-[#2A2A2A] rounded-lg shadow-xl border border-gray-700 py-1 z-[60]">
+            <>
+              {/* Backdrop to close menu */}
+              <div
+                className="fixed inset-0 z-[50]"
+                onClick={() => setShowMenu(false)}
+              />
+              <div className="absolute right-0 mt-2 w-56 bg-[#2A2A2A] rounded-lg shadow-xl border border-gray-700 py-1 z-[60]">
               {isOwner && (
                 <>
                   <button
@@ -609,11 +621,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                 <>
                   <div className="border-t border-gray-700 my-1" />
                   <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      handleDelete();
-                    }}
+                    onClick={handleDelete}
                     className="w-full px-4 py-2 text-left hover:bg-white/5 flex items-center gap-2 text-red-400"
                   >
                     <Trash2 className="w-4 h-4" />
@@ -637,6 +645,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                 </>
               )}
             </div>
+            </>
           )}
         </div>
       </div>
