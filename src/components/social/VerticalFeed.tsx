@@ -58,12 +58,13 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
 
       let query = supabase
         .from('social_posts')
-        .select('*')
+        .select('id, user_id, profile_id, content, media_url, media_type, is_public, likes_count, comments_count, created_at, updated_at')
         .order('created_at', { ascending: false })
         .limit(20);
 
       // For logged out users, only show public posts
       if (!user && mode !== 'my_posts') {
+        console.log('[FEED] Applying is_public filter for logged out user');
         query = query.eq('is_public', true);
       }
 
