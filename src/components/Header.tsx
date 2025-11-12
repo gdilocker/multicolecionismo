@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, ChevronDown, Home, Store, Bookmark, Radio, DollarSign, Users, LogIn, UserPlus, UserCircle, Crown, Globe, CreditCard, Settings } from 'lucide-react';
+import { Menu, X, User, LogOut, ChevronDown, Home, Store, Bookmark, Radio, DollarSign, Users, LogIn, UserPlus, UserCircle, Crown, Globe, CreditCard, Settings, LayoutDashboard, Shield } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import Logo from './Logo';
@@ -278,8 +278,16 @@ export default function Header() {
                               Upgrade Premium
                             </Link>
                           )}
-                          {userType === 'member' && (
+                          {(userType === 'member' || user?.role === 'admin') && (
                             <>
+                              <Link
+                                to="/panel/dashboard"
+                                onClick={() => setIsUserMenuOpen(false)}
+                                className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                              >
+                                <LayoutDashboard className="w-4 h-4" />
+                                Dashboard
+                              </Link>
                               <Link
                                 to="/panel/store"
                                 onClick={() => setIsUserMenuOpen(false)}
@@ -289,6 +297,16 @@ export default function Header() {
                                 Minha Loja
                               </Link>
                             </>
+                          )}
+                          {user?.role === 'admin' && (
+                            <Link
+                              to="/admin/dashboard"
+                              onClick={() => setIsUserMenuOpen(false)}
+                              className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center gap-2"
+                            >
+                              <Shield className="w-4 h-4" />
+                              Admin
+                            </Link>
                           )}
                           <div className="border-t border-gray-100 mt-2 pt-2">
                             <button
