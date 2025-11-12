@@ -26,7 +26,6 @@ interface Domain {
 interface ProfileData {
   id: string;
   subdomain: string;
-  is_active: boolean;
   store_enabled: boolean;
   social_enabled: boolean;
   domain_id: string;
@@ -95,7 +94,7 @@ const PanelDashboard: React.FC = () => {
           // Primeiro tenta buscar pelo domain_id
           let { data: activeProfileData } = await supabase
             .from('user_profiles')
-            .select('id, subdomain, is_active, store_enabled, social_enabled, domain_id')
+            .select('id, subdomain, store_enabled, social_enabled, domain_id')
             .eq('domain_id', customerData.active_domain_id)
             .maybeSingle();
 
@@ -103,7 +102,7 @@ const PanelDashboard: React.FC = () => {
           if (!activeProfileData) {
             const { data: fallbackProfileData } = await supabase
               .from('user_profiles')
-              .select('id, subdomain, is_active, store_enabled, social_enabled, domain_id')
+              .select('id, subdomain, store_enabled, social_enabled, domain_id')
               .eq('user_id', user.id)
               .order('created_at', { ascending: false })
               .limit(1)
@@ -223,7 +222,7 @@ const PanelDashboard: React.FC = () => {
 
   const quickActions = [];
 
-  if (profileData && profileData.is_active) {
+  if (profileData) {
     quickActions.push({
       icon: User,
       label: 'Minha Página',

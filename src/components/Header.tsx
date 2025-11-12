@@ -60,11 +60,11 @@ export default function Header() {
         // Fetch feature flags
         const { data: profileData } = await supabase
           .from('user_profiles')
-          .select('is_active, store_enabled, social_enabled')
+          .select('store_enabled, social_enabled')
           .eq('user_id', user.id)
           .maybeSingle();
 
-        setIsActive(profileData?.is_active || false);
+        setIsActive(true); // Profile is always active if it exists
         setStoreEnabled(profileData?.store_enabled || false);
         setSocialEnabled(profileData?.social_enabled || false);
       } catch (error) {
