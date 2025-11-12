@@ -4,7 +4,7 @@ import { supabase } from '../lib/supabase';
 import PhoneInput from './PhoneInput';
 
 interface FeatureControlsProps {
-  profileId: string;
+  profileId: string; // This is actually the user_id from auth
   onUpdate?: () => void;
 }
 
@@ -40,8 +40,8 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
     try {
       const { data, error } = await supabase
         .from('user_profiles')
-        .select('store_enabled, social_enabled, store_allowed_by_admin, social_allowed_by_admin, show_whatsapp_on_posts, whatsapp_number')
-        .eq('id', profileId)
+        .select('id, store_enabled, social_enabled, store_allowed_by_admin, social_allowed_by_admin, show_whatsapp_on_posts, whatsapp_number')
+        .eq('user_id', profileId)
         .maybeSingle();
 
       if (error) {
@@ -85,14 +85,23 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
     }
 
     setUpdating(feature);
+
+    const newValue = !currentValue;
+    const oldValue = currentValue;
+
+    // Optimistic update - update UI first
+    setFeatures(prev => ({
+      ...prev,
+      [columnName]: newValue
+    }));
+
     try {
-      const newValue = !currentValue;
       console.log(`Toggling ${feature} from ${currentValue} to ${newValue}`);
 
       const { data, error } = await supabase
         .from('user_profiles')
         .update({ [columnName]: newValue })
-        .eq('id', profileId)
+        .eq('user_id', profileId)
         .select()
         .maybeSingle();
 
@@ -103,11 +112,6 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
 
       console.log('Update successful:', data);
 
-      setFeatures(prev => ({
-        ...prev,
-        [columnName]: newValue
-      }));
-
       const featureName = feature === 'store' ? 'Loja' : feature === 'social' ? 'Feed' : 'WhatsApp nos Posts';
       const status = newValue ? 'ativado' : 'desativado';
 
@@ -117,16 +121,27 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
 
       // Toast notification
       const toast = document.createElement('div');
-      toast.className = 'fixed top-4 right-4 bg-black text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in';
+      toast.className = 'fixed top-4 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in';
       toast.textContent = `Função ${featureName} ${status} com sucesso`;
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 3000);
     } catch (error: any) {
       console.error('Error toggling feature:', error);
+
+      // Rollback optimistic update
+      setFeatures(prev => ({
+        ...prev,
+        [columnName]: oldValue
+      }));
+
       const errorMessage = error?.message || 'Erro ao atualizar funcionalidade. Tente novamente.';
-      alert(errorMessage);
-      // Reload to get current state
-      await loadFeatureStatus();
+
+      // Error toast
+      const toast = document.createElement('div');
+      toast.className = 'fixed top-4 right-4 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in';
+      toast.textContent = `Erro: ${errorMessage}`;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 5000);
     } finally {
       setUpdating(null);
     }
@@ -360,7 +375,7 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
                         await supabase
                           .from('user_profiles')
                           .update({ whatsapp_number: phone })
-                          .eq('id', profileId);
+                          .eq('user_id', profileId);
 
                         // Toast notification
                         const toast = document.createElement('div');

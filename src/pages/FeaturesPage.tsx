@@ -103,7 +103,7 @@ export default function FeaturesPage() {
 
         <div className="mt-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
           <FeatureControls
-            profileId={profile.id}
+            profileId={user!.id}
             onUpdate={() => {
               loadProfile();
             }}
