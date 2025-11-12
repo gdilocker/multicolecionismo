@@ -77,7 +77,6 @@ export const PanelSidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen, backRo
     { path: '/panel/funcionalidades', icon: ToggleLeft, label: 'Funcionalidades', subtitle: 'Loja / Feed / WhatsApp' },
     { path: '/panel/revendedor', icon: Store, label: 'Afiliado', badge: !userStatus.isAffiliate && !userStatus.hasAcceptedAffiliateTerms ? 'Participe' : undefined },
     { path: '/panel/billing', icon: CreditCard, label: 'Faturamento' },
-    { path: '/panel/settings', icon: Settings, label: 'Configurações' },
     { path: '/panel/support', icon: HelpCircle, label: 'Suporte' }
   ];
 

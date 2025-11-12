@@ -448,8 +448,8 @@ const DomainsPage: React.FC = () => {
     <PanelLayout>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <PageHeader
-          title="Meus Domínios"
-          subtitle="Gerencie seus domínios e personalize suas páginas públicas"
+          title="Meu Domínio"
+          subtitle="Gerencie seu domínio"
           primaryAction={
             <div className="flex flex-col items-stretch gap-3">
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
