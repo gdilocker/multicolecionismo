@@ -55,9 +55,20 @@ const getCachedUser = (): User | null => {
 
     if (cached && sessionValid === 'true') {
       const parsedUser = JSON.parse(cached);
+
+      // CRITICAL: Invalidate cache if admin without subscription access
+      // This fixes the issue where admin cache gets stuck with hasActiveSubscription: false
+      if (parsedUser.role === 'admin' && !parsedUser.hasActiveSubscription) {
+        console.warn('[AuthContext] Invalid admin cache detected (no subscription) - forcing refresh');
+        localStorage.removeItem(USER_CACHE_KEY);
+        localStorage.removeItem(SESSION_CHECK_KEY);
+        return null;
+      }
+
       console.log('[AuthContext] Using cached user:', {
         email: parsedUser.email,
         role: parsedUser.role,
+        hasActiveSubscription: parsedUser.hasActiveSubscription,
         hasCache: true
       });
       return parsedUser;
@@ -92,8 +103,38 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const isProcessingAuth = useRef(false);
 
   const getUserWithRole = useCallback(async (authUser: SupabaseUser): Promise<User> => {
+    console.log('[AuthContext] getUserWithRole called for:', authUser.email);
+
     try {
-      // Add timeout to RPC call - fail fast if it takes too long
+      // STEP 1: Check if user is admin FIRST (direct query, no RPC)
+      const { data: customerData, error: customerError } = await supabase
+        .from('customers')
+        .select('role')
+        .eq('user_id', authUser.id)
+        .maybeSingle();
+
+      console.log('[AuthContext] Customer lookup:', {
+        email: authUser.email,
+        role: customerData?.role,
+        error: customerError
+      });
+
+      // STEP 2: If admin, return IMMEDIATELY with full access
+      if (customerData?.role === 'admin') {
+        const adminUser = {
+          id: authUser.id,
+          email: authUser.email!,
+          name: authUser.user_metadata?.name,
+          role: 'admin',
+          hasActiveSubscription: true,  // ALWAYS TRUE for admin
+          subscriptionPlan: 'Supreme'   // ALWAYS Supreme for admin
+        };
+        console.log('[AuthContext] ✅ ADMIN DETECTED - Full access granted:', adminUser);
+        cacheUser(adminUser);
+        return adminUser;
+      }
+
+      // STEP 3: For non-admin, call RPC to get subscription info
       const timeoutPromise = new Promise<null>((_, reject) => {
         setTimeout(() => reject(new Error('RPC timeout')), 5000);
       });
@@ -109,30 +150,24 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       if (!rpcError && rpcData && Array.isArray(rpcData) && rpcData.length > 0) {
         const info = rpcData[0];
-        const isAdmin = info.role === 'admin';
         const userData = {
           id: authUser.id,
           email: authUser.email!,
           name: authUser.user_metadata?.name,
           role: info.role || 'user',
-          hasActiveSubscription: isAdmin ? true : (info.has_active_subscription || false),
-          subscriptionPlan: isAdmin ? 'supreme' : info.subscription_plan
+          hasActiveSubscription: info.has_active_subscription || false,
+          subscriptionPlan: info.subscription_plan
         };
-        console.log('[AuthContext] User data loaded from RPC:', {
-          email: userData.email,
-          role: userData.role,
-          isAdmin,
-          hasActiveSubscription: userData.hasActiveSubscription
-        });
-        // Cache the user data
+        console.log('[AuthContext] User data loaded from RPC:', userData);
         cacheUser(userData);
         return userData;
       }
     } catch (err) {
-      console.warn('RPC failed or timed out, using default role:', err);
+      console.error('[AuthContext] ERROR in getUserWithRole:', err);
     }
 
     // Fallback to default user
+    console.warn('[AuthContext] Falling back to default user role');
     const userData = {
       id: authUser.id,
       email: authUser.email!,
