@@ -22,6 +22,7 @@ import { CONTENT_LIMITS, validateBio, validateDisplayName, validateUsername } fr
 import LinkEditor from '../components/LinkEditor';
 import { profileLinksService, ProfileLink } from '../lib/services/profileLinks';
 import FeatureControls from '../components/FeatureControls';
+import { optimizeImage, formatFileSize } from '../lib/imageOptimizer';
 
 interface UserProfile {
   id: string;
@@ -335,23 +336,50 @@ export default function ProfileManager() {
       return;
     }
 
-    if (file.size > 5 * 1024 * 1024) {
-      setMessage('A imagem deve ter no máximo 5MB.');
-      setMessageType('error');
-      return;
-    }
-
     setUploadingImage(true);
-    setMessage('');
+    setMessage('Otimizando imagem...');
+    setMessageType('info');
 
     try {
-      const fileExt = file.name.split('.').pop();
+      let fileToUpload = file;
+      let compressionMessage = '';
+
+      // Otimizar imagem automaticamente se for maior que 1MB ou dimensões grandes
+      if (file.size > 1024 * 1024) {
+        const result = await optimizeImage(file, {
+          maxWidth: 800,
+          maxHeight: 800,
+          quality: 0.85,
+          targetFormat: 'jpeg'
+        });
+
+        fileToUpload = result.file;
+        const savedSize = formatFileSize(result.originalSize - result.optimizedSize);
+        compressionMessage = ` (economizou ${savedSize})`;
+        console.log('[ProfileManager] Image optimized:', {
+          original: formatFileSize(result.originalSize),
+          optimized: formatFileSize(result.optimizedSize),
+          ratio: `${result.compressionRatio.toFixed(1)}%`
+        });
+      }
+
+      // Verificar tamanho final após otimização
+      if (fileToUpload.size > 5 * 1024 * 1024) {
+        setMessage('Imagem ainda muito grande após otimização. Tente uma imagem menor.');
+        setMessageType('error');
+        setUploadingImage(false);
+        return;
+      }
+
+      setMessage('Fazendo upload...');
+
+      const fileExt = fileToUpload.name.split('.').pop();
       const fileName = `avatar-${Date.now()}.${fileExt}`;
       const filePath = `${user?.id}/${fileName}`;
 
       const { error: uploadError } = await supabase.storage
         .from('profile-images')
-        .upload(filePath, file);
+        .upload(filePath, fileToUpload);
 
       if (uploadError) throw uploadError;
 
@@ -372,7 +400,7 @@ export default function ProfileManager() {
       console.log('[ProfileManager] Avatar saved to database!');
       setProfile({ ...profile, avatar_url: newAvatarUrl });
       setMessageType('success');
-      setMessage('Foto atualizada com sucesso!');
+      setMessage(`Foto atualizada com sucesso!${compressionMessage}`);
     } catch (error: any) {
       console.error('Error uploading image:', error);
       setMessageType('error');
@@ -874,7 +902,8 @@ export default function ProfileManager() {
                   )}
 
                   <p className="text-xs text-slate-400 text-center pt-2">
-                    JPG, PNG ou GIF<br />Máximo 5MB
+                    JPG, PNG ou GIF<br />
+                    <span className="text-green-600 font-medium">✓ Otimização automática</span>
                   </p>
                 </div>
               </div>
