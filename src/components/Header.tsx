@@ -254,6 +254,21 @@ export default function Header() {
                 >
                   Registrar Domínio
                 </Link>
+
+                {/* Salvos Button - Desktop/Tablet */}
+                <Link
+                  to="/salvos"
+                  className={`flex items-center gap-2 px-3 py-2 font-medium transition-colors ${
+                    location.pathname === '/salvos'
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                  title="Posts Salvos"
+                >
+                  <Bookmark className="w-4 h-4" />
+                  <span>Salvos</span>
+                </Link>
+
                 <div className="relative">
                   <button
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
