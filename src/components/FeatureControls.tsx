@@ -40,7 +40,7 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
     try {
       const { data, error } = await supabase
         .from('user_profiles')
-        .select('id, store_enabled, social_enabled, store_allowed_by_admin, social_allowed_by_admin, show_whatsapp_on_posts, whatsapp_number')
+        .select('id, store_enabled, social_enabled, store_allowed_by_admin, social_allowed_by_admin, show_whatsapp_on_posts, whatsapp')
         .eq('user_id', profileId)
         .maybeSingle();
 
@@ -56,7 +56,7 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
           store_allowed_by_admin: data.store_allowed_by_admin ?? true,
           social_allowed_by_admin: data.social_allowed_by_admin ?? true,
           show_whatsapp_on_posts: data.show_whatsapp_on_posts ?? false,
-          whatsapp_number: data.whatsapp_number || ''
+          whatsapp_number: data.whatsapp || ''
         });
       }
     } catch (error) {
@@ -374,7 +374,7 @@ const FeatureControls: React.FC<FeatureControlsProps> = ({ profileId, onUpdate }
                       try {
                         await supabase
                           .from('user_profiles')
-                          .update({ whatsapp_number: phone })
+                          .update({ whatsapp: phone })
                           .eq('user_id', profileId);
 
                         // Toast notification
