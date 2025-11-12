@@ -5,7 +5,7 @@ import { supabase } from '../lib/supabase';
 import { PanelLayout } from '../components/PanelLayout';
 import { PageHeader } from '../components/PageHeader';
 import FeatureControls from '../components/FeatureControls';
-import { ToggleLeft, ArrowLeft } from 'lucide-react';
+import { ToggleLeft } from 'lucide-react';
 
 export default function FeaturesPage() {
   const { user } = useAuth();
@@ -108,16 +108,6 @@ export default function FeaturesPage() {
               loadProfile();
             }}
           />
-        </div>
-
-        <div className="mt-6 flex justify-center">
-          <button
-            onClick={() => navigate('/panel/domains')}
-            className="flex items-center gap-2 px-6 py-2 text-slate-600 hover:text-slate-900 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Voltar para Gerenciar
-          </button>
         </div>
       </div>
     </PanelLayout>
