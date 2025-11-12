@@ -26,43 +26,43 @@ export default function StoresDirectory() {
     try {
       setLoading(true);
 
-      // Get profiles with at least one published product
+      // Get profiles with store enabled
       const { data: storesData, error } = await supabase
         .from('user_profiles')
         .select(`
           subdomain,
           display_name,
           bio,
-          avatar_url
+          avatar_url,
+          user_id
         `)
         .eq('is_active', true)
+        .eq('store_enabled', true)
         .order('display_name');
 
       if (error) throw error;
 
-      // Get product counts for each store
+      // Get product counts for each store (optimized)
       const storesWithCounts = await Promise.all(
         (storesData || []).map(async (store) => {
           const { count } = await supabase
             .from('store_products')
             .select('*', { count: 'exact', head: true })
             .eq('status', 'published')
-            .eq('user_id', (await supabase
-              .from('user_profiles')
-              .select('user_id')
-              .eq('subdomain', store.subdomain)
-              .single()
-            ).data?.user_id || '');
+            .eq('user_id', store.user_id);
 
           return {
-            ...store,
+            subdomain: store.subdomain,
+            display_name: store.display_name,
+            bio: store.bio,
+            avatar_url: store.avatar_url,
             products_count: count || 0
           };
         })
       );
 
-      // Filter stores with products
-      setStores(storesWithCounts.filter(s => s.products_count && s.products_count > 0));
+      // Show all stores with store_enabled = true (even without products)
+      setStores(storesWithCounts);
     } catch (error) {
       console.error('Error loading stores:', error);
     } finally {
