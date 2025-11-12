@@ -625,29 +625,6 @@ const DomainsPage: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="flex flex-col gap-3">
-                      <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-slate-50 to-slate-100/50 rounded-xl border border-slate-200/50">
-                        <div className="flex items-center gap-3">
-                          <div className={`w-2 h-2 rounded-full ${domain.id === activeDomainId ? 'bg-emerald-500 animate-pulse' : 'bg-slate-300'}`} />
-                          <div>
-                            <p className="text-sm font-semibold text-slate-900">
-                              {domain.id === activeDomainId ? 'Domínio Ativo' : 'Domínio Inativo'}
-                            </p>
-                            <p className="text-xs text-slate-500">
-                              {domain.id === activeDomainId ? 'Visível no dashboard' : 'Clique para ativar'}
-                            </p>
-                          </div>
-                        </div>
-
-                        <motion.button
-                          whileTap={{ scale: 0.95 }}
-                          onClick={() => navigate(`/perfil/${domain.id}`)}
-                          className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-md hover:shadow-lg"
-                        >
-                          Gerenciar Página
-                        </motion.button>
-                      </div>
-                    </div>
                   </div>
                 </motion.div>
               );
