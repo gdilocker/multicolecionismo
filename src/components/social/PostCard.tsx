@@ -227,15 +227,39 @@ export const PostCard: React.FC<PostCardProps> = ({
         return;
       }
 
+      console.log('[PostCard] Fetching profile for user_id:', post.user_id);
+
       // Fallback: fetch profile if not included in JOIN
-      const { data: profilesData, error } = await supabase
+      // Try with all columns first
+      let { data: profilesData, error } = await supabase
         .from('user_profiles')
         .select('id, subdomain, display_name, avatar_url, whatsapp, show_whatsapp_on_posts, show_store_icon_on_posts, created_at')
         .eq('user_id', post.user_id)
         .order('created_at', { ascending: false });
 
+      // If error with specific columns (schema cache), retry with wildcard
+      if (error && error.message?.includes('does not exist')) {
+        console.log('[PostCard] Column error detected, retrying with wildcard select...');
+        const retryResult = await supabase
+          .from('user_profiles')
+          .select('*')
+          .eq('user_id', post.user_id)
+          .order('created_at', { ascending: false });
+
+        profilesData = retryResult.data;
+        error = retryResult.error;
+      }
+
       if (error) {
         console.error('[PostCard] Error loading profiles:', error);
+        // Set minimal profile with just subdomain
+        setUserProfile({
+          subdomain: 'user',
+          display_name: 'Usuário',
+          avatar_url: undefined,
+          whatsapp_number: undefined,
+          show_whatsapp_on_posts: false
+        });
         return;
       }
 

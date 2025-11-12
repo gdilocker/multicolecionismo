@@ -179,13 +179,33 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
         const userIds = [...new Set(data.map(p => p.user_id))];
         console.log('[FEED] Fetching profiles for', userIds.length, 'unique users');
 
-        const { data: profiles, error: profilesError } = await supabase
+        // Try with specific columns first
+        let { data: profiles, error: profilesError } = await supabase
           .from('user_profiles')
           .select('id, user_id, subdomain, display_name, avatar_url, bio, whatsapp, show_whatsapp_on_posts')
           .in('user_id', userIds);
 
+        // If schema cache error, retry with wildcard
+        if (profilesError && profilesError.message?.includes('does not exist')) {
+          console.log('[FEED] Schema cache error detected, retrying with wildcard select...');
+          const retryResult = await supabase
+            .from('user_profiles')
+            .select('*')
+            .in('user_id', userIds);
+
+          profiles = retryResult.data;
+          profilesError = retryResult.error;
+        }
+
         if (profilesError) {
-          console.error('[FEED] Error fetching profiles:', profilesError);
+          console.error('============================================================');
+          console.error('❌ [FEED] ERROR FETCHING PROFILES');
+          console.error('============================================================');
+          console.error('[FEED] Error:', profilesError);
+          console.error('[FEED] Error message:', profilesError.message);
+          console.error('[FEED] Error details:', profilesError.details);
+          console.error('============================================================');
+          // Continue without profiles - PostCard will handle fallback
         } else {
           console.log('[FEED] Loaded', profiles?.length || 0, 'profiles');
 
