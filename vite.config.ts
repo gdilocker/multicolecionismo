@@ -50,6 +50,7 @@ export default defineConfig(({ mode }) => {
       'import.meta.env.VITE_DEV_MODE': JSON.stringify(env.VITE_DEV_MODE || 'false'),
       'import.meta.env.VITE_BUILD_TIMESTAMP': JSON.stringify(new Date().toISOString()),
       'import.meta.env.VITE_BUILD_VERSION': JSON.stringify(`${mode}-${Date.now()}`),
+      'import.meta.env.VITE_BUILD_TIME': JSON.stringify(new Date().toLocaleString('pt-BR')),
     }
   };
 });

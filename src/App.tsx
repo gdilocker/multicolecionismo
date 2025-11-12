@@ -106,6 +106,18 @@ const LoadingFallback = () => (
 );
 
 function App() {
+  // Log build info on app mount
+  React.useEffect(() => {
+    console.log('============================================================');
+    console.log('🚀 Multi Colecionismo - Build Info');
+    console.log('============================================================');
+    console.log('📦 Build Version:', import.meta.env.VITE_BUILD_VERSION || 'unknown');
+    console.log('⏰ Build Time:', import.meta.env.VITE_BUILD_TIME || 'unknown');
+    console.log('🌍 Environment:', import.meta.env.MODE);
+    console.log('🔗 Supabase URL:', import.meta.env.VITE_SUPABASE_URL);
+    console.log('============================================================');
+  }, []);
+
   return (
     <AuthProvider>
       <DrawerProvider>

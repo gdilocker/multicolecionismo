@@ -63,7 +63,16 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
       setLoading(true);
       setError('');
 
-      console.log('[FEED] Loading posts, mode:', mode);
+      console.log('============================================================');
+      console.log('🔍 [FEED] DIAGNOSTIC INFO');
+      console.log('============================================================');
+      console.log('[FEED] Mode:', mode);
+      console.log('[FEED] User ID:', user?.id || 'Not logged in');
+      console.log('[FEED] Supabase URL:', import.meta.env.VITE_SUPABASE_URL);
+      console.log('[FEED] Build Version:', import.meta.env.VITE_BUILD_VERSION || 'unknown');
+      console.log('[FEED] Build Time:', import.meta.env.VITE_BUILD_TIME || 'unknown');
+      console.log('[FEED] Environment:', import.meta.env.MODE);
+      console.log('============================================================');
 
       // Fetch posts without JOIN to avoid PostgREST schema cache issues
       let query = supabase
@@ -71,6 +80,8 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
         .select('*')
         .order('created_at', { ascending: false })
         .limit(20);
+
+      console.log('[FEED] Query created, applying filters...');
 
       // For logged out users, only show public posts
       if (!user && mode !== 'my_posts') {
@@ -98,8 +109,19 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
 
       const { data, error: fetchError } = await query;
 
+      console.log('[FEED] Response received');
+      console.log('[FEED] Response status:', fetchError ? 'ERROR' : 'SUCCESS');
+      console.log('[FEED] Response data count:', data?.length || 0);
+
       if (fetchError) {
+        console.error('============================================================');
+        console.error('❌ [FEED] FETCH ERROR');
+        console.error('============================================================');
         console.error('[FEED] Error:', fetchError);
+        console.error('[FEED] Error message:', fetchError.message);
+        console.error('[FEED] Error details:', fetchError.details);
+        console.error('[FEED] Error hint:', fetchError.hint);
+        console.error('============================================================');
 
         // If column doesn't exist error, try without explicit select
         if (fetchError.message?.includes('does not exist')) {
@@ -140,10 +162,17 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
         throw fetchError;
       }
 
+      console.log('============================================================');
+      console.log('✅ [FEED] POSTS LOADED SUCCESSFULLY');
+      console.log('============================================================');
       console.log('[FEED] Loaded', data?.length || 0, 'posts');
-      console.log('[FEED] First post sample:', data?.[0]);
-      console.log('[FEED] First post media_url:', data?.[0]?.media_url);
-      console.log('[FEED] First post media_type:', data?.[0]?.media_type);
+      if (data && data.length > 0) {
+        console.log('[FEED] First post sample:', data[0]);
+        console.log('[FEED] First post media_url:', data[0]?.media_url);
+        console.log('[FEED] First post media_type:', data[0]?.media_type);
+        console.log('[FEED] All post media_urls:', data.map(p => ({ id: p.id, media_url: p.media_url })));
+      }
+      console.log('============================================================');
 
       // Fetch user profiles for all posts manually
       if (data && data.length > 0) {
