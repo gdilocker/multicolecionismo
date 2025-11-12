@@ -830,7 +830,7 @@ export const PostCard: React.FC<PostCardProps> = ({
         isOpen={showEdit}
         onClose={() => setShowEdit(false)}
         postId={post.id}
-        currentCaption={post.caption}
+        currentCaption={post.content || ''}
         onPostUpdated={() => {
           setShowEdit(false);
           window.location.reload();

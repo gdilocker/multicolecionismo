@@ -17,18 +17,18 @@ export const EditPostModal: React.FC<EditPostModalProps> = ({
   currentCaption,
   onPostUpdated
 }) => {
-  const [caption, setCaption] = useState(currentCaption);
+  const [caption, setCaption] = useState(currentCaption || '');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    setCaption(currentCaption);
+    setCaption(currentCaption || '');
   }, [currentCaption, isOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!caption.trim()) {
+    if (!caption || !caption.trim()) {
       setError('A legenda não pode estar vazia');
       return;
     }
@@ -40,7 +40,7 @@ export const EditPostModal: React.FC<EditPostModalProps> = ({
       const { error: updateError } = await supabase
         .from('social_posts')
         .update({
-          caption: caption.trim(),
+          content: caption.trim(),
           updated_at: new Date().toISOString()
         })
         .eq('id', postId);
