@@ -139,7 +139,7 @@ export default function SocialFeed() {
       {!subdomain && isLoggedIn && (
         <button
           onClick={handleCreatePost}
-          className="hidden md:flex fixed bottom-8 right-8 items-center justify-center w-16 h-16 bg-gradient-to-br from-[#F4D03F] via-[#D4AF37] to-[#C6941E] rounded-full shadow-2xl hover:scale-110 transition-all z-50 group"
+          className="hidden md:flex fixed bottom-24 right-6 items-center justify-center w-16 h-16 bg-gradient-to-br from-[#F4D03F] via-[#D4AF37] to-[#C6941E] rounded-full shadow-2xl hover:scale-110 transition-all z-40 group"
           title="Criar Post"
         >
           <Plus className="w-8 h-8 text-black group-hover:rotate-90 transition-transform duration-300" />
