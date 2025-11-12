@@ -142,6 +142,8 @@ export const VerticalFeed: React.FC<VerticalFeedProps> = ({ mode = 'all', userId
 
       console.log('[FEED] Loaded', data?.length || 0, 'posts');
       console.log('[FEED] First post sample:', data?.[0]);
+      console.log('[FEED] First post media_url:', data?.[0]?.media_url);
+      console.log('[FEED] First post media_type:', data?.[0]?.media_type);
 
       // Fetch user profiles for all posts manually
       if (data && data.length > 0) {

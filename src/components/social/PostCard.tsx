@@ -39,13 +39,16 @@ interface Post {
 }
 
 // Helper function to normalize media URLs
-const normalizeMediaUrls = (media_urls: (string | MediaItem)[] | undefined, content_type: string): MediaItem[] => {
+const normalizeMediaUrls = (media_urls: (string | MediaItem)[] | undefined, media_type: string): MediaItem[] => {
   if (!media_urls || media_urls.length === 0) return [];
 
   return media_urls.map(item => {
     if (typeof item === 'string') {
-      // Detect type from URL or content_type
-      const isVideo = item.includes('.mp4') || item.includes('.webm') || item.includes('.mov') || content_type === 'video';
+      // Detect type from media_type or URL
+      const isVideo = media_type === 'video' ||
+                     item.includes('.mp4') ||
+                     item.includes('.webm') ||
+                     item.includes('.mov');
       return {
         type: isVideo ? 'video' : 'image',
         url: item
@@ -95,9 +98,20 @@ export const PostCard: React.FC<PostCardProps> = ({
   });
   const [showMenu, setShowMenu] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
-  const normalizedMedia = normalizeMediaUrls(post.media_urls, post.content_type);
+  // Convert single media_url to array format for normalizeMediaUrls
+  const mediaArray = post.media_url ? [post.media_url] : [];
+  const normalizedMedia = normalizeMediaUrls(mediaArray as any, post.media_type || '');
   const [showComments, setShowComments] = useState(false);
   const [showReport, setShowReport] = useState(false);
+
+  // Log media for debugging
+  useEffect(() => {
+    if (post.media_url) {
+      console.log('[PostCard] Media URL:', post.media_url);
+      console.log('[PostCard] Media Type:', post.media_type);
+      console.log('[PostCard] Normalized Media:', normalizedMedia);
+    }
+  }, [post.media_url, post.media_type]);
   const [showEdit, setShowEdit] = useState(false);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [isOwner, setIsOwner] = useState(false);
@@ -515,6 +529,11 @@ export const PostCard: React.FC<PostCardProps> = ({
               src={normalizedMedia[currentMediaIndex]?.url}
               alt="Post content"
               className="w-full h-full object-cover md:rounded-2xl"
+              onLoad={() => console.log('[PostCard] Image loaded successfully:', normalizedMedia[currentMediaIndex]?.url)}
+              onError={(e) => {
+                console.error('[PostCard] Image failed to load:', normalizedMedia[currentMediaIndex]?.url);
+                console.error('[PostCard] Error event:', e);
+              }}
             />
           )}
           {/* Dark overlay for better text visibility */}
