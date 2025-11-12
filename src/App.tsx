@@ -155,6 +155,7 @@ function AppRoutes() {
                      pathname === '/minha-pagina' ||
                      pathname === '/salvos' ||
                      pathname.startsWith('/social') ||
+                     pathname === '/feed' ||
                      pathname.includes('/loja') ||
                      isDynamicRoute;
 
@@ -163,7 +164,11 @@ function AppRoutes() {
       {!hideLayout && <Header />}
       <main className={hideLayout ? '' : 'flex-1'}>
         <Routes>
-          {/* Public Routes */}
+          {/* ========================================
+              PUBLIC ROUTES
+              ======================================== */}
+
+          {/* Home / Feed Routes - Multiple Aliases */}
           <Route path="/" element={<SocialFeed />} />
           <Route path="/pt" element={<SocialFeed />} />
           <Route path="/en" element={<SocialFeed />} />
@@ -227,7 +232,9 @@ function AppRoutes() {
           <Route path="/r/:code" element={<RefRedirect />} />
 
           {/* Social Network Routes */}
+          {/* FEED ROUTES: Multiple aliases point to SocialFeed */}
           <Route path="/social" element={<SocialFeed />} />
+          <Route path="/feed" element={<SocialFeed />} />
           <Route path="/salvos" element={<SavedPosts />} />
           <Route path="/social/:subdomain" element={<SocialFeed />} />
           <Route path="/meu-perfil" element={
