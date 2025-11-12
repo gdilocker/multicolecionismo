@@ -204,30 +204,6 @@ export default function Header() {
                 >
                   Lojas
                 </Link>
-                {(user?.role === 'member' || user?.role === 'admin') && (
-                  <Link
-                    to="/panel/dashboard"
-                    className={`px-3 py-2 font-medium transition-colors ${
-                      location.pathname === '/panel/dashboard'
-                        ? 'text-white'
-                        : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    Dashboard
-                  </Link>
-                )}
-                {user?.role === 'admin' && (
-                  <Link
-                    to="/admin/dashboard"
-                    className={`px-3 py-2 font-medium transition-colors ${
-                      location.pathname.startsWith('/admin')
-                        ? 'text-white'
-                        : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    Admin
-                  </Link>
-                )}
                 <div className="relative">
                   <button
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
