@@ -72,7 +72,7 @@ export const PanelSidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen, backRo
   const menuItems = [
     { path: '/panel/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { path: '/feed', icon: Activity, label: 'Feed', subtitle: 'Rede Social' },
-    { path: '/panel/domains', icon: Globe, label: 'Gerenciar', subtitle: 'Domínios / Páginas', badge: !userStatus.hasProfile ? 'Criar Página' : undefined },
+    { path: '/panel/domains', icon: Globe, label: 'Gerenciar', subtitle: 'Domínios / Páginas / Loja / Feed', badge: !userStatus.hasProfile ? 'Criar Página' : undefined },
     { path: '/panel/revendedor', icon: Store, label: 'Afiliado', badge: !userStatus.isAffiliate && !userStatus.hasAcceptedAffiliateTerms ? 'Participe' : undefined },
     { path: '/panel/billing', icon: CreditCard, label: 'Faturamento' },
     { path: '/panel/settings', icon: Settings, label: 'Configurações' },
