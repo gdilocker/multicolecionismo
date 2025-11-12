@@ -1023,7 +1023,7 @@ export default function ProfileManager() {
                   <div>
                     <h3 className="text-base font-semibold text-slate-800 flex items-center gap-2">
                       <Eye className="w-5 h-5 text-slate-700" />
-                      Página Ativa
+                      {profile.is_active ? 'Página Ativada' : 'Página Desativada'}
                     </h3>
                     <p className="text-sm text-slate-600 mt-1">
                       {profile.is_active ? 'Sua página está visível publicamente' : 'Sua página está oculta'}
