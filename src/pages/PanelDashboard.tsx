@@ -26,6 +26,7 @@ interface Domain {
 interface ProfileData {
   id: string;
   subdomain: string;
+  is_active: boolean;
   store_enabled: boolean;
   social_enabled: boolean;
   domain_id: string;
@@ -94,7 +95,7 @@ const PanelDashboard: React.FC = () => {
           // Primeiro tenta buscar pelo domain_id
           let { data: activeProfileData } = await supabase
             .from('user_profiles')
-            .select('id, subdomain, store_enabled, social_enabled, domain_id')
+            .select('id, subdomain, is_active, store_enabled, social_enabled, domain_id')
             .eq('domain_id', customerData.active_domain_id)
             .maybeSingle();
 
@@ -102,7 +103,7 @@ const PanelDashboard: React.FC = () => {
           if (!activeProfileData) {
             const { data: fallbackProfileData } = await supabase
               .from('user_profiles')
-              .select('id, subdomain, store_enabled, social_enabled, domain_id')
+              .select('id, subdomain, is_active, store_enabled, social_enabled, domain_id')
               .eq('user_id', user.id)
               .order('created_at', { ascending: false })
               .limit(1)
@@ -176,7 +177,7 @@ const PanelDashboard: React.FC = () => {
       // Primeiro tenta buscar pelo domain_id
       let { data: newProfileData, error: profileError } = await supabase
         .from('user_profiles')
-        .select('id, subdomain, store_enabled, social_enabled, domain_id')
+        .select('id, subdomain, is_active, store_enabled, social_enabled, domain_id')
         .eq('domain_id', domainId)
         .maybeSingle();
 
@@ -189,7 +190,7 @@ const PanelDashboard: React.FC = () => {
         console.log('Profile not found by domain_id, trying user_id fallback');
         const { data: fallbackProfileData } = await supabase
           .from('user_profiles')
-          .select('id, subdomain, store_enabled, social_enabled, domain_id')
+          .select('id, subdomain, is_active, store_enabled, social_enabled, domain_id')
           .eq('user_id', user.id)
           .order('created_at', { ascending: false })
           .limit(1)
@@ -222,7 +223,7 @@ const PanelDashboard: React.FC = () => {
 
   const quickActions = [];
 
-  if (profileData) {
+  if (profileData && profileData.is_active) {
     quickActions.push({
       icon: User,
       label: 'Minha Página',
