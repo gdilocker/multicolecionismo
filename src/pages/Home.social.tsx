@@ -45,6 +45,7 @@ export default function Home() {
           user_profiles!social_posts_user_id_fkey(subdomain, display_name, avatar_url)
         `)
         .eq('is_public', true)
+        .eq('is_active', true)
         .order('created_at', { ascending: false })
         .limit(20);
 
