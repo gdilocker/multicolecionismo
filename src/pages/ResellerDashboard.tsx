@@ -360,23 +360,21 @@ const ResellerDashboard: React.FC = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-slate-500/80 to-slate-900/80"></div>
             <div className="relative z-10">
-              <img
-                src="/logo.png"
-                alt="Com.rich"
-                className="h-20 mx-auto mb-6 drop-shadow-lg"
-              />
+              <div className="flex justify-center mb-6">
+                <Logo size={80} />
+              </div>
               <h2 className="text-2xl font-bold text-white mb-3">
-                Torne-se um Afiliado
+                Programa de Afiliados Multicolecionismo
               </h2>
               <p className="text-white/90 mb-8 max-w-xl mx-auto">
-                Clique no botão abaixo para ativar sua conta de afiliado e começar a receber comissões recorrentes: 25% (Prime) ou 50% (Elite) em cada pagamento do cliente.
+                Clique no botão abaixo para aceitar os termos e ativar sua conta de afiliado. Ganhe comissões recorrentes: 10% (Prime), 25% (Elite) ou 35% (Supreme) em cada pagamento do cliente.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={createAffiliateAccount}
+                onClick={() => setShowTermsModal(true)}
                 disabled={creating}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-gold to-brand-gold-dark text-black rounded-xl font-bold shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
               >
                 {creating ? (
                   <>
@@ -400,11 +398,12 @@ const ResellerDashboard: React.FC = () => {
               </div>
               <h3 className="text-lg font-bold text-slate-800 mb-2">Comissões Recorrentes</h3>
               <p className="text-slate-600 text-sm mb-2">
-                25% (Prime) ou 50% (Elite) a cada pagamento
+                Ganhe todo mês enquanto seus referidos mantiverem a assinatura
               </p>
               <div className="space-y-1">
-                <div className="text-xs text-emerald-600 font-semibold">Prime: 25% recorrente</div>
-                <div className="text-xs text-yellow-600 font-semibold">Elite: $35/mês</div>
+                <div className="text-xs text-blue-600 font-semibold">Prime: 10% (R$ 7,00/mês)</div>
+                <div className="text-xs text-emerald-600 font-semibold">Elite: 25% (R$ 24,75/mês)</div>
+                <div className="text-xs text-yellow-600 font-semibold">Supreme: 35% (R$ 52,50/mês)</div>
               </div>
             </div>
 
@@ -980,7 +979,7 @@ const ResellerDashboard: React.FC = () => {
 
       <AffiliateTermsModal
         isOpen={showTermsModal}
-        onClose={() => {}}
+        onClose={() => !creating && setShowTermsModal(false)}
         onAccept={handleAcceptTerms}
       />
     </PanelLayout>
