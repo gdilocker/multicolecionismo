@@ -2,11 +2,27 @@
   command = "npm run build"
   publish = "dist"
 
+# Plugin to clear cache on deploy
+[[plugins]]
+  package = "@netlify/plugin-cache-control"
+
 [context.production.environment]
   NODE_VERSION = "18"
   VITE_SUPABASE_URL = "https://libzvdbgixckggmivspg.supabase.co"
   VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYnp2ZGJnaXhja2dnbWl2c3BnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA5MDI2OTMsImV4cCI6MjA3NjQ3ODY5M30.I4uFHXFXk23skBUm97HKxDhozDecUMrDefc3YBoy4_U"
   VITE_DEV_MODE = "false"
+
+# Force Edge/CDN cache invalidation
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
 
 [[redirects]]
   from = "/manifest.json"

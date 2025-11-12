@@ -3,6 +3,19 @@ import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
+// Build info for debugging production issues
+const BUILD_TIMESTAMP = new Date().toISOString();
+const BUILD_VERSION = `${import.meta.env.MODE}-${Date.now()}`;
+
+console.log('='.repeat(60));
+console.log('🚀 Multi Colecionismo - Build Info');
+console.log('='.repeat(60));
+console.log('📦 Build Version:', BUILD_VERSION);
+console.log('⏰ Build Time:', BUILD_TIMESTAMP);
+console.log('🌍 Environment:', import.meta.env.MODE);
+console.log('🔧 Vite Version:', import.meta.env.VITE_BUILD_VERSION || 'N/A');
+console.log('='.repeat(60));
+
 const rootElement = document.getElementById('root');
 
 if (!rootElement) {
