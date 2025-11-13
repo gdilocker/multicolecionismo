@@ -128,9 +128,7 @@ export const CreatePostModal: React.FC<CreatePostModalProps> = ({
           content: caption.trim(),
           media_url: mediaUrls.length > 0 ? mediaUrls[0] : null,
           media_type: mediaFiles.length > 0 ? (mediaFiles[0].type.startsWith('video/') ? 'video' : 'image') : null,
-          is_public: true,
-          likes_count: 0,
-          comments_count: 0
+          is_public: true
         });
 
       if (insertError) {
